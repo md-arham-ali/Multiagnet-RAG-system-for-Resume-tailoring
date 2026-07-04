@@ -1,0 +1,61 @@
+# =============================================================================
+# Multi-agent CV / Cover-Letter system — dependencies (mapped from Build.md).
+# Target interpreter: CPython 3.12 (all wheels available; 3.14 lacks wheels for
+# chromadb/spacy as of this writing). Install into ./.venv — see README.md.
+# =============================================================================
+
+# ---- Orchestration: LangGraph supervisor + graph + durable checkpointer ------
+langgraph                       # supervisor pattern + shared-state graph
+langgraph-supervisor            # prebuilt supervisor (Build.md #1)
+langgraph-checkpoint-postgres   # durable gates that survive restart (Build.md)
+psycopg[binary]                 # Postgres driver for the checkpointer
+
+# ---- LangChain core + provider integrations ----------------------------------
+langchain
+langchain-core                  # ChatModels, FakeListLLM (unit-test mocking)
+langchain-community
+langchain-openai                # OpenAI-compatible endpoints (incl. OpenRouter)
+langchain-groq                  # Groq Llama 3.3 70B
+langchain-google-genai          # Gemini 2.5 Flash (Google AI Studio)
+
+# ---- Model routing + fallbacks -----------------------------------------------
+litellm                         # per-agent alias -> provider + fallback chains
+
+# ---- Validation / structured extraction --------------------------------------
+pydantic                        # shared state schema + typed agent I/O
+pydantic-settings
+instructor                      # JD -> typed requirements (Build.md #5)
+python-dotenv                   # load .env (consumed only by config.py)
+pyyaml                          # load versioned prompt YAML (utils/prompt_loader)
+
+# ---- Knowledge base: vector store + local embeddings/reranking ---------------
+chromadb                        # document/profile/learning vector collections
+sentence-transformers           # bge-base-en-v1.5 embeddings + bge-reranker-base
+
+# ---- ATS check (deterministic, no LLM) ---------------------------------------
+keybert                         # JD keyword extraction
+spacy                           # NLP for JD keywords (run: python -m spacy download en_core_web_sm)
+rapidfuzz                       # fuzzy coverage score + do-not-claim exact/fuzzy match
+
+# ---- Evaluation / faithfulness ------------------------------------------------
+# NOTE: ragas is TEMPORARILY DISABLED. ragas 0.4.3 (latest) hard-imports
+# `langchain_community.chat_models.vertexai`, which was removed when
+# langchain-community was sunset (0.4.x). That module only survives in
+# langchain-community <=0.3.x, which pins langchain-core <1.0 — incompatible with
+# the langgraph 1.x backbone (langgraph / langchain-groq / langchain-google-genai
+# all require langchain-core >=1.4). deepeval covers the same role below. Re-enable
+# ragas once it migrates off the sunset langchain-community module.
+# ragas                         # retrieval precision + faithfulness (Build.md #16)
+deepeval                        # faithfulness + contextual precision/recall (Build.md #16/#21)
+
+# ---- Observability ------------------------------------------------------------
+langfuse                        # multi-agent trace tree (Build.md #20)
+
+# ---- Serving + UI -------------------------------------------------------------
+fastapi                         # API + SSE streaming (Build.md #22)
+uvicorn[standard]
+sse-starlette                   # server-sent events for the gate pause/resume UX
+streamlit                       # gate approve/edit/feedback UI (Build.md #23)
+
+# ---- Testing ------------------------------------------------------------------
+pytest                          # graph-logic unit tests with FakeListLLM
