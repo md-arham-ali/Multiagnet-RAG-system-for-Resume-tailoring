@@ -34,6 +34,13 @@ load_dotenv(BASE_DIR / ".env")
 # -----------------------------------------------------------------------------
 PROMPTS_DIR = BASE_DIR / "prompts"
 
+KB_DIR = BASE_DIR / "knowledge_base"
+KB_DOCUMENTS_DIR = KB_DIR / "documents"        # CV/CL examples + templates (vector)
+KB_PROFILE_DIR = KB_DIR / "profile"            # projects/skills/achievements (vector)
+KB_DO_NOT_CLAIM_DIR = KB_DIR / "do_not_claim"  # hard constraint list (plain JSON)
+KB_LEARNING_DIR = KB_DIR / "learning"          # per-agent exemplars + scores
+VECTORDB_DIR = KB_DIR / "chroma"               # Chroma persistent vector index (git-ignored)
+
 STATE_DIR = BASE_DIR / "state"
 LEARNING_DIR = BASE_DIR / "learning"
 EVALUATION_DIR = BASE_DIR / "evaluation"
@@ -119,6 +126,9 @@ def primary_litellm_model(agent: str) -> str:
     """Primary LiteLLM model string for an agent (head of its fallback chain)."""
     return fallback_chain_for(agent)[0]
 
+EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "BAAI/bge-base-en-v1.5")
+RERANKER_MODEL = os.getenv("RERANKER_MODEL", "BAAI/bge-reranker-base")
+
 
 # -----------------------------------------------------------------------------
 # API keys — read once, here, and nowhere else.
@@ -129,6 +139,27 @@ CEREBRAS_API_KEY = os.getenv("CEREBRAS_API_KEY", "")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+
+# -----------------------------------------------------------------------------
+# Observability (Langfuse)
+# -----------------------------------------------------------------------------
+LANGFUSE_PUBLIC_KEY = os.getenv("LANGFUSE_PUBLIC_KEY", "")
+LANGFUSE_SECRET_KEY = os.getenv("LANGFUSE_SECRET_KEY", "")
+LANGFUSE_HOST = os.getenv("LANGFUSE_HOST", "https://cloud.langfuse.com")
+LANGFUSE_ENABLED = bool(LANGFUSE_PUBLIC_KEY and LANGFUSE_SECRET_KEY)
+
+# -----------------------------------------------------------------------------
+# Durable checkpointer (Postgres — survives a paused human gate across restarts)
+# -----------------------------------------------------------------------------
+DATABASE_URL = os.getenv(
+    "DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/agentic"
+)
+
+# -----------------------------------------------------------------------------
+# Embeddings / reranking (local, free — sentence-transformers)
+# -----------------------------------------------------------------------------
+EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "BAAI/bge-base-en-v1.5")
+RERANKER_MODEL = os.getenv("RERANKER_MODEL", "BAAI/bge-reranker-base")
 
 # -----------------------------------------------------------------------------
 # Gemini daily-budget guard (Instructions Part 4, items 22-23)

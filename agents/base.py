@@ -89,6 +89,8 @@ def structured_call(agent: str, user_input: str, schema, *, fake_json: str | Non
     Anything added later (fence-stripping, retries, Langfuse tracing) is added
     once, here, and every agent inherits it.
     """
+    from utils.trace import step  # TEMP tracing
+
     spec = spec_for(agent)
     prompt = f"{spec.system_prompt}\n\n{user_input}"
 
@@ -97,4 +99,5 @@ def structured_call(agent: str, user_input: str, schema, *, fake_json: str | Non
         return schema.model_validate_json(llm.invoke(prompt).content)
 
     llm = make_chat_model(agent)
-    return llm.with_structured_output(schema).invoke(prompt)
+    with step(f"calling {agent} LLM ({config.model_for(agent)}) — waiting for response"):
+        return llm.with_structured_output(schema).invoke(prompt)
