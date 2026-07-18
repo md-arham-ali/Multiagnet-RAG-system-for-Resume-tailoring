@@ -8,10 +8,7 @@ Prompt: prompts/document/system.yaml.
 
 from __future__ import annotations
 
-from agents.base import spec_for
 from state.state import GraphState, Document, Stage
-
-SPEC = spec_for("document")
 
 
 def node(state: GraphState) -> dict:

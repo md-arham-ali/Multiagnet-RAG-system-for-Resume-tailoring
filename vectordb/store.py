@@ -114,7 +114,7 @@ class VectorStore:
 
     def reset(self, collection: str) -> None:
         """Drop a collection if it exists (used before a fresh re-ingest)."""
-        try:
+        # Check existence explicitly instead of `except Exception: pass`, which
+        # also silenced real failures (permissions, corrupt index, wrong path).
+        if collection in [c.name for c in self.client.list_collections()]:
             self.client.delete_collection(collection)
-        except Exception:
-            pass

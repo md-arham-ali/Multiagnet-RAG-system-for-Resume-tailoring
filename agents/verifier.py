@@ -1,5 +1,5 @@
 """
-Verifier — Groq llama-3.3-70b-versatile.
+Verifier - Groq llama-3.3-70b-versatile.
 
 Extracts every claim, checks each is grounded in the retrieved evidence (NLI /
 LLM-as-judge), and enforces the do-not-claim list exactly (exact + fuzzy match
@@ -9,10 +9,7 @@ prompts/verifier/system.yaml.
 
 from __future__ import annotations
 
-from agents.base import spec_for
 from state.state import GraphState, VerifierReport, VerifyStatus, Stage
-
-SPEC = spec_for("verifier")
 
 
 def node(state: GraphState) -> dict:

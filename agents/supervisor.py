@@ -9,14 +9,10 @@ max_revisions), Verifier-fail loop-backs, and context-injection control
 
 from __future__ import annotations
 
-from agents.base import spec_for
-from state.state import GraphState, Stage , Verdict, VerifyStatus 
+from state.state import GraphState, Stage , Verdict, VerifyStatus
 
 from langgraph.graph import StateGraph, START, END
 from agents import jd_analysis, profile, matching, document, critic, verifier, evaluation
-
-
-SPEC = spec_for("supervisor")
 
 NEXT_STAGE = {
     Stage.JD_ANALYSIS : "jd_analysis",
@@ -48,10 +44,10 @@ def route(state: GraphState) -> str:
         return "document"          # Verifier failed -> redo
     # otherwise advance to the next stage in the pipeline
     return NEXT_STAGE.get(state.stage, "END")
-    # raise NotImplementedError("supervisor.route is a scaffold — routing logic is TODO.")
+    # raise NotImplementedError("supervisor.route is a scaffold - routing logic is TODO.")
 
 def supervisor_node(state: GraphState) -> dict:
-    """The hub. Does no work now — routing happens on the edge (add_conditional_edges).
+    """The hub. Does no work now - routing happens on the edge (add_conditional_edges).
     Later: log the decision, bump revision_count on loop-backs, decide inject_critic functions to be added."""
     return {}
 

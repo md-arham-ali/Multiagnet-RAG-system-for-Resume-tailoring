@@ -134,6 +134,10 @@ def build(store: VectorStore, kb_dir: Path | None = None, reset: bool = True) ->
             continue
         ids, texts, metas = [], [], []
         for r in records:
+            if id_field not in r:
+                raise KeyError(
+                    f"{rel}: record missing its id field '{id_field}': {str(r)[:80]}"
+                )
             ids.append(f"{rtype}:{r[id_field]}")
             texts.append(text_fn(r))
             meta = {"type": rtype, "source_id": r[id_field]}

@@ -8,10 +8,7 @@ the prompt versions + learning slice used. Prompt: prompts/evaluation/system.yam
 
 from __future__ import annotations
 
-from agents.base import spec_for
 from state.state import GraphState, EvalRecord, Stage
-
-SPEC = spec_for("evaluation")
 
 
 def node(state: GraphState) -> dict:

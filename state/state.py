@@ -1,5 +1,5 @@
 """
-Shared LangGraph state — a Pydantic model used as the graph's State schema
+Shared LangGraph state - a Pydantic model used as the graph's State schema
 (Build.md #2). Every agent reads from and writes to this typed object, so it
 doubles as the run's audit trail: each artifact below records what one agent
 produced and what evidence backs it.
@@ -18,7 +18,7 @@ from pydantic import BaseModel, Field
 
 
 # -----------------------------------------------------------------------------
-# Enums (typed verdicts — these drive Supervisor routing)
+# Enums (typed verdicts - these drive Supervisor routing)
 # -----------------------------------------------------------------------------
 class Stage(str, Enum):
     JD_ANALYSIS = "jd_analysis"

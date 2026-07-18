@@ -60,6 +60,14 @@ USE_FAKE_LLM = os.getenv("USE_FAKE_LLM", "0").strip().lower() in {"1", "true", "
 # Canonical model identifiers (provider-agnostic names).
 GROQ_LLAMA = "llama-3.3-70b-versatile"
 GEMINI_FLASH = "gemini-2.5-flash"
+OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+
+# Single-flag provider override (same one-flag pattern as USE_FAKE_LLM / TEST_MODE):
+#   USE_OPENAI=1 -> route EVERY agent to OpenAI (OPENAI_MODEL), ignoring the
+#   Groq/Gemini per-mode assignment below. USE_FAKE_LLM still wins over this
+#   (offline structure testing stays free). Lets the whole system run on just an
+#   OpenAI key when Groq/Gemini aren't set up.
+USE_OPENAI = os.getenv("USE_OPENAI", "0").strip().lower() in {"1", "true", "yes", "on"}
 
 # Per-agent model assignment. Document + Critic read the flag; everything else
 # is pinned to Groq regardless of mode (Build.md + Instructions Part 1).
@@ -72,7 +80,19 @@ MODEL_CONFIG: dict[str, str] = {
     "critic":      GROQ_LLAMA if DEV_MODE else GEMINI_FLASH,
     "verifier":    GROQ_LLAMA,
     "evaluation":  GROQ_LLAMA,
+    # Scratch/experiment agents (scripts/custom_retriever_test.py) — not part of
+    # the 7-agent pipeline, no LangGraph node, no state graph.
+    "query_refine": GROQ_LLAMA,
+    "rerank_critic": GROQ_LLAMA,
+    # Sandbox company-ranking agents (scripts/agentic_rank_test.py) — a mini
+    # supervisor→refine→critic loop over the CV-vs-companies ranking.
+    "rank_refiner": GROQ_LLAMA,
+    "rank_verifier": GROQ_LLAMA,
 }
+
+# OpenAI override: repoint every agent at the single OpenAI model in one place.
+if USE_OPENAI:
+    MODEL_CONFIG = {agent: OPENAI_MODEL for agent in MODEL_CONFIG}
 
 # -----------------------------------------------------------------------------
 # Provider routing + LiteLLM fallback chains (Instructions Part 3)
@@ -90,11 +110,16 @@ GEMINI_LANE = [
     "openrouter/google/gemini-2.0-flash-exp:free",
     f"groq/{GROQ_LLAMA}",  # quality degrades here, but the run completes
 ]
+OPENAI_LANE = [
+    f"openai/{OPENAI_MODEL}",
+    f"groq/{GROQ_LLAMA}",  # last-resort degrade so a run still completes
+]
 
 # Map a canonical model name -> its full fallback chain (primary is element 0).
 FALLBACK_CHAINS: dict[str, list[str]] = {
     GROQ_LLAMA: GROQ_LANE,
     GEMINI_FLASH: GEMINI_LANE,
+    OPENAI_MODEL: OPENAI_LANE,
 }
 
 # Exponential-backoff-with-jitter settings applied on 429 before fallback fires
@@ -125,9 +150,6 @@ def fallback_chain_for(agent: str) -> list[str]:
 def primary_litellm_model(agent: str) -> str:
     """Primary LiteLLM model string for an agent (head of its fallback chain)."""
     return fallback_chain_for(agent)[0]
-
-EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "BAAI/bge-base-en-v1.5")
-RERANKER_MODEL = os.getenv("RERANKER_MODEL", "BAAI/bge-reranker-base")
 
 
 # -----------------------------------------------------------------------------
@@ -175,6 +197,8 @@ def required_keys_for_mode() -> list[str]:
     """Env var names that must be set for the current TEST_MODE to actually run."""
     if USE_FAKE_LLM:
         return []  # offline mode needs no provider keys at all
+    if USE_OPENAI:
+        return ["OPENAI_API_KEY"]  # override routes every agent to OpenAI
     required = ["GROQ_API_KEY"]  # the Groq lane backs every agent
     if not DEV_MODE:
         required.append("GOOGLE_API_KEY")  # eval mode pushes Document/Critic to Gemini
@@ -206,13 +230,16 @@ def summary() -> str:
     def mask(v: str) -> str:
         return "set" if v else "—"
 
+    provider = "OpenAI (USE_OPENAI)" if USE_OPENAI else ("fake/offline" if USE_FAKE_LLM else "Groq/Gemini")
     lines = [
         f"TEST_MODE          : {TEST_MODE} (DEV_MODE={DEV_MODE})",
+        f"Active provider    : {provider}",
         "Model assignment   :",
         *[f"    {a:<12}-> {m}" for a, m in MODEL_CONFIG.items()],
         "Provider keys      :",
         f"    GROQ           : {mask(GROQ_API_KEY)}",
         f"    GOOGLE         : {mask(GOOGLE_API_KEY)}",
+        f"    OPENAI         : {mask(OPENAI_API_KEY)}",
         f"    CEREBRAS       : {mask(CEREBRAS_API_KEY)}",
         f"    OPENROUTER     : {mask(OPENROUTER_API_KEY)}",
         f"Langfuse           : {'enabled' if LANGFUSE_ENABLED else 'disabled'}",

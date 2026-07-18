@@ -1,5 +1,5 @@
 """
-Matching Agent — Groq llama-3.3-70b-versatile.
+Matching Agent - Groq llama-3.3-70b-versatile.
 
 Scores the retrieved profile evidence (sharpened by the bge reranker) against the
 typed requirements and produces a `FitReport`. Prompt: prompts/matching/system.yaml.
@@ -7,10 +7,7 @@ typed requirements and produces a `FitReport`. Prompt: prompts/matching/system.y
 
 from __future__ import annotations
 
-from agents.base import spec_for
 from state.state import GraphState, FitReport, Stage
-
-SPEC = spec_for("matching")
 
 
 def node(state: GraphState) -> dict:

@@ -1,5 +1,5 @@
 """
-Profile Agent — Groq llama-3.3-70b-versatile.
+Profile Agent - Groq llama-3.3-70b-versatile.
 
 Retrieves relevant profile blocks for the requirements and runs the interactive
 gap-interview (a human gate via interrupt()) to enrich the profile store.
@@ -10,10 +10,7 @@ Prompt: prompts/profile/system.yaml.
 
 from __future__ import annotations
 
-from agents.base import spec_for
 from state.state import GraphState, ProfileBlock, Stage
-
-SPEC = spec_for("profile")
 
 
 def node(state: GraphState) -> dict:

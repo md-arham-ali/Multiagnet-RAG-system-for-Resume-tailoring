@@ -1,16 +1,13 @@
 """
-Critic Agent — Gemini 2.5 Flash in eval mode, Groq in dev mode.
+Critic Agent - Gemini 2.5 Flash in eval mode, Groq in dev mode.
 
-Reviews the Document Agent's output against a rubric the Supervisor passes at call
+Reviews the Document Agent's output against a RUBRIC the Supervisor passes at call
 time, returning a typed pass/revise `Critique`. Prompt: prompts/critic/system.yaml.
 """
 
 from __future__ import annotations
 
-from agents.base import spec_for
 from state.state import GraphState, Critique, Verdict, Stage
-
-SPEC = spec_for("critic")
 
 
 def node(state: GraphState) -> dict:
