@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """
+
+THIS IS ON A TEST BASIS
+
 Sandbox PDF ingestion runner. Reads PDFs from test_work/, embeds their chunks
-into a SEPARATE Chroma index at test_work/test_vb/ — nothing here touches the
+into a SEPARATE Chroma index at test_work/test_vb/ nothing here touches the
 real KB index under knowledge_base/chroma/.
 
 Usage:  python scripts/ingest_pdfs_test.py

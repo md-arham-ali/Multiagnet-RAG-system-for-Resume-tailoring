@@ -1,5 +1,5 @@
 """
-Document Agent — Gemini 2.5 Flash in eval mode, Groq in dev mode.
+Document Agent - Gemini 2.5 Flash in eval mode, Groq in dev mode.
 
 Generates the tailored CV / cover letter from a template + the matched evidence
 and the FULL do-not-claim list. Generation quality is the product here.

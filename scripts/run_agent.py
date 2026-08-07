@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 """
-Run a SINGLE agent node in isolation (no graph) and print what it returns.
-Useful for developing and testing one agent at a time.
-Offline-friendly: prefix with USE_FAKE_LLM=1 to use the fake LLM (no API keys).
+Run one agent node, or a SEQUENCE of them, without the graph — each node's
+output is threaded into the state the next node receives. Useful for developing
+and testing the agents you have actually finished, in order.
 
-Usage:  python scripts/run_agent.py              # defaults to jd_analysis
-        python scripts/run_agent.py jd_analysis
+Offline-friendly: prefix with USE_FAKE_LLM=1 to use the fake LLM (no API keys).
+Any upstream input a node needs but no earlier node produced is seeded from
+PREREQS below (only when still missing — real upstream output always wins).
+
+Usage:  python scripts/run_agent.py                      # the COMPLETED chain
+        python scripts/run_agent.py profile              # one agent, seeded
+        python scripts/run_agent.py jd_analysis profile  # an explicit chain
 """
 
 from __future__ import annotations
@@ -19,9 +24,39 @@ from importlib import import_module
 
 from pydantic import BaseModel
 
-from state.state import GraphState
+from state.state import GraphState, Requirement, Requirements
+from state.state_utils import update_state
 
 SAMPLE_JD = "We need a Python data engineer with strong SQL and ETL experience."
+
+# The agents with real brains, in pipeline order. Running with no arguments runs
+# exactly this chain — append to it as each agent stops being a stub.
+COMPLETED = ["jd_analysis", "profile"]
+
+# Agents downstream of jd_analysis need state that an upstream agent would have
+# produced. Seed it here so each node can be run in isolation, offline.
+SAMPLE_REQUIREMENTS = Requirements(
+    role_title="Data Engineer",
+    seniority="fresher",
+    keywords=["Python", "SQL", "ETL", "data pipeline"],
+    requirements=[
+        Requirement(text="Strong Python for data processing", kind="must_have",
+                    category="hard_skill"),
+        Requirement(text="SQL and relational data modelling", kind="must_have",
+                    category="hard_skill"),
+        Requirement(text="Build and maintain ETL pipelines", kind="must_have",
+                    category="responsibility"),
+        Requirement(text="Machine learning exposure", kind="nice_to_have",
+                    category="hard_skill"),
+    ],
+)
+
+# agent name -> extra GraphState fields its node expects to already be filled.
+PREREQS: dict[str, dict] = {
+    "profile": {"requirements": SAMPLE_REQUIREMENTS},
+    "matching": {"requirements": SAMPLE_REQUIREMENTS},
+    "document": {"requirements": SAMPLE_REQUIREMENTS},
+}
 
 
 def render(value) -> str:
@@ -33,17 +68,39 @@ def render(value) -> str:
     return str(value)
 
 
-def main() -> int:
-    agent = sys.argv[1] if len(sys.argv) > 1 else "jd_analysis"
+def seed_missing(state: GraphState, agent: str) -> GraphState:
+    """Fill only the prerequisite fields this agent needs that are still empty.
 
-    module = import_module(f"agents.{agent}")
+    In a chain, an upstream agent has usually produced them for real — those are
+    left untouched. Running a node alone, nothing produced them, so the sample
+    stands in.
+    """
+    missing = {
+        field: value
+        for field, value in PREREQS.get(agent, {}).items()
+        if getattr(state, field, None) is None
+    }
+    return update_state(state, **missing) if missing else state
+
+
+def main() -> int:
+    agents = sys.argv[1:] or COMPLETED
+
     state = GraphState(job_description=SAMPLE_JD)
 
-    print(f"\n=== Running agent: {agent} ===")
-    output = module.node(state)
+    for agent in agents:
+        module = import_module(f"agents.{agent}")
+        state = seed_missing(state, agent)
 
-    for key, value in output.items():
-        print(f"\n{key}:\n{render(value)}")
+        print(f"\n=== Running agent: {agent} ===")
+        output = module.node(state)
+
+        for key, value in output.items():
+            print(f"\n{key}:\n{render(value)}")
+
+        # Thread this node's output into the state the next node will see.
+        state = update_state(state, **output)
+
     return 0
 
 

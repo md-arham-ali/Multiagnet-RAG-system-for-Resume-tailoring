@@ -83,6 +83,14 @@ class GapQuestion(BaseModel):
     requirement: str
     question: str
 
+class RequirementAssessment(BaseModel):
+    requirement: str
+    support: Support
+    gap_question: Optional[str] = None
+
+
+class ProfileAssessment(BaseModel):
+    assessments: list[RequirementAssessment] = Field(default_factory=list)
 
 # -----------------------------------------------------------------------------
 # Matching artifacts

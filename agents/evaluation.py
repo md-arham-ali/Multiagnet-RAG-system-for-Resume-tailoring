@@ -1,9 +1,11 @@
 """
-Evaluation Agent — Groq llama-3.3-70b-versatile.
+Evaluation Agent - Groq llama-3.3-70b-versatile.
 
 Runs AFTER final human approval. Scores the run (retrieval precision, ATS, fit,
 generation quality) and writes an exemplar/score record to the Learning Store with
 the prompt versions + learning slice used. Prompt: prompts/evaluation/system.yaml.
+
+ATS part not yet impemented. TODO
 """
 
 from __future__ import annotations
