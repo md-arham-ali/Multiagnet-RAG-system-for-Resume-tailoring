@@ -1,10 +1,12 @@
 """
 Versioned prompt loader.
 
-Agent system prompts live as YAML under prompts/<agent>/system.yaml — versioned,
-not hardcoded in agent logic (Instructions.md step 4). This module is the single
-way agents read their prompt, so the prompt text never leaks into code and the
-version travels with it (Build.md #19: store version IDs alongside eval scores).
+Prompts live as YAML under prompts/<agent>/system.yaml, never hardcoded in agent
+code (Instructions #4). One way in, so prompt text stays out of the code and the
+version travels with it - log that next to eval scores (Build.md #19).
+
+Note: load_prompt is lru_cached, so a long-lived process needs a restart to see
+prompt edits.
 """
 
 from __future__ import annotations
@@ -17,13 +19,13 @@ import yaml
 
 import config
 
-# Accepted filenames, in priority order (.txt is a plain-text fallback).
+# in priority order, .txt is the plain-text fallback
 _FILENAMES = ("system.yaml", "system.yml", "system.txt")
 
 
 @dataclass(frozen=True)
 class Prompt:
-    """A loaded, versioned prompt plus its metadata."""
+    """A loaded prompt + its metadata."""
 
     name: str
     version: int
@@ -66,7 +68,7 @@ def load_prompt(agent: str) -> Prompt:
             path=path,
         )
 
-    # Plain-text fallback: the whole file is the system prompt, version defaults to 1.
+    # .txt fallback: whole file is the prompt, version 1
     text = path.read_text(encoding="utf-8").strip()
     if not text:
         raise ValueError(f"Prompt file {path} is empty.")
@@ -87,5 +89,5 @@ def prompt_version(agent: str) -> int:
 
 
 def all_prompt_versions() -> dict[str, int]:
-    """{agent: prompt_version} for every agent in MODEL_CONFIG — log this with evals."""
+    """{agent: version} for every agent in MODEL_CONFIG. Log this with evals."""
     return {agent: load_prompt(agent).version for agent in config.MODEL_CONFIG}

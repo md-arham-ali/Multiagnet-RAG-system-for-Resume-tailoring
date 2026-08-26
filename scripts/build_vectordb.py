@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Build the vector DB: embed the knowledge_base/*.json fixtures into Chroma.
+Build the vector DB: knowledge_base/*.json fixtures -> Chroma.
 
-First run downloads the embedding model (~440 MB) and persists the index to
-config.VECTORDB_DIR. Re-running is idempotent (upsert).
+First run downloads the embedding model (~440 MB), index persists to
+config.VECTORDB_DIR. Re-running is idempotent, it upserts.
 
 Usage:  python scripts/build_vectordb.py
 """

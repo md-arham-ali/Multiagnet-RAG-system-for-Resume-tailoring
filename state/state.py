@@ -1,24 +1,22 @@
 """
-Shared LangGraph state - a Pydantic model used as the graph's State schema
-(Build.md #2). Every agent reads from and writes to this typed object, so it
-doubles as the run's audit trail: each artifact below records what one agent
-produced and what evidence backs it.
+The graph's State schema (Build.md #2). Every agent reads and writes this one
+typed object, so it doubles as the audit trail: one artifact per agent below.
 
-Pydantic models are accepted directly as LangGraph state schemas, and `Annotated`
-field reducers (e.g. `add_messages`) are honoured.
+Annotated reducers (add_messages, operator.add) are honoured by LangGraph.
 """
 
 from __future__ import annotations
 
 from enum import Enum
-from typing import Annotated, Any, Optional
+from typing import Annotated, Any, Optional, Literal
 
 from langgraph.graph.message import add_messages
 from pydantic import BaseModel, Field
+import operator
 
 
 # -----------------------------------------------------------------------------
-# Enums (typed verdicts - these drive Supervisor routing)
+# Enums - these drive Supervisor routing
 # -----------------------------------------------------------------------------
 class Stage(str, Enum):
     JD_ANALYSIS = "jd_analysis"
@@ -29,6 +27,7 @@ class Stage(str, Enum):
     VERIFIER = "verifier"
     EVALUATION = "evaluation"
     DONE = "done"
+    PROFILE_ENRICH = "profile_enrich"
 
 
 class Support(str, Enum):
@@ -158,7 +157,7 @@ class VerifierReport(BaseModel):
 
 
 # -----------------------------------------------------------------------------
-# Evaluation artifacts (written to the Learning Store post-approval)
+# Evaluation artifacts - go to the Learning Store after approval
 # -----------------------------------------------------------------------------
 class EvalRecord(BaseModel):
     role_type: Optional[str] = None
@@ -166,14 +165,15 @@ class EvalRecord(BaseModel):
     ats_score: Optional[float] = None
     fit_score: Optional[float] = None
     generation_score: Optional[float] = None
-    # Attribution: which prompt versions + learning exemplars produced this run.
+    # Attribution: which prompt version + exemplars produced this run. Without
+    # it a score that moves can't be traced to prompt vs exemplars vs model.
     prompt_versions: dict[str, int] = Field(default_factory=dict)
     learning_slice: list[str] = Field(default_factory=list)
     exemplar_worthy: bool = False
 
 
 # -----------------------------------------------------------------------------
-# Human gate feedback (×4 interrupt() pauses)
+# Human gate feedback - 4 interrupt() pauses
 # -----------------------------------------------------------------------------
 class GateFeedback(BaseModel):
     gate: str
@@ -181,9 +181,25 @@ class GateFeedback(BaseModel):
     feedback: Optional[str] = None
     edited_payload: Optional[dict[str, Any]] = None
 
+class Compactfeedback(BaseModel):
+    summary: str
+    action_items: list[str] = Field(default_factory=list)
+    severity: Literal["minor", "moderate", "blocking"] = "moderate"
 
 # -----------------------------------------------------------------------------
-# Supervisor decision (Instructions.md #23 — returned after each agent completes)
+# Profile Enrich 
+# -----------------------------------------------------------------------------
+
+class GapAnswerPolish(BaseModel):
+    requirement: str
+    gap_question: str
+    answer: str
+    polished_answer: Optional[str] = None
+
+class ProfileEnrichment(BaseModel):
+    polished: list[GapAnswerPolish] = Field(default_factory= list)
+# -----------------------------------------------------------------------------
+# Supervisor decision (Instructions.md #23)
 # -----------------------------------------------------------------------------
 class SupervisorDecision(BaseModel):
     next_node: str               # name of the next node to run (or "END")
@@ -192,7 +208,7 @@ class SupervisorDecision(BaseModel):
 
 
 # -----------------------------------------------------------------------------
-# Top-level graph state — the audit trail
+# Top-level graph state - the audit trail
 # -----------------------------------------------------------------------------
 class GraphState(BaseModel):
     # Conversation log (LangGraph append reducer).
@@ -207,8 +223,9 @@ class GraphState(BaseModel):
 
     # Per-agent artifacts (each is one node's output).
     requirements: Optional[Requirements] = None
-    evidence: list[ProfileBlock] = Field(default_factory=list)
+    evidence: Annotated[list[ProfileBlock], operator.add] = Field(default_factory=list)
     gap_questions: list[GapQuestion] = Field(default_factory=list)
+    gap_answers: dict[str, str] = Field(default_factory=dict)
     fit_report: Optional[FitReport] = None
     document: Optional[Document] = None
     critique: Optional[Critique] = None
@@ -218,6 +235,6 @@ class GraphState(BaseModel):
     # Control flow.
     revision_count: int = 0
     max_revisions: int = 2
-    gate_feedback: list[GateFeedback] = Field(default_factory=list)
+    gate_feedback: Annotated[list[GateFeedback], operator.add] = Field(default_factory=list)
 
     model_config = {"arbitrary_types_allowed": True}

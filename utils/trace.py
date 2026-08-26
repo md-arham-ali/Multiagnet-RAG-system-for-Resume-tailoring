@@ -1,15 +1,14 @@
 """
-TEMPORARY workflow tracing — so nothing looks 'frozen'.
+TEMPORARY tracing, so a slow step never looks frozen.
 
-Prints what each slow step is doing and how long it took, with flush=True so the
-message appears BEFORE the wait (not after). On by default; silence with TRACE=0.
+flush=True matters: the message has to print BEFORE the wait, otherwise it is
+useless for the exact case it exists for. On by default, TRACE=0 silences it.
 
-    from utils.trace import step, log
-    with step("loading model"):   # prints "⏳ loading model ..." then "✓ ... (2.3s)"
+    with step("loading model"):   # "⏳ loading model ..." then "✓ ... (2.3s)"
         heavy()
-    log("quick note")             # prints "   … quick note"
+    log("quick note")
 
-Remove this module (and its call sites) once you no longer need the visibility.
+Delete this module and its call sites when the visibility isn't needed.
 """
 
 from __future__ import annotations
@@ -28,7 +27,7 @@ def log(msg: str) -> None:
 
 @contextmanager
 def step(msg: str):
-    """Announce a slow step before it runs, then report its duration."""
+    """Announce a slow step, then report how long it took."""
     if _ON:
         print(f"⏳ {msg} ...", flush=True)
     start = time.perf_counter()

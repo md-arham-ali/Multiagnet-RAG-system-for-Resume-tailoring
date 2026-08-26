@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
-Demonstrate the Retriever (keyword + hybrid), the layers you wrote by hand in
-vectordb/retriever.py. Prints semantic, keyword, and hybrid results side by
-side for the same queries so you can compare how each layer ranks things.
+Retriever demo: semantic, keyword and hybrid printed side by side for the same
+query, so the difference in how each ranks is visible.
 
 Usage:  python scripts/demo_retriever.py
 """
@@ -37,7 +36,7 @@ def main() -> int:
         build(store)
 
     retriever = Retriever(store=store)
-    where = {"type": "project"}  # only project evidence, not skills/education/etc.
+    where = {"type": "project"}  # projects only, no skills/education
 
     for q in QUERIES:
         print(f"\nquery: {q!r}")

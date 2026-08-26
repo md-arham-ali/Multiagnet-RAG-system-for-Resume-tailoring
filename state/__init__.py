@@ -1,4 +1,4 @@
-"""Shared state package — the typed LangGraph state (Build.md #2: the audit trail)."""
+"""Typed LangGraph state (Build.md #2). Doubles as the run's audit trail."""
 
 from state.state import (
     Critique,

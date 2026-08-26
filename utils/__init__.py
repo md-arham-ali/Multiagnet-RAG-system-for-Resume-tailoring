@@ -1,4 +1,4 @@
-"""Shared utilities (prompt loading, ranking helpers, etc.)."""
+"""Shared utilities: prompt loading, tracing, gates, checkpointing."""
 
 from utils.prompt_loader import (
     Prompt,

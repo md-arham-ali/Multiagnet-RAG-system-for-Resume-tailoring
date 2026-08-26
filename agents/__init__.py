@@ -1,13 +1,6 @@
 """
-Agents package.
-
-One module per agent, each a thin LangGraph node that:
-  - reads its versioned system prompt via utils.prompt_loader,
-  - is assigned a model by config.MODEL_CONFIG,
-  - reads from / writes to the shared GraphState.
-
-base.py holds the shared spec + chat-model factory; the per-agent node functions
-are scaffolds to be filled in as the graph is wired.
+One module per agent. Each is a thin LangGraph node: loads its prompt, gets its
+model from config, reads and writes GraphState. base.py holds the shared bits.
 """
 
 from agents.base import AgentSpec, make_chat_model, spec_for

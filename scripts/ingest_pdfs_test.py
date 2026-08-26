@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 """
-
 THIS IS ON A TEST BASIS
 
-Sandbox PDF ingestion runner. Reads PDFs from test_work/, embeds their chunks
-into a SEPARATE Chroma index at test_work/test_vb/ nothing here touches the
-real KB index under knowledge_base/chroma/.
+Sandbox PDF ingest. Reads PDFs from test_work/, embeds chunks into a SEPARATE
+index at test_work/test_vb/. Nothing here touches knowledge_base/chroma/.
 
 Usage:  python scripts/ingest_pdfs_test.py
-Then query it with scripts/query_pdfs_test.py (next step).
+Query it with scripts/rank_companies_test.py.
 """
 
 from __future__ import annotations
@@ -27,7 +25,7 @@ INDEX_DIR = ROOT / "test_work" / "test_vb"   # nested sandbox index
 
 
 def main() -> int:
-    # persist_dir points at the SANDBOX dir — isolated from config.VECTORDB_DIR.
+    # persist_dir is the SANDBOX dir, isolated from config.VECTORDB_DIR
     store = VectorStore(persist_dir=INDEX_DIR)
 
     print(f"reading PDFs from : {PDF_DIR}")

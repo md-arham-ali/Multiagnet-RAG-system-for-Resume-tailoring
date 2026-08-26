@@ -1,9 +1,8 @@
 """
-JD Analysis Agent — Groq llama-3.3-70b-versatile.
+JD Analysis Agent - Groq llama-3.3-70b-versatile.
 
-Turns the raw job description into a typed, validated `Requirements` object
-(Build.md #5: forces a validated requirements object). Prompt:
-prompts/jd_analysis/system.yaml.
+Raw job description in, typed Requirements object out (Build.md #5).
+Prompt: prompts/jd_analysis/system.yaml.
 """
 
 from __future__ import annotations
@@ -11,8 +10,7 @@ from __future__ import annotations
 from agents.base import structured_call
 from state.state import GraphState, Requirements, Stage
 
-# In offline mode the fake LLM returns this canned JSON — a stand-in for what a
-# real model will produce. Real mode ignores it and uses the live model's reply.
+# Offline mode returns this canned JSON. Live mode ignores it.
 _FAKE_JSON = (
     '{"role_title": "Data Engineer",'
     ' "requirements": [{"text": "Python", "kind": "must_have"},'
@@ -24,7 +22,7 @@ _FAKE_JSON = (
 # why not adding user input to the function"?
 
 def node(state: GraphState) -> dict:
-    """Read the job description, return a validated Requirements object."""
+    """Read the JD, return a validated Requirements object."""
     reqs = structured_call(
         "jd_analysis",
         "Extract the structured requirements from this job description:\n"

@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
-Demonstrate two-stage retrieval: vector search (recall) -> cross-encoder rerank
-(precision). Prints the vector-search order and the reranked order so the effect
-is visible.
+Two-stage retrieval: vector search for recall, cross-encoder rerank for
+precision. Prints both orders so the effect is visible.
 
 First run downloads the reranker model (BAAI/bge-reranker-base).
 

@@ -7,7 +7,8 @@
 # ---- Orchestration: LangGraph supervisor + graph + durable checkpointer ------
 langgraph                       # supervisor pattern + shared-state graph
 langgraph-supervisor            # prebuilt supervisor (Build.md #1)
-langgraph-checkpoint-postgres   # durable gates that survive restart (Build.md)
+langgraph-checkpoint-postgres   # durable gates that survive restart (Build.md target)
+langgraph-checkpoint-sqlite     # local durable checkpointer (no server to run) - 2026-08-09
 psycopg[binary]                 # Postgres driver for the checkpointer
 
 # ---- LangChain core + provider integrations ----------------------------------

@@ -1,8 +1,8 @@
 """
 Matching Agent - Groq llama-3.3-70b-versatile.
 
-Scores the retrieved profile evidence (sharpened by the bge reranker) against the
-typed requirements and produces a `FitReport`. Prompt: prompts/matching/system.yaml.
+Scores retrieved evidence against the typed requirements, out comes a FitReport.
+Prompt: prompts/matching/system.yaml.
 """
 
 from __future__ import annotations
@@ -12,10 +12,8 @@ from state.state import GraphState, FitReport, Stage
 
 def node(state: GraphState) -> dict:
     """
-    LangGraph node. TODO:
-      - rerank evidence, score each requirement (strong | partial | none),
-      - compute overall fit + must_have coverage, list unmet must-haves,
-      - return {"fit_report": ..., "stage": Stage.DOCUMENT}.
+    LangGraph node. TODO: rerank evidence, score each requirement
+    strong | partial | none, then overall fit + must_have coverage.
     """
 
     report = FitReport(

@@ -18,6 +18,7 @@ Layout
 
 from __future__ import annotations
 
+import contextvars
 import os
 from pathlib import Path
 
@@ -39,9 +40,12 @@ KB_DOCUMENTS_DIR = KB_DIR / "documents"        # CV/CL examples + templates (vec
 KB_PROFILE_DIR = KB_DIR / "profile"            # projects/skills/achievements (vector)
 KB_DO_NOT_CLAIM_DIR = KB_DIR / "do_not_claim"  # hard constraint list (plain JSON)
 KB_LEARNING_DIR = KB_DIR / "learning"          # per-agent exemplars + scores
+KB_AUTH_DIR = KB_DIR / "auth"                  # access requests + issued tokens (git-ignored)
 VECTORDB_DIR = KB_DIR / "chroma"               # Chroma persistent vector index (git-ignored)
 
 STATE_DIR = BASE_DIR / "state"
+RUNS_DIR = BASE_DIR / "logs" / "frontend_runs"  # one JSON event log per pipeline run
+CHECKPOINT_DB = BASE_DIR / "logs" / "checkpoints.sqlite"  # durable graph state for interrupt()/resume
 LEARNING_DIR = BASE_DIR / "learning"
 EVALUATION_DIR = BASE_DIR / "evaluation"
 OUTPUTS_DIR = BASE_DIR / "outputs"             # generated documents / run artifacts
@@ -56,6 +60,42 @@ DEV_MODE = TEST_MODE == "dev"
 #Offline build mode: when on, every agent uses a local fake LLM (no network,
 # lets us build and test the whole graph before any key exists
 USE_FAKE_LLM = os.getenv("USE_FAKE_LLM", "0").strip().lower() in {"1", "true", "yes", "on"}
+
+# Per-run override of the offline switch, for the frontend bridge: one process
+# can now have several pipeline runs in flight (one per user), each started in
+# "offline" or "live" mode independently. Mutating the USE_FAKE_LLM global from a
+# run's worker thread — what the bridge used to do — lets a live run flip an
+# in-flight offline run onto real, billed providers, and vice versa.
+#
+# A ContextVar and not a threading.local(): LangGraph runs a node inline on the
+# calling thread only while it is the single runnable task for that step
+# (langgraph/pregel/_runner.py). Any parallel step is submitted to a
+# ContextThreadPoolExecutor via copy_context() (pregel/_executor.py), i.e. a
+# DIFFERENT thread — where a thread-local set by the API worker is invisible and
+# the switch would silently fail open. copy_context() carries ContextVars by
+# design, so this works on both paths.
+_fake_llm: contextvars.ContextVar[bool | None] = contextvars.ContextVar("fake_llm", default=None)
+
+
+def set_fake_llm(value: bool) -> None:
+    """Force offline (True) / live (False) for the current context only."""
+    _fake_llm.set(bool(value))
+
+
+def fake_llm_active() -> bool:
+    """Is the fake LLM active here? Per-run override wins, else the env default."""
+    override = _fake_llm.get()
+    return USE_FAKE_LLM if override is None else override
+
+
+# -----------------------------------------------------------------------------
+# Frontend access control (scripts/frontend_api.py -> backend/)
+# -----------------------------------------------------------------------------
+# Bootstrap admin credential. Empty means no one can administer the bridge: no
+# access request can ever be approved, so no user token can ever be issued.
+ADMIN_TOKEN = os.getenv("ADMIN_TOKEN", "")
+# Pipeline runs granted per issued user token. Admin is never decremented.
+DEFAULT_RUN_ALLOWANCE = int(os.getenv("DEFAULT_RUN_ALLOWANCE", "2"))
 
 # Canonical model identifiers (provider-agnostic names).
 GROQ_LLAMA = "llama-3.3-70b-versatile"
@@ -75,6 +115,7 @@ MODEL_CONFIG: dict[str, str] = {
     "supervisor":  GROQ_LLAMA,
     "jd_analysis": GROQ_LLAMA,
     "profile":     GROQ_LLAMA,
+    "profile_enrich": GROQ_LLAMA,  # polishes raw gap-interview answers into KB text
     "matching":    GROQ_LLAMA,
     "document":    GROQ_LLAMA if DEV_MODE else GEMINI_FLASH,
     "critic":      GROQ_LLAMA if DEV_MODE else GEMINI_FLASH,

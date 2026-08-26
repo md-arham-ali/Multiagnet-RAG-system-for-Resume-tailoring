@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 """
-Run one agent node, or a SEQUENCE of them, without the graph — each node's
-output is threaded into the state the next node receives. Useful for developing
-and testing the agents you have actually finished, in order.
+Run one agent node, or a chain of them, without the graph. Each node's output is
+threaded into the state the next one sees.
 
-Offline-friendly: prefix with USE_FAKE_LLM=1 to use the fake LLM (no API keys).
-Any upstream input a node needs but no earlier node produced is seeded from
-PREREQS below (only when still missing — real upstream output always wins).
+Anything a node needs that no earlier node produced gets seeded from PREREQS, and
+only when still missing - real upstream output always wins.
 
 Usage:  python scripts/run_agent.py                      # the COMPLETED chain
         python scripts/run_agent.py profile              # one agent, seeded
@@ -29,12 +27,12 @@ from state.state_utils import update_state
 
 SAMPLE_JD = "We need a Python data engineer with strong SQL and ETL experience."
 
-# The agents with real brains, in pipeline order. Running with no arguments runs
-# exactly this chain — append to it as each agent stops being a stub.
+# Real agents, pipeline order. No-args runs exactly this chain.
+# Append as each one stops being a stub.
 COMPLETED = ["jd_analysis", "profile"]
 
-# Agents downstream of jd_analysis need state that an upstream agent would have
-# produced. Seed it here so each node can be run in isolation, offline.
+# Stand-in for what jd_analysis would have produced, so downstream nodes can run
+# on their own.
 SAMPLE_REQUIREMENTS = Requirements(
     role_title="Data Engineer",
     seniority="fresher",
@@ -51,7 +49,7 @@ SAMPLE_REQUIREMENTS = Requirements(
     ],
 )
 
-# agent name -> extra GraphState fields its node expects to already be filled.
+# agent -> the state fields its node expects to be filled already
 PREREQS: dict[str, dict] = {
     "profile": {"requirements": SAMPLE_REQUIREMENTS},
     "matching": {"requirements": SAMPLE_REQUIREMENTS},
@@ -60,7 +58,7 @@ PREREQS: dict[str, dict] = {
 
 
 def render(value) -> str:
-    """Pretty-print a value: Pydantic models as indented JSON, lists element-wise."""
+    """Pretty-print: models as indented JSON, lists element by element."""
     if isinstance(value, BaseModel):
         return value.model_dump_json(indent=2)
     if isinstance(value, list):
@@ -69,11 +67,10 @@ def render(value) -> str:
 
 
 def seed_missing(state: GraphState, agent: str) -> GraphState:
-    """Fill only the prerequisite fields this agent needs that are still empty.
+    """Fill only the prereq fields still empty.
 
-    In a chain, an upstream agent has usually produced them for real — those are
-    left untouched. Running a node alone, nothing produced them, so the sample
-    stands in.
+    In a chain an upstream agent already produced them for real, leave those
+    alone. Running a node by itself, nothing did, so the sample stands in.
     """
     missing = {
         field: value
@@ -98,7 +95,7 @@ def main() -> int:
         for key, value in output.items():
             print(f"\n{key}:\n{render(value)}")
 
-        # Thread this node's output into the state the next node will see.
+        # thread this output into what the next node sees
         state = update_state(state, **output)
 
     return 0

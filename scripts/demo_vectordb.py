@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Demonstrate the vector DB: embed a sentence, then run semantic searches over the
-knowledge base — including a metadata-filtered search and the documents/learning
-collections. Builds the index first if it is empty.
+Vector DB demo: embed a sentence, then semantic search over the KB, including a
+metadata-filtered one and the documents/learning collections.
+Builds the index first if it's empty.
 
 Usage:  python scripts/demo_vectordb.py
 """
@@ -29,21 +29,21 @@ def main() -> int:
         print("Index empty — building it first ...\n")
         build(store)
 
-    # 1) The embedding step, made visible.
+    # 1. the embedding step, made visible
     vec = store.embedder.embed(["applying machine learning on blockchain data"])[0]
     print(f"embedding dim = {len(vec)}  first 5 = {[round(x, 3) for x in vec[:5]]}")
 
-    # 2) Semantic search over the profile evidence.
+    # 2. semantic search over profile evidence
     show("detect fraud and risk in blockchain lending pool",
          store.query("profile", "etect fraud and risk in blockchain lending pool", k=5))
     show("forecasting token prices over time for lending pools",
          store.query("profile", "forecasting token prices over time for lending pools", k=5))
 
-    # 3) Same query, filtered to a single record type via metadata.
+    # 3. same query, filtered to one record type by metadata
     show("LSTM with pytorch  [type=skill only]",
          store.query("profile", "dLSTM with pytorch ", k=6, where={"type": "skill"}))
 
-    # 4) The other tw    o collections.
+    # 4. the other two collections
     show("resume for a growth data analyst",
          store.query("documents", "resume for a growth data analyst", k=4))
     show("how to write quantified resume bullets",
