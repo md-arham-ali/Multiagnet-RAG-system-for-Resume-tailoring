@@ -78,6 +78,10 @@ def human_gate(state: GraphState, gate_name: str) -> dict:
         decision=decision,
         feedback=feedback_text or None,
         edited_payload=edited_payload,
+        # Stamp the round this answer was given in. route() compares it against
+        # the CURRENT revision_count, so a loop-back that produces a new draft
+        # reopens the gate instead of inheriting the old approval.
+        revision=state.revision_count,
     )
 
     # Open: an "edit" is recorded but never written back onto the artifact.

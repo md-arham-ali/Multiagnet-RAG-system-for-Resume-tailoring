@@ -1,4 +1,5 @@
-"""Shared utilities: prompt loading, tracing, gates, checkpointing."""
+"""Shared utilities: prompt loading, tracing, gates, checkpointing, bullet rules,
+KB fixture generation, and CV handling (utils.cv_handling)."""
 
 from utils.prompt_loader import (
     Prompt,

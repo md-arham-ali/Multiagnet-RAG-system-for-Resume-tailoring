@@ -28,6 +28,7 @@ class Stage(str, Enum):
     EVALUATION = "evaluation"
     DONE = "done"
     PROFILE_ENRICH = "profile_enrich"
+    CV_LINK = "cv_link" # not an agente, but a node that links to the CV handling pipeline.
 
 
 class Support(str, Enum):
@@ -78,6 +79,28 @@ class ProfileBlock(BaseModel):
     skills: list[str] = Field(default_factory=list)
 
 
+def merge_evidence(left: list["ProfileBlock"], right: list["ProfileBlock"]) -> list["ProfileBlock"]:
+    """
+    Reducer for `evidence`: append, but never the same block twice.
+
+    Plain operator.add was correct only while nothing re-entered profile.node(),
+    which returns the WHOLE list every time - so one rejected gate 2 (bugs.md
+    #10 made that reachable) concatenated a full duplicate set, and repetition
+    reads as stronger support to whatever grades it next (bugs.md #8, same
+    failure as #13 one scope up).
+
+    Keyed on source_id, the same key #13's in-node guard uses.
+    """
+    seen = {block.source_id for block in left}
+    merged = list(left)
+    for block in right:
+        if block.source_id in seen:
+            continue
+        seen.add(block.source_id)
+        merged.append(block)
+    return merged
+
+
 class GapQuestion(BaseModel):
     requirement: str
     question: str
@@ -94,6 +117,28 @@ class ProfileAssessment(BaseModel):
 # -----------------------------------------------------------------------------
 # Matching artifacts
 # -----------------------------------------------------------------------------
+class MatchGrade(BaseModel):
+    """One requirement as the model graded it - the judgement half only.
+
+    Deliberately narrower than MatchResult: the model is never asked for the
+    requirement's kind, because the caller already holds it on state.requirements.
+    Structured output validates shape, never correspondence to the input, so
+    anything already known is filled from state and only the judgement is read
+    back (bugs.md #14).
+    """
+
+    requirement: str
+    support: Support
+    evidence_ids: list[str] = Field(default_factory=list)
+    justification: str = ""
+
+
+class MatchAssessment(BaseModel):
+    """The Matching agent's one LLM call. Same shape as ProfileAssessment."""
+
+    matches: list[MatchGrade] = Field(default_factory=list)
+
+
 class MatchResult(BaseModel):
     requirement: str
     kind: str
@@ -118,6 +163,48 @@ class Document(BaseModel):
     content: str
     template_id: Optional[str] = None
     unsupported_flags: list[str] = Field(default_factory=list)
+
+
+class EditAction(str, Enum):
+    REPLACE = "replace"   # rewrite the text of an existing bullet/item
+    INSERT = "insert"     # add a new bullet/item after target_id
+    DROP = "drop"         # remove a bullet/item
+
+
+class EditPurpose(str, Enum):
+    COVERS_REQUIREMENT = "covers_requirement"
+    ADDS_KEYWORD = "adds_keyword"
+    QUANTIFIES = "quantifies"
+    FIXES_CRITIQUE = "fixes_critique"
+    FIXES_VERIFIER = "fixes_verifier"
+
+
+class Edit(BaseModel):
+    # replace/drop: the node being changed. insert: the node the new one goes AFTER.
+    target_id: str
+    action: EditAction
+    new_text: Optional[str] = None        # required for replace/insert, None for drop
+    evidence_ids: list[str] = Field(default_factory=list)  # profile ids this edit rests on
+    purpose: EditPurpose
+    reason: str = ""
+
+
+class DocumentPatchSet(BaseModel):
+    # An empty list is valid: "this CV already fits".
+    edits: list[Edit] = Field(default_factory=list)
+
+class EditVerdict(str, Enum):
+    KEEP = "keep"        # unrelated to the job, or already strong
+    REFINE = "refine"    # backed, but under-states it; its children get graded next
+    REWRITE = "rewrite"  # backed, but aimed at the wrong thing; replaced whole, children not graded
+
+class NodeVerdict(BaseModel):
+    node_id:str
+    verdict: EditVerdict
+    reason: str = ""
+
+class VerdictSet(BaseModel):
+    verdicts: list[NodeVerdict] = Field(default_factory=list)
 
 
 # -----------------------------------------------------------------------------
@@ -180,6 +267,11 @@ class GateFeedback(BaseModel):
     decision: str  # approve | edit | reject
     feedback: Optional[str] = None
     edited_payload: Optional[dict[str, Any]] = None
+    # Which revision round this answer belongs to (stamped by human_gate from
+    # state.revision_count). The list is append-only, so the gate NAME alone
+    # only answers "was this ever reviewed" - routing needs "was THIS draft
+    # reviewed", and that is what the stamp gives it (bugs.md #11).
+    revision: int = 0
 
 class Compactfeedback(BaseModel):
     summary: str
@@ -205,7 +297,75 @@ class SupervisorDecision(BaseModel):
     next_node: str               # name of the next node to run (or "END")
     inject_critic: bool = False  # should the Critic review before proceeding?
     reason: str = ""             # why the Supervisor chose this (logged)
+    # True when this dispatch redoes work already done - a Critic/Verifier
+    # loop-back or a rejected gate. It is what costs a revision: the Supervisor
+    # bumps revision_count and clears the verdicts that described the old draft.
+    redo: bool = False
 
+# -----------------------------------------------------------------------------
+# CV_LINK node artifacts
+# -----------------------------------------------------------------------------
+
+
+class NodeKind(str, Enum):
+    CV = "cv"
+    SECTION = "section"
+    ENTRY = "entry"      # one job / project / degree / position
+    BULLET = "bullet"    # a "•" line under an entry
+    ITEM = "item"        # one element of a flat section (a skill, a course, an award)
+
+
+class SectionType(str, Enum):
+    """What a section MEANS, whatever the CV calls it."""
+    HEADER = "header"                    # name / location / contact lines
+    EDUCATION = "education"
+    EXPERIENCE = "experience"
+    PROJECTS = "projects"
+    COURSEWORK = "coursework"
+    SKILLS = "skills"
+    ACHIEVEMENTS = "achievements"
+    RESPONSIBILITIES = "responsibilities"  # "Positions Of Responsibilities"
+    OTHER = "other"                        # unrecognised title: kept, never dropped
+
+class MatchStatus(str, Enum):
+    """Score-only grading for now. `contradicted` needs the LLM pass, so it is not
+    a status yet."""
+    MATCHED = "matched"
+    PARTIAL = "partial"
+    UNMATCHED = "unmatched"
+
+
+class CVNode(BaseModel):
+    node_id: str                          # stable address from position, e.g. "experience.0.b2"
+    kind: NodeKind
+    section_type: SectionType             # inherited down the tree from the section
+    depth: int                            # 0 cv, 1 section, 2 entry, 3 bullet/item
+    parent_id: Optional[str] = None       # None only for the cv root
+    title: str = ""                       # section heading, or an entry's name (first "|" field)
+    text: str = ""                        # what is matched: repaired text of this line
+    raw_text: str = ""                    # exactly what pypdf returned, kept for audit
+    page: Optional[int] = None            # 0-based PDF page the line came from
+    # An entry header like "Research Engineer|MLflow + dbt|Internship|Cobalt Analytics
+    # Mar 2023 – Apr 2024" splits into named parts. Keys used so far: role, tech,
+    # kind, org, date_range. Strings only, so a node flattens to Chroma metadata.
+    attrs: dict[str, str] = Field(default_factory=dict)
+    children: list["CVNode"] = Field(default_factory=list)
+
+class CVTree(BaseModel):
+    source_file: str                      # CV_test.pdf
+    root: CVNode                          # kind == CV
+
+
+class LineLink(BaseModel):
+    """One CV node -> the profile record(s) it points to. The matcher's output."""
+    node_id: str
+    kind: NodeKind
+    section_type: SectionType
+    text: str
+    status: MatchStatus
+    # Chroma ids of the profile records, best first. Empty when unmatched.
+    source_ids: list[str] = Field(default_factory=list)
+    score: float = 0.0                    # best rerank score behind `status`
 
 # -----------------------------------------------------------------------------
 # Top-level graph state - the audit trail
@@ -220,21 +380,40 @@ class GraphState(BaseModel):
 
     # Input.
     job_description: Optional[str] = None
+    cv_path: Optional[str] = None
 
     # Per-agent artifacts (each is one node's output).
     requirements: Optional[Requirements] = None
-    evidence: Annotated[list[ProfileBlock], operator.add] = Field(default_factory=list)
+    evidence: Annotated[list[ProfileBlock], merge_evidence] = Field(default_factory=list)
     gap_questions: list[GapQuestion] = Field(default_factory=list)
     gap_answers: dict[str, str] = Field(default_factory=dict)
     fit_report: Optional[FitReport] = None
+
+    cv_tree: Optional[CVTree] =None
+    line_links: list[LineLink] = Field(default_factory=list)
+    
     document: Optional[Document] = None
+    document_patches: Optional[DocumentPatchSet] = None
+
+    document_plan: Optional[VerdictSet] = None    # call 1's resolved verdicts, reused on revision rounds
+    document_plan_key: Optional[str] = None       # hash of the exact call that produced it
+
     critique: Optional[Critique] = None
     verifier_report: Optional[VerifierReport] = None
     eval_record: Optional[EvalRecord] = None
+    active_rubric: Optional[str] = None # this is the rubric suprvisor is using. 
+    
 
     # Control flow.
+    # The Supervisor's last decision. route() reads next_node off this rather
+    # than re-deriving it, which is what lets supervisor_node() change the state
+    # the decision was made from (bump the count, clear the verdicts) without
+    # deleting the very condition the dispatch was based on (bugs.md #18).
+    supervisor_decision: Optional[SupervisorDecision] = None
     revision_count: int = 0
     max_revisions: int = 2
     gate_feedback: Annotated[list[GateFeedback], operator.add] = Field(default_factory=list)
 
     model_config = {"arbitrary_types_allowed": True}
+
+
