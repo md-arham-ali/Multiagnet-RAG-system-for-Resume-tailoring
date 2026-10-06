@@ -9,7 +9,7 @@ Prompts: prompts/profile/system.yaml, prompts/profile_enrich/system.yaml.
 from __future__ import annotations
 
 from agents.base import structured_call
-from state.state import ProfileAssessment, Support, GapQuestion, GapAnswerPolish, ProfileEnrichment
+from state.state import ProfileAssessment, Support, GapQuestion, ProfileEnrichment
 from learning.profile_store import save_gap_answers
 
 from state.state import GraphState, ProfileBlock, Stage
@@ -50,6 +50,7 @@ def node(state: GraphState) -> dict:
     """
 
     evidence = []
+    seen: set[str] = set()
     by_req: dict[str, list[str]] = {}
 
     for req in state.requirements.requirements:
@@ -62,12 +63,17 @@ def node(state: GraphState) -> dict:
             )
 
             for h in hits:
-                evidence.append(ProfileBlock(
-                    source_id = h.id,
-                    content=h.document,
-                    category=h.metadata.get("type"),
-                    skills=[]
-                ))
+                # One block can hit for several requirements. by_req still gets it
+                # (the LLM grades per requirement), evidence only once.
+                # Small pools like gap_answer would repeat on every requirement.
+                if h.id not in seen:
+                    seen.add(h.id)
+                    evidence.append(ProfileBlock(
+                        source_id = h.id,
+                        content=h.document,
+                        category=h.metadata.get("type"),
+                        skills=[]
+                    ))
                 by_req[req.text].append(h.document)
 
     # by_req -> one readable block per requirement for the LLM

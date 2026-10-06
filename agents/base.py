@@ -78,7 +78,7 @@ def make_chat_model(agent: str, **kwargs):
     )
 
 
-def structured_call(agent: str, user_input: str, schema, *, fake_json: str | None = None):
+def structured_call(agent: str, user_input: str, schema, *, fake_json: str | None = None, system_prompt:str | None = None):
     """Run an agent's model, return a validated `schema` instance.
 
     The single door every agent uses to reach an LLM. Call + parse plumbing lives
@@ -86,8 +86,8 @@ def structured_call(agent: str, user_input: str, schema, *, fake_json: str | Non
     """
     from utils.trace import step  # TEMP tracing
 
-    spec = spec_for(agent)
-    prompt = f"{spec.system_prompt}\n\n{user_input}"
+    system = system_prompt if system_prompt is not None else spec_for(agent).system_prompt
+    prompt = f"{system}\n\n{user_input}"
 
     if config.fake_llm_active():
         from pydantic import ValidationError
