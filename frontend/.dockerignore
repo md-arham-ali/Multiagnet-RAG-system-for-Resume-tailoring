@@ -1,0 +1,6 @@
+node_modules
+dist
+# Notes and the compose file are not part of the build; ignoring them keeps `COPY . .` cached
+# when only a document changes.
+*.md
+docker-compose.yml

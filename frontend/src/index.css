@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+/* Terminal-meets-product: one mono stack everywhere, dark only, low noise. */
+body {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  background: #0b0c0e;
+  color: #d7d9de;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #26282e; border-radius: 4px; }
+::-webkit-scrollbar-track { background: transparent; }

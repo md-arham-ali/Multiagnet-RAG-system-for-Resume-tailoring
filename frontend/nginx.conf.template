@@ -1,0 +1,41 @@
+# nginx config TEMPLATE. The official nginx image fills in ${BACKEND_URL} at container start
+# (it runs envsubst on /etc/nginx/templates/*.template) and writes the result to
+# /etc/nginx/conf.d/default.conf. nginx's own variables ($uri, $proxy_host ...) are left alone.
+#
+# BACKEND_URL is the backend's address, WITHOUT a path or a trailing slash. Set per environment:
+#   backend on the Mac, as before   http://host.docker.internal:8000   (the default, set in the Dockerfile)
+#   another container in Compose    http://backend:8000
+#   another machine                 http://10.0.0.5:8000   or   https://api.example.com
+#
+# nginx looks the name up ONCE, when it starts. If the backend is not up yet nginx fails with
+# "host not found"; Compose handles that with depends_on and restart: unless-stopped.
+# Decisions: context/final_docker_descision.md (section 5).
+server {
+    listen 80;
+    root /usr/share/nginx/html;
+    index index.html;
+
+    location /api/ {
+        proxy_pass ${BACKEND_URL};
+
+        # Only matters for an https:// backend: send the server name (SNI) and keep the Host header
+        # equal to the backend's own name. Both are harmless for plain http.
+        proxy_ssl_server_name on;
+        proxy_set_header Host $proxy_host;
+
+        # server-sent events: stream immediately, never buffer, never time out early
+        proxy_buffering off;
+        proxy_cache off;
+        proxy_http_version 1.1;
+        proxy_set_header Connection '';
+        proxy_read_timeout 3600s;
+
+        # CV uploads are capped at 5 MB by the API. nginx's default is 1 MB, which
+        # would reject a 1–5 MB PDF with its own HTML page instead of the API's JSON.
+        client_max_body_size 6m;
+    }
+
+    location / {
+        try_files $uri /index.html;
+    }
+}
