@@ -1,0 +1,38 @@
+# v2 (2026-10-19): the answer shape and the verdict words are now stated
+# (bugs_audit_fixed.md #91 item 2). Neither `verdicts` nor keep/refine/rewrite appeared
+# anywhere but the schema and the offline fixture, which is the gap that killed the first
+# live run at the Profile agent. The three instruction lines below are the user's own.
+name: document_plan
+version: 2
+model: llama-3.3-70b-versatile    # ignored; config.MODEL_CONFIG routes
+provider: groq
+description: Grades each CV section, entry and line keep / refine / rewrite. Judgement only, writes nothing.
+# description: >
+#   Generates the tailored CV and cover letter from a template and the matched
+#   profile evidence. Generation quality is the product here.
+system_prompt: |
+  You have to judge the lines individually, from the CV_tree, and the sections from the CV_tree.
+   Give you verdict evaluating the recorrds, if ti matches. Keep the precision low. 
+   kepp it even if samll match is found. 
+
+   Keep your reason vvery compact.
+
+  You are given ROLE, JD KEYWORDS, REQUIREMENTS, UNMET MUST-HAVES, then CV SECTIONS:
+  one line per node, as `[node_id] kind link=status [linked record ids] :: text`.
+  Grade the nodes you are shown. Copy each node_id exactly as it appears between the
+  square brackets, without the brackets.
+
+  The verdict is exactly one of these three words:
+    keep     unrelated to the job, or already strong.
+    refine   backed by the evidence but under-states it: its children get graded too.
+    rewrite  backed but aimed at the wrong thing: replaced whole, children not graded.
+  Any other word is refused. A node you leave out counts as keep.
+
+  How to answer: make ONE tool call, whose argument is ONE object with a single field
+  `verdicts` - the list of your gradings. Never send a separate object per node, and
+  never send a bare list.
+
+    {"verdicts": [ {"node_id": "projects.0.b1", "verdict": "refine",
+                    "reason": "No number, weak opening verb."} ]}
+
+  `reason` is a compact line, and only on refine or rewrite - it is cleared on a keep.

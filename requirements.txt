@@ -1,65 +1,70 @@
 # =============================================================================
-# Multi-agent CV / Cover-Letter system — dependencies (mapped from Build.md).
-# Target interpreter: CPython 3.12 (all wheels available; 3.14 lacks wheels for
-# chromadb/spacy as of this writing). Install into ./.venv — see README.md.
+# RUNTIME dependencies: what the backend imports while it serves. This is the list the
+# Docker image installs (together with requirements.lock for exact versions).
+# Target interpreter: CPython 3.12 (3.14 lacks wheels for chromadb).
+#
+# Three files, three jobs:
+#   requirements.txt     what the app needs, by name (this file; edit it when you add an import)
+#   requirements.lock    the exact versions of this list and everything it pulls in (the image uses it)
+#   requirements-ci.txt  what the test suite needs on GitHub Actions (pinned, no PyTorch)
+#
+# PyTorch is NOT pinned here. sentence-transformers pulls it in; the Dockerfile installs the
+# CPU-only build first, from https://download.pytorch.org/whl/cpu, so no multi-GB CUDA wheel.
+# Checked against the code on 2026-10-25 by scanning every import under agents/ backend/
+# utils/ vectordb/ evaluation/ learning/ state/ config.py scripts/frontend_api.py.
 # =============================================================================
 
-# ---- Orchestration: LangGraph supervisor + graph + durable checkpointer ------
-langgraph                       # supervisor pattern + shared-state graph
-langgraph-supervisor            # prebuilt supervisor (Build.md #1)
-langgraph-checkpoint-postgres   # durable gates that survive restart (Build.md target)
-langgraph-checkpoint-sqlite     # local durable checkpointer (no server to run) - 2026-08-09
-psycopg[binary]                 # Postgres driver for the checkpointer
+# ---- Orchestration -----------------------------------------------------------
+langgraph                       # the graph, supervisor and gates
+langgraph-checkpoint-sqlite     # durable checkpointer (logs/checkpoints.sqlite)
 
-# ---- LangChain core + provider integrations ----------------------------------
-langchain
-langchain-core                  # ChatModels, FakeListLLM (unit-test mocking)
-langchain-community
-langchain-openai                # OpenAI-compatible endpoints (incl. OpenRouter)
-langchain-groq                  # Groq Llama 3.3 70B
-langchain-google-genai          # Gemini 2.5 Flash (Google AI Studio)
+# ---- LLM providers -----------------------------------------------------------
+langchain-core
+langchain-groq                  # Groq Llama
+langchain-google-genai          # Gemini
+langchain-openai                # OpenAI-compatible endpoints
+google-genai                    # Gemini errors, imported by agents/base.py
+langchain-text-splitters        # vectordb/pdf_ingest.py
+google-api-core                 # Gemini errors, imported by agents/base.py
 
-# ---- Model routing + fallbacks -----------------------------------------------
-litellm                         # per-agent alias -> provider + fallback chains
+# ---- Validation, config, prompts ---------------------------------------------
+pydantic
+python-dotenv                   # config.py is the only reader of .env
+PyYAML                          # versioned prompts
 
-# ---- Validation / structured extraction --------------------------------------
-pydantic                        # shared state schema + typed agent I/O
-pydantic-settings
-instructor                      # JD -> typed requirements (Build.md #5)
-python-dotenv                   # load .env (consumed only by config.py)
-pyyaml                          # load versioned prompt YAML (utils/prompt_loader)
+# ---- Knowledge base: vector store, embeddings, matching ----------------------
+chromadb
+sentence-transformers           # bge embedder + reranker (pulls in PyTorch)
+numpy
+rapidfuzz                       # keyword channel, ATS coverage, do-not-claim matching
+pypdf                           # CV upload and parsing
 
-# ---- Knowledge base: vector store + local embeddings/reranking ---------------
-chromadb                        # document/profile/learning vector collections
-sentence-transformers           # bge-base-en-v1.5 embeddings + bge-reranker-base
+# ---- Serving -----------------------------------------------------------------
+fastapi
+uvicorn                         # plain, without the [standard] extras
+python-multipart                # FastAPI multipart/form-data (CV upload, backend/routes/cv.py)
 
-# ---- ATS check (deterministic, no LLM) ---------------------------------------
-keybert                         # JD keyword extraction
-spacy                           # NLP for JD keywords (run: python -m spacy download en_core_web_sm)
-rapidfuzz                       # fuzzy coverage score + do-not-claim exact/fuzzy match
+# ---- Observability -----------------------------------------------------------
+langfuse                        # utils/observability.py
 
-# ---- Evaluation / faithfulness ------------------------------------------------
-# NOTE: ragas is TEMPORARILY DISABLED. ragas 0.4.3 (latest) hard-imports
-# `langchain_community.chat_models.vertexai`, which was removed when
-# langchain-community was sunset (0.4.x). That module only survives in
-# langchain-community <=0.3.x, which pins langchain-core <1.0 — incompatible with
-# the langgraph 1.x backbone (langgraph / langchain-groq / langchain-google-genai
-# all require langchain-core >=1.4). deepeval covers the same role below. Re-enable
-# ragas once it migrates off the sunset langchain-community module.
-# ragas                         # retrieval precision + faithfulness (Build.md #16)
-deepeval                        # faithfulness + contextual precision/recall (Build.md #16/#21)
-
-# ---- Observability ------------------------------------------------------------
-langfuse                        # multi-agent trace tree (Build.md #20)
-
-# ---- Serving + UI -------------------------------------------------------------
-fastapi                         # API + SSE streaming (Build.md #22)
-uvicorn[standard]
-sse-starlette                   # server-sent events for the gate pause/resume UX
-streamlit                       # gate approve/edit/feedback UI (Build.md #23)
-
-# ---- Testing ------------------------------------------------------------------
-pytest                          # graph-logic unit tests with FakeListLLM
-
-# ---- PDF sandbox (test_work/ -> test_vb/, isolated from the real KB index) ----
-pypdf                            # PDF text extraction (no OCR)
+# =============================================================================
+# NOT INSTALLED BY THE IMAGE. Kept here, commented, so nothing is lost: these were in the
+# old requirements.txt, and a scan on 2026-10-25 found no import of them in the runtime
+# code. They stay installed in your local .venv. Uncomment one only if the code starts
+# importing it, and re-freeze requirements.lock.
+# =============================================================================
+# langgraph-supervisor          # no import; the supervisor is hand-written in agents/supervisor.py
+# langgraph-checkpoint-postgres # future: Postgres checkpointer (config.DATABASE_URL)
+# psycopg[binary]               # future: needed by the Postgres checkpointer
+# langchain                     # umbrella package, no import
+# langchain-community           # no import
+# litellm                       # fallback chains are in agents/base.py
+# pydantic-settings
+# instructor
+# keybert                       # JD keywords (evaluation/ats.py uses rapidfuzz only)
+# spacy                         # no import
+# sse-starlette                 # SSE is served with plain streaming
+# streamlit                     # old gate UI, replaced by the React frontend
+# deepeval                      # evaluation experiments
+# pytest                        # tests: see requirements-ci.txt
+# httpx                         # tests: FastAPI TestClient; see requirements-ci.txt

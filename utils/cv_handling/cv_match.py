@@ -24,9 +24,10 @@ from utils.cv_handling.cv_extract import parse_cv, print_parse, short, walk
 from utils.cv_handling.cv_ingest import SECTION_TO_KB_TYPE, ingested_pdfs
 from state.state import CVNode, CVTree, LineLink, MatchStatus, NodeKind, SectionType
 from vectordb.embeddings import Embedder
+from vectordb.models import get_embedder, get_reranker
 from vectordb.reranker import Reranker
 from vectordb.retriever import Retriever
-from vectordb.store import Hit, VectorStore
+from vectordb.store import Hit, IndexModelMismatch, VectorStore
 
 
 # =============================================================================
@@ -153,8 +154,8 @@ def collect_bullets(profile_ids: set[str]) -> tuple[list[str], list[str], list[d
 
 
 def build_bullet_index(sandbox_store: VectorStore, profile_ids: set[str], rebuild: bool) -> VectorTable:
-    # Makes sure the sandbox bullet collection exists and is current, then loads it.
-    # in : sandbox_store = store on the sandbox index (config.CV_SANDBOX_DIR), profile_ids = valid parent ids,
+    # Makes sure the bullet collection exists and is current, then loads it.
+    # in : sandbox_store = store on the bullet index (config.CV_BULLET_INDEX_DIR), profile_ids = valid parent ids,
     #      rebuild = force a re-embed
     # out: VectorTable of the bullet collection
     ids, texts, metas = collect_bullets(profile_ids)
@@ -632,36 +633,67 @@ def resolve_pdfs(pdf: Optional[str] = None, input_dir: Path = config.CV_INPUT_DI
     return [p for p in pdfs if p.exists()]
 
 
-def load_matcher_parts(rebuild_bullets: bool = False, index_dir: Path = config.CV_SANDBOX_DIR) -> Optional[tuple]:
+def _load_profile(store: VectorStore, embedder: Embedder) -> tuple[Optional[VectorTable], Optional[str]]:
+    # Reads the profile collection into memory, or says why it cannot be used.
+    # in : store = store on the real index, embedder = the one that will embed CV lines
+    # out: (profile table, None), or (None, what is wrong with the index)
+    if store.count(PROFILE_COLLECTION) == 0:
+        return None, f"Profile collection '{PROFILE_COLLECTION}' is empty. Build it first (scripts/build_vectordb.py)."
+    try:
+        store.check_model(PROFILE_COLLECTION)       # the stamped model name (#80.2)
+    except IndexModelMismatch as exc:
+        return None, str(exc)
+    profile = VectorTable.load(store._collection(PROFILE_COLLECTION))
+    if profile.vecs.shape[1] != embedder.dim:       # still the only check for an unstamped (older) index
+        return None, (f"Index vectors are {profile.vecs.shape[1]}-d but {config.EMBEDDING_MODEL} gives "
+                      f"{embedder.dim}-d: the index was built with another model. Rebuild it.")
+    return profile, None
+
+
+def load_matcher_parts(rebuild_bullets: bool = False, index_dir: Path = config.CV_BULLET_INDEX_DIR) -> Optional[tuple]:
     # Loads the models, the profile vectors and the bullet index, and builds both retrievers.
-    # in : rebuild_bullets = force a re-embed of the bullet collection, index_dir = sandbox Chroma folder
+    # in : rebuild_bullets = force a re-embed of the bullet collection, index_dir = Chroma folder of the bullet index
+    #      (default config.CV_BULLET_INDEX_DIR, under the KB; the CLI scripts pass the test_work sandbox instead)
     # out: (embedder, reranker, profile table, bullet table, profile retriever, bullet retriever),
     #      or None if the profile index is missing or built with another model
-    embedder = Embedder()
+    embedder = get_embedder()           # the process's one embedder, not a 4th copy (#43)
     store = VectorStore(embedder=embedder)
-    if store.count(PROFILE_COLLECTION) == 0:
-        print(f"\nProfile collection '{PROFILE_COLLECTION}' is empty. Build it first (scripts/build_vectordb.py).")
-        return None
-    profile = VectorTable.load(store._collection(PROFILE_COLLECTION))
-    if profile.vecs.shape[1] != embedder.dim:
-        print(f"\nIndex vectors are {profile.vecs.shape[1]}-d but {config.EMBEDDING_MODEL} gives "
-              f"{embedder.dim}-d: the index was built with another model. Rebuild it.")
+    profile, problem = _load_profile(store, embedder)
+    if profile is None:
+        print(f"\n{problem}")
         return None
     print(f"\nprofile records in '{PROFILE_COLLECTION}': {len(profile.ids)} "
           f"({profile.vecs.shape[1]}-d, read from the DB)")
     sandbox = VectorStore(embedder=embedder, persist_dir=index_dir)
     bullets = build_bullet_index(sandbox, set(profile.ids), rebuild_bullets)
-    reranker = Reranker()
+    reranker = get_reranker()           # ditto for the ~1.1GB cross-encoder (#43)
+    return (embedder, reranker, profile, bullets,
+            EmbeddedRetriever(store, reranker, profile), EmbeddedRetriever(sandbox, reranker, bullets))
+
+
+def refresh_matcher_parts(parts: tuple) -> tuple:
+    # Same models and stores, but the tables are re-read and the retrievers are new (#44).
+    # A process that lives across runs cached the profile table at its first run, so a record added
+    # since (Build Profile, a gap answer) could never be linked, and the retrievers' query-vector maps
+    # only ever grew. Re-reading a few hundred vectors per run is cheap; the models are the cost.
+    # in : parts = what load_matcher_parts returned
+    # out: a new parts tuple, same order; raises RuntimeError if the profile index is no longer usable
+    embedder, reranker, _, _, profile_retr, bullet_retr = parts
+    store, sandbox = profile_retr.store, bullet_retr.store
+    profile, problem = _load_profile(store, embedder)
+    if profile is None:
+        raise RuntimeError(f"cv_link: the profile index is no longer usable. {problem}")
+    bullets = build_bullet_index(sandbox, set(profile.ids), False)
     return (embedder, reranker, profile, bullets,
             EmbeddedRetriever(store, reranker, profile), EmbeddedRetriever(sandbox, reranker, bullets))
 
 
 def match_cvs(pdfs: list[Path], k: int = K_CANDIDATES, rebuild_bullets: bool = False,
-              out_dir: Optional[Path] = config.CV_MATCH_DIR, index_dir: Path = config.CV_SANDBOX_DIR,
+              out_dir: Optional[Path] = config.CV_MATCH_DIR, index_dir: Path = config.CV_BULLET_INDEX_DIR,
               report: bool = True) -> Optional[dict[str, "Matcher"]]:
     # Runs the whole pipeline for a list of CVs: parse, load models, match, report, write.
     # in : pdfs = CV paths, k = candidates reported per line, rebuild_bullets = re-embed bullets,
-    #      out_dir = where JSON goes (None = write nothing), index_dir = sandbox Chroma folder,
+    #      out_dir = where JSON goes (None = write nothing), index_dir = Chroma folder of the bullet index,
     #      report = print the parse / match / summary tables
     # out: {pdf file name: Matcher with .links and .details}, or None if the profile index is unusable
     parsed = []

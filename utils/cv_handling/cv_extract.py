@@ -192,6 +192,84 @@ def repair_text(s: str) -> str:
     return " ".join(toks)
 
 
+# =============================================================================
+# Stage 1: putting back the spaces the PDF never stored (bugs_audit_fixed.md #89)
+# =============================================================================
+# A LaTeX CV draws a styled phrase as its own text run, and the space beside it
+# often lives in the layout rather than in the content stream. Both pypdf modes
+# then return it glued: "Credit Scoring" + "solution" -> "Scoringsolution". The
+# case-based repairs below catch a join only when the case changes across it
+# ("improvingSharpe"), so lowercase-to-lowercase joins survived into the
+# delivered CV.
+#
+# The run boundaries are the dropped spaces. pypdf hands them over through
+# visitor_text, one run per font, and a word is not split across runs - so a
+# boundary that falls inside a glued token is a space that went missing. No word
+# list, no threshold: the PDF is saying where the gaps are.
+#
+# Lines are not rebuilt from the runs (a bullet marker sits a point or two off
+# its own text, so grouping by y needs a tolerance that differs per CV). Instead
+# the page's runs are joined into one spaced string, and each extracted line is
+# located in it by its whitespace-free form - the same squash() pairing already
+# used for the layout twins.
+
+_NO_SPACE_BEFORE = re.compile(r"^[,.;:!?%)\]}\u00bb\u201d\u2019/-]")
+_NO_SPACE_AFTER = re.compile(r"[(\[{\u00ab\u201c\u2018/-]$")
+
+
+def spaced_page_text(page) -> str:
+    # Joins a page's text runs, restoring a space at every boundary the PDF dropped.
+    # in : page = a pypdf page
+    # out: the page's text with those spaces back, or "" if runs are unavailable
+    runs: list[str] = []
+
+    def visit(text, cm, tm, font_dict, font_size):
+        if text and text.strip():
+            runs.append(text)
+
+    try:
+        page.extract_text(visitor_text=visit)
+    except Exception:
+        return ""
+    out: list[str] = []
+    for text in runs:
+        if (out and not out[-1][-1:].isspace() and not text[:1].isspace()
+                and not _NO_SPACE_BEFORE.match(text) and not _NO_SPACE_AFTER.search(out[-1])):
+            out.append(" ")
+        out.append(text)
+    return "".join(out)
+
+
+def make_spacer(page):
+    # Builds the lookup that re-spaces one extracted line against the page's runs.
+    # in : page = a pypdf page
+    # out: a function (line -> re-spaced line), or None when the page gives no runs
+    spaced = spaced_page_text(page)
+    if not spaced:
+        return None
+    flat = [(i, ch) for i, ch in enumerate(spaced) if not ch.isspace()]
+    keys = "".join(ch for _, ch in flat)
+    at_from = [i for i, _ in flat]
+    cursor = 0
+
+    def respace(line: str) -> str:
+        # out: the same line with the PDF's own run boundaries spaced; the line
+        #      unchanged when it cannot be located (nothing is ever guessed)
+        nonlocal cursor
+        key = squash(line)
+        if not key:
+            return line
+        found = keys.find(key, cursor)
+        if found < 0:
+            found = keys.find(key)        # runs out of reading order: search the page
+        if found < 0:
+            return line
+        cursor = found + len(key)
+        return " ".join(spaced[at_from[found]: at_from[found + len(key) - 1] + 1].split())
+
+    return respace
+
+
 def split_elements(body: str) -> list[str]:
     # Splits a skills list on "|" (or "," / ";"), never inside parentheses.
     # in : body = the text after a skills label, e.g. "Python (Pandas, NumPy)|SQL"
@@ -215,16 +293,20 @@ def split_elements(body: str) -> list[str]:
 
 @dataclass
 class Line:
-    # One non-empty PDF line: default-mode text, its page, and its layout-mode twin.
+    # One non-empty PDF line: default-mode text, its page, its layout-mode twin, and
+    # its run-spaced form (the same glyphs with the PDF's dropped spaces put back, #89).
     raw: str
     page: int
     layout: Optional[str] = None
+    spaced: Optional[str] = None
 
     @property
     def clean(self) -> str:
-        # Readable text of the line (layout twin when there is one).
+        # Readable text of the line (run-spaced form first, then the layout twin).
+        # Spaced wins because both pypdf modes return the same glued text (#89): the
+        # layout twin fixes column gaps, never a space missing inside a phrase.
         # out: the text with whitespace collapsed
-        return " ".join((self.layout or self.raw).split())
+        return " ".join((self.spaced or self.layout or self.raw).split())
 
     @property
     def bullet(self) -> bool:
@@ -270,9 +352,13 @@ def read_lines(pdf: Path) -> list[Line]:
         for ln in layout.splitlines():
             if ln.strip():
                 twins.setdefault(squash(ln), ln)
+        # Re-spacing needs the lines in reading order, so the spacer is built per page
+        # and called once per line, in order. None (no runs) leaves every line as it was.
+        respace = make_spacer(page)
         for ln in (page.extract_text() or "").splitlines():
             if ln.strip():
-                lines.append(Line(raw=ln, page=page_no, layout=twins.get(squash(ln))))
+                lines.append(Line(raw=ln, page=page_no, layout=twins.get(squash(ln)),
+                                  spaced=respace(ln) if respace else None))
     return lines
 
 
@@ -507,6 +593,20 @@ def parse_cv(pdf: Path) -> tuple[CVTree, list[Line]]:
         else:
             builder.open_section(stype, line)
     return builder.finish(), lines
+
+
+def has_text(lines: list[Line]) -> bool:
+    # Did the PDF have a text layer at all?
+    # A scan with no text gives read_lines() == [], and parse_cv then builds a
+    # perfectly valid EMPTY tree without complaining - "successfully parsed,
+    # contains nothing" (#79 item 4). Every caller has to ask before trusting it.
+    return bool(lines)
+
+
+def has_sections(tree: CVTree) -> bool:
+    # Is there anything in the tree beyond the identity header?
+    # A CV of just name/email/phone is parseable and useless: nothing to patch.
+    return any(c.section_type != SectionType.HEADER for c in tree.root.children)
 
 
 def line_problems(tree: CVTree, lines: list[Line]) -> list[str]:

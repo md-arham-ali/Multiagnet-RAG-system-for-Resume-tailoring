@@ -207,6 +207,19 @@ def some(seq, lo, hi):
     return random.sample(seq, k)
 
 
+def upto(seq, lo, hi):
+    """`random.sample` of between lo and hi items, never more than `seq` holds.
+
+    `random.sample(ids, random.randint(1, 4))` raised ValueError whenever the
+    linked list was shorter than the draw, which is every `generate(n)` below 4
+    (#65.5). Clamped here instead of at each call site so the three cross-link
+    draws cannot drift apart.
+    """
+    lo = min(lo, len(seq))
+    k = random.randint(lo, min(hi, len(seq)))
+    return random.sample(seq, k)
+
+
 def pct():
     return random.randint(8, 92)
 
@@ -306,6 +319,14 @@ def gen_projects(n):
              "Liquidity Tracker", "Wallet Profiler", "Yield Optimizer",
              "Fraud Detector", "Churn Predictor", "Price Oracle",
              "Portfolio Analyzer", "Token Classifier", "Network Mapper"]
+    # Titles are one subject + one noun, so there are exactly len(subjects) x
+    # len(nouns) of them. The draw-until-unused loop below has no exit, so
+    # asking for more hung forever with no error (#67.1). Refuse instead.
+    if n > len(subjects) * len(nouns):
+        raise ValueError(
+            f"gen_projects({n}): only {len(subjects) * len(nouns)} unique titles exist "
+            f"({len(subjects)} subjects x {len(nouns)} nouns); ask for fewer or widen the pools"
+        )
     used, out = set(), []
     for i in range(n):
         while True:
@@ -426,7 +447,7 @@ def gen_work(n, project_titles):
                              for _ in range(random.randint(2, 4))],
             "metrics": [f"{pct()}% reduction in {pick(RESULT_NOUNS)}",
                         f"{big_num()} records processed daily"],
-            "projects": random.sample(project_titles, random.randint(1, 3)),
+            "projects": upto(project_titles, 1, 3),
             "skills_demonstrated": some(SKILLS, 4, 8),
             "resume_bullets": resume_bullets(pick(DOMAINS), some(TOOLS, 2, 3), pick(SKILLS)),
             "interview_questions": qa(random.randint(2, 3), f"your role at {company}"),
@@ -470,8 +491,8 @@ def gen_skills(n, project_ids, exp_ids):
             "proficiency": pick(PROFICIENCY),
             "years_of_experience": random.randint(1, 8),
             "description": f"Applied {name} to {pick(GOALS)} across multiple projects.",
-            "projects_used_in": random.sample(project_ids, random.randint(1, 4)),
-            "work_experience_used_in": random.sample(exp_ids, random.randint(0, 3)),
+            "projects_used_in": upto(project_ids, 1, 4),
+            "work_experience_used_in": upto(exp_ids, 0, 3),
             "coursework_related": some(COURSES, 1, 3),
             "evidence": [{"source": pick(["project", "work", "course", "competition"]),
                           "description": f"Used {name} to {pick(GOALS)}, improving "
@@ -517,7 +538,10 @@ def gen_achievements(n, project_ids):
         cat = pick(ACHIEVEMENT_CATEGORIES)
         title = {
             "Award": f"{pick(['Best', 'Outstanding', 'Top'])} {pick(['Project', 'Analyst', 'Hackathon'])} Award",
-            "Certification": f"{pick(['Google', 'AWS', 'Coursera', 'DataCamp'])} {pick(['Data', 'ML', 'Analytics'])} Certificate",
+            # Not 'Google': gen_do_not_claim forbids "Worked at Google" on the bare
+            # term "google", so a Google certificate made the candidate's own
+            # legitimate achievement trip the hard constraint (#67.2).
+            "Certification": f"{pick(['Microsoft', 'AWS', 'Coursera', 'DataCamp'])} {pick(['Data', 'ML', 'Analytics'])} Certificate",
             "Competition": f"{pick(['1st', '2nd', '3rd', 'Top 10'])} place — {pick(['Kaggle', 'DeFi', 'Quant'])} Challenge",
             "Publication": f"Blog/paper on {pick(GOALS)}",
             "Recognition": f"Recognized for {pick(GOALS)}",
@@ -535,7 +559,7 @@ def gen_achievements(n, project_ids):
             "metrics": [f"{pct()}% improvement in {pick(RESULT_NOUNS)}",
                         f"{big_num()} users/records impacted"],
             "skills_demonstrated": some(SKILLS, 2, 5),
-            "related_projects": random.sample(project_ids, random.randint(0, 2)),
+            "related_projects": upto(project_ids, 0, 2),
             "keywords": some(SKILLS + DOMAINS, 3, 6),
         })
     return out

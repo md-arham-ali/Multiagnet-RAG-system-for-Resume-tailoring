@@ -40,20 +40,44 @@ KB_DOCUMENTS_DIR = KB_DIR / "documents"        # CV/CL examples + templates (vec
 KB_PROFILE_DIR = KB_DIR / "profile"            # projects/skills/achievements (vector)
 KB_DO_NOT_CLAIM_DIR = KB_DIR / "do_not_claim"  # hard constraint list (plain JSON)
 KB_LEARNING_DIR = KB_DIR / "learning"          # per-agent exemplars + scores
-KB_AUTH_DIR = KB_DIR / "auth"                  # access requests + issued tokens (git-ignored)
+# Env-overridable (same default) so a throwaway server — scripts/dev.py smoke — can keep its
+# test accounts out of the real folder (bug #86 item 3).
+KB_AUTH_DIR = Path(os.getenv("KB_AUTH_DIR") or (KB_DIR / "auth"))  # access requests + issued tokens (git-ignored)
 VECTORDB_DIR = KB_DIR / "chroma"               # Chroma persistent vector index (git-ignored)
+CV_INPUT_DIR = KB_DIR / "input"                # CV PDFs read by utils/cv_handling; kept out of profile/ (git-ignored)
+CV_SANDBOX_DIR = BASE_DIR / "test_work" / "test_vb"   # sandbox Chroma for the CLI test scripts only: pdf_documents (+ profile_bullets when a script passes it)
+# The `profile_bullets` index the live cv_link node matches CV lines against. A derived cache
+# (rebuilt from the KB JSON when its count drifts), kept in its own Chroma folder under the KB
+# so a deploy needs no test_work/ at all and it rides on the knowledge_base volume.
+CV_BULLET_INDEX_DIR = Path(os.getenv("CV_BULLET_INDEX_DIR") or (KB_DIR / "chroma_bullets"))
+CV_MATCH_DIR = BASE_DIR / "test_work" / "cv_match"    # CV match outputs (tree + links JSON)
+# Sample CV, used only as the admin/demo fallback once CV upload exists
+# (design.md D-CV2: block non-admins with no CV; never the admin, who may have
+# no profile of their own to upload against). Still read from server config,
+# never from the request: a client-supplied path would let a caller point
+# cv_link at any file on the host.
+CV_DEFAULT_PATH = Path(os.getenv("CV_DEFAULT_PATH") or (CV_INPUT_DIR / "CV_test.pdf"))
+# User-uploaded CV PDFs, one subtree per owner: uploads/{owner}/cv/{sha256[:12]}.pdf
+# plus that owner's index.json (backend/cv_store.py). Git-ignored and on the
+# persisted volume, same treatment as KB_AUTH_DIR. `owner` is token_id until
+# Stage 0 §13.1's profile_id lands.
+CV_UPLOADS_DIR = Path(os.getenv("CV_UPLOADS_DIR") or (BASE_DIR / "uploads"))
 
 STATE_DIR = BASE_DIR / "state"
-RUNS_DIR = BASE_DIR / "logs" / "frontend_runs"  # one JSON event log per pipeline run
+RUNS_DIR = Path(os.getenv("RUNS_DIR") or (BASE_DIR / "logs" / "frontend_runs"))  # one JSON event log per pipeline run
 CHECKPOINT_DB = BASE_DIR / "logs" / "checkpoints.sqlite"  # durable graph state for interrupt()/resume
+PLAN_CACHE_DIR = BASE_DIR / "logs" / "plan_cache"  # Document planner answers (LLM call 1), one JSON per call fingerprint
+# PLAN_CACHE=0: never read or write that folder, so the planner is called every time.
+PLAN_CACHE = os.getenv("PLAN_CACHE", "1").strip().lower() in {"1", "true", "yes", "on"}
 LEARNING_DIR = BASE_DIR / "learning"
 EVALUATION_DIR = BASE_DIR / "evaluation"
 OUTPUTS_DIR = BASE_DIR / "outputs"             # generated documents / run artifacts
 
 # -----------------------------------------------------------------------------
 # Test / cost mode (Instructions Part 1: "Wiring it as one flag")
-#   dev  -> every agent on Groq Llama (graph/behaviour testing, cheap)
-#   eval -> Document + Critic on Gemini Flash (output-quality testing only)
+#   dev / eval. Since 2026-10-19 this no longer changes model routing: MODEL_CONFIG
+#   below is the user's fixed per-agent assignment. Use USE_FAKE_LLM=1 (or
+#   FAKE_CRITIC_VERDICT) for routine development so Gemini is not spent.
 # -----------------------------------------------------------------------------
 TEST_MODE = os.getenv("TEST_MODE", "dev").strip().lower()
 DEV_MODE = TEST_MODE == "dev"
@@ -88,9 +112,67 @@ def fake_llm_active() -> bool:
     return USE_FAKE_LLM if override is None else override
 
 
+# Whose data this run may touch (backend/bugs.md "2026-10-09 (design)" §3).
+# Same carrier as _fake_llm above and for the same reason: a run's worker thread
+# sets it, and every node — inline or on a copy_context() pool thread — reads the
+# value its own run set, never another in-flight run's. A module global or a
+# threading.local would make one user's collection, plan cache or export folder
+# visible to another user's node the moment two runs overlap.
+#
+# Deliberately a bare profile_id string, not a Scope object: `backend/deps.Scope`
+# carries a role as well, and nothing the graph does may depend on the caller
+# being an admin — an admin's run reads the admin's own vault, exactly like
+# everyone else's. Keeping the role out of the graph means there is no path for
+# a privileged caller to widen what a node can see.
+_profile_id: contextvars.ContextVar[str | None] = contextvars.ContextVar("profile_id", default=None)
+
+
+def set_profile_id(value: str | None) -> None:
+    """Bind this run's account for the current context only. None clears it."""
+    _profile_id.set(value or None)
+
+
+def current_profile_id() -> str | None:
+    """This run's account, or None outside a scoped run (a bare CLI driver)."""
+    return _profile_id.get()
+
+
+def require_profile_id() -> str:
+    """This run's account, or raise. Use this at every door that reaches user
+    data — a vault path, a per-profile collection, the plan cache, an export.
+
+    Raising is the point (§3: "a missing scope raises"). The alternative to an
+    unscoped read is not a harmless default; it is the shared, everyone's-data
+    behaviour that §3 exists to end, and silently falling back to it is exactly
+    how one account's evidence reached another's run.
+    """
+    value = _profile_id.get()
+    if not value:
+        raise RuntimeError(
+            "No profile is in scope: this code reaches per-account data and must run "
+            "inside a scoped run (config.set_profile_id, set by backend/runs/worker.py "
+            "or a CLI driver's --profile)."
+        )
+    return value
+
+
 # -----------------------------------------------------------------------------
 # Frontend access control (scripts/frontend_api.py -> backend/)
 # -----------------------------------------------------------------------------
+# The one definition of the bridge API's port (bugs_audit_fixed.md #40: dev.py
+# served 8002 while the Vite proxy, nginx and the smoke test all called 8000, so
+# `dev.py up` showed a dashboard whose every call failed and `dev.py smoke`
+# checked whatever stale server happened to hold 8000). Everything that needs
+# the port reads the BACKEND_PORT env var, with this default:
+#   - scripts/dev.py       reads the env/.env directly (it must stay runnable
+#                          without the venv, so it cannot import config)
+#   - scripts/smoke_backend.py  via SMOKE_BASE, which dev.py builds from it
+#   - frontend/vite.config.js   via process.env.BACKEND_PORT
+#   - frontend/nginx.conf.template   takes the backend address from the BACKEND_URL
+#                          env var (default http://host.docker.internal:8000 in the
+#                          Dockerfile), so a non-default port needs BACKEND_URL set,
+#                          not a rebuild. It does not read BACKEND_PORT itself.
+BACKEND_PORT = int(os.getenv("BACKEND_PORT", "8000"))
 # Bootstrap admin credential. Empty means no one can administer the bridge: no
 # access request can ever be approved, so no user token can ever be issued.
 ADMIN_TOKEN = os.getenv("ADMIN_TOKEN", "")
@@ -98,8 +180,14 @@ ADMIN_TOKEN = os.getenv("ADMIN_TOKEN", "")
 DEFAULT_RUN_ALLOWANCE = int(os.getenv("DEFAULT_RUN_ALLOWANCE", "2"))
 
 # Canonical model identifiers (provider-agnostic names).
-GROQ_LLAMA = "llama-3.3-70b-versatile"
-GEMINI_FLASH = "gemini-2.5-flash"
+# Set GROQ_MODEL in .env to a model your Groq key can list (GET /openai/v1/models).
+GROQ_LLAMA = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile").strip()
+# Defaults moved 2026-10-24: gemini-2.5-flash is closed to new API users (404) and Cerebras no
+# longer serves llama-3.3-70b to this key (its list: gpt-oss-120b, qwen-3.8-27b). The names stay.
+GEMINI_FLASH = os.getenv("GEMINI_MODEL", "gemini-3.8-flash").strip()
+CEREBRAS_LLAMA = os.getenv("CEREBRAS_MODEL", "gpt-oss-120b").strip()
+OPENROUTER_FREE = os.getenv("OPENROUTER_MODEL", "meta-llama/llama-3.3-70b-instruct:free").strip()
+OPENROUTER_GEMINI_FREE = os.getenv("OPENROUTER_GEMINI_MODEL", "google/gemini-2.0-flash-exp:free").strip()
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 
 # Single-flag provider override (same one-flag pattern as USE_FAKE_LLM / TEST_MODE):
@@ -109,26 +197,27 @@ OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 #   OpenAI key when Groq/Gemini aren't set up.
 USE_OPENAI = os.getenv("USE_OPENAI", "0").strip().lower() in {"1", "true", "yes", "on"}
 
-# Per-agent model assignment. Document + Critic read the flag; everything else
-# is pinned to Groq regardless of mode (Build.md + Instructions Part 1).
+# Per-agent model assignment (the user's allocation, 2026-10-19). Four providers:
+# Groq for routine structured work, Gemini Flash where output quality is the
+# product, Cerebras as the second lane, OpenRouter free for occasional calls.
+# A provider with no key is skipped and the agent's lane falls over (FALLBACK_CHAINS).
 MODEL_CONFIG: dict[str, str] = {
-    "supervisor":  GROQ_LLAMA,
-    "jd_analysis": GROQ_LLAMA,
-    "profile":     GROQ_LLAMA,
-    "profile_enrich": GROQ_LLAMA,  # polishes raw gap-interview answers into KB text
-    "matching":    GROQ_LLAMA,
-    "document":    GROQ_LLAMA if DEV_MODE else GEMINI_FLASH,
-    "critic":      GROQ_LLAMA if DEV_MODE else GEMINI_FLASH,
-    "verifier":    GROQ_LLAMA,
-    "evaluation":  GROQ_LLAMA,
-    # Scratch/experiment agents (scripts/custom_retriever_test.py) — not part of
-    # the 7-agent pipeline, no LangGraph node, no state graph.
-    "query_refine": GROQ_LLAMA,
-    "rerank_critic": GROQ_LLAMA,
-    # Sandbox company-ranking agents (scripts/agentic_rank_test.py) — a mini
-    # supervisor→refine→critic loop over the CV-vs-companies ranking.
-    "rank_refiner": GROQ_LLAMA,
-    "rank_verifier": GROQ_LLAMA,
+    "supervisor":     GROQ_LLAMA,       # routing is deterministic (decide()); no LLM call today
+    "jd_analysis":    GROQ_LLAMA,       # structured extraction
+    "profile":        GROQ_LLAMA,       # retrieval-heavy, one grading call
+    "profile_enrich": CEREBRAS_LLAMA,   # polishes gap answers into compact KB text
+    "matching":       GROQ_LLAMA,       # requirement-to-evidence grading
+    "document":       GEMINI_FLASH,     # LLM 2 of the CV patcher: writes the lines
+    "document_plan":  GROQ_LLAMA,       # LLM 1 of the CV patcher: keep/refine/rewrite, no writing
+    "critic":         GEMINI_FLASH,     # quality review; use FAKE_CRITIC_VERDICT in routine dev
+    "verifier":       CEREBRAS_LLAMA,   # stub in Stage 0; real calls only for semantic checks
+    "evaluation":     OPENROUTER_FREE,  # occasional evaluation / model comparison
+    # Scratch/experiment agents: prompts exist, no pipeline node.
+    "query_refine":   GROQ_LLAMA,
+    "rerank_critic":  OPENROUTER_FREE,
+    # Sandbox company-ranking agents (scripts/agentic_rank_test.py).
+    "rank_refiner":   GROQ_LLAMA,
+    "rank_verifier":  CEREBRAS_LLAMA,
 }
 
 # OpenAI override: repoint every agent at the single OpenAI model in one place.
@@ -136,19 +225,29 @@ if USE_OPENAI:
     MODEL_CONFIG = {agent: OPENAI_MODEL for agent in MODEL_CONFIG}
 
 # -----------------------------------------------------------------------------
-# Provider routing + LiteLLM fallback chains (Instructions Part 3)
-#   Groq lane:   Groq -> Cerebras -> OpenRouter :free  (same model family)
-#   Gemini lane: Gemini -> OpenRouter Gemini :free -> Groq 70B
-# Values are LiteLLM model strings, usable directly with litellm.completion(...).
+# Provider routing + fallback chains (agents/base.py _live_answer)
+#   Each canonical model has a lane: element 0 is the primary, the rest are tried
+#   in order once the primary's retries are used up. Entries are "provider/model";
+#   a provider with no key is skipped.
 # -----------------------------------------------------------------------------
 GROQ_LANE = [
     f"groq/{GROQ_LLAMA}",
-    "cerebras/llama-3.3-70b",
-    "openrouter/meta-llama/llama-3.3-70b-instruct:free",
+    f"cerebras/{CEREBRAS_LLAMA}",
+    f"openrouter/{OPENROUTER_FREE}",
+]
+CEREBRAS_LANE = [
+    f"cerebras/{CEREBRAS_LLAMA}",
+    f"groq/{GROQ_LLAMA}",
+    f"openrouter/{OPENROUTER_FREE}",
+]
+OPENROUTER_LANE = [
+    f"openrouter/{OPENROUTER_FREE}",
+    f"groq/{GROQ_LLAMA}",
+    f"cerebras/{CEREBRAS_LLAMA}",
 ]
 GEMINI_LANE = [
     f"gemini/{GEMINI_FLASH}",
-    "openrouter/google/gemini-2.0-flash-exp:free",
+    f"openrouter/{OPENROUTER_GEMINI_FREE}",
     f"groq/{GROQ_LLAMA}",  # quality degrades here, but the run completes
 ]
 OPENAI_LANE = [
@@ -159,18 +258,48 @@ OPENAI_LANE = [
 # Map a canonical model name -> its full fallback chain (primary is element 0).
 FALLBACK_CHAINS: dict[str, list[str]] = {
     GROQ_LLAMA: GROQ_LANE,
+    CEREBRAS_LLAMA: CEREBRAS_LANE,
+    OPENROUTER_FREE: OPENROUTER_LANE,
     GEMINI_FLASH: GEMINI_LANE,
     OPENAI_MODEL: OPENAI_LANE,
 }
+if len(FALLBACK_CHAINS) != 5:
+    # Two providers configured with the same model string would share one lane.
+    raise RuntimeError("config: two provider models have the same name; set distinct *_MODEL values.")
 
-# Exponential-backoff-with-jitter settings applied on 429 before fallback fires
-# (Instructions Part 3, item 17).
-RETRY = {
-    "max_retries": 4,
-    "base_delay_seconds": 1.0,
-    "max_delay_seconds": 30.0,
-    "jitter": True,
+# Lane provider prefix -> the env var holding its key.
+PROVIDER_KEY = {
+    "groq": "GROQ_API_KEY",
+    "gemini": "GOOGLE_API_KEY",
+    "cerebras": "CEREBRAS_API_KEY",
+    "openrouter": "OPENROUTER_API_KEY",
+    "openai": "OPENAI_API_KEY",
 }
+
+# The agents that are graph nodes (sandbox agents excluded from key checks).
+PIPELINE_AGENTS = [
+    "jd_analysis", "profile", "profile_enrich", "matching",
+    "document_plan", "document", "critic", "verifier", "evaluation",
+]
+
+# LLM door settings (agents/base.py structured_call). Set fallback_offline
+# False for Stage 0 production: a fallback answer is fake data.
+RETRY = {
+    "rate_limit_wait_seconds": 5.0,   # fixed wait after a 429, before trying again
+    "rate_limit_attempts": 4,         # total tries on the provider when it keeps sending 429
+    "none_attempts": 2,               # total tries when the model returns None
+    "fallback_offline": False,         # 429 tries used up -> answer with the offline fake LLM
+}
+
+# LangGraph's step budget for ONE invoke/stream call. pregel/_loop.py recomputes
+# it as (current step + recursion_limit + 1) at the start of every call, so each
+# gate resume begins a fresh budget and only the longest single call matters:
+# gate 3 -> gate 4, which holds the whole Critic/Verifier loop at ~6 steps a lap.
+# The default 25 overruns as soon as max_revisions goes past its default 2
+# (bugs_audit_fixed.md #78 item 1). A flat ceiling cannot under-provision at any
+# cap, and decide() already bounds the loop by max_revisions, so this is only a
+# backstop against a wiring bug that never terminates.
+RECURSION_LIMIT = 100
 
 
 def model_for(agent: str) -> str:
@@ -208,11 +337,14 @@ OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 # -----------------------------------------------------------------------------
 LANGFUSE_PUBLIC_KEY = os.getenv("LANGFUSE_PUBLIC_KEY", "")
 LANGFUSE_SECRET_KEY = os.getenv("LANGFUSE_SECRET_KEY", "")
-LANGFUSE_HOST = os.getenv("LANGFUSE_HOST", "https://cloud.langfuse.com")
+# The SDK's own name is LANGFUSE_BASE_URL; LANGFUSE_HOST is the older one. Keys are per region.
+LANGFUSE_HOST = (os.getenv("LANGFUSE_BASE_URL") or os.getenv("LANGFUSE_HOST") or "https://cloud.langfuse.com").strip().strip('"')
 LANGFUSE_ENABLED = bool(LANGFUSE_PUBLIC_KEY and LANGFUSE_SECRET_KEY)
 
 # -----------------------------------------------------------------------------
-# Durable checkpointer (Postgres — survives a paused human gate across restarts)
+# Durable checkpointer. What actually backs the gates today is CHECKPOINT_DB
+# above (SqliteSaver, utils/checkpointer.py). DATABASE_URL is the Build.md
+# Postgres target and has no reader yet - the swap is one function.
 # -----------------------------------------------------------------------------
 DATABASE_URL = os.getenv(
     "DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/agentic"
@@ -240,10 +372,9 @@ def required_keys_for_mode() -> list[str]:
         return []  # offline mode needs no provider keys at all
     if USE_OPENAI:
         return ["OPENAI_API_KEY"]  # override routes every agent to OpenAI
-    required = ["GROQ_API_KEY"]  # the Groq lane backs every agent
-    if not DEV_MODE:
-        required.append("GOOGLE_API_KEY")  # eval mode pushes Document/Critic to Gemini
-    return required
+    # The primary provider of every pipeline agent. A missing one is not fatal at run
+    # time (the lane falls over), but it means that agent never runs where assigned.
+    return sorted({PROVIDER_KEY[primary_litellm_model(a).partition("/")[0]] for a in PIPELINE_AGENTS})
 
 
 def validate(strict: bool = False) -> list[str]:
@@ -271,12 +402,12 @@ def summary() -> str:
     def mask(v: str) -> str:
         return "set" if v else "—"
 
-    provider = "OpenAI (USE_OPENAI)" if USE_OPENAI else ("fake/offline" if USE_FAKE_LLM else "Groq/Gemini")
+    provider = "OpenAI (USE_OPENAI)" if USE_OPENAI else ("fake/offline" if USE_FAKE_LLM else "per-agent (Groq/Gemini/Cerebras/OpenRouter)")
     lines = [
         f"TEST_MODE          : {TEST_MODE} (DEV_MODE={DEV_MODE})",
         f"Active provider    : {provider}",
         "Model assignment   :",
-        *[f"    {a:<12}-> {m}" for a, m in MODEL_CONFIG.items()],
+        *[f"    {a:<15}-> {primary_litellm_model(a)}" for a in MODEL_CONFIG],
         "Provider keys      :",
         f"    GROQ           : {mask(GROQ_API_KEY)}",
         f"    GOOGLE         : {mask(GOOGLE_API_KEY)}",

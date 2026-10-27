@@ -1,10 +1,18 @@
 """
 Entry point.
 
-For now this validates configuration and reports system status without making any
-API calls — a fast way to confirm the scaffold is wired correctly. The LangGraph
-build/run (supervisor + four human gates + Postgres checkpointer) is assembled in
-a later milestone; see README.md and agents/supervisor.py:build_graph.
+A preflight, not a runner: it validates configuration, prints the active model
+assignment and proves every versioned prompt loads, all without a single API
+call. Use it to find a bad .env before spending a run.
+
+The pipeline itself is built elsewhere and has been since 07-05 — the supervisor
+graph with its four human gates is `agents/supervisor.py:build_graph`, and the
+gates are checkpointed to SQLite (`utils/checkpointer.py`, `config.CHECKPOINT_DB`;
+the Postgres target in `config.DATABASE_URL` has no reader yet). To run it:
+
+    python scripts/run_gated_graph.py     the whole pipeline, gates at the terminal
+    python scripts/run_agent.py <agent>   one node, seeded, no graph
+    python scripts/dev.py up              backend + frontend together
 
 Usage:
     python main.py
@@ -49,8 +57,8 @@ def main() -> int:
         return 1
 
     print("-" * 72)
-    print("Scaffold OK. Next: wire the LangGraph supervisor + gates "
-          "(agents/supervisor.py:build_graph). See README.md.")
+    print("Config OK. Run the pipeline with:  python scripts/run_gated_graph.py"
+          "   (add USE_FAKE_LLM=1 to stay offline and free)")
     return 0
 
 

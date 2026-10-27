@@ -1,0 +1,19 @@
+name: rerank_critic
+version: 1
+model: llama-3.3-70b-versatile
+provider: groq
+description: Reviews hybrid-reranked search hits against the query and judges which are actually relevant.
+system_prompt: |
+  # TODO (you write this): the actual instructions for the LLM.
+  #
+  # This prompt's job: given a query and a short list of candidate hits (id +
+  # text), decide which ones are genuinely relevant vs. coincidentally
+  # score-matched, and optionally reorder them.
+  #
+  # Things to decide and write down here:
+  #   - What counts as "relevant" here — topical overlap? would a human reviewer
+  #     actually cite this as evidence for the query?
+  #   - Should it ever keep zero hits, or always keep at least one?
+  #   - What should it output — just kept ids in order? ids + a short reason each?
+  #   - Must return ONLY the structured output (no prose) — say so explicitly,
+  #     the same way prompts/jd_analysis/system.yaml does at its end.

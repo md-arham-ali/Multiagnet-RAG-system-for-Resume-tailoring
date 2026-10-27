@@ -27,12 +27,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from langgraph.types import Command
 
+import config
 from agents.supervisor import build_graph
 from state.state import GraphState
 from utils.checkpointer import make_checkpointer
+from utils.final_review import FINAL_GATE, close_run
 
 # SAMPLE_JD = "We need a JAVA data engineer with strong OOps experience."
 SAMPLE_JD = " WE need a python data engineer with must have strong MLops experience"
+SAMPLE_CV = str(config.CV_DEFAULT_PATH)   # cv_link needs a CV on every run; same default as the backend
 
 VALID_DECISIONS = ("approve", "edit", "reject")
 
@@ -70,16 +73,43 @@ def ask_gate(payload: dict, auto_approve: bool = False) -> dict:
     answer: dict = {"decision": decision}
     if (feedback := input("Feedback (optional): ").strip()):
         answer["feedback"] = feedback
-    if decision == "edit" and (note := input("What should change? ").strip()):
-        answer["edited_payload"] = {"note": note}
+    if decision == "edit":
+        if gate == FINAL_GATE:
+            # Gate 4's edit is written back as the final CV, and human_gate's
+            # _final_edit only reads edited_payload["content"]. A one-line note
+            # here used to be silently dropped: the unedited draft was exported
+            # while the terminal said "edit" (bugs_audit_fixed.md #81 item 2). A
+            # whole CV does not fit an input() line, so it comes from a file -
+            # same contract as run_gated_graph.py.
+            path = input("Path to your edited CV (.md; enter to keep the draft): ").strip()
+            while path and not Path(path).expanduser().is_file():
+                path = input("No such file. Path (enter to keep the draft): ").strip()
+            if path:
+                answer["edited_payload"] = {"content": Path(path).expanduser().read_text(encoding="utf-8")}
+        elif (note := input("What should change? ").strip()):
+            answer["edited_payload"] = {"note": note}
+
+    # Gate 2 carries the gap interview. human_gate() reads answer["gap_answers"],
+    # keyed by requirement, which is what enrich() looks up. Without this the
+    # dict stays empty and profile_enrich early-returns every run.
+    if (gaps := payload.get("gap_questions")) and decision != "reject":
+        gap_answers = {}
+        print(f"\n{len(gaps)} gap question(s) — press enter to skip any.")
+        for gap in gaps:
+            reply = input(f"  [{gap['requirement']}] {gap['question']}\n  > ").strip()
+            if reply:
+                gap_answers[gap["requirement"]] = reply
+        if gap_answers:
+            answer["gap_answers"] = gap_answers
     return answer
 
 
-def run(thread_id: str, resume: bool, auto_approve: bool) -> dict:
-    """Invoke, answer gates until the run finishes."""
-    app = build_graph(checkpointer=make_checkpointer())
-    cfg = {"configurable": {"thread_id": thread_id}}
+def run(app, cfg: dict, thread_id: str, resume: bool, auto_approve: bool) -> dict:
+    """Invoke, answer gates until the run finishes.
 
+    The graph and config are built by the caller so that a raise in a late node
+    still leaves main() able to close the run out of the checkpoint (#81).
+    """
     # Fresh run starts from state, a resumed one picks up the checkpoint and must
     # NOT pass state again or it overwrites what was saved.
     if resume and app.get_state(cfg).created_at is None:
@@ -93,7 +123,7 @@ def run(thread_id: str, resume: bool, auto_approve: bool) -> dict:
             f"  Known threads:  {', '.join(dict.fromkeys(known)) or '(none yet)'}"
         )
 
-    payload = None if resume else GraphState(run_id=thread_id, job_description=SAMPLE_JD)
+    payload = None if resume else GraphState(run_id=thread_id, job_description=SAMPLE_JD, cv_path=SAMPLE_CV)
     result = app.invoke(payload, config=cfg)
 
     while interrupts := result.get("__interrupt__"):
@@ -115,7 +145,25 @@ def main() -> int:
         parser.error("--resume needs --thread <id> (which run to continue)")
 
     print(f"thread_id: {thread_id}   (resume later with --thread {thread_id} --resume)")
-    result = run(thread_id, resume=args.resume, auto_approve=args.auto_approve)
+
+    app = build_graph(checkpointer=make_checkpointer())
+    cfg = {"configurable": {"thread_id": thread_id}, "recursion_limit": config.RECURSION_LIMIT}
+
+    # A node AFTER gate 4 raising must not lose the CV the human already
+    # approved: it is in the checkpoint either way, close_run just reads it out.
+    # Same guard run_gated_graph.py and the backend worker have (#81 item 1).
+    try:
+        result = run(app, cfg, thread_id, resume=args.resume, auto_approve=args.auto_approve)
+    except Exception as exc:
+        print(f"\n!! the run raised: {type(exc).__name__}: {exc}")
+        print("   closing out whatever gate 4 already approved before re-raising...")
+        try:
+            saved = close_run(app.get_state(cfg).values, owner="cli", run_id=thread_id,
+                              live=not config.fake_llm_active())
+            print("   saved:", saved.get("export") or "nothing (no approved review yet)")
+        except Exception as close_exc:            # never mask the original error
+            print(f"   close_run also failed: {type(close_exc).__name__}: {close_exc}")
+        raise
 
     print("\n=== Graph run complete ===")
     print("final stage:", result.get("stage"))
@@ -171,6 +219,19 @@ def main() -> int:
     print(f"\n[gates] {len(gates)} decision(s)")
     for fb in gates:
         _line(fb.gate, f"{fb.decision}" + (f" — {fb.feedback}" if fb.feedback else ""))
+
+    # 9. close the run - the same closing step as run_gated_graph.py and the
+    # backend worker: gate 4's outcome -> saved CV + learning record. Without it
+    # an approved run through THIS driver left nothing under OUTPUTS_DIR and no
+    # learning record, so which driver you picked silently decided whether the
+    # run was saved (bugs_audit_fixed.md #81 item 1).
+    final = close_run(result, owner="cli", run_id=thread_id, live=not config.fake_llm_active())
+    review = final["review"]
+    print("\nfinal review:", review and f"{review['decision']} (approved={review['approved']}, "
+                                        f"edited={review['edited']}, rounds={review['rounds']})")
+    if final["export"]:
+        print("saved:", ", ".join(str(config.OUTPUTS_DIR / p) for p in final["export"].values()))
+    print("learning:", final["learning"])
 
     return 0
 

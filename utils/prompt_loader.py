@@ -48,6 +48,16 @@ def _resolve(agent: str) -> Path:
     )
 
 
+def _version(raw, path: Path) -> int:
+    """An int or a digit string. int() would turn 2.1 into 2 and true into 1, so
+    two prompts would log the same version next to their scores (#66)."""
+    if isinstance(raw, int) and not isinstance(raw, bool):
+        return raw
+    if isinstance(raw, str) and raw.strip().isdecimal():
+        return int(raw)
+    raise ValueError(f"Prompt {path} has version {raw!r}; it must be a whole number.")
+
+
 @lru_cache(maxsize=None)
 def load_prompt(agent: str) -> Prompt:
     """Load (and cache) the prompt for an agent by folder name."""
@@ -60,7 +70,7 @@ def load_prompt(agent: str) -> Prompt:
             raise ValueError(f"Prompt {path} has no non-empty 'system_prompt'.")
         return Prompt(
             name=str(data.get("name", agent)),
-            version=int(data.get("version", 1)),
+            version=_version(data.get("version", 1), path),
             model=str(data.get("model", "")),
             provider=str(data.get("provider", "")),
             description=(data.get("description") or "").strip(),
@@ -88,6 +98,33 @@ def prompt_version(agent: str) -> int:
     return load_prompt(agent).version
 
 
-def all_prompt_versions() -> dict[str, int]:
-    """{agent: version} for every agent in MODEL_CONFIG. Log this with evals."""
-    return {agent: load_prompt(agent).version for agent in config.MODEL_CONFIG}
+# In MODEL_CONFIG but not in the pipeline: scratch agents and the company-ranking
+# sandbox (scripts/agentic_rank_test.py). They have no LangGraph node, so their
+# prompt versions explain nothing about a run - and loading them used to let one
+# broken, unrelated YAML raise in the run's last step (#77 item 3).
+NON_PIPELINE_AGENTS = frozenset({
+    "query_refine", "rerank_critic", "rank_refiner", "rank_verifier",
+})
+
+
+def pipeline_agents() -> list[str]:
+    """The agents a run actually calls, in MODEL_CONFIG order."""
+    return [a for a in config.MODEL_CONFIG if a not in NON_PIPELINE_AGENTS]
+
+
+def all_prompt_versions(agents: list[str] | None = None) -> dict[str, int | None]:
+    """{agent: version} for the pipeline agents. Log this with evals.
+
+    Never raises: an agent whose prompt is missing, empty or malformed records
+    None. Attribution is worth having partially; it is not worth failing a run
+    for, least of all in the step that runs after the human already approved
+    the CV (#77 item 3).
+    """
+    versions: dict[str, int | None] = {}
+    for agent in (pipeline_agents() if agents is None else agents):
+        try:
+            versions[agent] = load_prompt(agent).version
+        except Exception as exc:
+            print(f"(prompt version for '{agent}' unavailable: {type(exc).__name__}: {exc})")
+            versions[agent] = None
+    return versions

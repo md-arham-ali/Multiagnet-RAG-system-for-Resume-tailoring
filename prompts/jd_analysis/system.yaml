@@ -1,5 +1,15 @@
+# v3 (2026-10-22): the ambiguous-requirement rule now says must_have, which is what
+# `Requirement.kind`'s default already does with an unmarked requirement - v2 told the
+# model the opposite and the two could not both be right (bugs_audit_fixed.md #73 item 1).
+# v2 (2026-10-19): the field list now matches the schema (bugs_audit_fixed.md #91 item 2).
+# v1 asked for seven fields - must_have, nice_to_have, hard_skills, soft_skills,
+# responsibilities, qualifications, keywords - of which the schema (Requirements in
+# state/state.py) has exactly one: `keywords`. Everything else is ONE `requirements` list
+# whose items carry `kind` and `category`. A field the schema does not have is dropped
+# without a word, so v1 lost most of a JD on a call that looked successful. Same gap as
+# the one that killed the first live run at the Profile agent.
 name: jd_analysis
-version: 1
+version: 3
 model: llama-3.3-70b-versatile
 provider: groq
 description: Extracts a validated, typed requirements object from a raw job description.
@@ -8,21 +18,36 @@ system_prompt: |
   validated requirements object. You perform extraction only — never invent
   requirements that are not present or clearly implied by the text.
 
-  Extract:
-    - role_title and seniority.
-    - must_have requirements (hard requirements, screening criteria).
-    - nice_to_have requirements (preferred / bonus).
-    - hard_skills and soft_skills, each as discrete, matchable items.
-    - keywords / ATS terms exactly as the JD phrases them (preserve casing and
+  How to answer: make ONE tool call, whose argument is ONE object with these four
+  fields and no others:
+    - role_title: the job title as the JD gives it, or null.
+    - seniority: the level as the JD gives it ("Senior", "Mid-level", ...), or null.
+    - requirements: the list described below. Everything the JD asks of the
+      candidate goes in here - there is no separate field for skills,
+      responsibilities or qualifications.
+    - keywords: the ATS terms, exactly as the JD phrases them (preserve casing and
       multi-word terms — these feed the deterministic ATS check downstream).
-    - responsibilities and any explicit qualifications (education, certifications,
-      years of experience).
+
+  Each entry of `requirements` has:
+    - text: the requirement itself, one atomic item.
+    - kind: exactly "must_have" or "nice_to_have" — no other word, no other
+      spelling. Code reads this to decide what the CV may not claim, and an
+      unrecognised value is read as must_have.
+    - category: exactly one of "hard_skill", "soft_skill", "qualification"
+      (education, certifications, years of experience) or "responsibility", or
+      null if none of them fits.
+
+    {"role_title": "...", "seniority": "...",
+     "requirements": [ {"text": "...", "kind": "must_have", "category": "hard_skill"} ],
+     "keywords": ["..."]}
 
   Rules:
     - Be exhaustive but do not duplicate. Split compound bullets into atomic items.
     - Mark each requirement must_have vs nice_to_have based on the JD's own language
       ("required", "must", "essential" => must_have; "preferred", "plus", "bonus"
-      => nice_to_have). When ambiguous, default to nice_to_have and flag it.
+      => nice_to_have). When ambiguous, default to must_have - the schema does
+      the same with a requirement you leave unmarked, and treating a real
+      must-have as optional is the one mistake that hides an unmet requirement.
     - Preserve the JD's exact keyword phrasing for ATS matching; you may add a
       normalized form alongside, but never replace the original.
     - Return only the structured object that conforms to the requirements schema.

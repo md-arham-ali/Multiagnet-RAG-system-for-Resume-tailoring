@@ -35,13 +35,13 @@ def main() -> int:
 
     # 2. semantic search over profile evidence
     show("detect fraud and risk in blockchain lending pool",
-         store.query("profile", "etect fraud and risk in blockchain lending pool", k=5))
+         store.query("profile", "detect fraud and risk in blockchain lending pool", k=5))
     show("forecasting token prices over time for lending pools",
          store.query("profile", "forecasting token prices over time for lending pools", k=5))
 
     # 3. same query, filtered to one record type by metadata
     show("LSTM with pytorch  [type=skill only]",
-         store.query("profile", "dLSTM with pytorch ", k=6, where={"type": "skill"}))
+         store.query("profile", "LSTM with pytorch", k=6, where={"type": "skill"}))
 
     # 4. the other two collections
     show("resume for a growth data analyst",

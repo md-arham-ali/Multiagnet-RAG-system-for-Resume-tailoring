@@ -32,12 +32,16 @@ class Stage(str, Enum):
 
 
 class Support(str, Enum):
+    """How well the evidence backs a requirement."""
+
     STRONG = "strong"
     PARTIAL = "partial"
     NONE = "none"
 
 
 class Verdict(str, Enum):
+    """A reviewer's overall call: accept the draft, or send it back."""
+
     PASS = "pass"
     REVISE = "revise"
 
@@ -57,16 +61,37 @@ class ClaimLabel(str, Enum):
 # JD Analysis artifacts
 # -----------------------------------------------------------------------------
 class Requirement(BaseModel):
-    text: str
-    kind: str = "must_have"  # must_have | nice_to_have
-    category: Optional[str] = None  # hard_skill | soft_skill | qualification | responsibility
+    """One atomic thing the job asks of the candidate."""
+
+    text: str = Field(description="The requirement itself, one atomic item, in the JD's own words.")
+    # must_have | nice_to_have. Free string, not an enum: a spelling variant reads as
+    # must_have and hides an unmet requirement (bugs_audit_fixed.md #58).
+    kind: str = Field("must_have", description=(
+        "Exactly 'must_have' or 'nice_to_have' - no other word and no other spelling. "
+        "The JD's own language decides: required/must/essential is must_have, "
+        "preferred/plus/bonus is nice_to_have. When it is ambiguous, use must_have."))
+    category: Optional[str] = Field(None, description=(
+        "Exactly one of 'hard_skill', 'soft_skill', 'qualification' (education, "
+        "certification, years of experience) or 'responsibility'. Null if none fits."))
 
 
 class Requirements(BaseModel):
-    role_title: Optional[str] = None
-    seniority: Optional[str] = None
-    requirements: list[Requirement] = Field(default_factory=list)
-    keywords: list[str] = Field(default_factory=list)  # exact JD phrasing for ATS
+    """Everything a job description asks for, extracted and typed.
+
+    Return ONE object with these four fields and no others. Everything the JD asks of
+    the candidate goes in `requirements`: there is no separate field for skills,
+    responsibilities or qualifications.
+    """
+
+    role_title: Optional[str] = Field(None, description="The job title as the JD gives it, or null.")
+    seniority: Optional[str] = Field(None, description=(
+        "The level as the JD gives it ('Senior', 'Mid-level', ...), or null."))
+    requirements: list[Requirement] = Field(default_factory=list, description=(
+        "Every requirement in the JD, one entry each, split into atomic items. "
+        "Be exhaustive but do not duplicate."))
+    keywords: list[str] = Field(default_factory=list, description=(
+        "The ATS terms exactly as the JD phrases them - keep casing and multi-word "
+        "terms. A normalised form may be added alongside, never instead."))
 
 
 # -----------------------------------------------------------------------------
@@ -106,37 +131,67 @@ class GapQuestion(BaseModel):
     question: str
 
 class RequirementAssessment(BaseModel):
-    requirement: str
-    support: Support
-    gap_question: Optional[str] = None
+    """One requirement, graded against the evidence retrieved for it."""
+
+    requirement: str = Field(description="Copied from the input, unchanged.")
+    support: Support = Field(description=(
+        "How well the evidence shown backs this requirement. Judge only from that "
+        "evidence; never assume experience that is not there."))
+    gap_question: Optional[str] = Field(None, description=(
+        "ONE short, answerable question that would close the gap, when support is "
+        "partial or none. Null otherwise. Never ask about something the evidence covers."))
 
 
 class ProfileAssessment(BaseModel):
-    assessments: list[RequirementAssessment] = Field(default_factory=list)
+    """The Profile agent's grading pass over every requirement.
+
+    Return ONE object with a single field `assessments`, holding one entry per
+    requirement. Never return a separate object per requirement, and never a bare list.
+    """
+
+    assessments: list[RequirementAssessment] = Field(default_factory=list, description=(
+        "One entry per requirement given, graded once each. Do not add requirements."))
 
 # -----------------------------------------------------------------------------
 # Matching artifacts
 # -----------------------------------------------------------------------------
+# Deliberately narrower than MatchResult: the model is never asked for the
+# requirement's kind, because the caller already holds it on state.requirements.
+# Structured output validates shape, never correspondence to the input, so
+# anything already known is filled from state and only the judgement is read
+# back (bugs.md #14). The docstring below is the tool description the provider
+# sees, so it speaks to the model, not to us (bugs_audit_fixed.md #111).
 class MatchGrade(BaseModel):
-    """One requirement as the model graded it - the judgement half only.
+    """One requirement, graded against the profile evidence supplied with it."""
 
-    Deliberately narrower than MatchResult: the model is never asked for the
-    requirement's kind, because the caller already holds it on state.requirements.
-    Structured output validates shape, never correspondence to the input, so
-    anything already known is filled from state and only the judgement is read
-    back (bugs.md #14).
-    """
-
-    requirement: str
-    support: Support
-    evidence_ids: list[str] = Field(default_factory=list)
-    justification: str = ""
+    requirement_id: str = Field("", description=(
+        "The label this requirement carries in the list given, copied exactly: 'R1', "
+        "'R2', ... It is how the grade is paired back to its requirement, so copy it "
+        "character for character and never invent a label that was not in the list."))
+    requirement: str = Field(description="Copied from the list given, unchanged.")
+    support: Support = Field(description=(
+        "How well the supplied evidence backs this requirement. Never upgrade a "
+        "partial match to strong to make the candidate look better."))
+    evidence_ids: list[str] = Field(default_factory=list, description=(
+        "Ids of the evidence blocks that actually support it, best first. Cite only "
+        "ids present in the evidence given: an invented id is dropped, and a grade "
+        "resting only on invented ids is downgraded to 'none'. Empty for 'none'."))
+    justification: str = Field("", description=(
+        "One short line, anchored to the blocks cited above."))
 
 
 class MatchAssessment(BaseModel):
-    """The Matching agent's one LLM call. Same shape as ProfileAssessment."""
+    """The Matching agent's grading pass over every requirement.
 
-    matches: list[MatchGrade] = Field(default_factory=list)
+    Return ONE object with a single field `matches`, holding one entry per
+    requirement. Never return a separate object per requirement, and never a bare list.
+    You are not asked for an overall fit score or a coverage percentage: those are
+    computed from these grades so they stay reproducible.
+    """
+
+    matches: list[MatchGrade] = Field(default_factory=list, description=(
+        "One entry per requirement given, graded once each. Do not add requirements "
+        "that are not in the list."))
 
 
 class MatchResult(BaseModel):
@@ -166,60 +221,121 @@ class Document(BaseModel):
 
 
 class EditAction(str, Enum):
+    """What an edit does to the line it names. Only 'replace' is built today."""
+
     REPLACE = "replace"   # rewrite the text of an existing bullet/item
     INSERT = "insert"     # add a new bullet/item after target_id
     DROP = "drop"         # remove a bullet/item
 
 
 class EditPurpose(str, Enum):
-    COVERS_REQUIREMENT = "covers_requirement"
-    ADDS_KEYWORD = "adds_keyword"
-    QUANTIFIES = "quantifies"
+    """Why an edit was made. The last two belong to later review rounds only."""
+
+    COVERS_REQUIREMENT = "covers_requirement"   # makes a requirement the line serves visible
+    ADDS_KEYWORD = "adds_keyword"               # works in a JD keyword the evidence supports
+    QUANTIFIES = "quantifies"                   # states a result with a figure the evidence has
     FIXES_CRITIQUE = "fixes_critique"
     FIXES_VERIFIER = "fixes_verifier"
 
 
 class Edit(BaseModel):
+    """One better line for one CV line you were asked to write."""
+
     # replace/drop: the node being changed. insert: the node the new one goes AFTER.
-    target_id: str
-    action: EditAction
-    new_text: Optional[str] = None        # required for replace/insert, None for drop
-    evidence_ids: list[str] = Field(default_factory=list)  # profile ids this edit rests on
-    purpose: EditPurpose
-    reason: str = ""
+    target_id: str = Field(description=(
+        "The line's id exactly as shown in square brackets, without the brackets. It "
+        "must be one of the lines you were asked to write; any other id is dropped."))
+    action: EditAction = Field(description="Always 'replace'.")
+    # The schema cannot say 'required for replace/insert' on its own - a missing
+    # new_text validates here and fails downstream (bugs_audit_fixed.md #111 N6).
+    new_text: Optional[str] = Field(None, description=(
+        "The new line, following the section rules. Required for 'replace'. Use only "
+        "facts from the current line and the evidence you cite, and never a figure "
+        "that is not in one of them."))
+    evidence_ids: list[str] = Field(default_factory=list, description=(
+        "Ids of the records this new line rests on: at least one, taken only from the "
+        "EVIDENCE or AVAILABLE EVIDENCE blocks. An edit citing nothing is dropped."))
+    purpose: EditPurpose = Field(description=(
+        "Why this edit was made. Use covers_requirement, adds_keyword or quantifies; "
+        "the other two are for later review rounds."))
+    reason: str = Field("", description="One short line: what you changed and why.")
 
 
 class DocumentPatchSet(BaseModel):
+    """The lines you improved in ONE CV section.
+
+    Return ONE object with a single field `edits`. Never return a bare list.
+    """
+
     # An empty list is valid: "this CV already fits".
-    edits: list[Edit] = Field(default_factory=list)
+    edits: list[Edit] = Field(default_factory=list, description=(
+        "One edit per line you can improve truthfully, at most one per line. Leave a "
+        "line out rather than force an edit: the original is kept, which is better. An "
+        "empty list is a valid answer."))
 
 class EditVerdict(str, Enum):
+    """How much work one CV section, entry or line needs."""
+
     KEEP = "keep"        # unrelated to the job, or already strong
     REFINE = "refine"    # backed, but under-states it; its children get graded next
     REWRITE = "rewrite"  # backed, but aimed at the wrong thing; replaced whole, children not graded
 
 class NodeVerdict(BaseModel):
-    node_id:str
-    verdict: EditVerdict
-    reason: str = ""
+    """One graded node of the CV tree."""
+
+    node_id:str = Field(description=(
+        "Copied exactly as it appears between the square brackets, without the brackets."))
+    verdict: EditVerdict = Field(description=(
+        "How much work this node needs. A node you leave out counts as 'keep'."))
+    reason: str = Field("", description=(
+        "A compact line, only on 'refine' or 'rewrite'. It is cleared on a 'keep'."))
 
 class VerdictSet(BaseModel):
-    verdicts: list[NodeVerdict] = Field(default_factory=list)
+    """The plan: every CV node you graded.
+
+    Return ONE object with a single field `verdicts`. Never return a separate object
+    per node, and never a bare list.
+    """
+
+    verdicts: list[NodeVerdict] = Field(default_factory=list, description=(
+        "One entry per node you graded, from the nodes you were shown."))
 
 
 # -----------------------------------------------------------------------------
 # Critic artifacts
 # -----------------------------------------------------------------------------
 class CritiqueItem(BaseModel):
-    rubric_item: str
-    severity: str = "info"  # info | minor | major
-    location: Optional[str] = None
-    instruction: Optional[str] = None
+    """One finding, on one dimension of the rubric you were given."""
+
+    rubric_item: str = Field(description=(
+        "The name of the dimension, copied from the rubric given for THIS call. A "
+        "finding on anything else is dropped by code."))
+    # info | minor | major. Free string, not an enum: any other word reads as "info",
+    # so a real problem labelled "critical" lands as the mildest kind of note
+    # (bugs_audit_fixed.md #111 N5).
+    severity: str = Field("info", description=(
+        "Exactly one of 'info', 'minor', 'major'. These three words are the whole "
+        "vocabulary; any other word is read as 'info'. Reserve 'major' for a claim "
+        "the evidence shown does not back."))
+    location: Optional[str] = Field(None, description=(
+        "Where in the document the finding is - quote the line or the evidence id."))
+    instruction: Optional[str] = Field(None, description=(
+        "For a 'revise', what the Document agent should change and why, concrete "
+        "enough to act on directly. No vague advice."))
 
 
 class Critique(BaseModel):
-    verdict: Verdict
-    items: list[CritiqueItem] = Field(default_factory=list)
+    """Your review of the document against the rubric given for this call.
+
+    Return ONE object with `verdict` and `items`.
+    """
+
+    verdict: Verdict = Field(description=(
+        "'revise' or 'pass'. This drives the Supervisor's loop-back. A 'revise' needs "
+        "at least one item, and a 'pass' must carry no 'major' item: code corrects "
+        "both, and logs the correction."))
+    items: list[CritiqueItem] = Field(default_factory=list, description=(
+        "One entry per rubric dimension you have a finding on. Empty is valid."))
 
 
 # -----------------------------------------------------------------------------
@@ -254,7 +370,9 @@ class EvalRecord(BaseModel):
     generation_score: Optional[float] = None
     # Attribution: which prompt version + exemplars produced this run. Without
     # it a score that moves can't be traced to prompt vs exemplars vs model.
-    prompt_versions: dict[str, int] = Field(default_factory=dict)
+    # int | None: an unreadable prompt records None rather than failing the whole
+    # record (#77 item 3). A key that is missing entirely means "never asked".
+    prompt_versions: dict[str, Optional[int]] = Field(default_factory=dict)
     learning_slice: list[str] = Field(default_factory=list)
     exemplar_worthy: bool = False
 
@@ -283,13 +401,28 @@ class Compactfeedback(BaseModel):
 # -----------------------------------------------------------------------------
 
 class GapAnswerPolish(BaseModel):
-    requirement: str
-    gap_question: str
-    answer: str
-    polished_answer: Optional[str] = None
+    """One gap-interview answer, rewritten as a storable profile block."""
+
+    requirement: str = Field(description=(
+        "Copied exactly from the input - this is how the caller matches your output "
+        "back to the right gap."))
+    gap_question: str = Field(description="Copied exactly from the input.")
+    answer: str = Field(description="Copied exactly from the input (the candidate's raw words).")
+    polished_answer: Optional[str] = Field(None, description=(
+        "The rewritten evidence text: third person, past tense, 1-3 sentences, keeping "
+        "every technology, number and outcome the candidate stated and adding none. "
+        "Null when they declined, were too vague, or said they have not done this - "
+        "null means 'store nothing', never a restatement of the question."))
 
 class ProfileEnrichment(BaseModel):
-    polished: list[GapAnswerPolish] = Field(default_factory= list)
+    """The Profile Enrichment agent's rewrite of every gap answer given.
+
+    Return ONE object with a single field `polished`, holding one entry per gap in the
+    input. Never return a separate object per gap, and never a bare list.
+    """
+
+    polished: list[GapAnswerPolish] = Field(default_factory=list, description=(
+        "One entry per gap in the input."))
 # -----------------------------------------------------------------------------
 # Supervisor decision (Instructions.md #23)
 # -----------------------------------------------------------------------------
@@ -376,6 +509,12 @@ class GraphState(BaseModel):
 
     # Run metadata.
     run_id: Optional[str] = None
+    # Whose account this run belongs to (p-<8hex>). Set once at run start and
+    # never rewritten by a node. The live carrier for scoped reads is
+    # config.current_profile_id() (a ContextVar, visible on LangGraph's pool
+    # threads); this field is the checkpointed copy, so a run resumed in a new
+    # process can restore that scope from its own state instead of guessing.
+    profile_id: Optional[str] = None
     stage: Stage = Stage.JD_ANALYSIS
 
     # Input.
@@ -402,6 +541,14 @@ class GraphState(BaseModel):
     verifier_report: Optional[VerifierReport] = None
     eval_record: Optional[EvalRecord] = None
     active_rubric: Optional[str] = None # this is the rubric suprvisor is using. 
+
+    # {agent: prompt version}, contributed by each node AS IT CALLS its model and
+    # merged with operator.or_ (later writes win for the same agent, which is what
+    # a redo should do). Evaluation reports this map instead of re-reading prompts
+    # off disk once the run ends, which credited whatever was on disk THEN - a
+    # different version if the process restarted while the run waited at gate 4
+    # (#77 item 3). Riding in the state means it survives that restart.
+    prompt_versions: Annotated[dict[str, Optional[int]], operator.or_] = Field(default_factory=dict)
     
 
     # Control flow.
