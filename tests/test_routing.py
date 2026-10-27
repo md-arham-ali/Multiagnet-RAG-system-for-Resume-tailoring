@@ -1558,8 +1558,6 @@ def test_profile_retrieval_is_scoped_to_the_runs_own_account(monkeypatch, retrie
     assert retriever.calls and all("p-alice" in json.dumps(c) for c in retriever.calls)
 
 
-@pytest.mark.xfail(strict=True, reason="bugs_audit_fixed.md #73 item 7: gap answers are saved with no owner, "
-                                       "so the next account's retrieval can find them")
 def test_saved_gap_answers_carry_the_runs_account(monkeypatch, saved):
     monkeypatch.setattr(profile, "structured_call", Door(ProfileEnrichment(polished=[
         GapAnswerPolish(requirement="SQL", gap_question="q", answer="a", polished_answer="Wrote SQL.")])))
@@ -1789,7 +1787,6 @@ def test_ranking_breaks_ties_by_citations_then_retrieval_order_and_keeps_the_bud
     assert report.ranked_evidence_ids[1:] == [f"e{i}" for i in range(15) if i != 9][:matching.EVIDENCE_BUDGET - 1]
 
 
-@pytest.mark.xfail(strict=True, reason="bugs_audit_fixed.md #58: Requirement.kind is a free string")
 def test_a_must_have_spelled_differently_is_still_a_must_have(monkeypatch):
     reqs = Requirements(requirements=[Requirement(text="SQL", kind="Must-have")])
     report, _ = _match(monkeypatch, _grade("SQL", Support.NONE), requirements=reqs)
@@ -3863,8 +3860,8 @@ def test_concurrent_supervisor_calls_decide_their_own_state():
 
 
 def _drive_like_the_worker(p, **state):
-    """The bridge's config: a thread id and nothing else, so LangGraph's default recursion limit."""
-    cfg = {"configurable": {"thread_id": "worker-like"}}
+    """The bridge's config (backend/runs/worker.py): a thread id and config.RECURSION_LIMIT."""
+    cfg = {"configurable": {"thread_id": "worker-like"}, "recursion_limit": config.RECURSION_LIMIT}
     payload = GraphState(job_description="jd", **state)
     for _ in range(80):
         pause = None
@@ -3885,10 +3882,6 @@ def test_the_worst_loop_at_the_default_cap_fits_the_default_recursion_limit(pipe
     assert _field(final, "revision_count") == GraphState().max_revisions
 
 
-# strict=False on purpose (2026-10-24): this test passes today only because the test pipeline takes fewer steps,
-# while no production caller sets recursion_limit. Strict would fail the suite on a bug that is still open.
-@pytest.mark.xfail(strict=False, reason="bugs_audit_fixed.md #78 item 1: no caller sets recursion_limit, so a "
-                                        "raised max_revisions crashes the run mid-loop with GraphRecursionError")
 def test_a_raised_cap_still_finishes_under_the_bridges_config(pipeline):
     p = pipeline(verifier_says=[VerifyStatus.FAIL] * 20)
     final = _drive_like_the_worker(p, max_revisions=4)
