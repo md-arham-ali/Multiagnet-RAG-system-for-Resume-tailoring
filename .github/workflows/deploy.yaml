@@ -1,0 +1,63 @@
+name: deploy
+
+# Reads these from Settings > Secrets and variables > Actions:
+#   Secrets:    VM_SSH_KEY       the PRIVATE deploy key, whole file
+#               VM_KNOWN_HOSTS   the VM's host key line (output of ssh-keyscan)
+#   Variables:  VM_HOST          the VM's public IP or hostname
+#               VM_USER          the SSH user on the VM
+#               VM_APP_DIR       optional: absolute path of the project on the VM
+#                                (default /home/ubuntu/app)
+
+on:
+  workflow_run:
+    workflows: [ci]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    # Only after a green CI run caused by a push (never a pull request).
+    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    concurrency: deploy-vm
+    env:
+      VM_HOST: ${{ vars.VM_HOST }}
+      VM_USER: ${{ vars.VM_USER }}
+      VM_APP_DIR: ${{ vars.VM_APP_DIR || '/home/ubuntu/app' }}
+      VM_SSH_KEY: ${{ secrets.VM_SSH_KEY }}
+      VM_KNOWN_HOSTS: ${{ secrets.VM_KNOWN_HOSTS }}
+      SHA: ${{ github.event.workflow_run.head_sha }}
+    steps:
+      - name: Check the settings exist
+        run: |
+          for name in VM_HOST VM_USER VM_SSH_KEY VM_KNOWN_HOSTS; do
+            if [ -z "${!name}" ]; then
+              echo "::error::$name is not set (secret or variable)"
+              exit 1
+            fi
+          done
+
+      - name: Set up SSH
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$VM_SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$VM_KNOWN_HOSTS" > ~/.ssh/known_hosts
+
+      # Deploys exactly the commit CI tested, not whatever is newest on main.
+      - name: Update code and rebuild on the VM
+        run: |
+          ssh -o BatchMode=yes "$VM_USER@$VM_HOST" \
+            "cd '$VM_APP_DIR' && git fetch origin main && git reset --hard '$SHA' && docker compose up -d --build && docker image prune -f"
+
+      - name: Health check
+        run: |
+          for i in $(seq 1 12); do
+            curl -fsS "http://$VM_HOST/api/health" && exit 0
+            sleep 5
+          done
+          exit 1

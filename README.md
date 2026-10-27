@@ -12,12 +12,20 @@ order:
 Built on LangGraph. A human can approve, edit or reject the work at each step,
 and every claim must trace back to a real profile record.
 
-> **Status (2026-10-06):**
+> **Status (2026-10-27):**
 > - **Agents:** six of the eight are real, and the graph runs end to end
->   offline. The Document agent has only been run offline, never against a live
->   model yet.
-> - **Tests:** 111 passed, 2 skipped, 6 failed. All six failures are known and
->   stale (see [Status](#status)).
+>   offline. The `verifier` is deliberately out of Stage 0 and stays a
+>   placeholder that always passes, as does `evaluation`.
+> - **Live runs:** only partly proven. On 2026-10-24 Groq worked for
+>   `jd_analysis`, `profile`, `matching` and the Document planner. Gemini
+>   returned a 503 on the Critic, and the Cerebras and OpenRouter model names
+>   were retired. The Document writer and the Critic's findings have never been
+>   seen live.
+> - **Tests:** 144 failures were cut to about 40 on 2026-10-24; the rest are
+>   tracked as bug #117 (see [Status](#status)). CI runs the offline suite on
+>   every push.
+> - **Deploy:** Docker files and a compose file are written but no image has
+>   been built yet.
 > - **Full history:** [`context/context.md`](context/context.md).
 
 ---
@@ -32,14 +40,16 @@ and every claim must trace back to a real profile record.
   sends work to one agent at a time, and every agent hands its result back to
   it. Agents never call each other.
 - **Agents, in order:** `jd_analysis` → `profile` → `profile_enrich` →
-  `matching` → `cv_link` → `document` → `critic` → `verifier` → `evaluation`.
+  `matching` → `cv_link` → `document` → `critic` → `verifier` → `evaluation`
+  (`verifier` and `evaluation` are placeholders for now).
   - `cv_link` isn't drawn in the diagram. It isn't an agent and makes no LLM
     call: it turns your CV PDF into a tree and links every line to the profile
     record behind it.
 - **Four human gates.** These are LangGraph `interrupt()` pauses. Each paused
   run is saved to SQLite (`logs/checkpoints.sqlite`), so it survives a restart
-  and can be resumed from another process. A rejected gate sends the work back
-  to the agent that produced it.
+  and can be resumed from another process; the web UI has a Resume action for a
+  run parked at a gate. A rejected gate sends the work back to the agent that
+  produced it.
 - **Knowledge layer.** `profile` and `profile_enrich` use it today.
   - **Retrieval:** hybrid search (semantic plus keyword), re-ranked by a
     cross-encoder.
@@ -89,11 +99,13 @@ and every claim must trace back to a real profile record.
 |------|-------|
 | `jd_analysis`, `profile`, `profile_enrich`, `matching`, `critic` | Real, one LLM call each. |
 | `document` (CV patcher) + `cv_link` | Built, run offline only. Two LLM calls, plan answer cached. |
-| `verifier`, `evaluation` | Placeholders: `verifier` always passes. |
+| `verifier`, `evaluation` | Placeholders, labelled as such. `verifier` always passes. It is out of scope for Stage 0 (decided 2026-10-07). |
 | Supervisor routing, 4 gates, revision cap, SQLite checkpointing | Built and verified. |
 | Retrieval (hybrid + re-rank) over Chroma | Built and test-covered. |
 | CV parsing + line-to-record linking | Built. All 74 lines on the test CV link correctly. |
-| Backend (FastAPI) + frontend (React/Vite) | Built. The UI shows the graph's own gates. |
+| Backend (FastAPI) + frontend (React/Vite) | Built. The UI shows the graph's own gates. Accounts are keyed by `profile_id`, a parked run survives a restart, and an audit and run log are kept per user. |
+| Live LLM runs | Partly proven: Groq works for four agents, Gemini and the fallback providers need fixing or re-testing (see above). |
+| Docker + CI | Backend and frontend Dockerfiles, `docker-compose.yml` and a GitHub Actions workflow (offline tests, then image builds). Written, never built locally. |
 | Learning store, do-not-claim check, Gate 5 (critique review) | Designed, not connected. |
 
 **Known gaps**
@@ -107,20 +119,29 @@ and every claim must trace back to a real profile record.
 - **Offline runs never exercise the Document writer.** Matching's offline
   fixture produces an empty fit report, so `document` makes no edits. Use
   `scripts/run_agent.py document` to exercise it.
-- **The six test failures** are:
-  - five backend tests that use an outdated `StubGraph`;
-  - one routing test that predates `active_rubric`.
+- **Live runs are unfinished.** The Critic's findings and the Document writer
+  have not been seen against a live model, and the planner tends to answer
+  `keep` for every node.
+- **About 40 tests still fail,** tracked as bug #117. The suite is saved per
+  run in `logs/testruns/`.
+- **Most "fixed" claims in the bug log are offline-only:** they were checked by
+  compiling or reading the code, not by a live run. The open and partly fixed
+  bugs are listed in [`context/bugs_audit_fixed.md`](context/bugs_audit_fixed.md).
+- **Profiles are still one flat `profiles.json`.** The per-user store described
+  under Next is not built.
 - **`agents/CV_Link.py` has a capital letter in its name,** so imports break on
   case-sensitive (Linux) filesystems.
 
 **Next**
 1. Make `document` read the critique and verifier report.
 2. Do a live run on the test CV to check both Document prompts.
-3. Build the Verifier.
-4. Stage 0 (approved 2026-09-27):
+3. Stage 0 (approved 2026-09-27), in milestones:
+   - M0, a green baseline: fix the outdated `StubGraph` tests, get `pytest`
+     green, one gated offline run, a smoke test, then commit;
    - a profile store per user, in SQLite with one Chroma collection each;
    - an intake interview for new users;
-   - a public deploy.
+   - build and test the Docker images, then a public deploy on synthetic data.
+4. Later: the Verifier, the learning store and the do-not-claim check.
 
 ---
 
@@ -174,6 +195,9 @@ template is [`.env.example`](.env.example).
 ├── context/           # project docs: work log, per-role design notes, bug lists
 ├── docs/diagrams/     # the diagrams in this README
 ├── config.py          # the only place env vars are read
+├── Dockerfile         # backend image (frontend has its own in frontend/)
+├── docker-compose.yml # backend + frontend together
+├── .github/workflows/ # CI: offline tests, then Docker image builds
 └── main.py            # config + prompt self-check, no API calls
 ```
 
@@ -217,10 +241,76 @@ python scripts/dev.py up
 python scripts/dev.py test
 ```
 
+- **Docker (not built yet):** `docker compose up --build` starts the backend
+  and the nginx frontend. It defaults to the fake LLM; set
+  `COMPOSE_USE_FAKE_LLM=0` to go live. `python scripts/dev.py up --docker` does
+  the same for local development. The choices behind it are in
+  [`context/final_docker_descision.md`](context/final_docker_descision.md).
+- **Smoke test a running backend:** `python scripts/dev.py smoke`.
 - **Interactive run:** `run_graph.py` without `--auto-approve` stops at each gate
   and asks you in the terminal.
 - **Resume a paused run:** pass `--thread <id> --resume`.
 - **Exercise the review loop offline:** set `FAKE_CRITIC_VERDICT=revise`.
+
+---
+
+## Live deployment
+
+The project is hosted at **`http://<SERVER_IP>`** (placeholder; replace with the
+real address). The page you reach is the web UI, served by nginx. Port 80 is
+the only published port, and the API sits behind it.
+
+> **For now, only the admin can start a run.** Everyone else can request an
+> account, but no run is open to them yet.
+
+### 1. Get the admin token
+
+The admin token is the `ADMIN_TOKEN` value in the server's `.env`. It is not
+issued through the UI.
+
+- **Owner:** read it from the `.env` on the server. If it is empty, generate
+  one, set it and restart the backend:
+  ```bash
+  python -c "import secrets; print(secrets.token_urlsafe(32))"
+  ```
+- **Everyone else:** ask the owner for it. With an empty `ADMIN_TOKEN`, nobody
+  can administer the system and no user token can be issued.
+- Treat it like a password. Never commit it or paste it into a shared chat.
+
+### 2. Access it
+
+1. Open `http://<SERVER_IP>` in a browser.
+2. Sign in with the admin token.
+3. The Account page then shows your role and your runs.
+
+### 3. Execute a run
+
+1. Open the run screen and paste a job description.
+2. Choose the mode:
+   - **Demo (offline):** a fake LLM, no provider keys used. This is the
+     default for the Docker deployment.
+   - **Live:** real models. The server needs its provider keys set, and it
+     refuses a live run when they are missing.
+3. Start the run, then work through the four human gates, approving, editing
+   or rejecting at each.
+4. Download the patched CV at the end.
+
+**Which CV is used.** A run uses the CV the account uploaded. An admin with no
+upload falls back to the shared sample CV, which is labelled as a sample. If
+that file is missing on the server, the run is refused with "No CV is
+configured on the server."
+
+**Run limits.** The admin is never counted against an allowance.
+`DEFAULT_RUN_ALLOWANCE` (default 2) applies only to issued user tokens, which
+are not in use yet.
+
+### 4. Other accounts (later)
+
+A visitor can submit an access request. The admin approves it, which issues a
+user token exactly once. Approval does not open runs to them yet; see the note
+at the top of this section.
+
+---
 
 ## Further reading
 
@@ -231,5 +321,10 @@ python scripts/dev.py test
   retrieval stack.
 - [`context/context_Eval_Learning loop.md`](context/context_Eval_Learning%20loop.md):
   Critic, Verifier and the planned loop.
+- [`context/context_Pipeline Infra+Config+Testing.md`](context/context_Pipeline%20Infra+Config+Testing.md):
+  config, tests, CI and deployment.
+- [`context/bugs_audit_fixed.md`](context/bugs_audit_fixed.md): the master bug
+  log, open and fixed.
+- [`context/test_status.md`](context/test_status.md): the latest test results.
 - [`explanations.md`](explanations.md): the vector layer, explained step by
   step.
