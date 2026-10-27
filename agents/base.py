@@ -36,6 +36,24 @@ class AgentSpec:
         return self.prompt.version
 
 
+def run_profile_id(state) -> str | None:
+    """The account this run belongs to, or None for an unscoped run (CLI, tests).
+
+    Two carriers, set together by backend/runs/worker.py: the ContextVar
+    (config.set_profile_id) and GraphState.profile_id, which survives a checkpoint
+    into a new process. If both are set they must agree - a run reading one
+    account's data while scoped to another is the leak this exists to stop.
+    """
+    bound = config.current_profile_id()
+    stated = getattr(state, "profile_id", None)
+    if bound and stated and bound != stated:
+        raise RuntimeError(
+            f"Run scope mismatch: the state says profile {stated!r}, the worker bound "
+            f"{bound!r}. Refusing to read profile data for either."
+        )
+    return stated or bound
+
+
 def spec_for(agent: str) -> AgentSpec:
     """Spec for one agent: model from config, prompt from its yaml."""
     return AgentSpec(name=agent, model=config.model_for(agent), prompt=load_prompt(agent))

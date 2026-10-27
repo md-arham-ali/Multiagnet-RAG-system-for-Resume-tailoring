@@ -11,8 +11,9 @@ from enum import Enum
 from typing import Annotated, Any, Optional, Literal
 
 from langgraph.graph.message import add_messages
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, BeforeValidator, Field
 import operator
+import re
 
 
 # -----------------------------------------------------------------------------
@@ -60,13 +61,41 @@ class ClaimLabel(str, Enum):
 # -----------------------------------------------------------------------------
 # JD Analysis artifacts
 # -----------------------------------------------------------------------------
+# Spellings that mean "nice to have", after _normalise_kind folds case and
+# punctuation into "_". Anything else is a must-have.
+_NICE_TO_HAVE_SPELLINGS = {
+    "nice_to_have", "nicetohave", "nice", "good_to_have", "goodtohave", "preferred",
+    "optional", "bonus", "plus", "a_plus", "desirable", "desired", "advantage",
+    "advantageous",
+}
+
+
+def _normalise_kind(value: object) -> str:
+    """Any spelling of a requirement's kind -> 'must_have' or 'nice_to_have'.
+
+    Readers compare against the exact string "must_have", so a model writing
+    "Must-have" used to score as a nice-to-have and drop out of unmet_must_haves
+    (bugs_audit_fixed.md #58). Unknown or missing reads as must_have: that can flag
+    a gap that is not real, never hide one that is.
+    """
+    if not isinstance(value, str):
+        return "must_have"
+    key = re.sub(r"[^a-z]+", "_", value.lower()).strip("_")
+    return "nice_to_have" if key in _NICE_TO_HAVE_SPELLINGS else "must_have"
+
+
+# One type for every kind field. Normalised BEFORE the Literal check, so a spelling
+# variant is corrected, never rejected - a rejected kind would throw away the whole
+# Requirements answer it came in.
+RequirementKind = Annotated[Literal["must_have", "nice_to_have"], BeforeValidator(_normalise_kind)]
+
+
 class Requirement(BaseModel):
     """One atomic thing the job asks of the candidate."""
 
     text: str = Field(description="The requirement itself, one atomic item, in the JD's own words.")
-    # must_have | nice_to_have. Free string, not an enum: a spelling variant reads as
-    # must_have and hides an unmet requirement (bugs_audit_fixed.md #58).
-    kind: str = Field("must_have", description=(
+    # must_have | nice_to_have, normalised on the way in (RequirementKind, #58).
+    kind: RequirementKind = Field("must_have", description=(
         "Exactly 'must_have' or 'nice_to_have' - no other word and no other spelling. "
         "The JD's own language decides: required/must/essential is must_have, "
         "preferred/plus/bonus is nice_to_have. When it is ambiguous, use must_have."))
@@ -104,9 +133,21 @@ class ProfileBlock(BaseModel):
     skills: list[str] = Field(default_factory=list)
 
 
+class ReplaceEvidence(list):
+    """A write to `evidence` that REPLACES it, where a plain list only appends.
+
+    Only the node that produces the retrieved set (profile.node) writes one. Without
+    it the field could only grow, so a rejected gate 2 re-ran Profile and the
+    blocks the human rejected stayed in state (bugs_audit_fixed.md #27 item 1).
+    A list subclass, so the node's output still reads, compares and validates as a
+    list; the reducer is the only code that tells the two apart.
+    """
+
+
 def merge_evidence(left: list["ProfileBlock"], right: list["ProfileBlock"]) -> list["ProfileBlock"]:
     """
-    Reducer for `evidence`: append, but never the same block twice.
+    Reducer for `evidence`: append, but never the same block twice. A
+    ReplaceEvidence write starts from nothing instead of from `left`.
 
     Plain operator.add was correct only while nothing re-entered profile.node(),
     which returns the WHOLE list every time - so one rejected gate 2 (bugs.md
@@ -116,6 +157,8 @@ def merge_evidence(left: list["ProfileBlock"], right: list["ProfileBlock"]) -> l
 
     Keyed on source_id, the same key #13's in-node guard uses.
     """
+    if isinstance(right, ReplaceEvidence):
+        left = []
     seen = {block.source_id for block in left}
     merged = list(left)
     for block in right:
@@ -196,7 +239,7 @@ class MatchAssessment(BaseModel):
 
 class MatchResult(BaseModel):
     requirement: str
-    kind: str
+    kind: RequirementKind     # copied from the Requirement; same normalisation (#58)
     support: Support
     evidence_ids: list[str] = Field(default_factory=list)
     justification: str = ""

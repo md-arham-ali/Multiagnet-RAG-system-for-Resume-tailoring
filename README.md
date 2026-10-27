@@ -129,8 +129,9 @@ and every claim must trace back to a real profile record.
   bugs are listed in [`context/bugs_audit_fixed.md`](context/bugs_audit_fixed.md).
 - **Profiles are still one flat `profiles.json`.** The per-user store described
   under Next is not built.
-- **`agents/CV_Link.py` has a capital letter in its name,** so imports break on
-  case-sensitive (Linux) filesystems.
+- **`agents/CV_Link.py` has a capital letter in its name.** Every import spells it
+  `CV_Link`, so it works on case-sensitive (Linux) filesystems too; keep that spelling
+  in new imports.
 
 **Next**
 1. Make `document` read the critique and verifier report.

@@ -12,13 +12,13 @@ import threading
 
 import config
 
-from agents.base import structured_call
+from agents.base import run_profile_id, structured_call
 from utils.prompt_loader import all_prompt_versions
 from utils.trace import log
 from state.state import ProfileAssessment, Support, GapQuestion, ProfileEnrichment
-from learning.profile_store import save_gap_answers
+from learning.profile_store import foreign_entry_ids, is_foreign, save_gap_answers
 
-from state.state import GraphState, ProfileBlock, Stage
+from state.state import GraphState, ProfileBlock, ReplaceEvidence, Stage
 
 # #73 item 8. Built on first use, not at import. Importing this module imports the
 # graph, so a module-level `Retriever(reranker=Reranker())` loaded PyTorch and a
@@ -64,6 +64,10 @@ def _key(text: str) -> str:
 # wording as agents/matching.py's, and prompts/profile/system.yaml v4 names it.
 NOTHING_RETRIEVED = "- (no evidence retrieved)"
 
+# How many extra hits a scoped retrieval asks for, to make up for other accounts'
+# entries it then drops, so a quota is still filled from this account's data.
+FOREIGN_FETCH_CAP = 20
+
 QUOTAS = [
     (["project", "work_experience"], 3),   
     (["skill"], 2),                        
@@ -105,11 +109,21 @@ def node(state: GraphState) -> dict:
             "(Running this node alone? Pass a Requirements object in the state.)"
         )
     if not state.requirements.requirements:
-        return {"evidence": [], "gap_questions": [], "stage": Stage.PROFILE_ENRICH}
+        return {"evidence": ReplaceEvidence(), "gap_questions": [], "stage": Stage.PROFILE_ENRICH}
 
     evidence = []
     seen: set[str] = set()
     by_req: dict[str, list[str]] = {}
+
+    # Account scope (backend/bugs.md "2026-10-09 (design)" §3, bugs_audit_fixed.md
+    # #73 item 7). One `profile` collection holds the shared seed records AND every
+    # account's own entries, so without this, B's run used A's gap answers and
+    # Build-Profile entries as evidence. A scoped run drops other accounts' entries
+    # from every hit list; an unscoped run (CLI, tests) reads as before.
+    profile_id = run_profile_id(state)
+    foreign = foreign_entry_ids(profile_id) if profile_id else set()
+    extra = min(len(foreign), FOREIGN_FETCH_CAP)
+    dropped = 0
 
     # Once, here: the first retrieval of the run pays for the models, and the
     # no-requirements return above never does.
@@ -120,9 +134,13 @@ def node(state: GraphState) -> dict:
         by_req[req.text]=[]
         for types,n in QUOTAS:
             hits = retriever.hybrid(
-            "profile", req.text, k=n,
+            "profile", req.text, k=n + extra,
             where={"type": {"$in": types}},
             )
+            if foreign:
+                own = [h for h in hits if not is_foreign(h.id, foreign)]
+                dropped += len(hits) - len(own)
+                hits = own[:n]
 
             for h in hits:
                 # One block can hit for several requirements. by_req still gets it
@@ -137,6 +155,10 @@ def node(state: GraphState) -> dict:
                         skills=[]
                     ))
                 by_req[req.text].append(h.document)
+
+    if dropped:
+        # A count only: logs carry ids and counts, never another account's text.
+        log(f"profile: dropped {dropped} hit(s) belonging to other accounts")
 
     # by_req -> one readable block per requirement for the LLM
     blocks = []
@@ -177,7 +199,9 @@ def node(state: GraphState) -> dict:
             # The requirement text is OURS; only the question is the model's.
             gap_questions.append(GapQuestion(requirement=req.text, question=a.gap_question))
     return {
-        "evidence": evidence,
+        # The whole retrieved set, replacing any earlier one: a rejected gate 2 re-runs
+        # this node, and the blocks the human rejected must not survive the redo (#27).
+        "evidence": ReplaceEvidence(evidence),
         "gap_questions": gap_questions,
         "prompt_versions": all_prompt_versions(["profile"]),
         "stage": Stage.PROFILE_ENRICH,
@@ -223,6 +247,8 @@ def enrich(state: GraphState) -> dict:
         # the answers. Same shape as the no-answers return above.
         return {"stage": Stage.MATCHING}
 
+    # Read before the call: a scope mismatch raises without paying for one.
+    profile_id = run_profile_id(state)
     prompt = "\n\n".join(prompt_parts)
 
     result = structured_call(
@@ -254,6 +280,11 @@ def enrich(state: GraphState) -> dict:
             "category": "gap_answer",
             "skills": [],
         })
+        # Whose answer this is (#73 item 7). Saved without it, the answer is
+        # ownerless: admin-only to the Build-Profile routes, and reachable by
+        # every unscoped run. Only stamped when the run has an account.
+        if profile_id:
+            entries[-1]["owner"] = profile_id
 
     # Offline, `content` is the fixture's answer, not the candidate's. Saving it
     # puts invented text in knowledge_base/profile/manual_entries.json and the
