@@ -44,10 +44,10 @@ def _get_retriever():
     if _retriever is None:
         with _retriever_lock:
             if _retriever is None:
-                from vectordb.reranker import Reranker
+                from vectordb.models import get_reranker
                 from vectordb.retriever import Retriever
 
-                _retriever = Retriever(reranker=Reranker())
+                _retriever = Retriever(reranker=get_reranker())   # the process's one cross-encoder (#43)
     return _retriever
 
 def _key(text: str) -> str:
