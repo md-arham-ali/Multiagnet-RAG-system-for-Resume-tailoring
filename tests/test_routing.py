@@ -1669,8 +1669,8 @@ def test_matching_prompt_lists_every_block_and_every_requirement_once(monkeypatc
     text = call.user_input
     assert "[p1] (project) Built a Python ETL job" in text
     assert "[s1] (uncategorised) Airflow DAG scheduling" in text
-    assert "- Python [must_have]" in text and "- Airflow [nice_to_have]" in text
-    assert text.count("[p1]") == 1 and text.count("- SQL [") == 1
+    assert "R1. Python [must_have]" in text and "R3. Airflow [nice_to_have]" in text
+    assert text.count("[p1]") == 1 and text.count("R2. SQL [") == 1
 
 
 def test_matching_prompt_says_when_nothing_was_retrieved(monkeypatch):
@@ -1724,6 +1724,44 @@ def test_the_models_echo_is_matched_after_normalising(monkeypatch):
     report, _ = _match(monkeypatch, _grade("  PYTHON ", Support.STRONG, "p1"), _grade("sql", Support.PARTIAL, "p2"))
     assert _by_req(report)["Python"].support is Support.STRONG
     assert _by_req(report)["SQL"].support is Support.PARTIAL
+
+
+def test_a_grade_is_paired_by_its_label_when_the_text_is_reworded(monkeypatch):
+    # bug#116: the model rewords the requirement; the label copied into requirement_id still pairs it.
+    report, _ = _match(monkeypatch,
+                       MatchGrade(requirement_id="R1", requirement="Strong Python for data processing",
+                                  support=Support.STRONG, evidence_ids=["p1"], justification="graded"),
+                       MatchGrade(requirement_id="r2.", requirement="a query language",
+                                  support=Support.PARTIAL, evidence_ids=["p2"], justification="graded"),
+                       MatchGrade(requirement_id="R3", requirement="orchestration",
+                                  support=Support.NONE, justification="graded"))
+    by = _by_req(report)
+    assert (by["Python"].support, by["Python"].evidence_ids) == (Support.STRONG, ["p1"])
+    assert (by["SQL"].support, by["SQL"].evidence_ids) == (Support.PARTIAL, ["p2"])
+    assert by["Airflow"].support is Support.NONE
+
+
+def test_a_label_echoed_inside_the_text_field_still_pairs(monkeypatch):
+    # The live failure: the model writes the whole prompt line into `requirement` and leaves requirement_id empty.
+    report, _ = _match(monkeypatch,
+                       _grade("R1. Python [must_have]", Support.STRONG, "p1"),
+                       _grade("R2. a query language [must_have]", Support.PARTIAL, "p2"),
+                       _grade("Airflow", Support.NONE))
+    by = _by_req(report)
+    assert by["Python"].support is Support.STRONG and by["SQL"].support is Support.PARTIAL
+
+
+def test_the_label_wins_over_the_text_and_a_label_pairs_one_requirement_only(monkeypatch):
+    # R1 says Python even though the words say SQL; a second grade for R1 falls back to its text, not to a second pairing.
+    report, _ = _match(monkeypatch,
+                       MatchGrade(requirement_id="R1", requirement="SQL", support=Support.STRONG,
+                                  evidence_ids=["p1"], justification="first"),
+                       MatchGrade(requirement_id="R1", requirement="SQL", support=Support.PARTIAL,
+                                  evidence_ids=["p2"], justification="second"),
+                       _grade("Airflow", Support.NONE))
+    by = _by_req(report)
+    assert (by["Python"].support, by["Python"].evidence_ids) == (Support.STRONG, ["p1"])
+    assert (by["SQL"].support, by["SQL"].evidence_ids) == (Support.PARTIAL, ["p2"])
 
 
 def test_unknown_ids_are_dropped_and_ungrounded_support_is_downgraded(monkeypatch):
@@ -1888,8 +1926,9 @@ def test_the_matching_prompt_is_built_exactly(monkeypatch):
     assert door.calls[0].user_input == (
         "CANDIDATE EVIDENCE (cite blocks by the id in square brackets):\n"
         "[p1] (project) Wrote C++ — ünïcødé\n\n"
-        "REQUIREMENTS TO SCORE:\n- C++ {x} %s [must_have]\n\n"
-        "Grade every requirement above, exactly once each. Cite only ids from the evidence list. "
+        "REQUIREMENTS TO SCORE (each is labelled R1, R2, ...):\nR1. C++ {x} %s [must_have]\n\n"
+        "Grade every requirement above, exactly once each. Put its label in requirement_id, "
+        "copied exactly. Cite only ids from the evidence list. "
         "If nothing supports a requirement, grade it 'none' and leave evidence_ids empty - "
         "do not stretch a block to cover it.")
 
@@ -1924,7 +1963,7 @@ def test_concurrent_matching_runs_never_mix(monkeypatch):
     def door(agent, user_input, schema, *, fake_json=None, system_prompt=None):
         barrier.wait()
         ids = re.findall(r"^\[(\w+)\]", user_input, flags=re.M)
-        reqs = re.findall(r"^- (\S+) \[", user_input, flags=re.M)
+        reqs = re.findall(r"^R\d+\. (\S+) \[", user_input, flags=re.M)
         return MatchAssessment(matches=[_grade(r, Support.STRONG, *ids) for r in reqs])
 
     monkeypatch.setattr(matching, "structured_call", door)

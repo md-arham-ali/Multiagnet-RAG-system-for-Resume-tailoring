@@ -424,7 +424,7 @@ def test_each_agent_is_sent_the_inputs_it_works_on(ledger, world):
     assert JD in by["jd_analysis"]
     for req in ("Python", "SQL", "ETL pipelines"):
         assert f"REQUIREMENT: {req}" in by["profile"]
-        assert f"- {req} [" in by["matching"]
+        assert re.search(rf"^R\d+\. {re.escape(req)} \[", by["matching"], re.M)
     assert "ANSWER: 40M-row reports" in by["profile_enrich"]
     assert "[skill_000]" in by["matching"]
     assert "[projects.0.b0]" in by[document.PLANNER]
