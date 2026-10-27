@@ -8,9 +8,9 @@ _parts_lock = threading.Lock()
 
 
 def _get_parts() -> tuple:
-    # Loads the matcher's models and indexes once per process, on the first call.
-    # out: (embedder, reranker, profile table, bullet table, profile retriever, bullet retriever);
-    #      pass it as Matcher(*_get_parts(), k=...). Raises if the profile index is unusable.
+    # Loads the matcher's models once per process; the tables and retrievers are rebuilt on every call (#44).
+    # out: (embedder, reranker, profile table, bullet table, profile retriever, bullet retriever),
+    #      fresh for this run; pass it as Matcher(*_get_parts(), k=...). Raises if the profile index is unusable.
     global _parts
     with _parts_lock:
         if _parts is None:
@@ -23,7 +23,11 @@ def _get_parts() -> tuple:
                     "Build it with scripts/build_vectordb.py."
                 )
             _parts = parts
-    return _parts
+        from utils.cv_handling.cv_match import refresh_matcher_parts
+
+        # Never hand out the cached tuple itself: a run writes its query vectors into the retrievers
+        # it is given, and a record added since the first run must be in the table it matches against.
+        return refresh_matcher_parts(_parts)
 
 
 def node(state: GraphState) -> dict:
@@ -37,10 +41,25 @@ def node(state: GraphState) -> dict:
     if state.cv_tree is not None and state.cv_tree.source_file == pdf.name:
         return {"stage": Stage.DOCUMENT}
 
-    from utils.cv_handling.cv_extract import parse_cv
+    from utils.cv_handling.cv_extract import has_sections, has_text, parse_cv
     from utils.cv_handling.cv_match import K_CANDIDATES, Matcher
 
-    tree, _lines = parse_cv(pdf)
+    tree, lines = parse_cv(pdf)
+    # Check BEFORE _get_parts() (#79 item 4). The upload path has refused these
+    # two since 10-09 (backend/cv_store.py, CvNoText / CvNoSections), but the
+    # pipeline path never did, so a CLI run or any direct cv_path could load the
+    # embedder, the reranker and both indexes - ~20s cold - to link an empty
+    # tree, then hand Document a CV with nothing in it and no error anywhere.
+    if not has_text(lines):
+        raise ValueError(
+            f"cv_link: '{pdf.name}' has no extractable text (a scan or an image-only "
+            f"PDF?). Nothing was parsed, so there is nothing to link or patch."
+        )
+    if not has_sections(tree):
+        raise ValueError(
+            f"cv_link: '{pdf.name}' parsed to a header only - no Experience, Projects, "
+            f"Skills or Education section was found. There is nothing for Document to patch."
+        )
     matcher = Matcher(*_get_parts(), k=K_CANDIDATES)
     matcher.run(tree)
     return {

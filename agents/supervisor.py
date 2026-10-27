@@ -40,8 +40,11 @@ STAGE_RUBRIC: dict[Stage, str] = {
         1. Relevance — does the document target THIS job's requirements, and
            does it lead with the strongest evidence for them rather than with a
            generic summary.
-        2. Evidence traceability — every claim traces back to a specific
-           evidence block, not merely to something that sounds plausible.
+        2. Evidence traceability — judge the CHANGED LINES only. Each one must
+           rest on a specific evidence record listed beside it, not on something
+           that merely sounds plausible, and none may claim an unmet must-have.
+           The unchanged lines are the candidate's own CV, not the agent's
+           claim: do not ask for evidence for those.
         3. Readability — professional, concise and easy to read; consistent
            structure, no padding or filler.
     """,
@@ -73,9 +76,8 @@ def decide(state: GraphState) -> SupervisorDecision:
     Where does the run go next, and why. The whole routing brain lives here.
 
     Kept separate from route() so supervisor_node() can act on the decision -
-    bump the count, clear the verdicts - before route() reads it. Deriving it
-    twice would not work: the bump and the clear both destroy the condition the
-    decision was made from.
+    bump the count - before route() reads it. Deriving it twice would not work:
+    the bump destroys the condition the decision was made from.
 
     Status : COMPLETED
     """
@@ -170,11 +172,11 @@ def supervisor_node(state: GraphState) -> dict:
         # Without this the reject/loop-back condition is still true next time
         # round and the run redoes the same work forever.
         update["revision_count"] = state.revision_count + 1
-        # These describe the draft being replaced. Left in place, route() would
-        # bounce the run back here before Critic or Verifier saw the new one
-        # (audit #2).
-        update["critique"] = None
-        update["verifier_report"] = None
+        # critique / verifier_report are NOT cleared here (D3, 2026-10-08). The
+        # agent doing the redo has to read them, so Document clears them when it
+        # returns the new draft. Audit #2's bounce can't happen in between: every
+        # redo that can see a verdict goes to document, and nothing else runs
+        # before it returns.
 
     return update
 

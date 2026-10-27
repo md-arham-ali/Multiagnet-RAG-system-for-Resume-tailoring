@@ -18,12 +18,15 @@ from utils.bullet_rules import check_line, describe_line_rules
 from utils.cv_handling.cv_edit import apply_edits, index_nodes, render_markdown
 from utils.cv_handling.cv_extract import walk
 from utils.cv_handling.cv_ingest import SECTION_TO_KB_TYPE
+from utils.do_not_claim import check_text as dnc_check, describe_claims, phrase_pattern
 from utils.plan_cache import load_plan, save_plan
+from utils.prompt_loader import all_prompt_versions
 from vectordb.lookup import profile_blocks
 
 from state.state import (
-    CVNode, CVTree, Document, EditVerdict, FitReport, GraphState, LineLink,
-    NodeVerdict, Requirements, SectionType, Stage, VerdictSet, DocumentPatchSet, Edit, EditAction, NodeKind, ProfileBlock 
+    CVNode, CVTree, ClaimLabel, Document, EditVerdict, FitReport, GraphState, LineLink,
+    NodeVerdict, Requirements, SectionType, Stage, Verdict, VerdictSet, VerifyStatus,
+    DocumentPatchSet, Edit, EditAction, NodeKind, ProfileBlock
 )
 from agents.base import structured_call, spec_for
 from utils.trace import log
@@ -145,7 +148,35 @@ def _plan(state: GraphState) -> tuple[VerdictSet, str]:
 MATERIAL_CAP = 4                  # evidence not on the CV that a section's writer is offered
 MAX_EDITS_PER_SECTION = 8
 PROSE_SECTIONS = {SectionType.EXPERIENCE, SectionType.PROJECTS, SectionType.RESPONSIBILITIES}  # bullets here are sentences: the bullet rules apply
-_NUMERAL = re.compile(r"\d+(?:[.,]\d+)*")
+# A figure the way a reader of the CV reads it: the number WITH its unit.
+# Comparing bare digit runs, which is what this guard did, let any digit in the
+# evidence license the same digit in ANY role in the new line - "a team of 5" licensed
+# "cut query time by 5%" (#75 item 4), an invented metric in the candidate's
+# name, and the number guard is the only code check against those.
+# The unit may be written against the number or a space away ("40M", "250 ms").
+# The lookahead is what keeps a following WORD from being read as a unit: in
+# "5 members" the "m" cannot end the match, so that figure stays the bare 5.
+_QUANTITY = re.compile(r"(\d+(?:[.,]\d+)*)\s*(%|ms|rows?|users?|[xkmsh])?(?!\w)",
+                       re.IGNORECASE)
+
+
+def _quantities(text: str) -> set[str]:
+    """Every figure in `text`, each as "<number><unit>".
+
+    Thousands commas are dropped and the unit is lower-cased, so "1,000" and
+    "1000" are one quantity, and so are "40M" and "40m". Strict the other way
+    on purpose: "40K" and "40,000" are NOT the same quantity here, so an edit
+    that re-scales a figure out of the evidence is rejected and the candidate's
+    original line is kept. Only a conversion table should change that, never a
+    comparison of digits.
+    """
+    return {number.replace(",", "") + (unit or "").lower()
+            for number, unit in _QUANTITY.findall(text or "")}
+
+# The line the packet shows the writer above the unmet list, and the line the
+# guard below reads that list back out of. One constant, because the guard is
+# only trustworthy while it enforces exactly what the writer was told.
+UNMET_HEADER = "UNMET MUST-HAVES (never claim):"
 
 
 @dataclass
@@ -166,6 +197,76 @@ def _linked_ids(state: GraphState, plan: VerdictSet) -> list[str]:
     return list(dict.fromkeys(ids))
 
 
+# The header of the block a redo round carries, and the gate whose reject reaches
+# this node. Gates 1-3 send the run back to an earlier agent, so a reject there
+# never loops through Document; only gate 4's does.
+REVISION_HEADER = "REVISION NOTES (this draft was reviewed and sent back):"
+FINAL_GATE = "gate4_document"
+MAX_NOTES = 12                    # a packet carries findings, not a transcript
+
+
+def _revision_notes(state: GraphState) -> str:
+    """What the last round said against the draft, for the writer. "" on round 0.
+
+    bugs_audit_fixed.md #76 item 1 / #55 item 1 / #54. Document never read
+    `critique`, so on a Critic loop-back it rebuilt the same packets from the same
+    state: every writer call and the next Critic call were byte-identical to the
+    round before. The redo bought nothing, and the run spent its whole revision
+    budget regenerating the draft the Critic had rejected, then shipped it.
+
+    The verdicts are available to read here because `node()` clears them AFTER
+    producing, not the Supervisor before (D3, 2026-10-08) - the clearing half of
+    this landed then, and this is the reading half it was for.
+
+    Three sources, in the order a writer can act on them:
+      - the Critic's items (rubric dimension, severity, where, what to do). Already
+        sifted by `critic._sift`, so every one names a dimension someone asked for;
+      - the Verifier's findings: claims it would not call supported, and
+        do-not-claim hits. Dormant while `verifier.node` is the passing stub;
+      - the human's own reason from a gate-4 reject, which is the only one of the
+        three a person wrote.
+
+    NOT filtered to this packet's section. A `location` is free text from the model,
+    and dropping a finding because that string did not match a section id would
+    lose it silently - the one failure mode this whole fix is about. The block says
+    to act only on what concerns the section, and costs its tokens in every packet.
+    """
+    if state.revision_count < 1:
+        return ""
+
+    notes: list[str] = []
+
+    critique = state.critique
+    if critique is not None and critique.verdict == Verdict.REVISE:
+        for item in critique.items[:MAX_NOTES]:
+            where = f" at {item.location}" if item.location else ""
+            notes.append(f"- Critic [{item.rubric_item}, {item.severity}]{where}: {item.instruction}")
+
+    report = state.verifier_report
+    if report is not None and report.status == VerifyStatus.FAIL:
+        for claim in report.claims:
+            if claim.label != ClaimLabel.SUPPORTED and len(notes) < MAX_NOTES:
+                notes.append(f"- Verifier [{claim.label.value}]: {claim.claim}")
+        for hit in report.do_not_claim_hits:
+            if len(notes) < MAX_NOTES:
+                notes.append(f"- Verifier [do-not-claim]: \"{hit.text}\" matches {hit.matched_entry}")
+
+    # Newest first: the last reject is the one this round has to answer.
+    for feedback in reversed(state.gate_feedback):
+        if feedback.gate == FINAL_GATE and feedback.decision == "reject" and (feedback.feedback or "").strip():
+            notes.append(f"- The candidate rejected the draft: {feedback.feedback.strip()}")
+            break
+
+    if not notes:
+        # A redo with nothing recorded against the draft. Say so rather than send
+        # the round-0 packet again, which is what made the two rounds identical.
+        notes = ["- (no specific finding was recorded; improve the listed lines further)"]
+
+    log(f"document: round {state.revision_count}, {len(notes)} revision note(s) in every packet")
+    return "\n".join([REVISION_HEADER, *notes,
+                       "Act only on the notes that concern THIS section; ignore the rest."])
+
+
 def _build_packets(state: GraphState, plan: VerdictSet, blocks: dict[str, ProfileBlock]) -> list[_Packet]:
     tree, report, req = state.cv_tree, state.fit_report or FitReport(), state.requirements
     nodes = index_nodes(tree)
@@ -173,6 +274,7 @@ def _build_packets(state: GraphState, plan: VerdictSet, blocks: dict[str, Profil
     link_of = {l.node_id: l for l in state.line_links}
     on_cv = {rid for l in state.line_links for rid in l.source_ids[:LINKS_SHOWN]}
     rank = {rid: i for i, rid in enumerate(report.ranked_evidence_ids)}
+    notes = _revision_notes(state)
     packets: list[_Packet] = []
 
     for section in _graded(tree):
@@ -213,16 +315,105 @@ def _build_packets(state: GraphState, plan: VerdictSet, blocks: dict[str, Profil
             *[f"[{rid}] {evidence[rid]}" for rid in shown], "",
             "AVAILABLE EVIDENCE NOT ON THE CV (may be used when a line is rewritten):",
             *([f"[{b.source_id}] {b.content}" for b in material] or ["(none)"]), "",
-            "UNMET MUST-HAVES (never claim):",
+            UNMET_HEADER,
             *([f"- {r}" for r in report.unmet_must_haves] or ["(none)"]),
+            "",
+            # The do-not-claim file's own contract: injected WHOLE, never
+            # retrieved top-k. It was never injected anywhere (#75 item 2), and
+            # the Verifier that was meant to catch a hit is out of Stage 0.
+            describe_claims(),
+            # Last, and empty on round 0, so a first-round packet is byte-identical
+            # to what it was before this change (#76 item 1).
+            *([notes] if notes else []),
         ])
         packets.append(_Packet(section.node_id, section.section_type, text, original, evidence))
     return packets
+
+def _unmet_from_packet(text: str) -> list[str]:
+    """The unmet must-haves as this packet states them.
+
+    Read back out of the packet text rather than passed in beside it: the
+    writer and the guard then cannot disagree about which requirements are
+    off-limits, and _guard_edits keeps its one-argument shape. "(none)" does
+    not start with "- ", so an empty list parses as empty.
+    """
+    out: list[str] = []
+    found = False
+    for line in text.splitlines():
+        line = line.strip()
+        if not found:
+            found = line == UNMET_HEADER
+        elif line.startswith("- "):
+            out.append(line[2:].strip())
+        else:
+            break                       # the block ends at the first other line
+    return [r for r in out if r]
+
+
+def _other_entries_records(text: str) -> dict[str, set[str]]:
+    """line id -> the record ids that belong to a DIFFERENT entry of this section.
+
+    bugs_audit_fixed.md #75 item 1. Every packet's EVIDENCE block is the whole
+    section's: the ids cited by every line it lists, plus unseen material. The
+    guard accepted any of them for any line, so a rewrite of a bullet under
+    "Churn Model" could cite the record behind a bullet under "Recommender",
+    take its facts, and leave the entry header still saying "Churn Model". The
+    CV then states that the other project's work happened in this one - a false
+    claim in the candidate's name, which is the one thing this system promises
+    not to make.
+
+    A record "belongs to" an entry when a line under that entry cites it. A
+    record no listed line cites belongs to no entry: that is the AVAILABLE
+    EVIDENCE NOT ON THE CV material, and it is NOT restricted here - whether
+    material may be used under an entry at all is the design half of this item
+    and is still the owner's (decisions.md D3).
+
+    Read back out of `packet.text`, the way `_unmet_from_packet` is, so the
+    guard enforces exactly the grouping the writer was shown ("under:"). Two
+    entries whose text is identical merge into one, which only ever makes this
+    more permissive, never less.
+    """
+    under_of: dict[str, str] = {}
+    ids_of: dict[str, list[str]] = {}
+    current = None
+    for line in text.splitlines():
+        if line.startswith("[") and "] verdict=" in line:
+            current = line[1:line.index("]")]
+        elif current is None:
+            continue
+        elif line.startswith("  under: "):
+            under_of[current] = line[len("  under: "):].strip()
+        elif line.startswith("  evidence: "):
+            raw = line[len("  evidence: "):].strip()
+            ids_of[current] = [] if raw == "-" else [i.strip() for i in raw.split(",") if i.strip()]
+            current = None              # "evidence" is the last field of a line block
+
+    owners: dict[str, set[str]] = {}    # record id -> the entries that cite it
+    for node_id, ids in ids_of.items():
+        for rid in ids:
+            owners.setdefault(rid, set()).add(under_of.get(node_id, ""))
+
+    return {node_id: {rid for rid, entries in owners.items()
+                      if under_of.get(node_id, "") not in entries}
+            for node_id in ids_of}
+
+
+def _claim_pattern(requirement: str) -> Optional[re.Pattern[str]]:
+    """Match a requirement as a phrase, not as a substring.
+
+    The same matcher the do-not-claim guard uses, so the two claim checks in
+    this file cannot disagree about what counts as writing something.
+    """
+    return phrase_pattern(requirement)
+
 
 def _guard_edits(raw: DocumentPatchSet, packet: _Packet) -> tuple[list[Edit], list[str]]:
     accepted: list[Edit] = []
     rejected: list[str] = []
     seen: set[str] = set()
+    unmet = [(r, p) for r, p in ((r, _claim_pattern(r)) for r in _unmet_from_packet(packet.text))
+             if p is not None]
+    elsewhere = _other_entries_records(packet.text)
     for e in raw.edits:
         text = " ".join((e.new_text or "").split())
         cited = [i for i in e.evidence_ids if i in packet.evidence]
@@ -239,13 +430,41 @@ def _guard_edits(raw: DocumentPatchSet, packet: _Packet) -> tuple[list[Edit], li
             why = "same text as before"
         elif not cited:
             why = "cites no evidence from this section's packet"
+        elif (stolen := sorted(set(cited) & elsewhere.get(e.target_id, set()))):
+            # #75 item 1. Checked before the content guards, because this is not a
+            # question about what the new text says: the citation itself is the
+            # misattribution, whatever wording it ends up in.
+            why = ("cites record(s) belonging to another entry of this section: "
+                   + ", ".join(stolen))
         else:
-            allowed = set(_NUMERAL.findall(packet.original[e.target_id]))
-            for i in cited:
-                allowed |= set(_NUMERAL.findall(packet.evidence[i]))
-            extra = [n for n in _NUMERAL.findall(text) if n not in allowed]
+            # What this line is allowed to say: its own current text plus the
+            # records it cites. Both the number guard and the unmet-must-have
+            # guard below read the same two sources - a figure or a claim that
+            # is in neither was invented by the writer.
+            sources = [packet.original[e.target_id], *(packet.evidence[i] for i in cited)]
+            allowed: set[str] = set()
+            for s in sources:
+                allowed |= _quantities(s)
+            extra = sorted(_quantities(text) - allowed)
+            # The packet says "never claim" and nothing enforced it (#59): an
+            # edit citing any real record could write the unmet requirement
+            # into the line, and the Verifier that was meant to catch it is out
+            # of Stage 0. Claiming it is the one thing this system promises not
+            # to do, so it is rejected here. A term already in the line, or in
+            # a cited record, is the candidate's own words and stays allowed.
+            claimed = [r for r, pat in unmet
+                       if pat.search(text) and not any(pat.search(s) for s in sources)]
+            # The do-not-claim list is a hard constraint, not an evidence
+            # question: no cited record can license it and the candidate's own
+            # line cannot either, so this check ignores `sources`. Rejecting
+            # keeps the original line, which is the safe outcome.
+            forbidden = dnc_check(text, location=e.target_id)
             if extra:
                 why = f"numbers not in the line or the cited evidence: {extra}"
+            elif forbidden:
+                why = "writes a do-not-claim entry: " + ", ".join(h.matched_entry for h in forbidden)
+            elif claimed:
+                why = "claims unmet must-have(s) nothing in the profile backs: " + ", ".join(claimed)
             elif packet.section_type in PROSE_SECTIONS:
                 broken = check_line(text)
                 if broken:
@@ -254,7 +473,14 @@ def _guard_edits(raw: DocumentPatchSet, packet: _Packet) -> tuple[list[Edit], li
             rejected.append(f"{e.target_id}: {why}")
             continue
         seen.add(e.target_id)
-        accepted.append(e.model_copy(update={"new_text": text, "evidence_ids": cited}))
+        # The reason travels with the edit: the gate-4 diff, every gate
+        # snapshot, document_patches in the checkpoint and, live,
+        # corrections.json. The planner's reasons are cut to the same length
+        # (_resolve_verdicts); the writer's were kept at whatever the model
+        # sent (#75 item 3).
+        accepted.append(e.model_copy(update={
+            "new_text": text, "evidence_ids": cited,
+            "reason": " ".join((e.reason or "").split())[:MAX_REASON_CHARS]}))
     if len(accepted) > MAX_EDITS_PER_SECTION:
         rejected += [f"{e.target_id}: over the {MAX_EDITS_PER_SECTION}-edit cap" for e in accepted[MAX_EDITS_PER_SECTION:]]
         accepted = accepted[:MAX_EDITS_PER_SECTION]
@@ -287,11 +513,17 @@ _WRITE_FAKE_JSON = (
     ']}'
 )
 
+# Extra per-section guidance, appended after the section rules. "" sends nothing, so a
+# section falls back to FACT_SECTION_RULES / describe_line_rules() alone.
+# The three below read "…your text…" until 2026-10-19 and were going to the model
+# verbatim on every live call (bugs_audit_fixed.md #111 N2) - offline could not show it,
+# because the fixture answers whatever the prompt says. Emptied, not deleted: the keys
+# stay as the TODO they were.
 SECTION_PROMPTS = {
     SectionType.PROJECTS:     "",
-    SectionType.SKILLS:       "…your text…",
-    SectionType.COURSEWORK:   "…your text…",
-    SectionType.ACHIEVEMENTS: "…your text…",
+    SectionType.SKILLS:       "",       # TODO (user): per-section writer guidance, if any
+    SectionType.COURSEWORK:   "",       # TODO (user)
+    SectionType.ACHIEVEMENTS: "",       # TODO (user)
 }
 
 def _writer_prompt(section_type: SectionType) -> str:
@@ -332,5 +564,10 @@ def node(state: GraphState) -> dict:
         "document": draft, "document_patches": patches,
         "document_plan": plan, "document_plan_key": key,
         "evidence": fetched,          # the reducer drops duplicates; the Verifier can now ground against these
+        # The verdicts judged the draft this one replaces. Document clears them, not the Supervisor,
+        # so a redo can read them first (D3). Left in place, decide() would send the new draft
+        # straight back here before Critic or Verifier saw it (audit #2).
+        "critique": None, "verifier_report": None,
+        "prompt_versions": all_prompt_versions([PLANNER, WRITER]),
         "stage": Stage.CRITIC,
     }

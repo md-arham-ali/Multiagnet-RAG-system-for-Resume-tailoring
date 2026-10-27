@@ -4,6 +4,9 @@ Verifier - Groq llama-3.3-70b-versatile.
 Pulls every claim out of the draft and checks it is grounded in the evidence.
 Do-not-claim is matched over the WHOLE list, never top-k. Grounding, not generation.
 Prompt: prompts/verifier/system.yaml.
+
+Still a stub: listed in backend/runs/worker.py STUB_NODES, so the UI labels its
+output as placeholder. Remove it there in the same change that makes this real.
 """
 
 from __future__ import annotations
