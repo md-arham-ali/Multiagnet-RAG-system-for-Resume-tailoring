@@ -1,0 +1,26 @@
+# Allowlist: ignore everything, then let back in only what the backend image needs.
+# Deny-by-default, so a new secret or data folder can never get into the image by accident.
+# (The frontend has its own context and its own frontend/.dockerignore.)
+# Decisions: context/final_docker_descision.md
+
+*
+
+# ---- what the image is built from ----
+!requirements.lock
+!config.py
+!agents/
+!backend/
+!evaluation/
+!learning/
+!state/
+!utils/
+!vectordb/
+!prompts/
+!scripts/frontend_api.py
+
+# ---- never inside the image, even under an allowed folder ----
+# Everything not listed above is already excluded, which covers the decided list: .env, .venv,
+# .git, tests/, conftest.py, test_work/, knowledge_base/ (a volume), logs/, uploads/, outputs/.
+**/__pycache__
+**/*.pyc
+**/.DS_Store

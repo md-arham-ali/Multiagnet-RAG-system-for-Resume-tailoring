@@ -1,0 +1,63 @@
+# Backend + frontend together. Every choice traces to context/final_docker_descision.md;
+# anything that does not is marked "CHOICE" below so you can change it.
+#
+#   docker compose up --build        build both images (for THIS machine's CPU) and start them
+#   docker compose down              stop and remove the containers (the data in ./data stays)
+#
+# Needs a .env next to this file (provider keys, ADMIN_TOKEN, DEFAULT_RUN_ALLOWANCE ...).
+# Secrets reach the container as environment variables at run time; none is baked into an image.
+#
+# Before the first start, the host folders must exist and be owned by uid 10001, the user the
+# backend runs as (Dockerfile). If Docker creates a missing folder itself on Linux it is owned by
+# root and the backend cannot write to it:
+#   mkdir -p data/{knowledge_base,logs,uploads,outputs,models} && sudo chown -R 10001:10001 data
+# On Docker Desktop (Mac) the chown is not needed.
+name: agentic
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: agentic-backend:local
+    env_file: .env
+    environment:
+      # CHOICE: demo mode (fake LLM, no provider spend) is the default, as in the saved idea
+      # "demo mode by default, live mode gated". Set COMPOSE_USE_FAKE_LLM=0 to go live.
+      # A separate name on purpose: a USE_FAKE_LLM=0 in .env for host development must not
+      # silently make the container live.
+      USE_FAKE_LLM: ${COMPOSE_USE_FAKE_LLM:-1}
+    volumes:
+      # Layout A: the data lives outside the image, mounted at fixed paths.
+      # CHOICE: bind mounts under DATA_ROOT, so the files are visible and can be copied in with scp.
+      - ${DATA_ROOT:-./data}/knowledge_base:/app/knowledge_base
+      - ${DATA_ROOT:-./data}/logs:/app/logs
+      - ${DATA_ROOT:-./data}/uploads:/app/uploads
+      - ${DATA_ROOT:-./data}/outputs:/app/outputs
+      # The Hugging Face models (embedder + reranker). FRAGILE: if this folder is empty the first
+      # run downloads about 900 MB. On a Mac that already has them you can reuse that cache:
+      #   MODELS_DIR=$HOME/.cache/huggingface docker compose up
+      - ${MODELS_DIR:-./data/models}:/models
+    # No `ports:` on purpose: only the frontend publishes a port. The backend is reachable
+    # from the frontend container as http://backend:8000 and from nowhere else.
+    expose:
+      - "8000"
+    restart: unless-stopped
+    # The health check comes from the Dockerfile (/api/health).
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: agentic-frontend:local
+    environment:
+      # nginx proxies /api to this address. Compose gives each service a DNS name.
+      BACKEND_URL: http://backend:8000
+    ports:
+      # The only published port. CHOICE: 3000 here; set FRONTEND_PORT=80 on the VM.
+      - "${FRONTEND_PORT:-3000}:80"
+    depends_on:
+      # nginx looks the backend name up once, at start: wait until the backend is healthy.
+      backend:
+        condition: service_healthy
+    restart: unless-stopped

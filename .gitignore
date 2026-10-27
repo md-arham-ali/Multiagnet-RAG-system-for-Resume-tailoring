@@ -1,0 +1,79 @@
+# ---- Secrets ----
+.env
+*.key
+*.pem
+
+# ---- Python ----
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.Python
+
+# ---- Tooling caches ----
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+#------test work artifacts ----
+test_work/
+
+
+# ---- Local data / runtime artifacts ----
+# (context/ is ignored in the block at the end of this file)
+
+# Access tokens + requests (tokens.json holds PLAINTEXT credentials)
+knowledge_base/auth/
+# CV PDFs to ingest / match (real CVs carry contact details)
+knowledge_base/input/
+# Vector store on-disk indexes
+knowledge_base/**/chroma/
+knowledge_base/chroma/
+# Derived bullet index the cv_link node matches against (rebuilds itself)
+knowledge_base/chroma_bullets/
+knowledge_base/**/*.sqlite3
+# Generated documents / run outputs
+outputs/
+# User-uploaded CV PDFs (real CVs carry contact details), per owner
+uploads/
+*.log
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- Models / large downloads (cached by HuggingFace, not vendored) ----
+.cache/
+models/
+
+# ---- Runtime logs (machine-local, none of it reproducible) ----
+# logs/<run_id>/ gate state snapshots, logs/frontend_runs/ event logs, and
+# checkpoints.sqlite (durable interrupt() state). Untracked today; without this
+# a `git add .` commits ~6MB of run output.
+logs/
+
+# Runtime user data (gap answers, Build Profile entries): never committed, and no test may depend on it
+knowledge_base/profile/manual_entries.json
+
+# ---- Internal working notes and local tool config: never pushed (decided 2026-10-26) ----
+# The bug log, decisions, test status, design notes and instructions are the project's private memory.
+context/
+docs/
+plan-for-stage-0-*.md
+CV_bullet generation.md
+explanations.md
+# Claude Code app: project skills, settings, launch configs (machine-specific)
+.claude/
+
+# Local runtime data for docker compose (bind-mounted volumes)
+data/
+
+# Frontend dependencies (rebuilt by npm ci)
+node_modules/
