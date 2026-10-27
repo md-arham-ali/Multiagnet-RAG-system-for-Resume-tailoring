@@ -1,0 +1,623 @@
+[
+  {
+    "learning_id": "learn_000",
+    "agent_name": "resume_writer",
+    "timestamp": "2025-06-02T19:01:00Z",
+    "task_type": "verification",
+    "project_context": "Deep Learning — rank lending opportunities",
+    "input_context": {
+      "role": "Research Engineer",
+      "industry": "Insurance",
+      "job_description_summary": "Seeking a Research Engineer with Data Wrangling, On-chain Data, Statistical Modeling for detect anomalous wallet behavior."
+    },
+    "task": "Generate output for a Research Engineer in Insurance.",
+    "generated_output": "Evaluated a Data Engineering system that automate compliance reporting, improving accuracy by 21%.",
+    "evaluation": {
+      "score": 6,
+      "evaluation_source": "llm-judge",
+      "feedback": "Repeated action verbs.",
+      "strengths": [
+        "ATS-aligned",
+        "grounded",
+        "quantified"
+      ],
+      "weaknesses": []
+    },
+    "reflection": {
+      "root_cause": "Missing numeric anchor in the prompt.",
+      "what_worked": [
+        "strong retrieval",
+        "clear structure",
+        "tight prompt"
+      ],
+      "what_failed": [],
+      "what_should_change": [
+        "rerank exemplars by role"
+      ]
+    },
+    "lesson": {
+      "summary": "Enforce unique action verbs per line.",
+      "category": "factual-grounding",
+      "confidence": 0.96
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Data Engineer",
+        "Analytics Engineer"
+      ],
+      "industries": [
+        "Trading",
+        "E-commerce",
+        "AdTech"
+      ],
+      "project_types": [
+        "Automation"
+      ],
+      "minimum_similarity_score": 0.75
+    },
+    "memory_type": "semantic",
+    "should_reuse": true,
+    "importance_score": 1,
+    "expiry_policy": {
+      "review_after_days": 14,
+      "auto_delete": true
+    },
+    "embedding_text": "resume_writer learned to automate compliance reporting for a Research Engineer in Insurance using Feature Engineering, Smart Contract Analysis.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "Risk Analytics",
+        "Fintech",
+        "On-chain Analytics",
+        "Data Analytics"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_006",
+    "agent_name": "resume_writer",
+    "timestamp": "2024-04-12T12:39:00Z",
+    "task_type": "routing",
+    "project_context": "Web3 — score credit risk",
+    "input_context": {
+      "role": "Data Scientist",
+      "industry": "Trading",
+      "job_description_summary": "Seeking a Data Scientist with Python, MLOps, Model Deployment for surface at-risk loan positions."
+    },
+    "task": "Generate output for a Data Scientist in Trading.",
+    "generated_output": "Enhanced a Algorithmic Trading system that rank lending opportunities, improving turnaround time by 61%.",
+    "evaluation": {
+      "score": 8,
+      "evaluation_source": "automatic",
+      "feedback": "Needs explicit domain mention.",
+      "strengths": [
+        "ATS-aligned",
+        "concise"
+      ],
+      "weaknesses": [
+        "unsupported claim",
+        "weak domain focus",
+        "verbose"
+      ]
+    },
+    "reflection": {
+      "root_cause": "Evidence not injected for the claim.",
+      "what_worked": [
+        "strong retrieval",
+        "clear structure",
+        "tight prompt"
+      ],
+      "what_failed": [
+        "over-generation",
+        "no metric",
+        "verb repetition"
+      ],
+      "what_should_change": [
+        "inject a metric requirement",
+        "rerank exemplars by role",
+        "add do-not-claim check"
+      ]
+    },
+    "lesson": {
+      "summary": "Enforce unique action verbs per line.",
+      "category": "instruction-following",
+      "confidence": 0.74
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Research Engineer"
+      ],
+      "industries": [
+        "Crypto / Web3",
+        "Trading"
+      ],
+      "project_types": [
+        "Data Analytics",
+        "Research"
+      ],
+      "minimum_similarity_score": 0.63
+    },
+    "memory_type": "episodic",
+    "should_reuse": true,
+    "importance_score": 3,
+    "expiry_policy": {
+      "review_after_days": 90,
+      "auto_delete": false
+    },
+    "embedding_text": "resume_writer learned to predict customer churn for a Data Scientist in Trading using Anomaly Detection, MLOps, Dashboarding.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "Data Analytics",
+        "SQL",
+        "Model Deployment"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_009",
+    "agent_name": "cover_letter_writer",
+    "timestamp": "2025-04-19T03:52:00Z",
+    "task_type": "jd_analysis",
+    "project_context": "Data Analytics — predict customer churn",
+    "input_context": {
+      "role": "Data Scientist",
+      "industry": "Consulting",
+      "job_description_summary": "Seeking a Data Scientist with Risk Modeling, Feature Engineering for surface at-risk loan positions."
+    },
+    "task": "Generate output for a Data Scientist in Consulting.",
+    "generated_output": "Enhanced a Quantitative Finance system that classify token contracts, improving accuracy by 80%.",
+    "evaluation": {
+      "score": 5,
+      "evaluation_source": "human",
+      "feedback": "Needs explicit domain mention.",
+      "strengths": [
+        "quantified"
+      ],
+      "weaknesses": [
+        "verbose",
+        "weak domain focus",
+        "repetitive verbs"
+      ]
+    },
+    "reflection": {
+      "root_cause": "Rubric weight on quantification too low.",
+      "what_worked": [
+        "clear structure",
+        "strong retrieval",
+        "good exemplar"
+      ],
+      "what_failed": [
+        "over-generation",
+        "verb repetition"
+      ],
+      "what_should_change": [
+        "enforce word limit",
+        "add do-not-claim check",
+        "rerank exemplars by role"
+      ]
+    },
+    "lesson": {
+      "summary": "Enforce unique action verbs per line.",
+      "category": "factual-grounding",
+      "confidence": 0.87
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Business Intelligence Analyst"
+      ],
+      "industries": [
+        "Trading",
+        "AdTech",
+        "Insurance"
+      ],
+      "project_types": [
+        "Automation",
+        "Data Engineering"
+      ],
+      "minimum_similarity_score": 0.75
+    },
+    "memory_type": "semantic",
+    "should_reuse": false,
+    "importance_score": 8,
+    "expiry_policy": {
+      "review_after_days": 14,
+      "auto_delete": false
+    },
+    "embedding_text": "cover_letter_writer learned to forecast short-term volatility for a Data Scientist in Consulting using NLP, Deep Learning.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "Risk Analytics",
+        "Machine Learning",
+        "Risk Modeling",
+        "retrieval"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_011",
+    "agent_name": "cover_letter_writer",
+    "timestamp": "2024-12-26T02:23:00Z",
+    "task_type": "verification",
+    "project_context": "NLP — rank lending opportunities",
+    "input_context": {
+      "role": "Analytics Engineer",
+      "industry": "Consulting",
+      "job_description_summary": "Seeking a Analytics Engineer with SQL, Model Deployment for surface at-risk loan positions."
+    },
+    "task": "Generate output for a Analytics Engineer in Consulting.",
+    "generated_output": "Reduced a Data Engineering system that predict customer churn, improving latency by 13%.",
+    "evaluation": {
+      "score": 8,
+      "evaluation_source": "llm-judge",
+      "feedback": "Repeated action verbs.",
+      "strengths": [
+        "quantified",
+        "ATS-aligned",
+        "on-topic"
+      ],
+      "weaknesses": []
+    },
+    "reflection": {
+      "root_cause": "Missing numeric anchor in the prompt.",
+      "what_worked": [
+        "strong retrieval"
+      ],
+      "what_failed": [
+        "over-generation",
+        "verb repetition",
+        "hallucinated detail"
+      ],
+      "what_should_change": [
+        "enforce word limit"
+      ]
+    },
+    "lesson": {
+      "summary": "Enforce unique action verbs per line.",
+      "category": "tone",
+      "confidence": 0.95
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Data Engineer",
+        "Data Scientist",
+        "Data Analyst"
+      ],
+      "industries": [
+        "Fintech"
+      ],
+      "project_types": [
+        "NLP System",
+        "Automation"
+      ],
+      "minimum_similarity_score": 0.83
+    },
+    "memory_type": "semantic",
+    "should_reuse": true,
+    "importance_score": 5,
+    "expiry_policy": {
+      "review_after_days": 14,
+      "auto_delete": false
+    },
+    "embedding_text": "cover_letter_writer learned to surface at-risk loan positions for a Analytics Engineer in Consulting using Prompt Engineering, Statistical Modeling.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "Computer Vision",
+        "Anomaly Detection",
+        "Time Series Forecasting"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_012",
+    "agent_name": "cover_letter_writer",
+    "timestamp": "2025-03-03T22:58:00Z",
+    "task_type": "resume_bullet",
+    "project_context": "Data Analytics — predict customer churn",
+    "input_context": {
+      "role": "Data Scientist",
+      "industry": "Fintech",
+      "job_description_summary": "Seeking a Data Scientist with Cloud Computing, Deep Learning for detect anomalous wallet behavior."
+    },
+    "task": "Generate output for a Data Scientist in Fintech.",
+    "generated_output": "Enhanced a On-chain Analytics system that automate compliance reporting, improving data freshness by 89%.",
+    "evaluation": {
+      "score": 5,
+      "evaluation_source": "automatic",
+      "feedback": "Repeated action verbs.",
+      "strengths": [
+        "on-topic"
+      ],
+      "weaknesses": [
+        "verbose",
+        "weak domain focus"
+      ]
+    },
+    "reflection": {
+      "root_cause": "Missing numeric anchor in the prompt.",
+      "what_worked": [
+        "good exemplar",
+        "clear structure"
+      ],
+      "what_failed": [
+        "over-generation",
+        "no metric",
+        "verb repetition"
+      ],
+      "what_should_change": [
+        "inject a metric requirement",
+        "add do-not-claim check",
+        "enforce word limit"
+      ]
+    },
+    "lesson": {
+      "summary": "Always anchor bullets with a numeric result.",
+      "category": "formatting",
+      "confidence": 0.97
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Quant Developer",
+        "Business Intelligence Analyst"
+      ],
+      "industries": [
+        "E-commerce"
+      ],
+      "project_types": [
+        "Data Analytics",
+        "Research",
+        "Machine Learning"
+      ],
+      "minimum_similarity_score": 0.6
+    },
+    "memory_type": "semantic",
+    "should_reuse": false,
+    "importance_score": 3,
+    "expiry_policy": {
+      "review_after_days": 14,
+      "auto_delete": false
+    },
+    "embedding_text": "cover_letter_writer learned to optimize gas usage for a Data Scientist in Fintech using MLOps, Model Deployment.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "Statistical Modeling",
+        "Risk Analytics",
+        "Model Deployment",
+        "On-chain Analytics"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_021",
+    "agent_name": "resume_writer",
+    "timestamp": "2024-05-01T08:11:00Z",
+    "task_type": "verification",
+    "project_context": "Machine Learning — automate compliance reporting",
+    "input_context": {
+      "role": "Data Analyst",
+      "industry": "Insurance",
+      "job_description_summary": "Seeking a Data Analyst with Prompt Engineering, Data Wrangling for map liquidity flows."
+    },
+    "task": "Generate output for a Data Analyst in Insurance.",
+    "generated_output": "Improved a Computer Vision system that rank lending opportunities, improving coverage by 61%.",
+    "evaluation": {
+      "score": 8,
+      "evaluation_source": "human",
+      "feedback": "Repeated action verbs.",
+      "strengths": [
+        "grounded",
+        "concise"
+      ],
+      "weaknesses": []
+    },
+    "reflection": {
+      "root_cause": "Evidence not injected for the claim.",
+      "what_worked": [
+        "strong retrieval",
+        "clear structure",
+        "good exemplar"
+      ],
+      "what_failed": [
+        "over-generation"
+      ],
+      "what_should_change": [
+        "inject a metric requirement",
+        "add do-not-claim check",
+        "enforce word limit"
+      ]
+    },
+    "lesson": {
+      "summary": "Verify every metric against project evidence.",
+      "category": "retrieval",
+      "confidence": 0.88
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Data Analyst"
+      ],
+      "industries": [
+        "Crypto / Web3"
+      ],
+      "project_types": [
+        "Predictive Modeling",
+        "ETL Pipeline"
+      ],
+      "minimum_similarity_score": 0.62
+    },
+    "memory_type": "procedural",
+    "should_reuse": true,
+    "importance_score": 5,
+    "expiry_policy": {
+      "review_after_days": 60,
+      "auto_delete": true
+    },
+    "embedding_text": "resume_writer learned to predict customer churn for a Data Analyst in Insurance using Machine Learning, Risk Modeling, MLOps.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "MLOps",
+        "Data Pipeline Design",
+        "factual-grounding",
+        "Smart Contracts",
+        "MLOps"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_041",
+    "agent_name": "cover_letter_writer",
+    "timestamp": "2025-06-19T03:54:00Z",
+    "task_type": "jd_analysis",
+    "project_context": "Web3 — rank lending opportunities",
+    "input_context": {
+      "role": "Business Intelligence Analyst",
+      "industry": "Banking",
+      "job_description_summary": "Seeking a Business Intelligence Analyst with Model Deployment, Statistical Modeling for classify token contracts."
+    },
+    "task": "Generate output for a Business Intelligence Analyst in Banking.",
+    "generated_output": "Accelerated a Time Series Forecasting system that optimize gas usage, improving latency by 66%.",
+    "evaluation": {
+      "score": 3,
+      "evaluation_source": "automatic",
+      "feedback": "Strong quantification.",
+      "strengths": [
+        "ATS-aligned",
+        "on-topic"
+      ],
+      "weaknesses": [
+        "unsupported claim"
+      ]
+    },
+    "reflection": {
+      "root_cause": "Rubric weight on quantification too low.",
+      "what_worked": [
+        "strong retrieval",
+        "clear structure"
+      ],
+      "what_failed": [],
+      "what_should_change": [
+        "rerank exemplars by role",
+        "enforce word limit",
+        "add do-not-claim check"
+      ]
+    },
+    "lesson": {
+      "summary": "Verify every metric against project evidence.",
+      "category": "quantification",
+      "confidence": 0.8
+    },
+    "reuse_conditions": {
+      "roles": [
+        "ML Researcher",
+        "Data Engineer"
+      ],
+      "industries": [
+        "Consulting"
+      ],
+      "project_types": [
+        "NLP System",
+        "Machine Learning"
+      ],
+      "minimum_similarity_score": 0.63
+    },
+    "memory_type": "semantic",
+    "should_reuse": false,
+    "importance_score": 4,
+    "expiry_policy": {
+      "review_after_days": 60,
+      "auto_delete": false
+    },
+    "embedding_text": "cover_letter_writer learned to score credit risk for a Business Intelligence Analyst in Banking using Cloud Computing, Time Series Analysis.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "formatting",
+        "NLP",
+        "On-chain Analytics",
+        "SQL"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_046",
+    "agent_name": "cover_letter_writer",
+    "timestamp": "2024-06-24T05:37:00Z",
+    "task_type": "jd_analysis",
+    "project_context": "MLOps — detect anomalous wallet behavior",
+    "input_context": {
+      "role": "Quant Developer",
+      "industry": "Healthcare Analytics",
+      "job_description_summary": "Seeking a Quant Developer with Statistical Modeling, Cloud Computing, Data Visualization for optimize gas usage."
+    },
+    "task": "Generate output for a Quant Developer in Healthcare Analytics.",
+    "generated_output": "Implemented a Credit Scoring system that predict customer churn, improving data freshness by 55%.",
+    "evaluation": {
+      "score": 8,
+      "evaluation_source": "automatic",
+      "feedback": "Strong quantification.",
+      "strengths": [
+        "quantified",
+        "ATS-aligned"
+      ],
+      "weaknesses": [
+        "verbose",
+        "unsupported claim"
+      ]
+    },
+    "reflection": {
+      "root_cause": "Rubric weight on quantification too low.",
+      "what_worked": [
+        "clear structure",
+        "good exemplar"
+      ],
+      "what_failed": [
+        "hallucinated detail",
+        "no metric",
+        "verb repetition"
+      ],
+      "what_should_change": [
+        "rerank exemplars by role",
+        "add do-not-claim check"
+      ]
+    },
+    "lesson": {
+      "summary": "Rerank exemplars by role type before injection.",
+      "category": "quantification",
+      "confidence": 0.85
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Analytics Engineer",
+        "ML Researcher"
+      ],
+      "industries": [
+        "E-commerce",
+        "Crypto / Web3",
+        "Trading"
+      ],
+      "project_types": [
+        "Automation"
+      ],
+      "minimum_similarity_score": 0.75
+    },
+    "memory_type": "procedural",
+    "should_reuse": true,
+    "importance_score": 10,
+    "expiry_policy": {
+      "review_after_days": 90,
+      "auto_delete": true
+    },
+    "embedding_text": "cover_letter_writer learned to automate compliance reporting for a Quant Developer in Healthcare Analytics using Python, Cloud Computing.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "MLOps",
+        "Data Engineering",
+        "Risk Analytics"
+      ]
+    }
+  }
+]

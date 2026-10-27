@@ -1,0 +1,38 @@
+[
+  {
+    "correction_id": "corr_032",
+    "agent_name": "profile",
+    "before": "Enhanced a system that helped with score credit risk.",
+    "after": "Integrated a Recommender Systems system that automate compliance reporting, improving false-positive rate by 77%.",
+    "feedback": "Avoid repeating the action verb.",
+    "reason": "Missing numeric metric (validation rule).",
+    "timestamp": "2025-05-29T18:50:00Z"
+  },
+  {
+    "correction_id": "corr_041",
+    "agent_name": "profile",
+    "before": "Deployed a system that helped with optimize gas usage.",
+    "after": "Analyzed a Algorithmic Trading system that optimize gas usage, improving analyst hours by 92%.",
+    "feedback": "Name the domain explicitly.",
+    "reason": "Domain not stated.",
+    "timestamp": "2024-09-11T22:37:00Z"
+  },
+  {
+    "correction_id": "corr_046",
+    "agent_name": "profile",
+    "before": "Implemented a system that helped with map liquidity flows.",
+    "after": "Improved a Web3 system that predict customer churn, improving throughput by 84%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Exceeded the 18-word limit.",
+    "timestamp": "2025-05-12T00:03:00Z"
+  },
+  {
+    "correction_id": "corr_049",
+    "agent_name": "profile",
+    "before": "Engineered a system that helped with automate compliance reporting.",
+    "after": "Built a Recommender Systems system that predict customer churn, improving data freshness by 64%.",
+    "feedback": "Ground the claim in an actual project.",
+    "reason": "Domain not stated.",
+    "timestamp": "2024-01-30T18:28:00Z"
+  }
+]

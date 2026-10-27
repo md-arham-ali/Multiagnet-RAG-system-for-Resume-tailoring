@@ -1,0 +1,533 @@
+[
+  {
+    "learning_id": "learn_005",
+    "agent_name": "jd_analysis",
+    "timestamp": "2025-01-27T02:18:00Z",
+    "task_type": "resume_bullet",
+    "project_context": "Quantitative Finance — map liquidity flows",
+    "input_context": {
+      "role": "Blockchain Data Engineer",
+      "industry": "Insurance",
+      "job_description_summary": "Seeking a Blockchain Data Engineer with Cloud Computing, Anomaly Detection, Time Series Analysis for forecast short-term volatility."
+    },
+    "task": "Generate output for a Blockchain Data Engineer in Insurance.",
+    "generated_output": "Improved a Credit Scoring system that surface at-risk loan positions, improving data freshness by 43%.",
+    "evaluation": {
+      "score": 8,
+      "evaluation_source": "llm-judge",
+      "feedback": "Too generic for the role.",
+      "strengths": [
+        "concise",
+        "ATS-aligned",
+        "on-topic"
+      ],
+      "weaknesses": [
+        "weak domain focus",
+        "repetitive verbs"
+      ]
+    },
+    "reflection": {
+      "root_cause": "Missing numeric anchor in the prompt.",
+      "what_worked": [
+        "clear structure"
+      ],
+      "what_failed": [
+        "over-generation"
+      ],
+      "what_should_change": [
+        "add do-not-claim check",
+        "inject a metric requirement"
+      ]
+    },
+    "lesson": {
+      "summary": "Always anchor bullets with a numeric result.",
+      "category": "quantification",
+      "confidence": 0.87
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Research Engineer",
+        "Business Intelligence Analyst"
+      ],
+      "industries": [
+        "Trading",
+        "Crypto / Web3"
+      ],
+      "project_types": [
+        "Data Analytics",
+        "NLP System"
+      ],
+      "minimum_similarity_score": 0.71
+    },
+    "memory_type": "procedural",
+    "should_reuse": true,
+    "importance_score": 7,
+    "expiry_policy": {
+      "review_after_days": 90,
+      "auto_delete": false
+    },
+    "embedding_text": "jd_analysis learned to forecast short-term volatility for a Blockchain Data Engineer in Insurance using Anomaly Detection, On-chain Data.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "Model Deployment",
+        "Machine Learning",
+        "routing",
+        "A/B Testing"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_007",
+    "agent_name": "jd_analysis",
+    "timestamp": "2024-05-22T02:50:00Z",
+    "task_type": "verification",
+    "project_context": "Fintech — predict customer churn",
+    "input_context": {
+      "role": "ML Researcher",
+      "industry": "Fintech",
+      "job_description_summary": "Seeking a ML Researcher with Data Visualization, A/B Testing, NLP for classify token contracts."
+    },
+    "task": "Generate output for a ML Researcher in Fintech.",
+    "generated_output": "Created a Data Analytics system that detect anomalous wallet behavior, improving data freshness by 45%.",
+    "evaluation": {
+      "score": 8,
+      "evaluation_source": "llm-judge",
+      "feedback": "Too generic for the role.",
+      "strengths": [
+        "quantified"
+      ],
+      "weaknesses": []
+    },
+    "reflection": {
+      "root_cause": "Context window lacked the right exemplar.",
+      "what_worked": [
+        "clear structure",
+        "tight prompt"
+      ],
+      "what_failed": [
+        "no metric",
+        "hallucinated detail",
+        "verb repetition"
+      ],
+      "what_should_change": [
+        "rerank exemplars by role"
+      ]
+    },
+    "lesson": {
+      "summary": "Rerank exemplars by role type before injection.",
+      "category": "retrieval",
+      "confidence": 0.95
+    },
+    "reuse_conditions": {
+      "roles": [
+        "ML Researcher",
+        "Business Intelligence Analyst"
+      ],
+      "industries": [
+        "Trading"
+      ],
+      "project_types": [
+        "Web Application"
+      ],
+      "minimum_similarity_score": 0.78
+    },
+    "memory_type": "semantic",
+    "should_reuse": true,
+    "importance_score": 5,
+    "expiry_policy": {
+      "review_after_days": 30,
+      "auto_delete": true
+    },
+    "embedding_text": "jd_analysis learned to map liquidity flows for a ML Researcher in Fintech using Prompt Engineering, ETL, Smart Contract Analysis.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "Feature Engineering",
+        "Anomaly Detection",
+        "NLP",
+        "Data Engineering",
+        "Data Wrangling"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_010",
+    "agent_name": "jd_analysis",
+    "timestamp": "2024-02-16T04:22:00Z",
+    "task_type": "routing",
+    "project_context": "Smart Contracts — optimize gas usage",
+    "input_context": {
+      "role": "Data Scientist",
+      "industry": "E-commerce",
+      "job_description_summary": "Seeking a Data Scientist with Prompt Engineering, Machine Learning for forecast short-term volatility."
+    },
+    "task": "Generate output for a Data Scientist in E-commerce.",
+    "generated_output": "Streamlined a MLOps system that rank lending opportunities, improving throughput by 64%.",
+    "evaluation": {
+      "score": 8,
+      "evaluation_source": "llm-judge",
+      "feedback": "Too generic for the role.",
+      "strengths": [
+        "grounded"
+      ],
+      "weaknesses": [
+        "weak domain focus"
+      ]
+    },
+    "reflection": {
+      "root_cause": "Missing numeric anchor in the prompt.",
+      "what_worked": [
+        "tight prompt",
+        "strong retrieval"
+      ],
+      "what_failed": [
+        "over-generation",
+        "verb repetition",
+        "no metric"
+      ],
+      "what_should_change": [
+        "rerank exemplars by role",
+        "enforce word limit"
+      ]
+    },
+    "lesson": {
+      "summary": "Rerank exemplars by role type before injection.",
+      "category": "tone",
+      "confidence": 0.98
+    },
+    "reuse_conditions": {
+      "roles": [
+        "ML Researcher",
+        "Quant Developer"
+      ],
+      "industries": [
+        "SaaS"
+      ],
+      "project_types": [
+        "Data Engineering",
+        "Automation"
+      ],
+      "minimum_similarity_score": 0.8
+    },
+    "memory_type": "semantic",
+    "should_reuse": true,
+    "importance_score": 5,
+    "expiry_policy": {
+      "review_after_days": 90,
+      "auto_delete": false
+    },
+    "embedding_text": "jd_analysis learned to map liquidity flows for a Data Scientist in E-commerce using Cloud Computing, Python.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "Computer Vision",
+        "Data Pipeline Design",
+        "routing",
+        "Data Visualization",
+        "Machine Learning"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_013",
+    "agent_name": "jd_analysis",
+    "timestamp": "2025-01-02T11:48:00Z",
+    "task_type": "cover_letter",
+    "project_context": "Fintech — score credit risk",
+    "input_context": {
+      "role": "Quantitative Analyst",
+      "industry": "Healthcare Analytics",
+      "job_description_summary": "Seeking a Quantitative Analyst with Statistical Modeling, Python, Smart Contract Analysis for optimize gas usage."
+    },
+    "task": "Generate output for a Quantitative Analyst in Healthcare Analytics.",
+    "generated_output": "Designed a Blockchain system that surface at-risk loan positions, improving turnaround time by 70%.",
+    "evaluation": {
+      "score": 5,
+      "evaluation_source": "automatic",
+      "feedback": "Too generic for the role.",
+      "strengths": [
+        "quantified"
+      ],
+      "weaknesses": [
+        "unsupported claim",
+        "weak domain focus",
+        "repetitive verbs"
+      ]
+    },
+    "reflection": {
+      "root_cause": "Missing numeric anchor in the prompt.",
+      "what_worked": [
+        "strong retrieval"
+      ],
+      "what_failed": [
+        "hallucinated detail",
+        "no metric",
+        "over-generation"
+      ],
+      "what_should_change": [
+        "rerank exemplars by role",
+        "add do-not-claim check",
+        "enforce word limit"
+      ]
+    },
+    "lesson": {
+      "summary": "Rerank exemplars by role type before injection.",
+      "category": "tone",
+      "confidence": 0.92
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Quant Developer"
+      ],
+      "industries": [
+        "Consulting"
+      ],
+      "project_types": [
+        "Web Application",
+        "Automation"
+      ],
+      "minimum_similarity_score": 0.82
+    },
+    "memory_type": "episodic",
+    "should_reuse": false,
+    "importance_score": 1,
+    "expiry_policy": {
+      "review_after_days": 90,
+      "auto_delete": false
+    },
+    "embedding_text": "jd_analysis learned to optimize gas usage for a Quantitative Analyst in Healthcare Analytics using Cloud Computing, SQL.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "Cloud Computing",
+        "On-chain Analytics",
+        "DeFi"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_026",
+    "agent_name": "jd_analysis",
+    "timestamp": "2024-03-29T13:46:00Z",
+    "task_type": "critique",
+    "project_context": "Data Analytics — forecast short-term volatility",
+    "input_context": {
+      "role": "Data Analyst",
+      "industry": "Crypto / Web3",
+      "job_description_summary": "Seeking a Data Analyst with Cloud Computing, Risk Modeling, Data Wrangling for surface at-risk loan positions."
+    },
+    "task": "Generate output for a Data Analyst in Crypto / Web3.",
+    "generated_output": "Improved a Data Analytics system that score credit risk, improving turnaround time by 83%.",
+    "evaluation": {
+      "score": 8,
+      "evaluation_source": "human",
+      "feedback": "Too generic for the role.",
+      "strengths": [
+        "on-topic",
+        "ATS-aligned"
+      ],
+      "weaknesses": [
+        "missing metric",
+        "verbose"
+      ]
+    },
+    "reflection": {
+      "root_cause": "Evidence not injected for the claim.",
+      "what_worked": [
+        "good exemplar"
+      ],
+      "what_failed": [],
+      "what_should_change": [
+        "rerank exemplars by role",
+        "add do-not-claim check"
+      ]
+    },
+    "lesson": {
+      "summary": "Rerank exemplars by role type before injection.",
+      "category": "tone",
+      "confidence": 0.41
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Quant Developer",
+        "Analytics Engineer",
+        "Machine Learning Engineer"
+      ],
+      "industries": [
+        "Crypto / Web3"
+      ],
+      "project_types": [
+        "Web Application"
+      ],
+      "minimum_similarity_score": 0.62
+    },
+    "memory_type": "episodic",
+    "should_reuse": true,
+    "importance_score": 10,
+    "expiry_policy": {
+      "review_after_days": 30,
+      "auto_delete": false
+    },
+    "embedding_text": "jd_analysis learned to optimize gas usage for a Data Analyst in Crypto / Web3 using A/B Testing, Data Pipeline Design, Dashboarding.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "Machine Learning",
+        "Feature Engineering",
+        "Time Series Forecasting",
+        "Fintech",
+        "Web3"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_031",
+    "agent_name": "jd_analysis",
+    "timestamp": "2024-03-11T08:45:00Z",
+    "task_type": "critique",
+    "project_context": "Algorithmic Trading — automate compliance reporting",
+    "input_context": {
+      "role": "Business Intelligence Analyst",
+      "industry": "Consulting",
+      "job_description_summary": "Seeking a Business Intelligence Analyst with Data Wrangling, Cloud Computing for optimize gas usage."
+    },
+    "task": "Generate output for a Business Intelligence Analyst in Consulting.",
+    "generated_output": "Deployed a Quantitative Finance system that forecast short-term volatility, improving latency by 36%.",
+    "evaluation": {
+      "score": 6,
+      "evaluation_source": "automatic",
+      "feedback": "Too generic for the role.",
+      "strengths": [
+        "quantified",
+        "concise"
+      ],
+      "weaknesses": [
+        "missing metric",
+        "unsupported claim"
+      ]
+    },
+    "reflection": {
+      "root_cause": "Evidence not injected for the claim.",
+      "what_worked": [
+        "good exemplar"
+      ],
+      "what_failed": [],
+      "what_should_change": [
+        "rerank exemplars by role"
+      ]
+    },
+    "lesson": {
+      "summary": "Enforce unique action verbs per line.",
+      "category": "routing",
+      "confidence": 0.57
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Data Engineer",
+        "Quantitative Analyst"
+      ],
+      "industries": [
+        "Crypto / Web3",
+        "Fintech",
+        "E-commerce"
+      ],
+      "project_types": [
+        "ETL Pipeline"
+      ],
+      "minimum_similarity_score": 0.78
+    },
+    "memory_type": "semantic",
+    "should_reuse": true,
+    "importance_score": 9,
+    "expiry_policy": {
+      "review_after_days": 90,
+      "auto_delete": false
+    },
+    "embedding_text": "jd_analysis learned to map liquidity flows for a Business Intelligence Analyst in Consulting using Python, Data Pipeline Design.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "routing",
+        "ETL",
+        "Time Series Forecasting",
+        "Data Pipeline Design"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_049",
+    "agent_name": "jd_analysis",
+    "timestamp": "2024-03-16T04:19:00Z",
+    "task_type": "routing",
+    "project_context": "Algorithmic Trading — rank lending opportunities",
+    "input_context": {
+      "role": "Analytics Engineer",
+      "industry": "Consulting",
+      "job_description_summary": "Seeking a Analytics Engineer with Feature Engineering, A/B Testing, SQL for predict customer churn."
+    },
+    "task": "Generate output for a Analytics Engineer in Consulting.",
+    "generated_output": "Improved a Credit Scoring system that automate compliance reporting, improving precision by 50%.",
+    "evaluation": {
+      "score": 10,
+      "evaluation_source": "human",
+      "feedback": "Repeated action verbs.",
+      "strengths": [
+        "on-topic"
+      ],
+      "weaknesses": [
+        "missing metric",
+        "weak domain focus",
+        "repetitive verbs"
+      ]
+    },
+    "reflection": {
+      "root_cause": "Missing numeric anchor in the prompt.",
+      "what_worked": [
+        "good exemplar"
+      ],
+      "what_failed": [
+        "over-generation"
+      ],
+      "what_should_change": [
+        "enforce word limit"
+      ]
+    },
+    "lesson": {
+      "summary": "Verify every metric against project evidence.",
+      "category": "instruction-following",
+      "confidence": 0.71
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Business Intelligence Analyst"
+      ],
+      "industries": [
+        "Consulting"
+      ],
+      "project_types": [
+        "Predictive Modeling",
+        "Machine Learning"
+      ],
+      "minimum_similarity_score": 0.67
+    },
+    "memory_type": "semantic",
+    "should_reuse": true,
+    "importance_score": 10,
+    "expiry_policy": {
+      "review_after_days": 14,
+      "auto_delete": false
+    },
+    "embedding_text": "jd_analysis learned to surface at-risk loan positions for a Analytics Engineer in Consulting using Data Visualization, A/B Testing.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "Time Series Forecasting",
+        "Data Visualization",
+        "Blockchain",
+        "Anomaly Detection",
+        "ETL"
+      ]
+    }
+  }
+]

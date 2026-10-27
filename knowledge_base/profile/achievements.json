@@ -1,0 +1,1311 @@
+[
+  {
+    "achievement_id": "ach_000",
+    "title": "Shipped forecast short-term volatility to production",
+    "category": "Milestone",
+    "date": "2017-03",
+    "description": "Reduced work that predict customer churn.",
+    "impact": "Improved latency by 49% and saved 15M in cost.",
+    "metrics": [
+      "28% improvement in turnaround time",
+      "5.3M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "A/B Testing",
+      "Data Visualization",
+      "On-chain Data"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "Risk Modeling",
+      "Data Analytics",
+      "Data Visualization",
+      "Computer Vision",
+      "Credit Scoring",
+      "Machine Learning"
+    ]
+  },
+  {
+    "achievement_id": "ach_001",
+    "title": "Blog/paper on score credit risk",
+    "category": "Publication",
+    "date": "2018-08",
+    "description": "Accelerated work that predict customer churn.",
+    "impact": "Improved throughput by 61% and saved 5995 in cost.",
+    "metrics": [
+      "40% improvement in false-positive rate",
+      "6326 users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Data Visualization",
+      "Smart Contract Analysis",
+      "ETL",
+      "Feature Engineering",
+      "Risk Modeling"
+    ],
+    "related_projects": [
+      "nft_market_forecasting_engine_019",
+      "customer_forecasting_engine_014"
+    ],
+    "keywords": [
+      "Smart Contracts",
+      "Data Analytics",
+      "Web3"
+    ]
+  },
+  {
+    "achievement_id": "ach_002",
+    "title": "Outstanding Hackathon Award",
+    "category": "Award",
+    "date": "2019-03",
+    "description": "Leveraged work that surface at-risk loan positions.",
+    "impact": "Improved accuracy by 84% and saved 390K in cost.",
+    "metrics": [
+      "61% improvement in coverage",
+      "49M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Machine Learning",
+      "SQL"
+    ],
+    "related_projects": [
+      "nft_market_token_classifier_013"
+    ],
+    "keywords": [
+      "Machine Learning",
+      "On-chain Analytics",
+      "Blockchain",
+      "MLOps",
+      "Algorithmic Trading"
+    ]
+  },
+  {
+    "achievement_id": "ach_003",
+    "title": "Shipped surface at-risk loan positions to production",
+    "category": "Milestone",
+    "date": "2025-03",
+    "description": "Automated work that forecast short-term volatility.",
+    "impact": "Improved accuracy by 52% and saved 1941 in cost.",
+    "metrics": [
+      "67% improvement in turnaround time",
+      "40M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "NLP",
+      "Data Wrangling",
+      "Statistical Modeling",
+      "Cloud Computing",
+      "Prompt Engineering"
+    ],
+    "related_projects": [
+      "cross_chain_token_classifier_023",
+      "uniswap_scoring_model_039"
+    ],
+    "keywords": [
+      "Web3",
+      "MLOps",
+      "Time Series Forecasting"
+    ]
+  },
+  {
+    "achievement_id": "ach_004",
+    "title": "Blog/paper on forecast short-term volatility",
+    "category": "Publication",
+    "date": "2018-04",
+    "description": "Integrated work that automate compliance reporting.",
+    "impact": "Improved coverage by 92% and saved 31M in cost.",
+    "metrics": [
+      "24% improvement in throughput",
+      "660 users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Deep Learning",
+      "Machine Learning"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "On-chain Analytics",
+      "Feature Engineering",
+      "NLP",
+      "Cloud Computing"
+    ]
+  },
+  {
+    "achievement_id": "ach_005",
+    "title": "Maintainer of a Computer Vision library",
+    "category": "Open Source",
+    "date": "2021-09",
+    "description": "Streamlined work that forecast short-term volatility.",
+    "impact": "Improved precision by 91% and saved 13M in cost.",
+    "metrics": [
+      "70% improvement in false-positive rate",
+      "23M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Smart Contract Analysis",
+      "Risk Modeling"
+    ],
+    "related_projects": [
+      "derivatives_trading_bot_001",
+      "lending_pool_scoring_model_034"
+    ],
+    "keywords": [
+      "Deep Learning",
+      "A/B Testing",
+      "Quantitative Finance",
+      "Time Series Analysis"
+    ]
+  },
+  {
+    "achievement_id": "ach_006",
+    "title": "Coursera Data Certificate",
+    "category": "Certification",
+    "date": "2019-07",
+    "description": "Generated work that rank lending opportunities.",
+    "impact": "Improved coverage by 36% and saved 761K in cost.",
+    "metrics": [
+      "80% improvement in false-positive rate",
+      "829K users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Smart Contract Analysis",
+      "Machine Learning",
+      "Data Visualization"
+    ],
+    "related_projects": [
+      "uniswap_recommendation_system_010",
+      "defi_lending_trading_bot_040"
+    ],
+    "keywords": [
+      "ETL",
+      "Risk Analytics",
+      "Algorithmic Trading",
+      "NLP"
+    ]
+  },
+  {
+    "achievement_id": "ach_007",
+    "title": "Blog/paper on optimize gas usage",
+    "category": "Publication",
+    "date": "2021-01",
+    "description": "Designed work that automate compliance reporting.",
+    "impact": "Improved false-positive rate by 47% and saved 1070 in cost.",
+    "metrics": [
+      "25% improvement in coverage",
+      "792K users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "On-chain Data",
+      "Dashboarding",
+      "Deep Learning",
+      "Time Series Analysis",
+      "Smart Contract Analysis"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "Data Pipeline Design",
+      "Data Wrangling",
+      "Machine Learning",
+      "Time Series Analysis"
+    ]
+  },
+  {
+    "achievement_id": "ach_008",
+    "title": "3rd place — DeFi Challenge",
+    "category": "Competition",
+    "date": "2018-11",
+    "description": "Accelerated work that classify token contracts.",
+    "impact": "Improved recall by 92% and saved 8967 in cost.",
+    "metrics": [
+      "27% improvement in latency",
+      "4M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Anomaly Detection",
+      "A/B Testing"
+    ],
+    "related_projects": [
+      "on_chain_data_pipeline_037"
+    ],
+    "keywords": [
+      "MLOps",
+      "Dashboarding",
+      "A/B Testing",
+      "Fintech"
+    ]
+  },
+  {
+    "achievement_id": "ach_009",
+    "title": "Coursera Data Certificate",
+    "category": "Certification",
+    "date": "2021-05",
+    "description": "Generated work that predict customer churn.",
+    "impact": "Improved turnaround time by 40% and saved 23K in cost.",
+    "metrics": [
+      "82% improvement in data freshness",
+      "4.9M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Data Pipeline Design",
+      "Model Deployment",
+      "Dashboarding",
+      "On-chain Data",
+      "MLOps"
+    ],
+    "related_projects": [
+      "wallet_fraud_detector_024",
+      "uniswap_risk_monitor_002"
+    ],
+    "keywords": [
+      "Fraud Detection",
+      "Smart Contracts",
+      "Deep Learning"
+    ]
+  },
+  {
+    "achievement_id": "ach_010",
+    "title": "Coursera Analytics Certificate",
+    "category": "Certification",
+    "date": "2025-01",
+    "description": "Deployed work that optimize gas usage.",
+    "impact": "Improved accuracy by 35% and saved 23M in cost.",
+    "metrics": [
+      "60% improvement in accuracy",
+      "45M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Data Wrangling",
+      "A/B Testing",
+      "Python"
+    ],
+    "related_projects": [
+      "loan_dashboard_029"
+    ],
+    "keywords": [
+      "Cloud Computing",
+      "Risk Modeling",
+      "Recommender Systems",
+      "Smart Contracts",
+      "Anomaly Detection"
+    ]
+  },
+  {
+    "achievement_id": "ach_011",
+    "title": "Maintainer of a Data Engineering library",
+    "category": "Open Source",
+    "date": "2018-12",
+    "description": "Designed work that optimize gas usage.",
+    "impact": "Improved throughput by 87% and saved 26M in cost.",
+    "metrics": [
+      "70% improvement in throughput",
+      "927K users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "SQL",
+      "Data Visualization",
+      "Deep Learning",
+      "Dashboarding"
+    ],
+    "related_projects": [
+      "aave_portfolio_analyzer_032"
+    ],
+    "keywords": [
+      "Recommender Systems",
+      "Risk Analytics",
+      "Smart Contract Analysis",
+      "Machine Learning",
+      "Algorithmic Trading"
+    ]
+  },
+  {
+    "achievement_id": "ach_012",
+    "title": "Google Analytics Certificate",
+    "category": "Certification",
+    "date": "2019-07",
+    "description": "Implemented work that automate compliance reporting.",
+    "impact": "Improved analyst hours by 80% and saved 240K in cost.",
+    "metrics": [
+      "78% improvement in coverage",
+      "516K users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "A/B Testing",
+      "Anomaly Detection",
+      "Deep Learning"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "Dashboarding",
+      "NLP",
+      "Python"
+    ]
+  },
+  {
+    "achievement_id": "ach_013",
+    "title": "Research Scholarship",
+    "category": "Scholarship",
+    "date": "2021-12",
+    "description": "Enhanced work that automate compliance reporting.",
+    "impact": "Improved turnaround time by 55% and saved 6.3M in cost.",
+    "metrics": [
+      "25% improvement in throughput",
+      "1683 users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Data Visualization",
+      "Model Deployment",
+      "Time Series Analysis",
+      "Smart Contract Analysis"
+    ],
+    "related_projects": [
+      "nft_market_recommendation_system_044",
+      "staking_network_mapper_041"
+    ],
+    "keywords": [
+      "Quantitative Finance",
+      "Data Pipeline Design",
+      "Time Series Forecasting",
+      "Data Visualization"
+    ]
+  },
+  {
+    "achievement_id": "ach_014",
+    "title": "Research Scholarship",
+    "category": "Scholarship",
+    "date": "2017-06",
+    "description": "Leveraged work that detect anomalous wallet behavior.",
+    "impact": "Improved latency by 53% and saved 551 in cost.",
+    "metrics": [
+      "63% improvement in coverage",
+      "30M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Time Series Analysis",
+      "Dashboarding",
+      "MLOps",
+      "Risk Modeling"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "SQL",
+      "Algorithmic Trading",
+      "Data Visualization",
+      "DeFi",
+      "Fraud Detection"
+    ]
+  },
+  {
+    "achievement_id": "ach_015",
+    "title": "Google Analytics Certificate",
+    "category": "Certification",
+    "date": "2019-01",
+    "description": "Leveraged work that forecast short-term volatility.",
+    "impact": "Improved throughput by 19% and saved 6447 in cost.",
+    "metrics": [
+      "56% improvement in data freshness",
+      "8M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Risk Modeling",
+      "Data Wrangling",
+      "NLP"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "MLOps",
+      "Machine Learning",
+      "On-chain Data",
+      "A/B Testing"
+    ]
+  },
+  {
+    "achievement_id": "ach_016",
+    "title": "Shipped surface at-risk loan positions to production",
+    "category": "Milestone",
+    "date": "2025-01",
+    "description": "Enhanced work that forecast short-term volatility.",
+    "impact": "Improved coverage by 8% and saved 22M in cost.",
+    "metrics": [
+      "11% improvement in analyst hours",
+      "3188 users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Data Pipeline Design",
+      "Deep Learning",
+      "Smart Contract Analysis"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "Credit Scoring",
+      "Blockchain",
+      "Time Series Forecasting",
+      "Smart Contract Analysis"
+    ]
+  },
+  {
+    "achievement_id": "ach_017",
+    "title": "Need-based Scholarship",
+    "category": "Scholarship",
+    "date": "2018-06",
+    "description": "Automated work that score credit risk.",
+    "impact": "Improved false-positive rate by 29% and saved 40M in cost.",
+    "metrics": [
+      "66% improvement in false-positive rate",
+      "9M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Smart Contract Analysis",
+      "Statistical Modeling",
+      "Time Series Analysis"
+    ],
+    "related_projects": [
+      "cross_chain_churn_predictor_012"
+    ],
+    "keywords": [
+      "Feature Engineering",
+      "DeFi",
+      "Data Visualization",
+      "Web3",
+      "Fraud Detection",
+      "Deep Learning"
+    ]
+  },
+  {
+    "achievement_id": "ach_018",
+    "title": "Coursera Analytics Certificate",
+    "category": "Certification",
+    "date": "2020-05",
+    "description": "Evaluated work that optimize gas usage.",
+    "impact": "Improved turnaround time by 56% and saved 33M in cost.",
+    "metrics": [
+      "79% improvement in data freshness",
+      "7.4M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Feature Engineering",
+      "ETL",
+      "Dashboarding"
+    ],
+    "related_projects": [
+      "derivatives_sentiment_tracker_036",
+      "lending_pool_scoring_model_034"
+    ],
+    "keywords": [
+      "Smart Contracts",
+      "Anomaly Detection",
+      "Data Visualization",
+      "Risk Analytics"
+    ]
+  },
+  {
+    "achievement_id": "ach_019",
+    "title": "Best Analyst Award",
+    "category": "Award",
+    "date": "2025-06",
+    "description": "Developed work that rank lending opportunities.",
+    "impact": "Improved latency by 66% and saved 739K in cost.",
+    "metrics": [
+      "71% improvement in recall",
+      "1.0M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "SQL",
+      "Time Series Analysis",
+      "Prompt Engineering",
+      "Cloud Computing"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "A/B Testing",
+      "Blockchain",
+      "Machine Learning",
+      "Feature Engineering",
+      "ETL",
+      "Fraud Detection"
+    ]
+  },
+  {
+    "achievement_id": "ach_020",
+    "title": "Blog/paper on automate compliance reporting",
+    "category": "Publication",
+    "date": "2023-05",
+    "description": "Constructed work that classify token contracts.",
+    "impact": "Improved precision by 84% and saved 52K in cost.",
+    "metrics": [
+      "92% improvement in recall",
+      "2.1M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Data Pipeline Design",
+      "Cloud Computing",
+      "Machine Learning"
+    ],
+    "related_projects": [
+      "lending_pool_liquidity_tracker_016",
+      "aave_scoring_model_043"
+    ],
+    "keywords": [
+      "Dashboarding",
+      "Risk Analytics",
+      "Smart Contracts",
+      "Algorithmic Trading",
+      "Time Series Forecasting",
+      "MLOps"
+    ]
+  },
+  {
+    "achievement_id": "ach_021",
+    "title": "AWS Data Certificate",
+    "category": "Certification",
+    "date": "2018-02",
+    "description": "Integrated work that surface at-risk loan positions.",
+    "impact": "Improved turnaround time by 31% and saved 6176 in cost.",
+    "metrics": [
+      "26% improvement in data freshness",
+      "14M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Dashboarding",
+      "SQL"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "MLOps",
+      "Smart Contract Analysis",
+      "DeFi",
+      "Quantitative Finance",
+      "On-chain Data"
+    ]
+  },
+  {
+    "achievement_id": "ach_022",
+    "title": "Outstanding Analyst Award",
+    "category": "Award",
+    "date": "2024-02",
+    "description": "Integrated work that score credit risk.",
+    "impact": "Improved false-positive rate by 44% and saved 9.2M in cost.",
+    "metrics": [
+      "22% improvement in latency",
+      "3M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Python",
+      "Statistical Modeling",
+      "Data Visualization",
+      "Prompt Engineering"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "Data Analytics",
+      "SQL",
+      "Time Series Forecasting"
+    ]
+  },
+  {
+    "achievement_id": "ach_023",
+    "title": "Outstanding Hackathon Award",
+    "category": "Award",
+    "date": "2023-05",
+    "description": "Accelerated work that optimize gas usage.",
+    "impact": "Improved data freshness by 38% and saved 7554 in cost.",
+    "metrics": [
+      "27% improvement in data freshness",
+      "239K users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Data Wrangling",
+      "Machine Learning",
+      "Smart Contract Analysis",
+      "SQL",
+      "Risk Modeling"
+    ],
+    "related_projects": [
+      "token_analytics_platform_009"
+    ],
+    "keywords": [
+      "Quantitative Finance",
+      "Deep Learning",
+      "Risk Analytics"
+    ]
+  },
+  {
+    "achievement_id": "ach_024",
+    "title": "Blog/paper on optimize gas usage",
+    "category": "Publication",
+    "date": "2024-06",
+    "description": "Built work that predict customer churn.",
+    "impact": "Improved turnaround time by 25% and saved 261K in cost.",
+    "metrics": [
+      "92% improvement in analyst hours",
+      "50M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Deep Learning",
+      "On-chain Data",
+      "Statistical Modeling",
+      "NLP"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "Model Deployment",
+      "Algorithmic Trading",
+      "Deep Learning",
+      "Data Visualization",
+      "On-chain Data",
+      "Risk Modeling"
+    ]
+  },
+  {
+    "achievement_id": "ach_025",
+    "title": "Shipped rank lending opportunities to production",
+    "category": "Milestone",
+    "date": "2019-05",
+    "description": "Improved work that detect anomalous wallet behavior.",
+    "impact": "Improved turnaround time by 81% and saved 431K in cost.",
+    "metrics": [
+      "24% improvement in data freshness",
+      "6.9M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Feature Engineering",
+      "SQL"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "Prompt Engineering",
+      "Machine Learning",
+      "Anomaly Detection"
+    ]
+  },
+  {
+    "achievement_id": "ach_026",
+    "title": "Shipped predict customer churn to production",
+    "category": "Milestone",
+    "date": "2024-06",
+    "description": "Automated work that automate compliance reporting.",
+    "impact": "Improved precision by 20% and saved 2774 in cost.",
+    "metrics": [
+      "23% improvement in false-positive rate",
+      "37M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Data Visualization",
+      "Prompt Engineering",
+      "Statistical Modeling"
+    ],
+    "related_projects": [
+      "lending_pool_churn_predictor_006"
+    ],
+    "keywords": [
+      "Data Wrangling",
+      "Data Analytics",
+      "Web3"
+    ]
+  },
+  {
+    "achievement_id": "ach_027",
+    "title": "Maintainer of a Time Series Forecasting library",
+    "category": "Open Source",
+    "date": "2024-11",
+    "description": "Improved work that predict customer churn.",
+    "impact": "Improved throughput by 18% and saved 5016 in cost.",
+    "metrics": [
+      "27% improvement in latency",
+      "47M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "SQL",
+      "Model Deployment",
+      "Dashboarding",
+      "Risk Modeling",
+      "Machine Learning"
+    ],
+    "related_projects": [
+      "lending_pool_liquidity_tracker_016"
+    ],
+    "keywords": [
+      "Data Engineering",
+      "Data Pipeline Design",
+      "Fintech",
+      "Python"
+    ]
+  },
+  {
+    "achievement_id": "ach_028",
+    "title": "Need-based Scholarship",
+    "category": "Scholarship",
+    "date": "2017-05",
+    "description": "Streamlined work that forecast short-term volatility.",
+    "impact": "Improved throughput by 78% and saved 1.2M in cost.",
+    "metrics": [
+      "46% improvement in turnaround time",
+      "26M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Cloud Computing",
+      "Smart Contract Analysis",
+      "MLOps",
+      "Risk Modeling",
+      "Statistical Modeling"
+    ],
+    "related_projects": [
+      "staking_churn_predictor_046"
+    ],
+    "keywords": [
+      "Recommender Systems",
+      "On-chain Data",
+      "MLOps",
+      "Dashboarding",
+      "Data Pipeline Design"
+    ]
+  },
+  {
+    "achievement_id": "ach_029",
+    "title": "Google Analytics Certificate",
+    "category": "Certification",
+    "date": "2018-03",
+    "description": "Enhanced work that forecast short-term volatility.",
+    "impact": "Improved coverage by 81% and saved 4.1M in cost.",
+    "metrics": [
+      "51% improvement in analyst hours",
+      "42M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Model Deployment",
+      "Data Visualization"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "On-chain Data",
+      "Machine Learning",
+      "Smart Contract Analysis",
+      "SQL"
+    ]
+  },
+  {
+    "achievement_id": "ach_030",
+    "title": "Maintainer of a Fraud Detection library",
+    "category": "Open Source",
+    "date": "2024-10",
+    "description": "Automated work that classify token contracts.",
+    "impact": "Improved precision by 83% and saved 1.7M in cost.",
+    "metrics": [
+      "30% improvement in recall",
+      "5.2M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Deep Learning",
+      "Machine Learning"
+    ],
+    "related_projects": [
+      "retail_scoring_model_048"
+    ],
+    "keywords": [
+      "Cloud Computing",
+      "Machine Learning",
+      "On-chain Analytics",
+      "Fraud Detection"
+    ]
+  },
+  {
+    "achievement_id": "ach_031",
+    "title": "Recognized for rank lending opportunities",
+    "category": "Recognition",
+    "date": "2021-05",
+    "description": "Automated work that forecast short-term volatility.",
+    "impact": "Improved accuracy by 16% and saved 1089 in cost.",
+    "metrics": [
+      "18% improvement in data freshness",
+      "1.1M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Cloud Computing",
+      "A/B Testing",
+      "Smart Contract Analysis",
+      "NLP"
+    ],
+    "related_projects": [
+      "derivatives_price_oracle_031"
+    ],
+    "keywords": [
+      "MLOps",
+      "Anomaly Detection",
+      "Risk Analytics",
+      "On-chain Data",
+      "A/B Testing"
+    ]
+  },
+  {
+    "achievement_id": "ach_032",
+    "title": "Top 10 place — DeFi Challenge",
+    "category": "Competition",
+    "date": "2019-03",
+    "description": "Deployed work that optimize gas usage.",
+    "impact": "Improved accuracy by 25% and saved 2547 in cost.",
+    "metrics": [
+      "54% improvement in accuracy",
+      "164K users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "SQL",
+      "On-chain Data"
+    ],
+    "related_projects": [
+      "token_analytics_platform_009"
+    ],
+    "keywords": [
+      "Prompt Engineering",
+      "On-chain Data",
+      "Python",
+      "MLOps",
+      "Machine Learning"
+    ]
+  },
+  {
+    "achievement_id": "ach_033",
+    "title": "2nd place — DeFi Challenge",
+    "category": "Competition",
+    "date": "2024-11",
+    "description": "Developed work that predict customer churn.",
+    "impact": "Improved latency by 16% and saved 632K in cost.",
+    "metrics": [
+      "74% improvement in data freshness",
+      "512K users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Anomaly Detection",
+      "ETL",
+      "Prompt Engineering",
+      "Model Deployment"
+    ],
+    "related_projects": [
+      "uniswap_scoring_model_039"
+    ],
+    "keywords": [
+      "Credit Scoring",
+      "Data Wrangling",
+      "Fintech"
+    ]
+  },
+  {
+    "achievement_id": "ach_034",
+    "title": "Recognized for classify token contracts",
+    "category": "Recognition",
+    "date": "2022-07",
+    "description": "Integrated work that rank lending opportunities.",
+    "impact": "Improved throughput by 37% and saved 19M in cost.",
+    "metrics": [
+      "32% improvement in coverage",
+      "943K users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Dashboarding",
+      "NLP",
+      "SQL",
+      "Cloud Computing",
+      "MLOps"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "ETL",
+      "Algorithmic Trading",
+      "Anomaly Detection",
+      "Machine Learning",
+      "Fintech",
+      "MLOps"
+    ]
+  },
+  {
+    "achievement_id": "ach_035",
+    "title": "Merit Scholarship",
+    "category": "Scholarship",
+    "date": "2024-04",
+    "description": "Integrated work that surface at-risk loan positions.",
+    "impact": "Improved throughput by 53% and saved 5343 in cost.",
+    "metrics": [
+      "48% improvement in analyst hours",
+      "9.3M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Python",
+      "Deep Learning",
+      "MLOps",
+      "ETL"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "NLP",
+      "SQL",
+      "Model Deployment",
+      "MLOps",
+      "Risk Modeling",
+      "ETL"
+    ]
+  },
+  {
+    "achievement_id": "ach_036",
+    "title": "Recognized for classify token contracts",
+    "category": "Recognition",
+    "date": "2024-06",
+    "description": "Implemented work that automate compliance reporting.",
+    "impact": "Improved data freshness by 43% and saved 474K in cost.",
+    "metrics": [
+      "49% improvement in accuracy",
+      "22M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Cloud Computing",
+      "On-chain Data",
+      "Data Pipeline Design"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "Smart Contracts",
+      "Anomaly Detection",
+      "Machine Learning",
+      "Smart Contract Analysis",
+      "On-chain Analytics",
+      "Feature Engineering"
+    ]
+  },
+  {
+    "achievement_id": "ach_037",
+    "title": "Recognized for classify token contracts",
+    "category": "Recognition",
+    "date": "2019-02",
+    "description": "Generated work that detect anomalous wallet behavior.",
+    "impact": "Improved recall by 19% and saved 7M in cost.",
+    "metrics": [
+      "16% improvement in data freshness",
+      "6921 users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Data Pipeline Design",
+      "Feature Engineering",
+      "Deep Learning"
+    ],
+    "related_projects": [
+      "uniswap_recommendation_system_010"
+    ],
+    "keywords": [
+      "MLOps",
+      "A/B Testing",
+      "NLP"
+    ]
+  },
+  {
+    "achievement_id": "ach_038",
+    "title": "Top Hackathon Award",
+    "category": "Award",
+    "date": "2019-09",
+    "description": "Built work that predict customer churn.",
+    "impact": "Improved turnaround time by 89% and saved 4845 in cost.",
+    "metrics": [
+      "11% improvement in turnaround time",
+      "51K users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Dashboarding",
+      "NLP",
+      "SQL"
+    ],
+    "related_projects": [
+      "nft_market_recommendation_system_044"
+    ],
+    "keywords": [
+      "Fraud Detection",
+      "Blockchain",
+      "Data Engineering"
+    ]
+  },
+  {
+    "achievement_id": "ach_039",
+    "title": "1st place — Quant Challenge",
+    "category": "Competition",
+    "date": "2025-07",
+    "description": "Automated work that rank lending opportunities.",
+    "impact": "Improved analyst hours by 40% and saved 6.3M in cost.",
+    "metrics": [
+      "91% improvement in precision",
+      "8485 users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Machine Learning",
+      "Data Visualization",
+      "Python"
+    ],
+    "related_projects": [
+      "lending_pool_churn_predictor_006"
+    ],
+    "keywords": [
+      "On-chain Data",
+      "Time Series Forecasting",
+      "Model Deployment",
+      "Risk Modeling"
+    ]
+  },
+  {
+    "achievement_id": "ach_040",
+    "title": "Recognized for rank lending opportunities",
+    "category": "Recognition",
+    "date": "2017-04",
+    "description": "Automated work that predict customer churn.",
+    "impact": "Improved recall by 71% and saved 2807 in cost.",
+    "metrics": [
+      "69% improvement in false-positive rate",
+      "5.3M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Model Deployment",
+      "Python"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "SQL",
+      "Model Deployment",
+      "Computer Vision",
+      "Data Analytics",
+      "Time Series Forecasting"
+    ]
+  },
+  {
+    "achievement_id": "ach_041",
+    "title": "2nd place — DeFi Challenge",
+    "category": "Competition",
+    "date": "2017-05",
+    "description": "Developed work that forecast short-term volatility.",
+    "impact": "Improved precision by 26% and saved 5.7M in cost.",
+    "metrics": [
+      "68% improvement in coverage",
+      "3947 users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Data Wrangling",
+      "SQL",
+      "Dashboarding",
+      "NLP"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "Risk Modeling",
+      "Statistical Modeling",
+      "Machine Learning",
+      "Data Analytics"
+    ]
+  },
+  {
+    "achievement_id": "ach_042",
+    "title": "Best Analyst Award",
+    "category": "Award",
+    "date": "2021-12",
+    "description": "Leveraged work that rank lending opportunities.",
+    "impact": "Improved precision by 11% and saved 5.3M in cost.",
+    "metrics": [
+      "91% improvement in accuracy",
+      "984K users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "ETL",
+      "Smart Contract Analysis"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "Quantitative Finance",
+      "Web3",
+      "Risk Analytics",
+      "Cloud Computing",
+      "Blockchain"
+    ]
+  },
+  {
+    "achievement_id": "ach_043",
+    "title": "Shipped optimize gas usage to production",
+    "category": "Milestone",
+    "date": "2022-05",
+    "description": "Optimized work that classify token contracts.",
+    "impact": "Improved false-positive rate by 60% and saved 98K in cost.",
+    "metrics": [
+      "50% improvement in throughput",
+      "8.7M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "MLOps",
+      "Anomaly Detection",
+      "Statistical Modeling",
+      "Model Deployment"
+    ],
+    "related_projects": [
+      "lending_pool_scoring_model_034"
+    ],
+    "keywords": [
+      "Time Series Forecasting",
+      "Data Wrangling",
+      "Risk Modeling",
+      "Machine Learning"
+    ]
+  },
+  {
+    "achievement_id": "ach_044",
+    "title": "Google Analytics Certificate",
+    "category": "Certification",
+    "date": "2020-11",
+    "description": "Built work that classify token contracts.",
+    "impact": "Improved latency by 49% and saved 8670 in cost.",
+    "metrics": [
+      "36% improvement in analyst hours",
+      "714K users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Statistical Modeling",
+      "Deep Learning",
+      "SQL",
+      "MLOps",
+      "Data Visualization"
+    ],
+    "related_projects": [
+      "token_analytics_platform_009"
+    ],
+    "keywords": [
+      "Model Deployment",
+      "NLP",
+      "Machine Learning"
+    ]
+  },
+  {
+    "achievement_id": "ach_045",
+    "title": "Recognized for automate compliance reporting",
+    "category": "Recognition",
+    "date": "2018-02",
+    "description": "Analyzed work that classify token contracts.",
+    "impact": "Improved latency by 62% and saved 46M in cost.",
+    "metrics": [
+      "57% improvement in throughput",
+      "4.4M users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Python",
+      "NLP",
+      "Cloud Computing",
+      "Smart Contract Analysis",
+      "SQL"
+    ],
+    "related_projects": [
+      "nft_market_recommendation_system_044"
+    ],
+    "keywords": [
+      "Data Analytics",
+      "Risk Analytics",
+      "Deep Learning",
+      "NLP",
+      "Fraud Detection",
+      "DeFi"
+    ]
+  },
+  {
+    "achievement_id": "ach_046",
+    "title": "Merit Scholarship",
+    "category": "Scholarship",
+    "date": "2018-08",
+    "description": "Deployed work that predict customer churn.",
+    "impact": "Improved recall by 85% and saved 340K in cost.",
+    "metrics": [
+      "86% improvement in turnaround time",
+      "562 users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "MLOps",
+      "Machine Learning"
+    ],
+    "related_projects": [
+      "dex_recommendation_system_017"
+    ],
+    "keywords": [
+      "Risk Analytics",
+      "Data Visualization",
+      "MLOps",
+      "Fraud Detection",
+      "Time Series Analysis",
+      "Fintech"
+    ]
+  },
+  {
+    "achievement_id": "ach_047",
+    "title": "Research Scholarship",
+    "category": "Scholarship",
+    "date": "2019-02",
+    "description": "Constructed work that classify token contracts.",
+    "impact": "Improved data freshness by 39% and saved 2993 in cost.",
+    "metrics": [
+      "13% improvement in precision",
+      "358K users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Data Visualization",
+      "Machine Learning",
+      "Statistical Modeling",
+      "Model Deployment",
+      "Dashboarding"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "MLOps",
+      "Blockchain",
+      "NLP",
+      "Python",
+      "Fintech",
+      "On-chain Analytics"
+    ]
+  },
+  {
+    "achievement_id": "ach_048",
+    "title": "Google ML Certificate",
+    "category": "Certification",
+    "date": "2022-08",
+    "description": "Deployed work that map liquidity flows.",
+    "impact": "Improved recall by 25% and saved 175K in cost.",
+    "metrics": [
+      "65% improvement in false-positive rate",
+      "279K users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Data Visualization",
+      "Data Pipeline Design",
+      "Python",
+      "Time Series Analysis",
+      "Deep Learning"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "Data Wrangling",
+      "Machine Learning",
+      "SQL",
+      "Blockchain",
+      "Data Visualization"
+    ]
+  },
+  {
+    "achievement_id": "ach_049",
+    "title": "Best Hackathon Award",
+    "category": "Award",
+    "date": "2020-11",
+    "description": "Leveraged work that classify token contracts.",
+    "impact": "Improved data freshness by 35% and saved 2.2M in cost.",
+    "metrics": [
+      "26% improvement in coverage",
+      "1214 users/records impacted"
+    ],
+    "skills_demonstrated": [
+      "Dashboarding",
+      "Machine Learning"
+    ],
+    "related_projects": [],
+    "keywords": [
+      "On-chain Analytics",
+      "Blockchain",
+      "A/B Testing",
+      "MLOps",
+      "Deep Learning",
+      "Data Visualization"
+    ]
+  }
+]

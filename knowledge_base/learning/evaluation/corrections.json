@@ -1,0 +1,65 @@
+[
+  {
+    "correction_id": "corr_006",
+    "agent_name": "evaluation",
+    "before": "Engineered a system that helped with map liquidity flows.",
+    "after": "Implemented a Fintech system that classify token contracts, improving latency by 26%.",
+    "feedback": "Name the domain explicitly.",
+    "reason": "Missing numeric metric (validation rule).",
+    "timestamp": "2024-04-20T10:45:00Z"
+  },
+  {
+    "correction_id": "corr_019",
+    "agent_name": "evaluation",
+    "before": "Improved a system that helped with score credit risk.",
+    "after": "Created a On-chain Analytics system that score credit risk, improving latency by 86%.",
+    "feedback": "Tighten to the word limit.",
+    "reason": "Missing numeric metric (validation rule).",
+    "timestamp": "2024-03-09T22:52:00Z"
+  },
+  {
+    "correction_id": "corr_024",
+    "agent_name": "evaluation",
+    "before": "Integrated a system that helped with score credit risk.",
+    "after": "Streamlined a Credit Scoring system that predict customer churn, improving data freshness by 9%.",
+    "feedback": "Name the domain explicitly.",
+    "reason": "Action-word repetition across lines.",
+    "timestamp": "2024-03-04T00:16:00Z"
+  },
+  {
+    "correction_id": "corr_025",
+    "agent_name": "evaluation",
+    "before": "Developed a system that helped with optimize gas usage.",
+    "after": "Leveraged a Data Engineering system that classify token contracts, improving latency by 31%.",
+    "feedback": "Avoid repeating the action verb.",
+    "reason": "Exceeded the 18-word limit.",
+    "timestamp": "2024-03-28T09:38:00Z"
+  },
+  {
+    "correction_id": "corr_027",
+    "agent_name": "evaluation",
+    "before": "Optimized a system that helped with classify token contracts.",
+    "after": "Deployed a On-chain Analytics system that classify token contracts, improving accuracy by 42%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Domain not stated.",
+    "timestamp": "2024-12-29T07:45:00Z"
+  },
+  {
+    "correction_id": "corr_039",
+    "agent_name": "evaluation",
+    "before": "Optimized a system that helped with automate compliance reporting.",
+    "after": "Accelerated a Algorithmic Trading system that score credit risk, improving false-positive rate by 88%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Domain not stated.",
+    "timestamp": "2024-01-03T12:29:00Z"
+  },
+  {
+    "correction_id": "corr_040",
+    "agent_name": "evaluation",
+    "before": "Optimized a system that helped with forecast short-term volatility.",
+    "after": "Analyzed a Data Analytics system that classify token contracts, improving precision by 60%.",
+    "feedback": "Name the domain explicitly.",
+    "reason": "Missing numeric metric (validation rule).",
+    "timestamp": "2024-08-19T10:39:00Z"
+  }
+]

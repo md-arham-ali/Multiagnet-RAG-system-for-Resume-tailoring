@@ -1,0 +1,2270 @@
+[
+  {
+    "skill_id": "skill_000",
+    "name": "JavaScript",
+    "category": "Data Tool",
+    "proficiency": "Advanced",
+    "years_of_experience": 1,
+    "description": "Applied JavaScript to forecast short-term volatility across multiple projects.",
+    "projects_used_in": [
+      "derivatives_price_oracle_031"
+    ],
+    "work_experience_used_in": [
+      "exp_041"
+    ],
+    "coursework_related": [
+      "Convex Optimization",
+      "Operating Systems"
+    ],
+    "evidence": [
+      {
+        "source": "work",
+        "description": "Used JavaScript to surface at-risk loan positions, improving accuracy by 11%."
+      },
+      {
+        "source": "work",
+        "description": "Used JavaScript to map liquidity flows, improving analyst hours by 56%."
+      }
+    ],
+    "interview_topics": [
+      "JavaScript internals",
+      "scaling JavaScript",
+      "JavaScript trade-offs"
+    ],
+    "subskills": [
+      "On-chain Data"
+    ],
+    "keywords": [
+      "Prompt Engineering",
+      "Data Visualization",
+      "On-chain Data",
+      "Model Deployment",
+      "MLOps",
+      "Anomaly Detection"
+    ]
+  },
+  {
+    "skill_id": "skill_001",
+    "name": "XGBoost",
+    "category": "ML Framework",
+    "proficiency": "Expert",
+    "years_of_experience": 2,
+    "description": "Applied XGBoost to score credit risk across multiple projects.",
+    "projects_used_in": [
+      "defi_lending_recommendation_system_022",
+      "cross_chain_churn_predictor_012",
+      "loan_anomaly_detector_021"
+    ],
+    "work_experience_used_in": [
+      "exp_003",
+      "exp_015",
+      "exp_014"
+    ],
+    "coursework_related": [
+      "Cloud Computing"
+    ],
+    "evidence": [
+      {
+        "source": "work",
+        "description": "Used XGBoost to optimize gas usage, improving false-positive rate by 80%."
+      }
+    ],
+    "interview_topics": [
+      "XGBoost internals"
+    ],
+    "subskills": [
+      "Python",
+      "Feature Engineering"
+    ],
+    "keywords": [
+      "Data Visualization",
+      "Risk Modeling",
+      "Statistical Modeling"
+    ]
+  },
+  {
+    "skill_id": "skill_002",
+    "name": "FastAPI",
+    "category": "Database",
+    "proficiency": "Beginner",
+    "years_of_experience": 6,
+    "description": "Applied FastAPI to predict customer churn across multiple projects.",
+    "projects_used_in": [
+      "crypto_forecasting_engine_018",
+      "cross_chain_wallet_profiler_008"
+    ],
+    "work_experience_used_in": [
+      "exp_030",
+      "exp_042",
+      "exp_007"
+    ],
+    "coursework_related": [
+      "Database Systems",
+      "Software Engineering",
+      "Probability Theory"
+    ],
+    "evidence": [
+      {
+        "source": "work",
+        "description": "Used FastAPI to classify token contracts, improving throughput by 36%."
+      },
+      {
+        "source": "competition",
+        "description": "Used FastAPI to automate compliance reporting, improving throughput by 78%."
+      },
+      {
+        "source": "course",
+        "description": "Used FastAPI to rank lending opportunities, improving false-positive rate by 42%."
+      }
+    ],
+    "interview_topics": [
+      "FastAPI internals",
+      "debugging FastAPI"
+    ],
+    "subskills": [
+      "Risk Modeling",
+      "Model Deployment",
+      "NLP"
+    ],
+    "keywords": [
+      "Python",
+      "Machine Learning",
+      "Data Visualization",
+      "NLP",
+      "Deep Learning"
+    ]
+  },
+  {
+    "skill_id": "skill_003",
+    "name": "web3.py",
+    "category": "Database",
+    "proficiency": "Intermediate",
+    "years_of_experience": 2,
+    "description": "Applied web3.py to predict customer churn across multiple projects.",
+    "projects_used_in": [
+      "uniswap_risk_monitor_002",
+      "derivatives_yield_optimizer_015"
+    ],
+    "work_experience_used_in": [
+      "exp_041",
+      "exp_048",
+      "exp_029"
+    ],
+    "coursework_related": [
+      "Machine Learning"
+    ],
+    "evidence": [
+      {
+        "source": "project",
+        "description": "Used web3.py to automate compliance reporting, improving precision by 83%."
+      },
+      {
+        "source": "competition",
+        "description": "Used web3.py to automate compliance reporting, improving latency by 15%."
+      }
+    ],
+    "interview_topics": [
+      "debugging web3.py",
+      "web3.py trade-offs"
+    ],
+    "subskills": [
+      "On-chain Data"
+    ],
+    "keywords": [
+      "Risk Modeling",
+      "SQL",
+      "Deep Learning",
+      "Machine Learning",
+      "Smart Contract Analysis",
+      "Statistical Modeling"
+    ]
+  },
+  {
+    "skill_id": "skill_004",
+    "name": "Anomaly Detection",
+    "category": "Soft Skill",
+    "proficiency": "Beginner",
+    "years_of_experience": 5,
+    "description": "Applied Anomaly Detection to surface at-risk loan positions across multiple projects.",
+    "projects_used_in": [
+      "derivatives_trading_bot_001",
+      "credit_forecasting_engine_038",
+      "retail_scoring_model_048"
+    ],
+    "work_experience_used_in": [
+      "exp_016",
+      "exp_048"
+    ],
+    "coursework_related": [
+      "Financial Mathematics",
+      "Machine Learning",
+      "Natural Language Processing"
+    ],
+    "evidence": [
+      {
+        "source": "competition",
+        "description": "Used Anomaly Detection to optimize gas usage, improving accuracy by 21%."
+      },
+      {
+        "source": "competition",
+        "description": "Used Anomaly Detection to automate compliance reporting, improving false-positive rate by 67%."
+      },
+      {
+        "source": "competition",
+        "description": "Used Anomaly Detection to score credit risk, improving analyst hours by 74%."
+      }
+    ],
+    "interview_topics": [
+      "Anomaly Detection trade-offs",
+      "debugging Anomaly Detection"
+    ],
+    "subskills": [
+      "Time Series Analysis",
+      "Statistical Modeling",
+      "SQL",
+      "Data Wrangling"
+    ],
+    "keywords": [
+      "Python",
+      "Deep Learning",
+      "MLOps",
+      "Data Wrangling",
+      "ETL"
+    ]
+  },
+  {
+    "skill_id": "skill_005",
+    "name": "A/B Testing",
+    "category": "Blockchain",
+    "proficiency": "Expert",
+    "years_of_experience": 1,
+    "description": "Applied A/B Testing to score credit risk across multiple projects.",
+    "projects_used_in": [
+      "cross_chain_token_classifier_023",
+      "dex_recommendation_system_017",
+      "uniswap_churn_predictor_042"
+    ],
+    "work_experience_used_in": [
+      "exp_041",
+      "exp_049"
+    ],
+    "coursework_related": [
+      "Machine Learning",
+      "Statistical Inference",
+      "Distributed Systems"
+    ],
+    "evidence": [
+      {
+        "source": "course",
+        "description": "Used A/B Testing to automate compliance reporting, improving coverage by 64%."
+      },
+      {
+        "source": "competition",
+        "description": "Used A/B Testing to surface at-risk loan positions, improving data freshness by 9%."
+      },
+      {
+        "source": "competition",
+        "description": "Used A/B Testing to surface at-risk loan positions, improving throughput by 69%."
+      }
+    ],
+    "interview_topics": [
+      "A/B Testing trade-offs",
+      "debugging A/B Testing",
+      "A/B Testing internals"
+    ],
+    "subskills": [
+      "Data Wrangling"
+    ],
+    "keywords": [
+      "Python",
+      "Risk Modeling",
+      "Statistical Modeling",
+      "Time Series Analysis",
+      "A/B Testing"
+    ]
+  },
+  {
+    "skill_id": "skill_006",
+    "name": "Pandas",
+    "category": "Data Tool",
+    "proficiency": "Intermediate",
+    "years_of_experience": 3,
+    "description": "Applied Pandas to detect anomalous wallet behavior across multiple projects.",
+    "projects_used_in": [
+      "customer_forecasting_engine_014"
+    ],
+    "work_experience_used_in": [],
+    "coursework_related": [
+      "Data Structures and Algorithms",
+      "Blockchain and Cryptocurrencies",
+      "Reinforcement Learning"
+    ],
+    "evidence": [
+      {
+        "source": "course",
+        "description": "Used Pandas to surface at-risk loan positions, improving false-positive rate by 37%."
+      },
+      {
+        "source": "project",
+        "description": "Used Pandas to automate compliance reporting, improving precision by 10%."
+      }
+    ],
+    "interview_topics": [
+      "scaling Pandas",
+      "debugging Pandas",
+      "Pandas internals"
+    ],
+    "subskills": [
+      "Smart Contract Analysis",
+      "Data Visualization"
+    ],
+    "keywords": [
+      "NLP",
+      "Risk Modeling",
+      "Feature Engineering"
+    ]
+  },
+  {
+    "skill_id": "skill_007",
+    "name": "Prompt Engineering",
+    "category": "Visualization",
+    "proficiency": "Beginner",
+    "years_of_experience": 4,
+    "description": "Applied Prompt Engineering to rank lending opportunities across multiple projects.",
+    "projects_used_in": [
+      "derivatives_sentiment_tracker_036",
+      "cross_chain_token_classifier_023",
+      "aave_scoring_model_043"
+    ],
+    "work_experience_used_in": [
+      "exp_004",
+      "exp_041",
+      "exp_027"
+    ],
+    "coursework_related": [
+      "Deep Learning",
+      "Machine Learning"
+    ],
+    "evidence": [
+      {
+        "source": "course",
+        "description": "Used Prompt Engineering to predict customer churn, improving turnaround time by 91%."
+      },
+      {
+        "source": "course",
+        "description": "Used Prompt Engineering to classify token contracts, improving precision by 87%."
+      }
+    ],
+    "interview_topics": [
+      "Prompt Engineering trade-offs"
+    ],
+    "subskills": [
+      "Python",
+      "ETL",
+      "Statistical Modeling"
+    ],
+    "keywords": [
+      "Feature Engineering",
+      "Dashboarding",
+      "Machine Learning"
+    ]
+  },
+  {
+    "skill_id": "skill_008",
+    "name": "Java",
+    "category": "Domain Knowledge",
+    "proficiency": "Advanced",
+    "years_of_experience": 4,
+    "description": "Applied Java to optimize gas usage across multiple projects.",
+    "projects_used_in": [
+      "uniswap_churn_predictor_042"
+    ],
+    "work_experience_used_in": [
+      "exp_024"
+    ],
+    "coursework_related": [
+      "Database Systems",
+      "Software Engineering",
+      "Linear Algebra"
+    ],
+    "evidence": [
+      {
+        "source": "competition",
+        "description": "Used Java to map liquidity flows, improving latency by 75%."
+      },
+      {
+        "source": "project",
+        "description": "Used Java to score credit risk, improving data freshness by 92%."
+      },
+      {
+        "source": "competition",
+        "description": "Used Java to predict customer churn, improving precision by 32%."
+      }
+    ],
+    "interview_topics": [
+      "scaling Java",
+      "Java internals",
+      "Java trade-offs"
+    ],
+    "subskills": [
+      "Smart Contract Analysis",
+      "Time Series Analysis"
+    ],
+    "keywords": [
+      "ETL",
+      "Feature Engineering",
+      "Deep Learning",
+      "Risk Modeling",
+      "On-chain Data",
+      "Cloud Computing"
+    ]
+  },
+  {
+    "skill_id": "skill_009",
+    "name": "Machine Learning",
+    "category": "ML Framework",
+    "proficiency": "Advanced",
+    "years_of_experience": 2,
+    "description": "Applied Machine Learning to predict customer churn across multiple projects.",
+    "projects_used_in": [
+      "credit_forecasting_engine_038",
+      "customer_forecasting_engine_014",
+      "credit_price_oracle_028",
+      "defi_lending_liquidity_tracker_026"
+    ],
+    "work_experience_used_in": [
+      "exp_036"
+    ],
+    "coursework_related": [
+      "Data Mining"
+    ],
+    "evidence": [
+      {
+        "source": "competition",
+        "description": "Used Machine Learning to score credit risk, improving coverage by 85%."
+      }
+    ],
+    "interview_topics": [
+      "scaling Machine Learning",
+      "Machine Learning trade-offs"
+    ],
+    "subskills": [
+      "Data Visualization",
+      "Feature Engineering",
+      "Risk Modeling"
+    ],
+    "keywords": [
+      "NLP",
+      "Data Visualization",
+      "Data Pipeline Design",
+      "A/B Testing",
+      "Machine Learning",
+      "Statistical Modeling"
+    ]
+  },
+  {
+    "skill_id": "skill_010",
+    "name": "SQL",
+    "category": "DevOps",
+    "proficiency": "Beginner",
+    "years_of_experience": 3,
+    "description": "Applied SQL to forecast short-term volatility across multiple projects.",
+    "projects_used_in": [
+      "lending_pool_liquidity_tracker_016",
+      "retail_scoring_model_048",
+      "wallet_analytics_platform_035",
+      "credit_fraud_detector_045"
+    ],
+    "work_experience_used_in": [
+      "exp_047",
+      "exp_006",
+      "exp_008"
+    ],
+    "coursework_related": [
+      "Convex Optimization"
+    ],
+    "evidence": [
+      {
+        "source": "work",
+        "description": "Used SQL to forecast short-term volatility, improving coverage by 73%."
+      }
+    ],
+    "interview_topics": [
+      "debugging SQL",
+      "SQL trade-offs",
+      "scaling SQL"
+    ],
+    "subskills": [
+      "On-chain Data",
+      "Data Pipeline Design"
+    ],
+    "keywords": [
+      "Prompt Engineering",
+      "Data Wrangling",
+      "Feature Engineering",
+      "ETL"
+    ]
+  },
+  {
+    "skill_id": "skill_011",
+    "name": "Smart Contract Analysis",
+    "category": "Domain Knowledge",
+    "proficiency": "Beginner",
+    "years_of_experience": 1,
+    "description": "Applied Smart Contract Analysis to forecast short-term volatility across multiple projects.",
+    "projects_used_in": [
+      "credit_price_oracle_028",
+      "defi_lending_liquidity_tracker_026",
+      "defi_lending_trading_bot_040"
+    ],
+    "work_experience_used_in": [
+      "exp_047",
+      "exp_027",
+      "exp_018"
+    ],
+    "coursework_related": [
+      "Deep Learning",
+      "Blockchain and Cryptocurrencies"
+    ],
+    "evidence": [
+      {
+        "source": "project",
+        "description": "Used Smart Contract Analysis to detect anomalous wallet behavior, improving accuracy by 83%."
+      },
+      {
+        "source": "course",
+        "description": "Used Smart Contract Analysis to classify token contracts, improving turnaround time by 49%."
+      },
+      {
+        "source": "competition",
+        "description": "Used Smart Contract Analysis to detect anomalous wallet behavior, improving false-positive rate by 83%."
+      }
+    ],
+    "interview_topics": [
+      "Smart Contract Analysis internals",
+      "debugging Smart Contract Analysis"
+    ],
+    "subskills": [
+      "NLP",
+      "Cloud Computing",
+      "Python"
+    ],
+    "keywords": [
+      "Data Wrangling",
+      "ETL",
+      "Smart Contract Analysis",
+      "Anomaly Detection",
+      "Statistical Modeling",
+      "Data Visualization"
+    ]
+  },
+  {
+    "skill_id": "skill_012",
+    "name": "LightGBM",
+    "category": "Programming Language",
+    "proficiency": "Intermediate",
+    "years_of_experience": 7,
+    "description": "Applied LightGBM to map liquidity flows across multiple projects.",
+    "projects_used_in": [
+      "derivatives_sentiment_tracker_036",
+      "uniswap_scoring_model_039",
+      "lending_pool_recommendation_system_020"
+    ],
+    "work_experience_used_in": [],
+    "coursework_related": [
+      "Distributed Systems",
+      "Blockchain and Cryptocurrencies"
+    ],
+    "evidence": [
+      {
+        "source": "course",
+        "description": "Used LightGBM to automate compliance reporting, improving data freshness by 64%."
+      }
+    ],
+    "interview_topics": [
+      "LightGBM trade-offs"
+    ],
+    "subskills": [
+      "Data Wrangling",
+      "Model Deployment",
+      "Data Visualization"
+    ],
+    "keywords": [
+      "Anomaly Detection",
+      "Time Series Analysis",
+      "Data Visualization",
+      "Feature Engineering"
+    ]
+  },
+  {
+    "skill_id": "skill_013",
+    "name": "ETL",
+    "category": "Cloud Platform",
+    "proficiency": "Intermediate",
+    "years_of_experience": 1,
+    "description": "Applied ETL to score credit risk across multiple projects.",
+    "projects_used_in": [
+      "lending_pool_scoring_model_034"
+    ],
+    "work_experience_used_in": [
+      "exp_000"
+    ],
+    "coursework_related": [
+      "Machine Learning",
+      "Big Data Analytics"
+    ],
+    "evidence": [
+      {
+        "source": "course",
+        "description": "Used ETL to score credit risk, improving turnaround time by 64%."
+      }
+    ],
+    "interview_topics": [
+      "ETL trade-offs",
+      "debugging ETL",
+      "scaling ETL"
+    ],
+    "subskills": [
+      "Data Visualization"
+    ],
+    "keywords": [
+      "On-chain Data",
+      "A/B Testing",
+      "Time Series Analysis",
+      "Python",
+      "Data Visualization",
+      "Model Deployment"
+    ]
+  },
+  {
+    "skill_id": "skill_014",
+    "name": "On-chain Data",
+    "category": "ML Framework",
+    "proficiency": "Advanced",
+    "years_of_experience": 2,
+    "description": "Applied On-chain Data to rank lending opportunities across multiple projects.",
+    "projects_used_in": [
+      "lending_pool_recommendation_system_020"
+    ],
+    "work_experience_used_in": [
+      "exp_032"
+    ],
+    "coursework_related": [
+      "Probability Theory",
+      "Computer Networks"
+    ],
+    "evidence": [
+      {
+        "source": "project",
+        "description": "Used On-chain Data to predict customer churn, improving accuracy by 63%."
+      },
+      {
+        "source": "project",
+        "description": "Used On-chain Data to map liquidity flows, improving throughput by 32%."
+      },
+      {
+        "source": "project",
+        "description": "Used On-chain Data to surface at-risk loan positions, improving recall by 25%."
+      }
+    ],
+    "interview_topics": [
+      "debugging On-chain Data",
+      "On-chain Data internals",
+      "scaling On-chain Data"
+    ],
+    "subskills": [
+      "NLP",
+      "Statistical Modeling",
+      "Machine Learning"
+    ],
+    "keywords": [
+      "Data Wrangling",
+      "Data Visualization",
+      "Machine Learning",
+      "Python",
+      "NLP",
+      "Model Deployment"
+    ]
+  },
+  {
+    "skill_id": "skill_015",
+    "name": "Feature Engineering",
+    "category": "Programming Language",
+    "proficiency": "Expert",
+    "years_of_experience": 2,
+    "description": "Applied Feature Engineering to classify token contracts across multiple projects.",
+    "projects_used_in": [
+      "credit_fraud_detector_045",
+      "market_portfolio_analyzer_011"
+    ],
+    "work_experience_used_in": [],
+    "coursework_related": [
+      "Probability Theory",
+      "Time Series Analysis"
+    ],
+    "evidence": [
+      {
+        "source": "work",
+        "description": "Used Feature Engineering to predict customer churn, improving data freshness by 75%."
+      },
+      {
+        "source": "work",
+        "description": "Used Feature Engineering to automate compliance reporting, improving recall by 45%."
+      },
+      {
+        "source": "competition",
+        "description": "Used Feature Engineering to classify token contracts, improving turnaround time by 84%."
+      }
+    ],
+    "interview_topics": [
+      "debugging Feature Engineering",
+      "Feature Engineering trade-offs"
+    ],
+    "subskills": [
+      "Time Series Analysis"
+    ],
+    "keywords": [
+      "Data Wrangling",
+      "On-chain Data",
+      "Risk Modeling"
+    ]
+  },
+  {
+    "skill_id": "skill_016",
+    "name": "Solidity",
+    "category": "Domain Knowledge",
+    "proficiency": "Intermediate",
+    "years_of_experience": 7,
+    "description": "Applied Solidity to forecast short-term volatility across multiple projects.",
+    "projects_used_in": [
+      "loan_dashboard_029",
+      "lending_pool_recommendation_system_020"
+    ],
+    "work_experience_used_in": [],
+    "coursework_related": [
+      "Time Series Analysis",
+      "Deep Learning"
+    ],
+    "evidence": [
+      {
+        "source": "competition",
+        "description": "Used Solidity to score credit risk, improving turnaround time by 38%."
+      },
+      {
+        "source": "project",
+        "description": "Used Solidity to automate compliance reporting, improving precision by 72%."
+      }
+    ],
+    "interview_topics": [
+      "debugging Solidity"
+    ],
+    "subskills": [
+      "Data Pipeline Design"
+    ],
+    "keywords": [
+      "Time Series Analysis",
+      "Anomaly Detection",
+      "ETL",
+      "On-chain Data",
+      "Smart Contract Analysis"
+    ]
+  },
+  {
+    "skill_id": "skill_017",
+    "name": "spaCy",
+    "category": "DevOps",
+    "proficiency": "Expert",
+    "years_of_experience": 7,
+    "description": "Applied spaCy to automate compliance reporting across multiple projects.",
+    "projects_used_in": [
+      "dex_recommendation_system_017"
+    ],
+    "work_experience_used_in": [
+      "exp_046",
+      "exp_014",
+      "exp_021"
+    ],
+    "coursework_related": [
+      "Data Structures and Algorithms",
+      "Distributed Systems",
+      "Computer Networks"
+    ],
+    "evidence": [
+      {
+        "source": "work",
+        "description": "Used spaCy to score credit risk, improving coverage by 76%."
+      },
+      {
+        "source": "work",
+        "description": "Used spaCy to forecast short-term volatility, improving analyst hours by 86%."
+      }
+    ],
+    "interview_topics": [
+      "spaCy trade-offs",
+      "scaling spaCy"
+    ],
+    "subskills": [
+      "SQL"
+    ],
+    "keywords": [
+      "Python",
+      "ETL",
+      "Cloud Computing",
+      "MLOps",
+      "Prompt Engineering",
+      "SQL"
+    ]
+  },
+  {
+    "skill_id": "skill_018",
+    "name": "NumPy",
+    "category": "Visualization",
+    "proficiency": "Intermediate",
+    "years_of_experience": 6,
+    "description": "Applied NumPy to map liquidity flows across multiple projects.",
+    "projects_used_in": [
+      "uniswap_recommendation_system_010",
+      "lending_pool_scoring_model_034"
+    ],
+    "work_experience_used_in": [
+      "exp_045",
+      "exp_014",
+      "exp_018"
+    ],
+    "coursework_related": [
+      "Big Data Analytics"
+    ],
+    "evidence": [
+      {
+        "source": "competition",
+        "description": "Used NumPy to rank lending opportunities, improving false-positive rate by 39%."
+      },
+      {
+        "source": "project",
+        "description": "Used NumPy to surface at-risk loan positions, improving accuracy by 75%."
+      }
+    ],
+    "interview_topics": [
+      "debugging NumPy"
+    ],
+    "subskills": [
+      "Python",
+      "Machine Learning",
+      "ETL",
+      "SQL"
+    ],
+    "keywords": [
+      "Model Deployment",
+      "Prompt Engineering",
+      "Deep Learning",
+      "SQL"
+    ]
+  },
+  {
+    "skill_id": "skill_019",
+    "name": "LangChain",
+    "category": "Database",
+    "proficiency": "Beginner",
+    "years_of_experience": 7,
+    "description": "Applied LangChain to optimize gas usage across multiple projects.",
+    "projects_used_in": [
+      "crypto_data_pipeline_047",
+      "dex_recommendation_system_017"
+    ],
+    "work_experience_used_in": [],
+    "coursework_related": [
+      "Database Systems"
+    ],
+    "evidence": [
+      {
+        "source": "competition",
+        "description": "Used LangChain to surface at-risk loan positions, improving accuracy by 77%."
+      },
+      {
+        "source": "work",
+        "description": "Used LangChain to forecast short-term volatility, improving analyst hours by 58%."
+      },
+      {
+        "source": "work",
+        "description": "Used LangChain to score credit risk, improving precision by 49%."
+      }
+    ],
+    "interview_topics": [
+      "LangChain internals",
+      "LangChain trade-offs"
+    ],
+    "subskills": [
+      "A/B Testing",
+      "Deep Learning",
+      "Data Visualization"
+    ],
+    "keywords": [
+      "Model Deployment",
+      "Data Pipeline Design",
+      "A/B Testing",
+      "Smart Contract Analysis",
+      "Data Wrangling"
+    ]
+  },
+  {
+    "skill_id": "skill_020",
+    "name": "Data Pipeline Design",
+    "category": "Soft Skill",
+    "proficiency": "Beginner",
+    "years_of_experience": 4,
+    "description": "Applied Data Pipeline Design to optimize gas usage across multiple projects.",
+    "projects_used_in": [
+      "defi_lending_dashboard_030",
+      "crypto_forecasting_engine_018",
+      "nft_market_recommendation_system_044"
+    ],
+    "work_experience_used_in": [
+      "exp_024"
+    ],
+    "coursework_related": [
+      "Operating Systems"
+    ],
+    "evidence": [
+      {
+        "source": "competition",
+        "description": "Used Data Pipeline Design to predict customer churn, improving false-positive rate by 21%."
+      },
+      {
+        "source": "competition",
+        "description": "Used Data Pipeline Design to rank lending opportunities, improving analyst hours by 11%."
+      },
+      {
+        "source": "competition",
+        "description": "Used Data Pipeline Design to rank lending opportunities, improving data freshness by 55%."
+      }
+    ],
+    "interview_topics": [
+      "Data Pipeline Design internals",
+      "scaling Data Pipeline Design"
+    ],
+    "subskills": [
+      "Cloud Computing",
+      "Statistical Modeling",
+      "Anomaly Detection"
+    ],
+    "keywords": [
+      "Feature Engineering",
+      "MLOps",
+      "Statistical Modeling"
+    ]
+  },
+  {
+    "skill_id": "skill_021",
+    "name": "TensorFlow",
+    "category": "Cloud Platform",
+    "proficiency": "Expert",
+    "years_of_experience": 4,
+    "description": "Applied TensorFlow to forecast short-term volatility across multiple projects.",
+    "projects_used_in": [
+      "payments_data_pipeline_025",
+      "uniswap_scoring_model_039"
+    ],
+    "work_experience_used_in": [
+      "exp_033",
+      "exp_046",
+      "exp_036"
+    ],
+    "coursework_related": [
+      "Data Structures and Algorithms"
+    ],
+    "evidence": [
+      {
+        "source": "course",
+        "description": "Used TensorFlow to optimize gas usage, improving precision by 51%."
+      },
+      {
+        "source": "work",
+        "description": "Used TensorFlow to surface at-risk loan positions, improving throughput by 80%."
+      }
+    ],
+    "interview_topics": [
+      "debugging TensorFlow",
+      "TensorFlow internals",
+      "TensorFlow trade-offs"
+    ],
+    "subskills": [
+      "Data Pipeline Design",
+      "NLP"
+    ],
+    "keywords": [
+      "ETL",
+      "Model Deployment",
+      "Deep Learning",
+      "Prompt Engineering",
+      "Risk Modeling",
+      "A/B Testing"
+    ]
+  },
+  {
+    "skill_id": "skill_022",
+    "name": "Scala",
+    "category": "Visualization",
+    "proficiency": "Beginner",
+    "years_of_experience": 2,
+    "description": "Applied Scala to optimize gas usage across multiple projects.",
+    "projects_used_in": [
+      "wallet_fraud_detector_024"
+    ],
+    "work_experience_used_in": [
+      "exp_048"
+    ],
+    "coursework_related": [
+      "Blockchain and Cryptocurrencies"
+    ],
+    "evidence": [
+      {
+        "source": "project",
+        "description": "Used Scala to detect anomalous wallet behavior, improving recall by 64%."
+      },
+      {
+        "source": "project",
+        "description": "Used Scala to surface at-risk loan positions, improving turnaround time by 71%."
+      },
+      {
+        "source": "work",
+        "description": "Used Scala to map liquidity flows, improving data freshness by 25%."
+      }
+    ],
+    "interview_topics": [
+      "debugging Scala",
+      "Scala trade-offs",
+      "Scala internals"
+    ],
+    "subskills": [
+      "Data Visualization",
+      "Risk Modeling",
+      "ETL"
+    ],
+    "keywords": [
+      "NLP",
+      "ETL",
+      "Dashboarding",
+      "Cloud Computing",
+      "Data Pipeline Design"
+    ]
+  },
+  {
+    "skill_id": "skill_023",
+    "name": "R",
+    "category": "Data Tool",
+    "proficiency": "Intermediate",
+    "years_of_experience": 5,
+    "description": "Applied R to map liquidity flows across multiple projects.",
+    "projects_used_in": [
+      "uniswap_scoring_model_039",
+      "credit_fraud_detector_045"
+    ],
+    "work_experience_used_in": [
+      "exp_033",
+      "exp_038"
+    ],
+    "coursework_related": [
+      "Operating Systems",
+      "Computer Networks"
+    ],
+    "evidence": [
+      {
+        "source": "course",
+        "description": "Used R to detect anomalous wallet behavior, improving coverage by 75%."
+      }
+    ],
+    "interview_topics": [
+      "debugging R",
+      "R internals",
+      "R trade-offs"
+    ],
+    "subskills": [
+      "Machine Learning",
+      "Statistical Modeling",
+      "NLP",
+      "Feature Engineering"
+    ],
+    "keywords": [
+      "Data Wrangling",
+      "Prompt Engineering",
+      "Machine Learning"
+    ]
+  },
+  {
+    "skill_id": "skill_024",
+    "name": "Scikit-Learn",
+    "category": "Cloud Platform",
+    "proficiency": "Beginner",
+    "years_of_experience": 8,
+    "description": "Applied Scikit-Learn to predict customer churn across multiple projects.",
+    "projects_used_in": [
+      "cross_chain_analytics_platform_003"
+    ],
+    "work_experience_used_in": [
+      "exp_038",
+      "exp_010",
+      "exp_004"
+    ],
+    "coursework_related": [
+      "Data Mining",
+      "Linear Algebra"
+    ],
+    "evidence": [
+      {
+        "source": "project",
+        "description": "Used Scikit-Learn to rank lending opportunities, improving precision by 44%."
+      },
+      {
+        "source": "competition",
+        "description": "Used Scikit-Learn to score credit risk, improving precision by 55%."
+      }
+    ],
+    "interview_topics": [
+      "debugging Scikit-Learn",
+      "Scikit-Learn trade-offs",
+      "Scikit-Learn internals"
+    ],
+    "subskills": [
+      "Dashboarding"
+    ],
+    "keywords": [
+      "Feature Engineering",
+      "Machine Learning",
+      "Time Series Analysis",
+      "Statistical Modeling"
+    ]
+  },
+  {
+    "skill_id": "skill_025",
+    "name": "Matplotlib",
+    "category": "Database",
+    "proficiency": "Beginner",
+    "years_of_experience": 3,
+    "description": "Applied Matplotlib to map liquidity flows across multiple projects.",
+    "projects_used_in": [
+      "loan_anomaly_detector_021",
+      "derivatives_sentiment_tracker_036",
+      "staking_forecasting_engine_049",
+      "on_chain_data_pipeline_037"
+    ],
+    "work_experience_used_in": [
+      "exp_047",
+      "exp_039"
+    ],
+    "coursework_related": [
+      "Operating Systems",
+      "Financial Mathematics",
+      "Blockchain and Cryptocurrencies"
+    ],
+    "evidence": [
+      {
+        "source": "work",
+        "description": "Used Matplotlib to rank lending opportunities, improving latency by 86%."
+      }
+    ],
+    "interview_topics": [
+      "Matplotlib trade-offs"
+    ],
+    "subskills": [
+      "NLP",
+      "SQL"
+    ],
+    "keywords": [
+      "Python",
+      "SQL",
+      "Data Visualization",
+      "NLP",
+      "Risk Modeling"
+    ]
+  },
+  {
+    "skill_id": "skill_026",
+    "name": "Deep Learning",
+    "category": "Soft Skill",
+    "proficiency": "Expert",
+    "years_of_experience": 6,
+    "description": "Applied Deep Learning to automate compliance reporting across multiple projects.",
+    "projects_used_in": [
+      "derivatives_yield_optimizer_015"
+    ],
+    "work_experience_used_in": [
+      "exp_024",
+      "exp_049",
+      "exp_045"
+    ],
+    "coursework_related": [
+      "Big Data Analytics",
+      "Distributed Systems"
+    ],
+    "evidence": [
+      {
+        "source": "course",
+        "description": "Used Deep Learning to map liquidity flows, improving latency by 85%."
+      },
+      {
+        "source": "work",
+        "description": "Used Deep Learning to detect anomalous wallet behavior, improving precision by 26%."
+      },
+      {
+        "source": "competition",
+        "description": "Used Deep Learning to map liquidity flows, improving data freshness by 70%."
+      }
+    ],
+    "interview_topics": [
+      "scaling Deep Learning",
+      "debugging Deep Learning",
+      "Deep Learning internals"
+    ],
+    "subskills": [
+      "Anomaly Detection",
+      "Smart Contract Analysis",
+      "Machine Learning",
+      "SQL"
+    ],
+    "keywords": [
+      "Risk Modeling",
+      "Anomaly Detection",
+      "Cloud Computing",
+      "On-chain Data",
+      "Machine Learning"
+    ]
+  },
+  {
+    "skill_id": "skill_027",
+    "name": "Data Wrangling",
+    "category": "Blockchain",
+    "proficiency": "Intermediate",
+    "years_of_experience": 7,
+    "description": "Applied Data Wrangling to predict customer churn across multiple projects.",
+    "projects_used_in": [
+      "crypto_data_pipeline_047",
+      "wallet_anomaly_detector_000"
+    ],
+    "work_experience_used_in": [
+      "exp_028"
+    ],
+    "coursework_related": [
+      "Reinforcement Learning",
+      "Financial Mathematics"
+    ],
+    "evidence": [
+      {
+        "source": "course",
+        "description": "Used Data Wrangling to predict customer churn, improving latency by 55%."
+      }
+    ],
+    "interview_topics": [
+      "Data Wrangling internals",
+      "scaling Data Wrangling"
+    ],
+    "subskills": [
+      "Python",
+      "Anomaly Detection",
+      "Data Wrangling"
+    ],
+    "keywords": [
+      "Smart Contract Analysis",
+      "SQL",
+      "Time Series Analysis",
+      "Model Deployment",
+      "Anomaly Detection",
+      "Data Wrangling"
+    ]
+  },
+  {
+    "skill_id": "skill_028",
+    "name": "Risk Modeling",
+    "category": "DevOps",
+    "proficiency": "Expert",
+    "years_of_experience": 8,
+    "description": "Applied Risk Modeling to detect anomalous wallet behavior across multiple projects.",
+    "projects_used_in": [
+      "crypto_data_pipeline_047",
+      "staking_network_mapper_041",
+      "retail_scoring_model_048",
+      "lending_pool_scoring_model_034"
+    ],
+    "work_experience_used_in": [],
+    "coursework_related": [
+      "Big Data Analytics"
+    ],
+    "evidence": [
+      {
+        "source": "work",
+        "description": "Used Risk Modeling to detect anomalous wallet behavior, improving coverage by 18%."
+      }
+    ],
+    "interview_topics": [
+      "Risk Modeling internals",
+      "debugging Risk Modeling"
+    ],
+    "subskills": [
+      "Anomaly Detection",
+      "Python",
+      "Cloud Computing",
+      "Data Visualization"
+    ],
+    "keywords": [
+      "Machine Learning",
+      "Model Deployment",
+      "Dashboarding",
+      "Risk Modeling",
+      "ETL"
+    ]
+  },
+  {
+    "skill_id": "skill_029",
+    "name": "Go",
+    "category": "Domain Knowledge",
+    "proficiency": "Intermediate",
+    "years_of_experience": 6,
+    "description": "Applied Go to map liquidity flows across multiple projects.",
+    "projects_used_in": [
+      "uniswap_churn_predictor_042"
+    ],
+    "work_experience_used_in": [
+      "exp_026",
+      "exp_042",
+      "exp_003"
+    ],
+    "coursework_related": [
+      "Financial Mathematics"
+    ],
+    "evidence": [
+      {
+        "source": "work",
+        "description": "Used Go to automate compliance reporting, improving latency by 30%."
+      },
+      {
+        "source": "competition",
+        "description": "Used Go to surface at-risk loan positions, improving precision by 85%."
+      },
+      {
+        "source": "work",
+        "description": "Used Go to map liquidity flows, improving turnaround time by 30%."
+      }
+    ],
+    "interview_topics": [
+      "Go internals",
+      "Go trade-offs",
+      "scaling Go"
+    ],
+    "subskills": [
+      "Data Visualization",
+      "Cloud Computing",
+      "A/B Testing"
+    ],
+    "keywords": [
+      "Data Pipeline Design",
+      "Risk Modeling",
+      "Python"
+    ]
+  },
+  {
+    "skill_id": "skill_030",
+    "name": "Plotly",
+    "category": "ML Framework",
+    "proficiency": "Beginner",
+    "years_of_experience": 3,
+    "description": "Applied Plotly to forecast short-term volatility across multiple projects.",
+    "projects_used_in": [
+      "lending_pool_recommendation_system_020",
+      "on_chain_data_pipeline_037"
+    ],
+    "work_experience_used_in": [],
+    "coursework_related": [
+      "Machine Learning"
+    ],
+    "evidence": [
+      {
+        "source": "course",
+        "description": "Used Plotly to classify token contracts, improving latency by 39%."
+      }
+    ],
+    "interview_topics": [
+      "Plotly trade-offs",
+      "scaling Plotly"
+    ],
+    "subskills": [
+      "ETL",
+      "Python"
+    ],
+    "keywords": [
+      "Prompt Engineering",
+      "Data Wrangling",
+      "Statistical Modeling",
+      "Time Series Analysis",
+      "Data Visualization",
+      "ETL"
+    ]
+  },
+  {
+    "skill_id": "skill_031",
+    "name": "Python",
+    "category": "Soft Skill",
+    "proficiency": "Intermediate",
+    "years_of_experience": 4,
+    "description": "Applied Python to automate compliance reporting across multiple projects.",
+    "projects_used_in": [
+      "market_portfolio_analyzer_011",
+      "crypto_forecasting_engine_018"
+    ],
+    "work_experience_used_in": [
+      "exp_044",
+      "exp_028"
+    ],
+    "coursework_related": [
+      "Database Systems",
+      "Operating Systems"
+    ],
+    "evidence": [
+      {
+        "source": "course",
+        "description": "Used Python to predict customer churn, improving false-positive rate by 65%."
+      },
+      {
+        "source": "work",
+        "description": "Used Python to surface at-risk loan positions, improving analyst hours by 57%."
+      }
+    ],
+    "interview_topics": [
+      "Python trade-offs"
+    ],
+    "subskills": [
+      "Smart Contract Analysis",
+      "Anomaly Detection",
+      "Prompt Engineering",
+      "ETL"
+    ],
+    "keywords": [
+      "ETL",
+      "Prompt Engineering",
+      "NLP",
+      "MLOps"
+    ]
+  },
+  {
+    "skill_id": "skill_032",
+    "name": "MLOps",
+    "category": "Database",
+    "proficiency": "Beginner",
+    "years_of_experience": 4,
+    "description": "Applied MLOps to automate compliance reporting across multiple projects.",
+    "projects_used_in": [
+      "loan_dashboard_029",
+      "lending_pool_liquidity_tracker_016"
+    ],
+    "work_experience_used_in": [],
+    "coursework_related": [
+      "Reinforcement Learning"
+    ],
+    "evidence": [
+      {
+        "source": "work",
+        "description": "Used MLOps to classify token contracts, improving coverage by 67%."
+      },
+      {
+        "source": "course",
+        "description": "Used MLOps to predict customer churn, improving analyst hours by 56%."
+      },
+      {
+        "source": "project",
+        "description": "Used MLOps to predict customer churn, improving latency by 88%."
+      }
+    ],
+    "interview_topics": [
+      "MLOps internals",
+      "debugging MLOps"
+    ],
+    "subskills": [
+      "NLP",
+      "Cloud Computing",
+      "Anomaly Detection",
+      "Data Visualization"
+    ],
+    "keywords": [
+      "Cloud Computing",
+      "Data Wrangling",
+      "Statistical Modeling",
+      "Risk Modeling"
+    ]
+  },
+  {
+    "skill_id": "skill_033",
+    "name": "Seaborn",
+    "category": "Visualization",
+    "proficiency": "Intermediate",
+    "years_of_experience": 1,
+    "description": "Applied Seaborn to classify token contracts across multiple projects.",
+    "projects_used_in": [
+      "on_chain_data_pipeline_037",
+      "derivatives_sentiment_tracker_036",
+      "nft_market_recommendation_system_044",
+      "payments_price_oracle_027"
+    ],
+    "work_experience_used_in": [
+      "exp_030",
+      "exp_015",
+      "exp_016"
+    ],
+    "coursework_related": [
+      "Big Data Analytics",
+      "Natural Language Processing",
+      "Operating Systems"
+    ],
+    "evidence": [
+      {
+        "source": "competition",
+        "description": "Used Seaborn to automate compliance reporting, improving accuracy by 37%."
+      },
+      {
+        "source": "project",
+        "description": "Used Seaborn to optimize gas usage, improving turnaround time by 42%."
+      },
+      {
+        "source": "competition",
+        "description": "Used Seaborn to score credit risk, improving accuracy by 28%."
+      }
+    ],
+    "interview_topics": [
+      "Seaborn trade-offs",
+      "debugging Seaborn",
+      "Seaborn internals"
+    ],
+    "subskills": [
+      "Statistical Modeling",
+      "Prompt Engineering"
+    ],
+    "keywords": [
+      "SQL",
+      "Python",
+      "Data Wrangling",
+      "Data Visualization",
+      "Cloud Computing"
+    ]
+  },
+  {
+    "skill_id": "skill_034",
+    "name": "Time Series Analysis",
+    "category": "DevOps",
+    "proficiency": "Expert",
+    "years_of_experience": 3,
+    "description": "Applied Time Series Analysis to classify token contracts across multiple projects.",
+    "projects_used_in": [
+      "uniswap_churn_predictor_042"
+    ],
+    "work_experience_used_in": [
+      "exp_012"
+    ],
+    "coursework_related": [
+      "Distributed Systems"
+    ],
+    "evidence": [
+      {
+        "source": "project",
+        "description": "Used Time Series Analysis to detect anomalous wallet behavior, improving recall by 34%."
+      },
+      {
+        "source": "competition",
+        "description": "Used Time Series Analysis to forecast short-term volatility, improving recall by 27%."
+      }
+    ],
+    "interview_topics": [
+      "scaling Time Series Analysis",
+      "Time Series Analysis internals",
+      "Time Series Analysis trade-offs"
+    ],
+    "subskills": [
+      "Smart Contract Analysis",
+      "Data Visualization"
+    ],
+    "keywords": [
+      "MLOps",
+      "Anomaly Detection",
+      "Smart Contract Analysis",
+      "Machine Learning",
+      "A/B Testing",
+      "Model Deployment"
+    ]
+  },
+  {
+    "skill_id": "skill_035",
+    "name": "TypeScript",
+    "category": "DevOps",
+    "proficiency": "Intermediate",
+    "years_of_experience": 2,
+    "description": "Applied TypeScript to optimize gas usage across multiple projects.",
+    "projects_used_in": [
+      "lending_pool_recommendation_system_020",
+      "retail_scoring_model_048"
+    ],
+    "work_experience_used_in": [
+      "exp_025"
+    ],
+    "coursework_related": [
+      "Distributed Systems",
+      "Convex Optimization"
+    ],
+    "evidence": [
+      {
+        "source": "competition",
+        "description": "Used TypeScript to map liquidity flows, improving latency by 52%."
+      },
+      {
+        "source": "competition",
+        "description": "Used TypeScript to score credit risk, improving accuracy by 36%."
+      },
+      {
+        "source": "work",
+        "description": "Used TypeScript to rank lending opportunities, improving throughput by 54%."
+      }
+    ],
+    "interview_topics": [
+      "TypeScript internals",
+      "scaling TypeScript"
+    ],
+    "subskills": [
+      "Feature Engineering",
+      "Anomaly Detection",
+      "Time Series Analysis",
+      "Statistical Modeling"
+    ],
+    "keywords": [
+      "Machine Learning",
+      "SQL",
+      "Prompt Engineering",
+      "Data Wrangling",
+      "On-chain Data",
+      "Python"
+    ]
+  },
+  {
+    "skill_id": "skill_036",
+    "name": "Data Visualization",
+    "category": "Domain Knowledge",
+    "proficiency": "Expert",
+    "years_of_experience": 3,
+    "description": "Applied Data Visualization to optimize gas usage across multiple projects.",
+    "projects_used_in": [
+      "crypto_forecasting_engine_018",
+      "nft_market_forecasting_engine_019"
+    ],
+    "work_experience_used_in": [
+      "exp_043",
+      "exp_030",
+      "exp_002"
+    ],
+    "coursework_related": [
+      "Convex Optimization",
+      "Blockchain and Cryptocurrencies"
+    ],
+    "evidence": [
+      {
+        "source": "competition",
+        "description": "Used Data Visualization to map liquidity flows, improving latency by 67%."
+      }
+    ],
+    "interview_topics": [
+      "scaling Data Visualization"
+    ],
+    "subskills": [
+      "Anomaly Detection"
+    ],
+    "keywords": [
+      "Data Visualization",
+      "Statistical Modeling",
+      "ETL",
+      "Data Visualization",
+      "Data Pipeline Design",
+      "NLP"
+    ]
+  },
+  {
+    "skill_id": "skill_037",
+    "name": "PyTorch",
+    "category": "Soft Skill",
+    "proficiency": "Expert",
+    "years_of_experience": 1,
+    "description": "Applied PyTorch to classify token contracts across multiple projects.",
+    "projects_used_in": [
+      "payments_price_oracle_027",
+      "staking_forecasting_engine_049",
+      "cross_chain_analytics_platform_003",
+      "nft_market_forecasting_engine_019"
+    ],
+    "work_experience_used_in": [
+      "exp_016",
+      "exp_047",
+      "exp_040"
+    ],
+    "coursework_related": [
+      "Software Engineering"
+    ],
+    "evidence": [
+      {
+        "source": "course",
+        "description": "Used PyTorch to classify token contracts, improving throughput by 76%."
+      },
+      {
+        "source": "course",
+        "description": "Used PyTorch to forecast short-term volatility, improving coverage by 62%."
+      }
+    ],
+    "interview_topics": [
+      "debugging PyTorch",
+      "scaling PyTorch",
+      "PyTorch internals"
+    ],
+    "subskills": [
+      "SQL",
+      "Cloud Computing"
+    ],
+    "keywords": [
+      "Machine Learning",
+      "NLP",
+      "Dashboarding",
+      "Risk Modeling",
+      "On-chain Data"
+    ]
+  },
+  {
+    "skill_id": "skill_038",
+    "name": "Model Deployment",
+    "category": "Programming Language",
+    "proficiency": "Expert",
+    "years_of_experience": 5,
+    "description": "Applied Model Deployment to surface at-risk loan positions across multiple projects.",
+    "projects_used_in": [
+      "derivatives_price_oracle_031"
+    ],
+    "work_experience_used_in": [
+      "exp_023",
+      "exp_003",
+      "exp_038"
+    ],
+    "coursework_related": [
+      "Big Data Analytics",
+      "Probability Theory",
+      "Convex Optimization"
+    ],
+    "evidence": [
+      {
+        "source": "course",
+        "description": "Used Model Deployment to surface at-risk loan positions, improving false-positive rate by 42%."
+      },
+      {
+        "source": "work",
+        "description": "Used Model Deployment to automate compliance reporting, improving throughput by 61%."
+      }
+    ],
+    "interview_topics": [
+      "debugging Model Deployment"
+    ],
+    "subskills": [
+      "ETL",
+      "Anomaly Detection",
+      "Python"
+    ],
+    "keywords": [
+      "Cloud Computing",
+      "SQL",
+      "MLOps"
+    ]
+  },
+  {
+    "skill_id": "skill_039",
+    "name": "Statsmodels",
+    "category": "Soft Skill",
+    "proficiency": "Intermediate",
+    "years_of_experience": 3,
+    "description": "Applied Statsmodels to forecast short-term volatility across multiple projects.",
+    "projects_used_in": [
+      "cross_chain_wallet_profiler_008"
+    ],
+    "work_experience_used_in": [
+      "exp_040"
+    ],
+    "coursework_related": [
+      "Convex Optimization",
+      "Probability Theory"
+    ],
+    "evidence": [
+      {
+        "source": "competition",
+        "description": "Used Statsmodels to score credit risk, improving recall by 75%."
+      },
+      {
+        "source": "competition",
+        "description": "Used Statsmodels to surface at-risk loan positions, improving latency by 49%."
+      }
+    ],
+    "interview_topics": [
+      "Statsmodels internals",
+      "debugging Statsmodels"
+    ],
+    "subskills": [
+      "On-chain Data"
+    ],
+    "keywords": [
+      "ETL",
+      "Model Deployment",
+      "Data Wrangling"
+    ]
+  },
+  {
+    "skill_id": "skill_040",
+    "name": "Streamlit",
+    "category": "Soft Skill",
+    "proficiency": "Expert",
+    "years_of_experience": 1,
+    "description": "Applied Streamlit to detect anomalous wallet behavior across multiple projects.",
+    "projects_used_in": [
+      "staking_churn_predictor_046",
+      "staking_network_mapper_041",
+      "crypto_data_pipeline_047"
+    ],
+    "work_experience_used_in": [],
+    "coursework_related": [
+      "Statistical Inference",
+      "Financial Mathematics"
+    ],
+    "evidence": [
+      {
+        "source": "course",
+        "description": "Used Streamlit to automate compliance reporting, improving analyst hours by 73%."
+      },
+      {
+        "source": "work",
+        "description": "Used Streamlit to surface at-risk loan positions, improving throughput by 81%."
+      },
+      {
+        "source": "competition",
+        "description": "Used Streamlit to rank lending opportunities, improving turnaround time by 43%."
+      }
+    ],
+    "interview_topics": [
+      "Streamlit trade-offs",
+      "debugging Streamlit",
+      "Streamlit internals"
+    ],
+    "subskills": [
+      "Machine Learning",
+      "Prompt Engineering",
+      "ETL",
+      "Data Wrangling"
+    ],
+    "keywords": [
+      "On-chain Data",
+      "Machine Learning",
+      "Streamlit"
+    ]
+  },
+  {
+    "skill_id": "skill_041",
+    "name": "SciPy",
+    "category": "Soft Skill",
+    "proficiency": "Intermediate",
+    "years_of_experience": 5,
+    "description": "Applied SciPy to automate compliance reporting across multiple projects.",
+    "projects_used_in": [
+      "credit_forecasting_engine_038",
+      "defi_lending_trading_bot_040",
+      "lending_pool_recommendation_system_020",
+      "lending_pool_churn_predictor_006"
+    ],
+    "work_experience_used_in": [
+      "exp_014"
+    ],
+    "coursework_related": [
+      "Natural Language Processing"
+    ],
+    "evidence": [
+      {
+        "source": "project",
+        "description": "Used SciPy to score credit risk, improving precision by 85%."
+      }
+    ],
+    "interview_topics": [
+      "debugging SciPy",
+      "scaling SciPy"
+    ],
+    "subskills": [
+      "Data Pipeline Design",
+      "On-chain Data",
+      "NLP"
+    ],
+    "keywords": [
+      "ETL",
+      "Cloud Computing",
+      "Risk Modeling"
+    ]
+  },
+  {
+    "skill_id": "skill_042",
+    "name": "NLP",
+    "category": "Data Tool",
+    "proficiency": "Expert",
+    "years_of_experience": 8,
+    "description": "Applied NLP to rank lending opportunities across multiple projects.",
+    "projects_used_in": [
+      "aave_scoring_model_043",
+      "wallet_fraud_detector_024"
+    ],
+    "work_experience_used_in": [
+      "exp_025",
+      "exp_002"
+    ],
+    "coursework_related": [
+      "Cloud Computing",
+      "Database Systems",
+      "Operating Systems"
+    ],
+    "evidence": [
+      {
+        "source": "course",
+        "description": "Used NLP to forecast short-term volatility, improving recall by 75%."
+      },
+      {
+        "source": "course",
+        "description": "Used NLP to automate compliance reporting, improving precision by 48%."
+      },
+      {
+        "source": "competition",
+        "description": "Used NLP to classify token contracts, improving accuracy by 27%."
+      }
+    ],
+    "interview_topics": [
+      "NLP trade-offs",
+      "scaling NLP",
+      "debugging NLP"
+    ],
+    "subskills": [
+      "Risk Modeling",
+      "SQL",
+      "ETL",
+      "Data Pipeline Design"
+    ],
+    "keywords": [
+      "Deep Learning",
+      "Smart Contract Analysis",
+      "MLOps",
+      "Data Visualization",
+      "Anomaly Detection",
+      "Feature Engineering"
+    ]
+  },
+  {
+    "skill_id": "skill_043",
+    "name": "Transformers",
+    "category": "ML Framework",
+    "proficiency": "Expert",
+    "years_of_experience": 4,
+    "description": "Applied Transformers to rank lending opportunities across multiple projects.",
+    "projects_used_in": [
+      "derivatives_sentiment_tracker_036"
+    ],
+    "work_experience_used_in": [
+      "exp_011",
+      "exp_010"
+    ],
+    "coursework_related": [
+      "Time Series Analysis",
+      "Data Mining",
+      "Convex Optimization"
+    ],
+    "evidence": [
+      {
+        "source": "work",
+        "description": "Used Transformers to optimize gas usage, improving analyst hours by 43%."
+      },
+      {
+        "source": "course",
+        "description": "Used Transformers to predict customer churn, improving latency by 89%."
+      }
+    ],
+    "interview_topics": [
+      "scaling Transformers",
+      "debugging Transformers",
+      "Transformers trade-offs"
+    ],
+    "subskills": [
+      "On-chain Data",
+      "NLP"
+    ],
+    "keywords": [
+      "Data Wrangling",
+      "Risk Modeling",
+      "Statistical Modeling",
+      "Model Deployment",
+      "Smart Contract Analysis",
+      "Prompt Engineering"
+    ]
+  },
+  {
+    "skill_id": "skill_044",
+    "name": "NLTK",
+    "category": "Programming Language",
+    "proficiency": "Advanced",
+    "years_of_experience": 8,
+    "description": "Applied NLTK to detect anomalous wallet behavior across multiple projects.",
+    "projects_used_in": [
+      "wallet_fraud_detector_024"
+    ],
+    "work_experience_used_in": [
+      "exp_026",
+      "exp_012",
+      "exp_040"
+    ],
+    "coursework_related": [
+      "Software Engineering"
+    ],
+    "evidence": [
+      {
+        "source": "work",
+        "description": "Used NLTK to score credit risk, improving analyst hours by 72%."
+      }
+    ],
+    "interview_topics": [
+      "debugging NLTK"
+    ],
+    "subskills": [
+      "Cloud Computing"
+    ],
+    "keywords": [
+      "Statistical Modeling",
+      "Data Pipeline Design",
+      "Model Deployment",
+      "A/B Testing"
+    ]
+  },
+  {
+    "skill_id": "skill_045",
+    "name": "Bash",
+    "category": "ML Framework",
+    "proficiency": "Advanced",
+    "years_of_experience": 1,
+    "description": "Applied Bash to score credit risk across multiple projects.",
+    "projects_used_in": [
+      "wallet_analytics_platform_035",
+      "aave_portfolio_analyzer_032",
+      "cross_chain_churn_predictor_012",
+      "uniswap_recommendation_system_010"
+    ],
+    "work_experience_used_in": [
+      "exp_023",
+      "exp_046",
+      "exp_015"
+    ],
+    "coursework_related": [
+      "Operating Systems"
+    ],
+    "evidence": [
+      {
+        "source": "work",
+        "description": "Used Bash to predict customer churn, improving coverage by 45%."
+      },
+      {
+        "source": "project",
+        "description": "Used Bash to surface at-risk loan positions, improving recall by 81%."
+      },
+      {
+        "source": "competition",
+        "description": "Used Bash to classify token contracts, improving recall by 85%."
+      }
+    ],
+    "interview_topics": [
+      "Bash trade-offs",
+      "Bash internals"
+    ],
+    "subskills": [
+      "MLOps",
+      "Anomaly Detection",
+      "Data Visualization",
+      "Model Deployment"
+    ],
+    "keywords": [
+      "Statistical Modeling",
+      "Deep Learning",
+      "Risk Modeling",
+      "Python",
+      "Bash"
+    ]
+  },
+  {
+    "skill_id": "skill_046",
+    "name": "Dashboarding",
+    "category": "Programming Language",
+    "proficiency": "Expert",
+    "years_of_experience": 8,
+    "description": "Applied Dashboarding to optimize gas usage across multiple projects.",
+    "projects_used_in": [
+      "defi_lending_liquidity_tracker_026"
+    ],
+    "work_experience_used_in": [
+      "exp_045",
+      "exp_034"
+    ],
+    "coursework_related": [
+      "Software Engineering"
+    ],
+    "evidence": [
+      {
+        "source": "project",
+        "description": "Used Dashboarding to classify token contracts, improving data freshness by 15%."
+      },
+      {
+        "source": "course",
+        "description": "Used Dashboarding to optimize gas usage, improving accuracy by 54%."
+      },
+      {
+        "source": "competition",
+        "description": "Used Dashboarding to map liquidity flows, improving data freshness by 62%."
+      }
+    ],
+    "interview_topics": [
+      "Dashboarding internals"
+    ],
+    "subskills": [
+      "Data Wrangling",
+      "Dashboarding"
+    ],
+    "keywords": [
+      "Statistical Modeling",
+      "Cloud Computing",
+      "On-chain Data"
+    ]
+  },
+  {
+    "skill_id": "skill_047",
+    "name": "Cloud Computing",
+    "category": "Domain Knowledge",
+    "proficiency": "Intermediate",
+    "years_of_experience": 4,
+    "description": "Applied Cloud Computing to classify token contracts across multiple projects.",
+    "projects_used_in": [
+      "lending_pool_liquidity_tracker_016",
+      "lending_pool_churn_predictor_006"
+    ],
+    "work_experience_used_in": [
+      "exp_041",
+      "exp_044"
+    ],
+    "coursework_related": [
+      "Computer Networks"
+    ],
+    "evidence": [
+      {
+        "source": "competition",
+        "description": "Used Cloud Computing to rank lending opportunities, improving precision by 51%."
+      },
+      {
+        "source": "course",
+        "description": "Used Cloud Computing to classify token contracts, improving throughput by 65%."
+      },
+      {
+        "source": "course",
+        "description": "Used Cloud Computing to score credit risk, improving precision by 84%."
+      }
+    ],
+    "interview_topics": [
+      "Cloud Computing trade-offs"
+    ],
+    "subskills": [
+      "MLOps",
+      "ETL"
+    ],
+    "keywords": [
+      "Deep Learning",
+      "Cloud Computing",
+      "Data Pipeline Design"
+    ]
+  },
+  {
+    "skill_id": "skill_048",
+    "name": "Statistical Modeling",
+    "category": "Domain Knowledge",
+    "proficiency": "Advanced",
+    "years_of_experience": 5,
+    "description": "Applied Statistical Modeling to detect anomalous wallet behavior across multiple projects.",
+    "projects_used_in": [
+      "defi_lending_dashboard_030",
+      "credit_fraud_detector_045",
+      "credit_price_oracle_028"
+    ],
+    "work_experience_used_in": [
+      "exp_009",
+      "exp_047"
+    ],
+    "coursework_related": [
+      "Deep Learning",
+      "Software Engineering",
+      "Distributed Systems"
+    ],
+    "evidence": [
+      {
+        "source": "course",
+        "description": "Used Statistical Modeling to rank lending opportunities, improving accuracy by 35%."
+      },
+      {
+        "source": "course",
+        "description": "Used Statistical Modeling to detect anomalous wallet behavior, improving analyst hours by 9%."
+      }
+    ],
+    "interview_topics": [
+      "scaling Statistical Modeling",
+      "debugging Statistical Modeling"
+    ],
+    "subskills": [
+      "NLP",
+      "Model Deployment",
+      "Machine Learning",
+      "Smart Contract Analysis"
+    ],
+    "keywords": [
+      "Data Pipeline Design",
+      "NLP",
+      "ETL",
+      "Cloud Computing"
+    ]
+  },
+  {
+    "skill_id": "skill_049",
+    "name": "JavaScript",
+    "category": "Soft Skill",
+    "proficiency": "Expert",
+    "years_of_experience": 3,
+    "description": "Applied JavaScript to map liquidity flows across multiple projects.",
+    "projects_used_in": [
+      "market_portfolio_analyzer_011",
+      "defi_lending_dashboard_030",
+      "wallet_fraud_detector_024",
+      "wallet_anomaly_detector_000"
+    ],
+    "work_experience_used_in": [],
+    "coursework_related": [
+      "Linear Algebra",
+      "Distributed Systems"
+    ],
+    "evidence": [
+      {
+        "source": "work",
+        "description": "Used JavaScript to detect anomalous wallet behavior, improving precision by 85%."
+      }
+    ],
+    "interview_topics": [
+      "JavaScript internals",
+      "scaling JavaScript",
+      "debugging JavaScript"
+    ],
+    "subskills": [
+      "NLP",
+      "A/B Testing",
+      "Dashboarding"
+    ],
+    "keywords": [
+      "NLP",
+      "Deep Learning",
+      "Machine Learning"
+    ]
+  }
+]

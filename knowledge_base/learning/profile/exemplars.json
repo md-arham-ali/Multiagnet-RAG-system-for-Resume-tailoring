@@ -1,0 +1,241 @@
+[
+  {
+    "learning_id": "learn_025",
+    "agent_name": "profile",
+    "timestamp": "2024-02-28T12:11:00Z",
+    "task_type": "routing",
+    "project_context": "Data Engineering — rank lending opportunities",
+    "input_context": {
+      "role": "Data Analyst",
+      "industry": "Healthcare Analytics",
+      "job_description_summary": "Seeking a Data Analyst with Anomaly Detection, Python, On-chain Data for rank lending opportunities."
+    },
+    "task": "Generate output for a Data Analyst in Healthcare Analytics.",
+    "generated_output": "Leveraged a Quantitative Finance system that forecast short-term volatility, improving latency by 76%.",
+    "evaluation": {
+      "score": 9,
+      "evaluation_source": "human",
+      "feedback": "Repeated action verbs.",
+      "strengths": [
+        "on-topic",
+        "grounded"
+      ],
+      "weaknesses": []
+    },
+    "reflection": {
+      "root_cause": "Context window lacked the right exemplar.",
+      "what_worked": [
+        "strong retrieval"
+      ],
+      "what_failed": [
+        "no metric",
+        "verb repetition"
+      ],
+      "what_should_change": [
+        "inject a metric requirement",
+        "enforce word limit"
+      ]
+    },
+    "lesson": {
+      "summary": "Enforce unique action verbs per line.",
+      "category": "factual-grounding",
+      "confidence": 0.41
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Machine Learning Engineer",
+        "Quantitative Analyst",
+        "Data Engineer"
+      ],
+      "industries": [
+        "AdTech"
+      ],
+      "project_types": [
+        "Data Analytics",
+        "Predictive Modeling",
+        "Web Application"
+      ],
+      "minimum_similarity_score": 0.77
+    },
+    "memory_type": "episodic",
+    "should_reuse": true,
+    "importance_score": 10,
+    "expiry_policy": {
+      "review_after_days": 90,
+      "auto_delete": false
+    },
+    "embedding_text": "profile learned to optimize gas usage for a Data Analyst in Healthcare Analytics using Cloud Computing, Data Wrangling.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "Feature Engineering",
+        "Blockchain",
+        "Anomaly Detection",
+        "MLOps",
+        "Time Series Forecasting"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_040",
+    "agent_name": "profile",
+    "timestamp": "2024-03-04T01:28:00Z",
+    "task_type": "verification",
+    "project_context": "Algorithmic Trading — optimize gas usage",
+    "input_context": {
+      "role": "Data Engineer",
+      "industry": "Consulting",
+      "job_description_summary": "Seeking a Data Engineer with A/B Testing, Risk Modeling for rank lending opportunities."
+    },
+    "task": "Generate output for a Data Engineer in Consulting.",
+    "generated_output": "Integrated a NLP system that map liquidity flows, improving recall by 72%.",
+    "evaluation": {
+      "score": 5,
+      "evaluation_source": "automatic",
+      "feedback": "Well grounded in evidence.",
+      "strengths": [
+        "concise",
+        "ATS-aligned",
+        "on-topic"
+      ],
+      "weaknesses": [
+        "verbose",
+        "repetitive verbs",
+        "weak domain focus"
+      ]
+    },
+    "reflection": {
+      "root_cause": "Missing numeric anchor in the prompt.",
+      "what_worked": [
+        "strong retrieval",
+        "clear structure",
+        "good exemplar"
+      ],
+      "what_failed": [
+        "over-generation",
+        "hallucinated detail",
+        "no metric"
+      ],
+      "what_should_change": [
+        "enforce word limit",
+        "inject a metric requirement",
+        "add do-not-claim check"
+      ]
+    },
+    "lesson": {
+      "summary": "Always anchor bullets with a numeric result.",
+      "category": "factual-grounding",
+      "confidence": 0.49
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Data Analyst",
+        "Quantitative Analyst",
+        "Business Intelligence Analyst"
+      ],
+      "industries": [
+        "Consulting",
+        "Banking",
+        "Crypto / Web3"
+      ],
+      "project_types": [
+        "Predictive Modeling",
+        "NLP System",
+        "Research"
+      ],
+      "minimum_similarity_score": 0.69
+    },
+    "memory_type": "episodic",
+    "should_reuse": false,
+    "importance_score": 8,
+    "expiry_policy": {
+      "review_after_days": 14,
+      "auto_delete": false
+    },
+    "embedding_text": "profile learned to predict customer churn for a Data Engineer in Consulting using On-chain Data, NLP.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "Data Analytics",
+        "Deep Learning",
+        "Smart Contracts",
+        "Feature Engineering",
+        "NLP"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_043",
+    "agent_name": "profile",
+    "timestamp": "2024-02-10T12:25:00Z",
+    "task_type": "critique",
+    "project_context": "Algorithmic Trading — score credit risk",
+    "input_context": {
+      "role": "Data Engineer",
+      "industry": "Banking",
+      "job_description_summary": "Seeking a Data Engineer with SQL, Data Pipeline Design for detect anomalous wallet behavior."
+    },
+    "task": "Generate output for a Data Engineer in Banking.",
+    "generated_output": "Analyzed a Algorithmic Trading system that automate compliance reporting, improving throughput by 74%.",
+    "evaluation": {
+      "score": 10,
+      "evaluation_source": "human",
+      "feedback": "Needs explicit domain mention.",
+      "strengths": [
+        "ATS-aligned"
+      ],
+      "weaknesses": [
+        "verbose"
+      ]
+    },
+    "reflection": {
+      "root_cause": "Rubric weight on quantification too low.",
+      "what_worked": [
+        "tight prompt",
+        "strong retrieval"
+      ],
+      "what_failed": [
+        "hallucinated detail"
+      ],
+      "what_should_change": [
+        "inject a metric requirement",
+        "enforce word limit"
+      ]
+    },
+    "lesson": {
+      "summary": "Enforce unique action verbs per line.",
+      "category": "routing",
+      "confidence": 0.97
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Data Scientist"
+      ],
+      "industries": [
+        "Trading"
+      ],
+      "project_types": [
+        "Data Analytics",
+        "NLP System"
+      ],
+      "minimum_similarity_score": 0.6
+    },
+    "memory_type": "episodic",
+    "should_reuse": true,
+    "importance_score": 6,
+    "expiry_policy": {
+      "review_after_days": 90,
+      "auto_delete": false
+    },
+    "embedding_text": "profile learned to optimize gas usage for a Data Engineer in Banking using Dashboarding, Model Deployment.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "Smart Contracts",
+        "Risk Modeling",
+        "Python",
+        "DeFi"
+      ]
+    }
+  }
+]

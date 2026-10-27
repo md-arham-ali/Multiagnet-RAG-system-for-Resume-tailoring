@@ -1,0 +1,1003 @@
+[
+  {
+    "example_id": "cv_000",
+    "target_role": "Quant Developer",
+    "industry": "AdTech",
+    "company_type": "Scale-up",
+    "seniority": "Mid",
+    "summary": "Quant Developer with strengths in On-chain Data, Data Wrangling, Time Series Analysis and a track record in AdTech.",
+    "cv_text": "PROFESSIONAL SUMMARY\nQuant Developer focused on automate compliance reporting.\n\nEXPERIENCE\n- Integrated a Risk Analytics system, improving Silhouette Score from 0.59 to 0.71.\n- Leveraged pipelines with DBeaver, Jupyter, cutting recall by 90%.\n\nSKILLS\nA/B Testing, SQL, On-chain Data, Dashboarding, Smart Contract Analysis",
+    "strengths": [
+      "strong action verbs",
+      "quantified impact",
+      "concise phrasing"
+    ],
+    "score": 7.9,
+    "review_comments": [
+      "Add one more leadership example.",
+      "Strong use of metrics throughout.",
+      "Quantify the last bullet."
+    ]
+  },
+  {
+    "example_id": "cv_001",
+    "target_role": "Blockchain Data Engineer",
+    "industry": "Healthcare Analytics",
+    "company_type": "Enterprise",
+    "seniority": "Senior",
+    "summary": "Blockchain Data Engineer with strengths in Machine Learning, Time Series Analysis and a track record in Healthcare Analytics.",
+    "cv_text": "PROFESSIONAL SUMMARY\nBlockchain Data Engineer focused on score credit risk.\n\nEXPERIENCE\n- Generated a Smart Contracts system, improving Log Loss from 0.6 to 0.71.\n- Constructed pipelines with MLflow, Airflow, cutting accuracy by 37%.\n\nSKILLS\nMachine Learning, Feature Engineering, Model Deployment, Data Pipeline Design, Python",
+    "strengths": [
+      "quantified impact",
+      "relevant domain focus",
+      "ATS keywords"
+    ],
+    "score": 7.9,
+    "review_comments": [
+      "Could tighten the summary to two lines.",
+      "Add one more leadership example.",
+      "Good keyword alignment with the target role."
+    ]
+  },
+  {
+    "example_id": "cv_002",
+    "target_role": "Data Analyst",
+    "industry": "Insurance",
+    "company_type": "Early-stage Startup",
+    "seniority": "Junior",
+    "summary": "Data Analyst with strengths in Model Deployment, Python and a track record in Insurance.",
+    "cv_text": "PROFESSIONAL SUMMARY\nData Analyst focused on score credit risk.\n\nEXPERIENCE\n- Automated a MLOps system, improving Log Loss from 0.64 to 0.72.\n- Leveraged pipelines with Power BI, Docker, Dune Analytics, cutting recall by 85%.\n\nSKILLS\nFeature Engineering, Data Visualization, Data Wrangling, Machine Learning, Data Pipeline Design",
+    "strengths": [
+      "strong action verbs",
+      "relevant domain focus"
+    ],
+    "score": 8.9,
+    "review_comments": [
+      "Could tighten the summary to two lines.",
+      "Quantify the last bullet.",
+      "Avoid repeating the same action verb.",
+      "Strong use of metrics throughout."
+    ]
+  },
+  {
+    "example_id": "cv_003",
+    "target_role": "Data Scientist",
+    "industry": "Healthcare Analytics",
+    "company_type": "Big Tech",
+    "seniority": "Intern",
+    "summary": "Data Scientist with strengths in On-chain Data, Statistical Modeling and a track record in Healthcare Analytics.",
+    "cv_text": "PROFESSIONAL SUMMARY\nData Scientist focused on detect anomalous wallet behavior.\n\nEXPERIENCE\n- Developed a Fraud Detection system, improving R2 from 0.75 to 0.92.\n- Optimized pipelines with Terraform, Jupyter, cutting throughput by 81%.\n\nSKILLS\nA/B Testing, Time Series Analysis, Prompt Engineering, Machine Learning, Data Visualization, Anomaly Detection, Dashboarding",
+    "strengths": [
+      "relevant domain focus",
+      "quantified impact",
+      "concise phrasing",
+      "clear structure"
+    ],
+    "score": 6.9,
+    "review_comments": [
+      "Add one more leadership example.",
+      "Avoid repeating the same action verb.",
+      "Quantify the last bullet."
+    ]
+  },
+  {
+    "example_id": "cv_004",
+    "target_role": "Quant Developer",
+    "industry": "AdTech",
+    "company_type": "Big Tech",
+    "seniority": "Senior",
+    "summary": "Quant Developer with strengths in Model Deployment, Dashboarding, On-chain Data and a track record in AdTech.",
+    "cv_text": "PROFESSIONAL SUMMARY\nQuant Developer focused on automate compliance reporting.\n\nEXPERIENCE\n- Generated a Recommender Systems system, improving R2 from 0.68 to 0.84.\n- Generated pipelines with Power BI, dbt, Dune Analytics, cutting recall by 17%.\n\nSKILLS\nETL, Data Visualization, Model Deployment, Risk Modeling, On-chain Data, Data Pipeline Design, Prompt Engineering",
+    "strengths": [
+      "quantified impact",
+      "ATS keywords",
+      "strong action verbs"
+    ],
+    "score": 7.1,
+    "review_comments": [
+      "Could tighten the summary to two lines.",
+      "Add one more leadership example."
+    ]
+  },
+  {
+    "example_id": "cv_005",
+    "target_role": "Quant Developer",
+    "industry": "Banking",
+    "company_type": "Research Lab",
+    "seniority": "Junior",
+    "summary": "Quant Developer with strengths in On-chain Data, Time Series Analysis, Statistical Modeling and a track record in Banking.",
+    "cv_text": "PROFESSIONAL SUMMARY\nQuant Developer focused on surface at-risk loan positions.\n\nEXPERIENCE\n- Integrated a Time Series Forecasting system, improving Precision from 0.65 to 0.79.\n- Leveraged pipelines with Weights & Biases, Grafana, Terraform, cutting throughput by 34%.\n\nSKILLS\nStatistical Modeling, Risk Modeling, Python, Time Series Analysis, Prompt Engineering, Data Visualization, ETL, Machine Learning",
+    "strengths": [
+      "ATS keywords",
+      "strong action verbs"
+    ],
+    "score": 9.3,
+    "review_comments": [
+      "Add one more leadership example.",
+      "Strong use of metrics throughout.",
+      "Good keyword alignment with the target role.",
+      "Could tighten the summary to two lines."
+    ]
+  },
+  {
+    "example_id": "cv_006",
+    "target_role": "ML Researcher",
+    "industry": "SaaS",
+    "company_type": "Research Lab",
+    "seniority": "Senior",
+    "summary": "ML Researcher with strengths in Smart Contract Analysis, Cloud Computing and a track record in SaaS.",
+    "cv_text": "PROFESSIONAL SUMMARY\nML Researcher focused on rank lending opportunities.\n\nEXPERIENCE\n- Created a Credit Scoring system, improving R2 from 0.66 to 0.85.\n- Engineered pipelines with Power BI, Grafana, cutting false-positive rate by 42%.\n\nSKILLS\nSQL, MLOps, Deep Learning, Anomaly Detection, Smart Contract Analysis",
+    "strengths": [
+      "strong action verbs",
+      "concise phrasing"
+    ],
+    "score": 7.5,
+    "review_comments": [
+      "Add one more leadership example.",
+      "Good keyword alignment with the target role.",
+      "Avoid repeating the same action verb.",
+      "Could tighten the summary to two lines."
+    ]
+  },
+  {
+    "example_id": "cv_007",
+    "target_role": "Research Engineer",
+    "industry": "Fintech",
+    "company_type": "Hedge Fund",
+    "seniority": "Senior",
+    "summary": "Research Engineer with strengths in MLOps, Python, Prompt Engineering and a track record in Fintech.",
+    "cv_text": "PROFESSIONAL SUMMARY\nResearch Engineer focused on map liquidity flows.\n\nEXPERIENCE\n- Improved a Credit Scoring system, improving MAE from 0.73 to 0.87.\n- Optimized pipelines with Airflow, DBeaver, Grafana, cutting data freshness by 89%.\n\nSKILLS\nStatistical Modeling, Prompt Engineering, Deep Learning, Feature Engineering, On-chain Data, Data Wrangling, Data Pipeline Design",
+    "strengths": [
+      "quantified impact",
+      "concise phrasing"
+    ],
+    "score": 7.4,
+    "review_comments": [
+      "Could tighten the summary to two lines.",
+      "Add one more leadership example."
+    ]
+  },
+  {
+    "example_id": "cv_008",
+    "target_role": "Business Intelligence Analyst",
+    "industry": "Insurance",
+    "company_type": "Scale-up",
+    "seniority": "Senior",
+    "summary": "Business Intelligence Analyst with strengths in Deep Learning, SQL, Feature Engineering and a track record in Insurance.",
+    "cv_text": "PROFESSIONAL SUMMARY\nBusiness Intelligence Analyst focused on detect anomalous wallet behavior.\n\nEXPERIENCE\n- Developed a Web3 system, improving Sharpe Ratio from 0.65 to 0.83.\n- Leveraged pipelines with Docker, Weights & Biases, cutting coverage by 71%.\n\nSKILLS\nFeature Engineering, Prompt Engineering, A/B Testing, Cloud Computing, Model Deployment",
+    "strengths": [
+      "ATS keywords",
+      "strong action verbs",
+      "concise phrasing",
+      "relevant domain focus"
+    ],
+    "score": 8.2,
+    "review_comments": [
+      "Good keyword alignment with the target role.",
+      "Quantify the last bullet.",
+      "Could tighten the summary to two lines.",
+      "Avoid repeating the same action verb."
+    ]
+  },
+  {
+    "example_id": "cv_009",
+    "target_role": "Quant Developer",
+    "industry": "Consulting",
+    "company_type": "Big Tech",
+    "seniority": "Junior",
+    "summary": "Quant Developer with strengths in SQL, Risk Modeling and a track record in Consulting.",
+    "cv_text": "PROFESSIONAL SUMMARY\nQuant Developer focused on classify token contracts.\n\nEXPERIENCE\n- Analyzed a Data Engineering system, improving Log Loss from 0.67 to 0.77.\n- Created pipelines with Grafana, MLflow, Dune Analytics, cutting analyst hours by 46%.\n\nSKILLS\nData Visualization, Statistical Modeling, Data Pipeline Design, Time Series Analysis, Dashboarding, Model Deployment, A/B Testing",
+    "strengths": [
+      "quantified impact",
+      "relevant domain focus"
+    ],
+    "score": 8.1,
+    "review_comments": [
+      "Quantify the last bullet.",
+      "Add one more leadership example.",
+      "Avoid repeating the same action verb."
+    ]
+  },
+  {
+    "example_id": "cv_010",
+    "target_role": "Business Intelligence Analyst",
+    "industry": "Healthcare Analytics",
+    "company_type": "Big Tech",
+    "seniority": "Senior",
+    "summary": "Business Intelligence Analyst with strengths in Cloud Computing, Python and a track record in Healthcare Analytics.",
+    "cv_text": "PROFESSIONAL SUMMARY\nBusiness Intelligence Analyst focused on optimize gas usage.\n\nEXPERIENCE\n- Deployed a Recommender Systems system, improving R2 from 0.62 to 0.71.\n- Evaluated pipelines with Dune Analytics, Airflow, dbt, cutting latency by 47%.\n\nSKILLS\nNLP, Prompt Engineering, On-chain Data, Dashboarding, Deep Learning, Model Deployment",
+    "strengths": [
+      "clear structure",
+      "ATS keywords",
+      "concise phrasing"
+    ],
+    "score": 8.4,
+    "review_comments": [
+      "Good keyword alignment with the target role.",
+      "Could tighten the summary to two lines."
+    ]
+  },
+  {
+    "example_id": "cv_011",
+    "target_role": "Business Intelligence Analyst",
+    "industry": "Healthcare Analytics",
+    "company_type": "Early-stage Startup",
+    "seniority": "Intern",
+    "summary": "Business Intelligence Analyst with strengths in SQL, Statistical Modeling and a track record in Healthcare Analytics.",
+    "cv_text": "PROFESSIONAL SUMMARY\nBusiness Intelligence Analyst focused on map liquidity flows.\n\nEXPERIENCE\n- Evaluated a Fraud Detection system, improving MAE from 0.69 to 0.87.\n- Optimized pipelines with Dune Analytics, Weights & Biases, cutting coverage by 12%.\n\nSKILLS\nETL, Smart Contract Analysis, Anomaly Detection, Dashboarding, Feature Engineering, Python",
+    "strengths": [
+      "ATS keywords",
+      "concise phrasing"
+    ],
+    "score": 6.8,
+    "review_comments": [
+      "Strong use of metrics throughout.",
+      "Quantify the last bullet.",
+      "Avoid repeating the same action verb.",
+      "Add one more leadership example."
+    ]
+  },
+  {
+    "example_id": "cv_012",
+    "target_role": "Data Analyst",
+    "industry": "AdTech",
+    "company_type": "Enterprise",
+    "seniority": "Lead",
+    "summary": "Data Analyst with strengths in Model Deployment, MLOps, Feature Engineering and a track record in AdTech.",
+    "cv_text": "PROFESSIONAL SUMMARY\nData Analyst focused on score credit risk.\n\nEXPERIENCE\n- Created a Deep Learning system, improving MAE from 0.74 to 0.87.\n- Streamlined pipelines with Power BI, DBeaver, Grafana, cutting false-positive rate by 20%.\n\nSKILLS\nModel Deployment, Time Series Analysis, ETL, Python, On-chain Data, Cloud Computing, Machine Learning, Smart Contract Analysis",
+    "strengths": [
+      "strong action verbs",
+      "ATS keywords",
+      "relevant domain focus"
+    ],
+    "score": 7.4,
+    "review_comments": [
+      "Add one more leadership example.",
+      "Quantify the last bullet.",
+      "Could tighten the summary to two lines.",
+      "Avoid repeating the same action verb."
+    ]
+  },
+  {
+    "example_id": "cv_013",
+    "target_role": "Quant Developer",
+    "industry": "Healthcare Analytics",
+    "company_type": "Consultancy",
+    "seniority": "Junior",
+    "summary": "Quant Developer with strengths in Feature Engineering, Python and a track record in Healthcare Analytics.",
+    "cv_text": "PROFESSIONAL SUMMARY\nQuant Developer focused on score credit risk.\n\nEXPERIENCE\n- Implemented a Deep Learning system, improving MAE from 0.6 to 0.72.\n- Streamlined pipelines with Power BI, Grafana, cutting latency by 44%.\n\nSKILLS\nCloud Computing, Dashboarding, Time Series Analysis, NLP, Risk Modeling, Data Pipeline Design, Data Visualization",
+    "strengths": [
+      "concise phrasing",
+      "relevant domain focus",
+      "ATS keywords",
+      "strong action verbs"
+    ],
+    "score": 7.2,
+    "review_comments": [
+      "Quantify the last bullet.",
+      "Strong use of metrics throughout.",
+      "Good keyword alignment with the target role."
+    ]
+  },
+  {
+    "example_id": "cv_014",
+    "target_role": "Data Analyst",
+    "industry": "AdTech",
+    "company_type": "Early-stage Startup",
+    "seniority": "Mid",
+    "summary": "Data Analyst with strengths in Machine Learning, NLP, A/B Testing and a track record in AdTech.",
+    "cv_text": "PROFESSIONAL SUMMARY\nData Analyst focused on optimize gas usage.\n\nEXPERIENCE\n- Built a Time Series Forecasting system, improving R2 from 0.59 to 0.66.\n- Built pipelines with DBeaver, Airflow, Jupyter, cutting coverage by 8%.\n\nSKILLS\nData Wrangling, Risk Modeling, Feature Engineering, NLP, Cloud Computing, Statistical Modeling",
+    "strengths": [
+      "clear structure",
+      "concise phrasing"
+    ],
+    "score": 8.1,
+    "review_comments": [
+      "Good keyword alignment with the target role.",
+      "Could tighten the summary to two lines.",
+      "Avoid repeating the same action verb."
+    ]
+  },
+  {
+    "example_id": "cv_015",
+    "target_role": "Data Engineer",
+    "industry": "Fintech",
+    "company_type": "Consultancy",
+    "seniority": "Mid",
+    "summary": "Data Engineer with strengths in Cloud Computing, SQL, Data Visualization and a track record in Fintech.",
+    "cv_text": "PROFESSIONAL SUMMARY\nData Engineer focused on classify token contracts.\n\nEXPERIENCE\n- Generated a Computer Vision system, improving Accuracy from 0.73 to 0.88.\n- Optimized pipelines with DBeaver, Terraform, Grafana, cutting false-positive rate by 43%.\n\nSKILLS\nMLOps, Dashboarding, Model Deployment, Deep Learning, Risk Modeling, Python, A/B Testing, Smart Contract Analysis",
+    "strengths": [
+      "relevant domain focus",
+      "ATS keywords",
+      "strong action verbs",
+      "quantified impact"
+    ],
+    "score": 7.4,
+    "review_comments": [
+      "Add one more leadership example.",
+      "Avoid repeating the same action verb."
+    ]
+  },
+  {
+    "example_id": "cv_016",
+    "target_role": "Quant Developer",
+    "industry": "Crypto / Web3",
+    "company_type": "Hedge Fund",
+    "seniority": "Lead",
+    "summary": "Quant Developer with strengths in Cloud Computing, Dashboarding and a track record in Crypto / Web3.",
+    "cv_text": "PROFESSIONAL SUMMARY\nQuant Developer focused on rank lending opportunities.\n\nEXPERIENCE\n- Streamlined a Web3 system, improving Precision from 0.66 to 0.84.\n- Developed pipelines with DBeaver, Jupyter, cutting precision by 58%.\n\nSKILLS\nSQL, MLOps, Time Series Analysis, Python, Model Deployment, A/B Testing, Data Pipeline Design",
+    "strengths": [
+      "quantified impact",
+      "strong action verbs",
+      "concise phrasing"
+    ],
+    "score": 9.5,
+    "review_comments": [
+      "Avoid repeating the same action verb.",
+      "Quantify the last bullet.",
+      "Add one more leadership example."
+    ]
+  },
+  {
+    "example_id": "cv_017",
+    "target_role": "Data Scientist",
+    "industry": "SaaS",
+    "company_type": "Research Lab",
+    "seniority": "Mid",
+    "summary": "Data Scientist with strengths in NLP, Dashboarding and a track record in SaaS.",
+    "cv_text": "PROFESSIONAL SUMMARY\nData Scientist focused on rank lending opportunities.\n\nEXPERIENCE\n- Reduced a Algorithmic Trading system, improving Precision from 0.75 to 0.91.\n- Implemented pipelines with MLflow, Git, cutting throughput by 30%.\n\nSKILLS\nSQL, Risk Modeling, Feature Engineering, Cloud Computing, Time Series Analysis, NLP",
+    "strengths": [
+      "quantified impact",
+      "clear structure"
+    ],
+    "score": 9.4,
+    "review_comments": [
+      "Good keyword alignment with the target role.",
+      "Could tighten the summary to two lines.",
+      "Quantify the last bullet.",
+      "Add one more leadership example."
+    ]
+  },
+  {
+    "example_id": "cv_018",
+    "target_role": "Blockchain Data Engineer",
+    "industry": "AdTech",
+    "company_type": "Consultancy",
+    "seniority": "Junior",
+    "summary": "Blockchain Data Engineer with strengths in Data Visualization, ETL, Data Pipeline Design and a track record in AdTech.",
+    "cv_text": "PROFESSIONAL SUMMARY\nBlockchain Data Engineer focused on map liquidity flows.\n\nEXPERIENCE\n- Designed a Data Analytics system, improving R2 from 0.59 to 0.71.\n- Implemented pipelines with Docker, Tableau, cutting precision by 30%.\n\nSKILLS\nA/B Testing, Cloud Computing, Data Visualization, MLOps, Data Pipeline Design",
+    "strengths": [
+      "relevant domain focus",
+      "quantified impact",
+      "strong action verbs"
+    ],
+    "score": 8.6,
+    "review_comments": [
+      "Strong use of metrics throughout.",
+      "Good keyword alignment with the target role.",
+      "Quantify the last bullet."
+    ]
+  },
+  {
+    "example_id": "cv_019",
+    "target_role": "Research Engineer",
+    "industry": "Banking",
+    "company_type": "Enterprise",
+    "seniority": "Intern",
+    "summary": "Research Engineer with strengths in Feature Engineering, Machine Learning and a track record in Banking.",
+    "cv_text": "PROFESSIONAL SUMMARY\nResearch Engineer focused on detect anomalous wallet behavior.\n\nEXPERIENCE\n- Built a NLP system, improving Log Loss from 0.64 to 0.73.\n- Reduced pipelines with Weights & Biases, dbt, cutting throughput by 11%.\n\nSKILLS\nOn-chain Data, Risk Modeling, Data Visualization, MLOps, Prompt Engineering, Deep Learning, Machine Learning",
+    "strengths": [
+      "relevant domain focus",
+      "strong action verbs"
+    ],
+    "score": 8.9,
+    "review_comments": [
+      "Quantify the last bullet.",
+      "Strong use of metrics throughout.",
+      "Could tighten the summary to two lines.",
+      "Good keyword alignment with the target role."
+    ]
+  },
+  {
+    "example_id": "cv_020",
+    "target_role": "Analytics Engineer",
+    "industry": "SaaS",
+    "company_type": "Consultancy",
+    "seniority": "Mid",
+    "summary": "Analytics Engineer with strengths in Python, A/B Testing and a track record in SaaS.",
+    "cv_text": "PROFESSIONAL SUMMARY\nAnalytics Engineer focused on rank lending opportunities.\n\nEXPERIENCE\n- Engineered a On-chain Analytics system, improving Recall from 0.73 to 0.84.\n- Engineered pipelines with DBeaver, Airflow, MLflow, cutting accuracy by 48%.\n\nSKILLS\nFeature Engineering, Statistical Modeling, Data Visualization, MLOps, Data Pipeline Design, Model Deployment, Anomaly Detection, Time Series Analysis",
+    "strengths": [
+      "relevant domain focus",
+      "concise phrasing",
+      "ATS keywords"
+    ],
+    "score": 6.9,
+    "review_comments": [
+      "Quantify the last bullet.",
+      "Good keyword alignment with the target role."
+    ]
+  },
+  {
+    "example_id": "cv_021",
+    "target_role": "Quantitative Analyst",
+    "industry": "E-commerce",
+    "company_type": "Early-stage Startup",
+    "seniority": "Intern",
+    "summary": "Quantitative Analyst with strengths in ETL, Prompt Engineering and a track record in E-commerce.",
+    "cv_text": "PROFESSIONAL SUMMARY\nQuantitative Analyst focused on detect anomalous wallet behavior.\n\nEXPERIENCE\n- Analyzed a Risk Analytics system, improving R2 from 0.67 to 0.79.\n- Analyzed pipelines with Terraform, MLflow, Tableau, cutting false-positive rate by 54%.\n\nSKILLS\nNLP, ETL, Risk Modeling, SQL, Cloud Computing",
+    "strengths": [
+      "concise phrasing",
+      "quantified impact"
+    ],
+    "score": 9.2,
+    "review_comments": [
+      "Avoid repeating the same action verb.",
+      "Quantify the last bullet.",
+      "Strong use of metrics throughout.",
+      "Could tighten the summary to two lines."
+    ]
+  },
+  {
+    "example_id": "cv_022",
+    "target_role": "Machine Learning Engineer",
+    "industry": "Crypto / Web3",
+    "company_type": "Enterprise",
+    "seniority": "Intern",
+    "summary": "Machine Learning Engineer with strengths in Dashboarding, Deep Learning and a track record in Crypto / Web3.",
+    "cv_text": "PROFESSIONAL SUMMARY\nMachine Learning Engineer focused on score credit risk.\n\nEXPERIENCE\n- Designed a Quantitative Finance system, improving RMSE from 0.77 to 0.94.\n- Analyzed pipelines with Terraform, dbt, Git, cutting false-positive rate by 18%.\n\nSKILLS\nData Pipeline Design, ETL, Data Visualization, On-chain Data, Python, Anomaly Detection, Risk Modeling",
+    "strengths": [
+      "concise phrasing",
+      "ATS keywords"
+    ],
+    "score": 7.3,
+    "review_comments": [
+      "Could tighten the summary to two lines.",
+      "Strong use of metrics throughout."
+    ]
+  },
+  {
+    "example_id": "cv_023",
+    "target_role": "Machine Learning Engineer",
+    "industry": "Consulting",
+    "company_type": "Early-stage Startup",
+    "seniority": "Senior",
+    "summary": "Machine Learning Engineer with strengths in On-chain Data, Data Pipeline Design, Data Visualization and a track record in Consulting.",
+    "cv_text": "PROFESSIONAL SUMMARY\nMachine Learning Engineer focused on automate compliance reporting.\n\nEXPERIENCE\n- Automated a On-chain Analytics system, improving Log Loss from 0.55 to 0.73.\n- Integrated pipelines with Airflow, Power BI, cutting coverage by 91%.\n\nSKILLS\nAnomaly Detection, SQL, NLP, Deep Learning, Statistical Modeling",
+    "strengths": [
+      "concise phrasing",
+      "relevant domain focus"
+    ],
+    "score": 7.2,
+    "review_comments": [
+      "Strong use of metrics throughout.",
+      "Avoid repeating the same action verb.",
+      "Good keyword alignment with the target role."
+    ]
+  },
+  {
+    "example_id": "cv_024",
+    "target_role": "Business Intelligence Analyst",
+    "industry": "Insurance",
+    "company_type": "Hedge Fund",
+    "seniority": "Junior",
+    "summary": "Business Intelligence Analyst with strengths in Deep Learning, MLOps, ETL and a track record in Insurance.",
+    "cv_text": "PROFESSIONAL SUMMARY\nBusiness Intelligence Analyst focused on predict customer churn.\n\nEXPERIENCE\n- Optimized a Risk Analytics system, improving Silhouette Score from 0.66 to 0.75.\n- Evaluated pipelines with Kubernetes, Docker, Jupyter, cutting latency by 61%.\n\nSKILLS\nAnomaly Detection, Model Deployment, NLP, SQL, Data Visualization, On-chain Data, Deep Learning",
+    "strengths": [
+      "ATS keywords",
+      "clear structure",
+      "relevant domain focus",
+      "concise phrasing"
+    ],
+    "score": 8.3,
+    "review_comments": [
+      "Could tighten the summary to two lines.",
+      "Quantify the last bullet.",
+      "Strong use of metrics throughout.",
+      "Add one more leadership example."
+    ]
+  },
+  {
+    "example_id": "cv_025",
+    "target_role": "Quantitative Analyst",
+    "industry": "Fintech",
+    "company_type": "Scale-up",
+    "seniority": "Junior",
+    "summary": "Quantitative Analyst with strengths in Data Visualization, Dashboarding, SQL and a track record in Fintech.",
+    "cv_text": "PROFESSIONAL SUMMARY\nQuantitative Analyst focused on rank lending opportunities.\n\nEXPERIENCE\n- Implemented a DeFi system, improving F1 from 0.72 to 0.88.\n- Implemented pipelines with Docker, Weights & Biases, Power BI, cutting coverage by 90%.\n\nSKILLS\nSmart Contract Analysis, Cloud Computing, Risk Modeling, On-chain Data, Prompt Engineering",
+    "strengths": [
+      "concise phrasing",
+      "ATS keywords",
+      "strong action verbs",
+      "relevant domain focus"
+    ],
+    "score": 7.1,
+    "review_comments": [
+      "Could tighten the summary to two lines.",
+      "Quantify the last bullet.",
+      "Add one more leadership example.",
+      "Avoid repeating the same action verb."
+    ]
+  },
+  {
+    "example_id": "cv_026",
+    "target_role": "Quantitative Analyst",
+    "industry": "Insurance",
+    "company_type": "Hedge Fund",
+    "seniority": "Intern",
+    "summary": "Quantitative Analyst with strengths in SQL, Risk Modeling, A/B Testing and a track record in Insurance.",
+    "cv_text": "PROFESSIONAL SUMMARY\nQuantitative Analyst focused on detect anomalous wallet behavior.\n\nEXPERIENCE\n- Developed a Blockchain system, improving Sharpe Ratio from 0.66 to 0.85.\n- Streamlined pipelines with Docker, MLflow, Tableau, cutting precision by 26%.\n\nSKILLS\nData Wrangling, Machine Learning, Risk Modeling, SQL, NLP, MLOps, Feature Engineering",
+    "strengths": [
+      "strong action verbs",
+      "ATS keywords",
+      "relevant domain focus",
+      "concise phrasing"
+    ],
+    "score": 7.2,
+    "review_comments": [
+      "Quantify the last bullet.",
+      "Good keyword alignment with the target role."
+    ]
+  },
+  {
+    "example_id": "cv_027",
+    "target_role": "Analytics Engineer",
+    "industry": "AdTech",
+    "company_type": "Hedge Fund",
+    "seniority": "Junior",
+    "summary": "Analytics Engineer with strengths in Time Series Analysis, Anomaly Detection and a track record in AdTech.",
+    "cv_text": "PROFESSIONAL SUMMARY\nAnalytics Engineer focused on classify token contracts.\n\nEXPERIENCE\n- Deployed a Quantitative Finance system, improving Log Loss from 0.61 to 0.74.\n- Generated pipelines with Tableau, Kubernetes, cutting throughput by 74%.\n\nSKILLS\nData Visualization, Data Wrangling, MLOps, ETL, On-chain Data, SQL, Feature Engineering",
+    "strengths": [
+      "quantified impact",
+      "clear structure",
+      "ATS keywords",
+      "relevant domain focus"
+    ],
+    "score": 9.0,
+    "review_comments": [
+      "Avoid repeating the same action verb.",
+      "Quantify the last bullet.",
+      "Could tighten the summary to two lines.",
+      "Good keyword alignment with the target role."
+    ]
+  },
+  {
+    "example_id": "cv_028",
+    "target_role": "Analytics Engineer",
+    "industry": "SaaS",
+    "company_type": "Enterprise",
+    "seniority": "Lead",
+    "summary": "Analytics Engineer with strengths in Dashboarding, Cloud Computing, SQL and a track record in SaaS.",
+    "cv_text": "PROFESSIONAL SUMMARY\nAnalytics Engineer focused on classify token contracts.\n\nEXPERIENCE\n- Constructed a NLP system, improving MAE from 0.55 to 0.74.\n- Created pipelines with Kubernetes, Grafana, Terraform, cutting analyst hours by 33%.\n\nSKILLS\nPrompt Engineering, Model Deployment, Dashboarding, Anomaly Detection, Smart Contract Analysis, Data Visualization, On-chain Data, Time Series Analysis",
+    "strengths": [
+      "clear structure",
+      "concise phrasing",
+      "ATS keywords",
+      "quantified impact"
+    ],
+    "score": 9.2,
+    "review_comments": [
+      "Add one more leadership example.",
+      "Could tighten the summary to two lines.",
+      "Good keyword alignment with the target role."
+    ]
+  },
+  {
+    "example_id": "cv_029",
+    "target_role": "Analytics Engineer",
+    "industry": "Insurance",
+    "company_type": "Consultancy",
+    "seniority": "Intern",
+    "summary": "Analytics Engineer with strengths in Dashboarding, Statistical Modeling and a track record in Insurance.",
+    "cv_text": "PROFESSIONAL SUMMARY\nAnalytics Engineer focused on rank lending opportunities.\n\nEXPERIENCE\n- Evaluated a Blockchain system, improving Accuracy from 0.65 to 0.79.\n- Streamlined pipelines with Git, Grafana, Tableau, cutting latency by 78%.\n\nSKILLS\nStatistical Modeling, Time Series Analysis, Deep Learning, Model Deployment, Smart Contract Analysis, Data Visualization, Python, Prompt Engineering",
+    "strengths": [
+      "relevant domain focus",
+      "strong action verbs"
+    ],
+    "score": 6.9,
+    "review_comments": [
+      "Quantify the last bullet.",
+      "Avoid repeating the same action verb.",
+      "Add one more leadership example."
+    ]
+  },
+  {
+    "example_id": "cv_030",
+    "target_role": "Quantitative Analyst",
+    "industry": "Crypto / Web3",
+    "company_type": "Early-stage Startup",
+    "seniority": "Intern",
+    "summary": "Quantitative Analyst with strengths in Model Deployment, Data Pipeline Design, Anomaly Detection and a track record in Crypto / Web3.",
+    "cv_text": "PROFESSIONAL SUMMARY\nQuantitative Analyst focused on rank lending opportunities.\n\nEXPERIENCE\n- Developed a Fraud Detection system, improving Sharpe Ratio from 0.63 to 0.72.\n- Analyzed pipelines with DBeaver, dbt, cutting accuracy by 70%.\n\nSKILLS\nRisk Modeling, Cloud Computing, Data Visualization, Feature Engineering, MLOps, Time Series Analysis",
+    "strengths": [
+      "ATS keywords",
+      "quantified impact",
+      "strong action verbs",
+      "concise phrasing"
+    ],
+    "score": 7.6,
+    "review_comments": [
+      "Add one more leadership example.",
+      "Avoid repeating the same action verb.",
+      "Could tighten the summary to two lines."
+    ]
+  },
+  {
+    "example_id": "cv_031",
+    "target_role": "Data Scientist",
+    "industry": "Crypto / Web3",
+    "company_type": "Consultancy",
+    "seniority": "Mid",
+    "summary": "Data Scientist with strengths in Machine Learning, Time Series Analysis and a track record in Crypto / Web3.",
+    "cv_text": "PROFESSIONAL SUMMARY\nData Scientist focused on surface at-risk loan positions.\n\nEXPERIENCE\n- Automated a Computer Vision system, improving Accuracy from 0.78 to 0.92.\n- Constructed pipelines with Kubernetes, Weights & Biases, cutting accuracy by 92%.\n\nSKILLS\nTime Series Analysis, Model Deployment, Statistical Modeling, Python, Data Visualization, Deep Learning, Smart Contract Analysis, Cloud Computing",
+    "strengths": [
+      "concise phrasing",
+      "strong action verbs",
+      "clear structure"
+    ],
+    "score": 8.6,
+    "review_comments": [
+      "Add one more leadership example.",
+      "Quantify the last bullet."
+    ]
+  },
+  {
+    "example_id": "cv_032",
+    "target_role": "Data Scientist",
+    "industry": "Banking",
+    "company_type": "Consultancy",
+    "seniority": "Senior",
+    "summary": "Data Scientist with strengths in Feature Engineering, Machine Learning and a track record in Banking.",
+    "cv_text": "PROFESSIONAL SUMMARY\nData Scientist focused on rank lending opportunities.\n\nEXPERIENCE\n- Designed a Deep Learning system, improving F1 from 0.64 to 0.77.\n- Implemented pipelines with Docker, Grafana, Power BI, cutting precision by 74%.\n\nSKILLS\nA/B Testing, Machine Learning, Model Deployment, Data Pipeline Design, Deep Learning, Prompt Engineering, Risk Modeling",
+    "strengths": [
+      "relevant domain focus",
+      "strong action verbs"
+    ],
+    "score": 7.4,
+    "review_comments": [
+      "Avoid repeating the same action verb.",
+      "Could tighten the summary to two lines.",
+      "Strong use of metrics throughout."
+    ]
+  },
+  {
+    "example_id": "cv_033",
+    "target_role": "Quantitative Analyst",
+    "industry": "AdTech",
+    "company_type": "Hedge Fund",
+    "seniority": "Intern",
+    "summary": "Quantitative Analyst with strengths in Statistical Modeling, Python and a track record in AdTech.",
+    "cv_text": "PROFESSIONAL SUMMARY\nQuantitative Analyst focused on rank lending opportunities.\n\nEXPERIENCE\n- Reduced a Machine Learning system, improving Log Loss from 0.62 to 0.79.\n- Leveraged pipelines with DBeaver, Jupyter, Grafana, cutting coverage by 14%.\n\nSKILLS\nData Pipeline Design, Time Series Analysis, Statistical Modeling, Anomaly Detection, Python, MLOps",
+    "strengths": [
+      "relevant domain focus",
+      "quantified impact",
+      "clear structure",
+      "ATS keywords"
+    ],
+    "score": 8.2,
+    "review_comments": [
+      "Avoid repeating the same action verb.",
+      "Quantify the last bullet.",
+      "Strong use of metrics throughout."
+    ]
+  },
+  {
+    "example_id": "cv_034",
+    "target_role": "Blockchain Data Engineer",
+    "industry": "E-commerce",
+    "company_type": "Scale-up",
+    "seniority": "Intern",
+    "summary": "Blockchain Data Engineer with strengths in NLP, Deep Learning, Statistical Modeling and a track record in E-commerce.",
+    "cv_text": "PROFESSIONAL SUMMARY\nBlockchain Data Engineer focused on rank lending opportunities.\n\nEXPERIENCE\n- Designed a Credit Scoring system, improving R2 from 0.63 to 0.71.\n- Accelerated pipelines with Tableau, MLflow, Grafana, cutting false-positive rate by 18%.\n\nSKILLS\nA/B Testing, Machine Learning, Data Wrangling, Cloud Computing, SQL, Python, Data Pipeline Design",
+    "strengths": [
+      "concise phrasing",
+      "quantified impact"
+    ],
+    "score": 9.2,
+    "review_comments": [
+      "Strong use of metrics throughout.",
+      "Quantify the last bullet.",
+      "Good keyword alignment with the target role.",
+      "Avoid repeating the same action verb."
+    ]
+  },
+  {
+    "example_id": "cv_035",
+    "target_role": "Quant Developer",
+    "industry": "Consulting",
+    "company_type": "Hedge Fund",
+    "seniority": "Intern",
+    "summary": "Quant Developer with strengths in Data Pipeline Design, Anomaly Detection, Smart Contract Analysis and a track record in Consulting.",
+    "cv_text": "PROFESSIONAL SUMMARY\nQuant Developer focused on surface at-risk loan positions.\n\nEXPERIENCE\n- Accelerated a DeFi system, improving Sharpe Ratio from 0.57 to 0.73.\n- Optimized pipelines with Airflow, MLflow, DBeaver, cutting latency by 72%.\n\nSKILLS\nETL, Data Wrangling, Machine Learning, Feature Engineering, Data Pipeline Design, Statistical Modeling, NLP",
+    "strengths": [
+      "strong action verbs",
+      "relevant domain focus",
+      "quantified impact"
+    ],
+    "score": 7.0,
+    "review_comments": [
+      "Avoid repeating the same action verb.",
+      "Quantify the last bullet.",
+      "Strong use of metrics throughout."
+    ]
+  },
+  {
+    "example_id": "cv_036",
+    "target_role": "Research Engineer",
+    "industry": "AdTech",
+    "company_type": "Hedge Fund",
+    "seniority": "Intern",
+    "summary": "Research Engineer with strengths in Model Deployment, Python and a track record in AdTech.",
+    "cv_text": "PROFESSIONAL SUMMARY\nResearch Engineer focused on surface at-risk loan positions.\n\nEXPERIENCE\n- Analyzed a Quantitative Finance system, improving F1 from 0.66 to 0.79.\n- Enhanced pipelines with Tableau, Airflow, Grafana, cutting false-positive rate by 43%.\n\nSKILLS\nOn-chain Data, Prompt Engineering, Dashboarding, Data Visualization, Time Series Analysis, Risk Modeling",
+    "strengths": [
+      "ATS keywords",
+      "relevant domain focus"
+    ],
+    "score": 7.2,
+    "review_comments": [
+      "Good keyword alignment with the target role.",
+      "Strong use of metrics throughout.",
+      "Quantify the last bullet."
+    ]
+  },
+  {
+    "example_id": "cv_037",
+    "target_role": "Blockchain Data Engineer",
+    "industry": "Banking",
+    "company_type": "Early-stage Startup",
+    "seniority": "Lead",
+    "summary": "Blockchain Data Engineer with strengths in Anomaly Detection, NLP and a track record in Banking.",
+    "cv_text": "PROFESSIONAL SUMMARY\nBlockchain Data Engineer focused on surface at-risk loan positions.\n\nEXPERIENCE\n- Evaluated a Computer Vision system, improving Accuracy from 0.73 to 0.84.\n- Evaluated pipelines with Jupyter, Airflow, Dune Analytics, cutting analyst hours by 89%.\n\nSKILLS\nStatistical Modeling, Feature Engineering, Python, Data Wrangling, Model Deployment, Data Visualization",
+    "strengths": [
+      "ATS keywords",
+      "relevant domain focus",
+      "quantified impact"
+    ],
+    "score": 9.3,
+    "review_comments": [
+      "Quantify the last bullet.",
+      "Strong use of metrics throughout.",
+      "Good keyword alignment with the target role.",
+      "Add one more leadership example."
+    ]
+  },
+  {
+    "example_id": "cv_038",
+    "target_role": "Blockchain Data Engineer",
+    "industry": "Banking",
+    "company_type": "Scale-up",
+    "seniority": "Lead",
+    "summary": "Blockchain Data Engineer with strengths in On-chain Data, Deep Learning and a track record in Banking.",
+    "cv_text": "PROFESSIONAL SUMMARY\nBlockchain Data Engineer focused on map liquidity flows.\n\nEXPERIENCE\n- Designed a Risk Analytics system, improving Precision from 0.68 to 0.81.\n- Integrated pipelines with DBeaver, Tableau, cutting coverage by 59%.\n\nSKILLS\nMachine Learning, MLOps, Dashboarding, ETL, Risk Modeling, Model Deployment, Prompt Engineering",
+    "strengths": [
+      "clear structure",
+      "strong action verbs"
+    ],
+    "score": 8.8,
+    "review_comments": [
+      "Good keyword alignment with the target role.",
+      "Avoid repeating the same action verb."
+    ]
+  },
+  {
+    "example_id": "cv_039",
+    "target_role": "Data Engineer",
+    "industry": "Insurance",
+    "company_type": "Enterprise",
+    "seniority": "Intern",
+    "summary": "Data Engineer with strengths in Python, On-chain Data, ETL and a track record in Insurance.",
+    "cv_text": "PROFESSIONAL SUMMARY\nData Engineer focused on optimize gas usage.\n\nEXPERIENCE\n- Automated a Fintech system, improving Recall from 0.57 to 0.76.\n- Created pipelines with Power BI, MLflow, cutting recall by 55%.\n\nSKILLS\nData Pipeline Design, Machine Learning, ETL, Deep Learning, SQL, Feature Engineering, NLP",
+    "strengths": [
+      "ATS keywords",
+      "strong action verbs",
+      "concise phrasing"
+    ],
+    "score": 9.2,
+    "review_comments": [
+      "Avoid repeating the same action verb.",
+      "Quantify the last bullet.",
+      "Strong use of metrics throughout.",
+      "Add one more leadership example."
+    ]
+  },
+  {
+    "example_id": "cv_040",
+    "target_role": "Machine Learning Engineer",
+    "industry": "Healthcare Analytics",
+    "company_type": "Big Tech",
+    "seniority": "Junior",
+    "summary": "Machine Learning Engineer with strengths in Cloud Computing, Statistical Modeling, A/B Testing and a track record in Healthcare Analytics.",
+    "cv_text": "PROFESSIONAL SUMMARY\nMachine Learning Engineer focused on score credit risk.\n\nEXPERIENCE\n- Developed a Data Engineering system, improving RMSE from 0.61 to 0.77.\n- Created pipelines with Terraform, Kubernetes, cutting recall by 34%.\n\nSKILLS\nDeep Learning, Smart Contract Analysis, Prompt Engineering, MLOps, Data Wrangling, Cloud Computing",
+    "strengths": [
+      "quantified impact",
+      "strong action verbs",
+      "clear structure",
+      "concise phrasing"
+    ],
+    "score": 9.0,
+    "review_comments": [
+      "Strong use of metrics throughout.",
+      "Avoid repeating the same action verb."
+    ]
+  },
+  {
+    "example_id": "cv_041",
+    "target_role": "Analytics Engineer",
+    "industry": "SaaS",
+    "company_type": "Early-stage Startup",
+    "seniority": "Lead",
+    "summary": "Analytics Engineer with strengths in Model Deployment, Deep Learning and a track record in SaaS.",
+    "cv_text": "PROFESSIONAL SUMMARY\nAnalytics Engineer focused on rank lending opportunities.\n\nEXPERIENCE\n- Improved a Data Analytics system, improving MAPE from 0.66 to 0.84.\n- Constructed pipelines with Docker, Power BI, MLflow, cutting throughput by 36%.\n\nSKILLS\nRisk Modeling, Python, Feature Engineering, Model Deployment, MLOps",
+    "strengths": [
+      "ATS keywords",
+      "strong action verbs",
+      "quantified impact"
+    ],
+    "score": 7.9,
+    "review_comments": [
+      "Add one more leadership example.",
+      "Avoid repeating the same action verb.",
+      "Strong use of metrics throughout.",
+      "Quantify the last bullet."
+    ]
+  },
+  {
+    "example_id": "cv_042",
+    "target_role": "Data Analyst",
+    "industry": "Insurance",
+    "company_type": "Early-stage Startup",
+    "seniority": "Lead",
+    "summary": "Data Analyst with strengths in Cloud Computing, Risk Modeling and a track record in Insurance.",
+    "cv_text": "PROFESSIONAL SUMMARY\nData Analyst focused on forecast short-term volatility.\n\nEXPERIENCE\n- Reduced a Deep Learning system, improving Silhouette Score from 0.74 to 0.94.\n- Generated pipelines with Docker, Grafana, cutting turnaround time by 50%.\n\nSKILLS\nAnomaly Detection, NLP, Data Wrangling, ETL, Data Visualization, Risk Modeling, SQL, A/B Testing",
+    "strengths": [
+      "concise phrasing",
+      "clear structure",
+      "strong action verbs",
+      "relevant domain focus"
+    ],
+    "score": 8.4,
+    "review_comments": [
+      "Could tighten the summary to two lines.",
+      "Strong use of metrics throughout.",
+      "Avoid repeating the same action verb."
+    ]
+  },
+  {
+    "example_id": "cv_043",
+    "target_role": "Blockchain Data Engineer",
+    "industry": "Consulting",
+    "company_type": "Big Tech",
+    "seniority": "Lead",
+    "summary": "Blockchain Data Engineer with strengths in Data Visualization, Data Pipeline Design, ETL and a track record in Consulting.",
+    "cv_text": "PROFESSIONAL SUMMARY\nBlockchain Data Engineer focused on rank lending opportunities.\n\nEXPERIENCE\n- Integrated a Risk Analytics system, improving Log Loss from 0.57 to 0.65.\n- Leveraged pipelines with Terraform, Dune Analytics, Jupyter, cutting coverage by 60%.\n\nSKILLS\nMachine Learning, Prompt Engineering, Deep Learning, MLOps, Statistical Modeling, Feature Engineering",
+    "strengths": [
+      "strong action verbs",
+      "ATS keywords"
+    ],
+    "score": 7.5,
+    "review_comments": [
+      "Strong use of metrics throughout.",
+      "Quantify the last bullet.",
+      "Good keyword alignment with the target role."
+    ]
+  },
+  {
+    "example_id": "cv_044",
+    "target_role": "Data Scientist",
+    "industry": "E-commerce",
+    "company_type": "Consultancy",
+    "seniority": "Intern",
+    "summary": "Data Scientist with strengths in Anomaly Detection, SQL, Cloud Computing and a track record in E-commerce.",
+    "cv_text": "PROFESSIONAL SUMMARY\nData Scientist focused on rank lending opportunities.\n\nEXPERIENCE\n- Leveraged a Risk Analytics system, improving F1 from 0.58 to 0.72.\n- Evaluated pipelines with Git, Grafana, cutting latency by 22%.\n\nSKILLS\nRisk Modeling, SQL, Python, Deep Learning, Model Deployment, MLOps",
+    "strengths": [
+      "ATS keywords",
+      "strong action verbs"
+    ],
+    "score": 7.7,
+    "review_comments": [
+      "Strong use of metrics throughout.",
+      "Quantify the last bullet.",
+      "Add one more leadership example.",
+      "Avoid repeating the same action verb."
+    ]
+  },
+  {
+    "example_id": "cv_045",
+    "target_role": "Quant Developer",
+    "industry": "Trading",
+    "company_type": "Scale-up",
+    "seniority": "Intern",
+    "summary": "Quant Developer with strengths in Deep Learning, Data Wrangling and a track record in Trading.",
+    "cv_text": "PROFESSIONAL SUMMARY\nQuant Developer focused on predict customer churn.\n\nEXPERIENCE\n- Enhanced a Blockchain system, improving F1 from 0.57 to 0.76.\n- Generated pipelines with MLflow, Jupyter, cutting latency by 70%.\n\nSKILLS\nRisk Modeling, Data Pipeline Design, Statistical Modeling, Deep Learning, MLOps, Data Wrangling, ETL, Smart Contract Analysis",
+    "strengths": [
+      "quantified impact",
+      "clear structure"
+    ],
+    "score": 7.4,
+    "review_comments": [
+      "Strong use of metrics throughout.",
+      "Avoid repeating the same action verb.",
+      "Add one more leadership example.",
+      "Quantify the last bullet."
+    ]
+  },
+  {
+    "example_id": "cv_046",
+    "target_role": "Research Engineer",
+    "industry": "E-commerce",
+    "company_type": "Big Tech",
+    "seniority": "Lead",
+    "summary": "Research Engineer with strengths in Risk Modeling, Python and a track record in E-commerce.",
+    "cv_text": "PROFESSIONAL SUMMARY\nResearch Engineer focused on rank lending opportunities.\n\nEXPERIENCE\n- Integrated a Fintech system, improving Silhouette Score from 0.6 to 0.78.\n- Implemented pipelines with Tableau, DBeaver, cutting throughput by 65%.\n\nSKILLS\nModel Deployment, Python, MLOps, Smart Contract Analysis, Dashboarding",
+    "strengths": [
+      "concise phrasing",
+      "quantified impact",
+      "ATS keywords",
+      "clear structure"
+    ],
+    "score": 8.3,
+    "review_comments": [
+      "Quantify the last bullet.",
+      "Add one more leadership example."
+    ]
+  },
+  {
+    "example_id": "cv_047",
+    "target_role": "Blockchain Data Engineer",
+    "industry": "Consulting",
+    "company_type": "Big Tech",
+    "seniority": "Lead",
+    "summary": "Blockchain Data Engineer with strengths in Model Deployment, Dashboarding, On-chain Data and a track record in Consulting.",
+    "cv_text": "PROFESSIONAL SUMMARY\nBlockchain Data Engineer focused on automate compliance reporting.\n\nEXPERIENCE\n- Reduced a Smart Contracts system, improving Silhouette Score from 0.74 to 0.86.\n- Streamlined pipelines with Git, Kubernetes, cutting coverage by 76%.\n\nSKILLS\nDashboarding, On-chain Data, Prompt Engineering, Time Series Analysis, Statistical Modeling, Cloud Computing, Data Visualization",
+    "strengths": [
+      "quantified impact",
+      "relevant domain focus",
+      "ATS keywords"
+    ],
+    "score": 8.3,
+    "review_comments": [
+      "Could tighten the summary to two lines.",
+      "Quantify the last bullet."
+    ]
+  },
+  {
+    "example_id": "cv_048",
+    "target_role": "Machine Learning Engineer",
+    "industry": "Banking",
+    "company_type": "Scale-up",
+    "seniority": "Mid",
+    "summary": "Machine Learning Engineer with strengths in Risk Modeling, On-chain Data and a track record in Banking.",
+    "cv_text": "PROFESSIONAL SUMMARY\nMachine Learning Engineer focused on score credit risk.\n\nEXPERIENCE\n- Reduced a Blockchain system, improving F1 from 0.74 to 0.91.\n- Accelerated pipelines with Git, Weights & Biases, cutting coverage by 58%.\n\nSKILLS\nA/B Testing, Risk Modeling, SQL, Anomaly Detection, Machine Learning",
+    "strengths": [
+      "clear structure",
+      "ATS keywords",
+      "concise phrasing",
+      "relevant domain focus"
+    ],
+    "score": 8.4,
+    "review_comments": [
+      "Quantify the last bullet.",
+      "Avoid repeating the same action verb.",
+      "Good keyword alignment with the target role."
+    ]
+  },
+  {
+    "example_id": "cv_049",
+    "target_role": "Quant Developer",
+    "industry": "Insurance",
+    "company_type": "Consultancy",
+    "seniority": "Lead",
+    "summary": "Quant Developer with strengths in ETL, SQL and a track record in Insurance.",
+    "cv_text": "PROFESSIONAL SUMMARY\nQuant Developer focused on predict customer churn.\n\nEXPERIENCE\n- Evaluated a Machine Learning system, improving R2 from 0.76 to 0.89.\n- Improved pipelines with Airflow, Dune Analytics, Git, cutting coverage by 59%.\n\nSKILLS\nData Pipeline Design, Statistical Modeling, Risk Modeling, Data Wrangling, Feature Engineering, On-chain Data, MLOps",
+    "strengths": [
+      "strong action verbs",
+      "quantified impact",
+      "clear structure"
+    ],
+    "score": 6.5,
+    "review_comments": [
+      "Add one more leadership example.",
+      "Strong use of metrics throughout.",
+      "Could tighten the summary to two lines."
+    ]
+  }
+]

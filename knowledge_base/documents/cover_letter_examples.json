@@ -1,0 +1,900 @@
+[
+  {
+    "example_id": "cl_000",
+    "target_role": "Quantitative Analyst",
+    "industry": "SaaS",
+    "company_type": "Enterprise",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Quantitative Analyst role. In my recent work I improved a Data Engineering solution that forecast short-term volatility, improving precision by 32%. I bring strong skills in On-chain Data, Data Pipeline Design, Statistical Modeling and a passion for SaaS.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "concise",
+      "clear motivation"
+    ],
+    "score": 9.0,
+    "review_comments": [
+      "Good specific metric in paragraph one.",
+      "Shorten the middle paragraph.",
+      "Strong, confident tone."
+    ]
+  },
+  {
+    "example_id": "cl_001",
+    "target_role": "Analytics Engineer",
+    "industry": "Insurance",
+    "company_type": "Early-stage Startup",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Analytics Engineer role. In my recent work I engineered a Credit Scoring solution that optimize gas usage, improving analyst hours by 58%. I bring strong skills in Feature Engineering, Python, Data Visualization and a passion for Insurance.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "concise",
+      "specific impact metric",
+      "personalized opening"
+    ],
+    "score": 6.3,
+    "review_comments": [
+      "Shorten the middle paragraph.",
+      "Slightly generic motivation — make it concrete."
+    ]
+  },
+  {
+    "example_id": "cl_002",
+    "target_role": "Data Scientist",
+    "industry": "Fintech",
+    "company_type": "Early-stage Startup",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Data Scientist role. In my recent work I deployed a Credit Scoring solution that surface at-risk loan positions, improving analyst hours by 90%. I bring strong skills in Feature Engineering, ETL, Anomaly Detection and a passion for Fintech.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "personalized opening",
+      "clear motivation",
+      "professional tone",
+      "specific impact metric"
+    ],
+    "score": 7.4,
+    "review_comments": [
+      "Shorten the middle paragraph.",
+      "Tie the closing back to the company mission."
+    ]
+  },
+  {
+    "example_id": "cl_003",
+    "target_role": "Business Intelligence Analyst",
+    "industry": "Trading",
+    "company_type": "Consultancy",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Business Intelligence Analyst role. In my recent work I evaluated a Deep Learning solution that surface at-risk loan positions, improving throughput by 36%. I bring strong skills in Data Wrangling, SQL, NLP and a passion for Trading.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "relevant skills",
+      "concise",
+      "clear motivation"
+    ],
+    "score": 7.4,
+    "review_comments": [
+      "Strong, confident tone.",
+      "Tie the closing back to the company mission."
+    ]
+  },
+  {
+    "example_id": "cl_004",
+    "target_role": "Data Engineer",
+    "industry": "AdTech",
+    "company_type": "Consultancy",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Data Engineer role. In my recent work I optimized a Smart Contracts solution that detect anomalous wallet behavior, improving throughput by 10%. I bring strong skills in NLP, Anomaly Detection and a passion for AdTech.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "relevant skills",
+      "personalized opening",
+      "specific impact metric"
+    ],
+    "score": 8.0,
+    "review_comments": [
+      "Good specific metric in paragraph one.",
+      "Slightly generic motivation — make it concrete.",
+      "Shorten the middle paragraph.",
+      "Tie the closing back to the company mission."
+    ]
+  },
+  {
+    "example_id": "cl_005",
+    "target_role": "ML Researcher",
+    "industry": "SaaS",
+    "company_type": "Enterprise",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the ML Researcher role. In my recent work I designed a Computer Vision solution that rank lending opportunities, improving recall by 66%. I bring strong skills in Feature Engineering, Statistical Modeling and a passion for SaaS.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "clear motivation",
+      "specific impact metric",
+      "concise"
+    ],
+    "score": 7.2,
+    "review_comments": [
+      "Good specific metric in paragraph one.",
+      "Strong, confident tone.",
+      "Slightly generic motivation — make it concrete."
+    ]
+  },
+  {
+    "example_id": "cl_006",
+    "target_role": "Machine Learning Engineer",
+    "industry": "Trading",
+    "company_type": "Early-stage Startup",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Machine Learning Engineer role. In my recent work I constructed a NLP solution that forecast short-term volatility, improving latency by 85%. I bring strong skills in SQL, On-chain Data and a passion for Trading.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "specific impact metric",
+      "relevant skills"
+    ],
+    "score": 6.8,
+    "review_comments": [
+      "Slightly generic motivation — make it concrete.",
+      "Tie the closing back to the company mission.",
+      "Strong, confident tone.",
+      "Shorten the middle paragraph."
+    ]
+  },
+  {
+    "example_id": "cl_007",
+    "target_role": "ML Researcher",
+    "industry": "Consulting",
+    "company_type": "Enterprise",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the ML Researcher role. In my recent work I deployed a Machine Learning solution that rank lending opportunities, improving recall by 65%. I bring strong skills in Prompt Engineering, Data Pipeline Design and a passion for Consulting.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "clear motivation",
+      "professional tone",
+      "personalized opening"
+    ],
+    "score": 8.5,
+    "review_comments": [
+      "Shorten the middle paragraph.",
+      "Slightly generic motivation — make it concrete."
+    ]
+  },
+  {
+    "example_id": "cl_008",
+    "target_role": "Data Scientist",
+    "industry": "Banking",
+    "company_type": "Research Lab",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Data Scientist role. In my recent work I deployed a MLOps solution that map liquidity flows, improving accuracy by 20%. I bring strong skills in Data Wrangling, ETL, Python and a passion for Banking.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "relevant skills",
+      "specific impact metric"
+    ],
+    "score": 8.4,
+    "review_comments": [
+      "Strong, confident tone.",
+      "Shorten the middle paragraph."
+    ]
+  },
+  {
+    "example_id": "cl_009",
+    "target_role": "ML Researcher",
+    "industry": "Crypto / Web3",
+    "company_type": "Scale-up",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the ML Researcher role. In my recent work I streamlined a Fraud Detection solution that map liquidity flows, improving coverage by 31%. I bring strong skills in SQL, Machine Learning and a passion for Crypto / Web3.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "personalized opening",
+      "relevant skills",
+      "specific impact metric",
+      "professional tone"
+    ],
+    "score": 8.2,
+    "review_comments": [
+      "Shorten the middle paragraph.",
+      "Strong, confident tone.",
+      "Good specific metric in paragraph one."
+    ]
+  },
+  {
+    "example_id": "cl_010",
+    "target_role": "Business Intelligence Analyst",
+    "industry": "SaaS",
+    "company_type": "Enterprise",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Business Intelligence Analyst role. In my recent work I leveraged a Smart Contracts solution that classify token contracts, improving recall by 62%. I bring strong skills in Data Pipeline Design, Time Series Analysis and a passion for SaaS.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "concise",
+      "specific impact metric"
+    ],
+    "score": 7.9,
+    "review_comments": [
+      "Strong, confident tone.",
+      "Good specific metric in paragraph one.",
+      "Tie the closing back to the company mission."
+    ]
+  },
+  {
+    "example_id": "cl_011",
+    "target_role": "Quantitative Analyst",
+    "industry": "Consulting",
+    "company_type": "Research Lab",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Quantitative Analyst role. In my recent work I streamlined a DeFi solution that classify token contracts, improving analyst hours by 77%. I bring strong skills in On-chain Data, Prompt Engineering, Data Visualization and a passion for Consulting.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "relevant skills",
+      "personalized opening",
+      "professional tone"
+    ],
+    "score": 9.0,
+    "review_comments": [
+      "Tie the closing back to the company mission.",
+      "Strong, confident tone.",
+      "Slightly generic motivation — make it concrete."
+    ]
+  },
+  {
+    "example_id": "cl_012",
+    "target_role": "Data Analyst",
+    "industry": "Fintech",
+    "company_type": "Enterprise",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Data Analyst role. In my recent work I engineered a Risk Analytics solution that map liquidity flows, improving coverage by 18%. I bring strong skills in Machine Learning, Time Series Analysis and a passion for Fintech.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "clear motivation",
+      "professional tone",
+      "specific impact metric",
+      "personalized opening"
+    ],
+    "score": 9.5,
+    "review_comments": [
+      "Slightly generic motivation — make it concrete.",
+      "Good specific metric in paragraph one.",
+      "Tie the closing back to the company mission.",
+      "Shorten the middle paragraph."
+    ]
+  },
+  {
+    "example_id": "cl_013",
+    "target_role": "Machine Learning Engineer",
+    "industry": "E-commerce",
+    "company_type": "Hedge Fund",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Machine Learning Engineer role. In my recent work I improved a Deep Learning solution that forecast short-term volatility, improving false-positive rate by 91%. I bring strong skills in Feature Engineering, Dashboarding and a passion for E-commerce.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "clear motivation",
+      "concise"
+    ],
+    "score": 7.4,
+    "review_comments": [
+      "Shorten the middle paragraph.",
+      "Good specific metric in paragraph one.",
+      "Slightly generic motivation — make it concrete."
+    ]
+  },
+  {
+    "example_id": "cl_014",
+    "target_role": "Business Intelligence Analyst",
+    "industry": "SaaS",
+    "company_type": "Research Lab",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Business Intelligence Analyst role. In my recent work I analyzed a Quantitative Finance solution that optimize gas usage, improving analyst hours by 85%. I bring strong skills in Data Pipeline Design, SQL, Machine Learning and a passion for SaaS.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "personalized opening",
+      "clear motivation"
+    ],
+    "score": 8.8,
+    "review_comments": [
+      "Tie the closing back to the company mission.",
+      "Strong, confident tone.",
+      "Slightly generic motivation — make it concrete.",
+      "Shorten the middle paragraph."
+    ]
+  },
+  {
+    "example_id": "cl_015",
+    "target_role": "ML Researcher",
+    "industry": "E-commerce",
+    "company_type": "Consultancy",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the ML Researcher role. In my recent work I optimized a MLOps solution that score credit risk, improving throughput by 86%. I bring strong skills in Anomaly Detection, Feature Engineering and a passion for E-commerce.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "clear motivation",
+      "relevant skills",
+      "concise"
+    ],
+    "score": 9.4,
+    "review_comments": [
+      "Strong, confident tone.",
+      "Good specific metric in paragraph one."
+    ]
+  },
+  {
+    "example_id": "cl_016",
+    "target_role": "Research Engineer",
+    "industry": "Banking",
+    "company_type": "Scale-up",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Research Engineer role. In my recent work I reduced a Risk Analytics solution that classify token contracts, improving turnaround time by 69%. I bring strong skills in Data Pipeline Design, Prompt Engineering and a passion for Banking.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "personalized opening",
+      "concise"
+    ],
+    "score": 7.6,
+    "review_comments": [
+      "Good specific metric in paragraph one.",
+      "Shorten the middle paragraph.",
+      "Slightly generic motivation — make it concrete."
+    ]
+  },
+  {
+    "example_id": "cl_017",
+    "target_role": "Quant Developer",
+    "industry": "Trading",
+    "company_type": "Hedge Fund",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Quant Developer role. In my recent work I accelerated a Algorithmic Trading solution that classify token contracts, improving turnaround time by 77%. I bring strong skills in Model Deployment, Dashboarding and a passion for Trading.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "concise",
+      "relevant skills",
+      "specific impact metric"
+    ],
+    "score": 8.9,
+    "review_comments": [
+      "Slightly generic motivation — make it concrete.",
+      "Tie the closing back to the company mission."
+    ]
+  },
+  {
+    "example_id": "cl_018",
+    "target_role": "Analytics Engineer",
+    "industry": "Fintech",
+    "company_type": "Research Lab",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Analytics Engineer role. In my recent work I reduced a Data Engineering solution that map liquidity flows, improving accuracy by 59%. I bring strong skills in Prompt Engineering, Anomaly Detection and a passion for Fintech.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "clear motivation",
+      "personalized opening"
+    ],
+    "score": 8.4,
+    "review_comments": [
+      "Slightly generic motivation — make it concrete.",
+      "Strong, confident tone."
+    ]
+  },
+  {
+    "example_id": "cl_019",
+    "target_role": "Data Engineer",
+    "industry": "Consulting",
+    "company_type": "Enterprise",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Data Engineer role. In my recent work I streamlined a On-chain Analytics solution that surface at-risk loan positions, improving accuracy by 23%. I bring strong skills in Data Wrangling, Data Pipeline Design and a passion for Consulting.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "professional tone",
+      "clear motivation"
+    ],
+    "score": 9.0,
+    "review_comments": [
+      "Slightly generic motivation — make it concrete.",
+      "Tie the closing back to the company mission.",
+      "Shorten the middle paragraph."
+    ]
+  },
+  {
+    "example_id": "cl_020",
+    "target_role": "Data Engineer",
+    "industry": "Trading",
+    "company_type": "Big Tech",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Data Engineer role. In my recent work I deployed a Computer Vision solution that detect anomalous wallet behavior, improving throughput by 86%. I bring strong skills in Machine Learning, Anomaly Detection, Time Series Analysis and a passion for Trading.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "specific impact metric",
+      "concise",
+      "clear motivation",
+      "professional tone"
+    ],
+    "score": 8.9,
+    "review_comments": [
+      "Tie the closing back to the company mission.",
+      "Good specific metric in paragraph one."
+    ]
+  },
+  {
+    "example_id": "cl_021",
+    "target_role": "Research Engineer",
+    "industry": "AdTech",
+    "company_type": "Scale-up",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Research Engineer role. In my recent work I analyzed a Data Analytics solution that predict customer churn, improving coverage by 76%. I bring strong skills in NLP, Machine Learning, Cloud Computing and a passion for AdTech.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "specific impact metric",
+      "concise",
+      "professional tone"
+    ],
+    "score": 7.4,
+    "review_comments": [
+      "Tie the closing back to the company mission.",
+      "Shorten the middle paragraph.",
+      "Strong, confident tone.",
+      "Slightly generic motivation — make it concrete."
+    ]
+  },
+  {
+    "example_id": "cl_022",
+    "target_role": "Machine Learning Engineer",
+    "industry": "Insurance",
+    "company_type": "Research Lab",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Machine Learning Engineer role. In my recent work I generated a Machine Learning solution that map liquidity flows, improving turnaround time by 55%. I bring strong skills in SQL, Anomaly Detection, NLP and a passion for Insurance.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "clear motivation",
+      "relevant skills",
+      "professional tone",
+      "personalized opening"
+    ],
+    "score": 8.1,
+    "review_comments": [
+      "Slightly generic motivation — make it concrete.",
+      "Shorten the middle paragraph.",
+      "Good specific metric in paragraph one."
+    ]
+  },
+  {
+    "example_id": "cl_023",
+    "target_role": "Data Scientist",
+    "industry": "Insurance",
+    "company_type": "Enterprise",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Data Scientist role. In my recent work I accelerated a Machine Learning solution that map liquidity flows, improving analyst hours by 17%. I bring strong skills in NLP, Model Deployment and a passion for Insurance.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "specific impact metric",
+      "personalized opening",
+      "professional tone"
+    ],
+    "score": 7.8,
+    "review_comments": [
+      "Slightly generic motivation — make it concrete.",
+      "Tie the closing back to the company mission.",
+      "Strong, confident tone.",
+      "Good specific metric in paragraph one."
+    ]
+  },
+  {
+    "example_id": "cl_024",
+    "target_role": "Machine Learning Engineer",
+    "industry": "Healthcare Analytics",
+    "company_type": "Scale-up",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Machine Learning Engineer role. In my recent work I deployed a MLOps solution that forecast short-term volatility, improving throughput by 45%. I bring strong skills in Data Visualization, Cloud Computing, Deep Learning and a passion for Healthcare Analytics.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "specific impact metric",
+      "professional tone"
+    ],
+    "score": 7.3,
+    "review_comments": [
+      "Strong, confident tone.",
+      "Shorten the middle paragraph."
+    ]
+  },
+  {
+    "example_id": "cl_025",
+    "target_role": "ML Researcher",
+    "industry": "Crypto / Web3",
+    "company_type": "Scale-up",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the ML Researcher role. In my recent work I evaluated a Time Series Forecasting solution that predict customer churn, improving accuracy by 10%. I bring strong skills in Statistical Modeling, Anomaly Detection, Data Visualization and a passion for Crypto / Web3.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "personalized opening",
+      "professional tone",
+      "clear motivation"
+    ],
+    "score": 6.6,
+    "review_comments": [
+      "Shorten the middle paragraph.",
+      "Good specific metric in paragraph one.",
+      "Slightly generic motivation — make it concrete."
+    ]
+  },
+  {
+    "example_id": "cl_026",
+    "target_role": "Business Intelligence Analyst",
+    "industry": "SaaS",
+    "company_type": "Hedge Fund",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Business Intelligence Analyst role. In my recent work I reduced a Blockchain solution that score credit risk, improving coverage by 69%. I bring strong skills in Data Wrangling, Smart Contract Analysis and a passion for SaaS.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "specific impact metric",
+      "concise"
+    ],
+    "score": 7.8,
+    "review_comments": [
+      "Strong, confident tone.",
+      "Tie the closing back to the company mission.",
+      "Good specific metric in paragraph one."
+    ]
+  },
+  {
+    "example_id": "cl_027",
+    "target_role": "Research Engineer",
+    "industry": "SaaS",
+    "company_type": "Research Lab",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Research Engineer role. In my recent work I evaluated a Recommender Systems solution that surface at-risk loan positions, improving throughput by 82%. I bring strong skills in A/B Testing, Data Pipeline Design, Data Wrangling and a passion for SaaS.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "specific impact metric",
+      "professional tone",
+      "relevant skills"
+    ],
+    "score": 8.5,
+    "review_comments": [
+      "Slightly generic motivation — make it concrete.",
+      "Shorten the middle paragraph.",
+      "Strong, confident tone.",
+      "Tie the closing back to the company mission."
+    ]
+  },
+  {
+    "example_id": "cl_028",
+    "target_role": "Business Intelligence Analyst",
+    "industry": "AdTech",
+    "company_type": "Enterprise",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Business Intelligence Analyst role. In my recent work I built a Smart Contracts solution that automate compliance reporting, improving coverage by 72%. I bring strong skills in ETL, Model Deployment and a passion for AdTech.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "personalized opening",
+      "relevant skills"
+    ],
+    "score": 9.4,
+    "review_comments": [
+      "Tie the closing back to the company mission.",
+      "Good specific metric in paragraph one."
+    ]
+  },
+  {
+    "example_id": "cl_029",
+    "target_role": "Data Scientist",
+    "industry": "Fintech",
+    "company_type": "Scale-up",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Data Scientist role. In my recent work I created a Fintech solution that rank lending opportunities, improving analyst hours by 90%. I bring strong skills in Feature Engineering, Time Series Analysis and a passion for Fintech.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "professional tone",
+      "personalized opening"
+    ],
+    "score": 8.8,
+    "review_comments": [
+      "Good specific metric in paragraph one.",
+      "Tie the closing back to the company mission.",
+      "Shorten the middle paragraph."
+    ]
+  },
+  {
+    "example_id": "cl_030",
+    "target_role": "Research Engineer",
+    "industry": "Healthcare Analytics",
+    "company_type": "Hedge Fund",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Research Engineer role. In my recent work I developed a Credit Scoring solution that rank lending opportunities, improving turnaround time by 79%. I bring strong skills in Prompt Engineering, Data Visualization and a passion for Healthcare Analytics.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "clear motivation",
+      "professional tone",
+      "relevant skills"
+    ],
+    "score": 7.4,
+    "review_comments": [
+      "Strong, confident tone.",
+      "Tie the closing back to the company mission.",
+      "Shorten the middle paragraph.",
+      "Good specific metric in paragraph one."
+    ]
+  },
+  {
+    "example_id": "cl_031",
+    "target_role": "Data Engineer",
+    "industry": "Trading",
+    "company_type": "Consultancy",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Data Engineer role. In my recent work I streamlined a MLOps solution that optimize gas usage, improving coverage by 8%. I bring strong skills in Smart Contract Analysis, MLOps and a passion for Trading.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "professional tone",
+      "specific impact metric",
+      "clear motivation",
+      "concise"
+    ],
+    "score": 6.7,
+    "review_comments": [
+      "Shorten the middle paragraph.",
+      "Tie the closing back to the company mission."
+    ]
+  },
+  {
+    "example_id": "cl_032",
+    "target_role": "Data Analyst",
+    "industry": "SaaS",
+    "company_type": "Research Lab",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Data Analyst role. In my recent work I implemented a Deep Learning solution that rank lending opportunities, improving latency by 24%. I bring strong skills in Model Deployment, Statistical Modeling and a passion for SaaS.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "personalized opening",
+      "clear motivation",
+      "professional tone",
+      "relevant skills"
+    ],
+    "score": 7.3,
+    "review_comments": [
+      "Good specific metric in paragraph one.",
+      "Tie the closing back to the company mission."
+    ]
+  },
+  {
+    "example_id": "cl_033",
+    "target_role": "Data Engineer",
+    "industry": "E-commerce",
+    "company_type": "Hedge Fund",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Data Engineer role. In my recent work I automated a Computer Vision solution that map liquidity flows, improving data freshness by 52%. I bring strong skills in Data Pipeline Design, Machine Learning and a passion for E-commerce.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "relevant skills",
+      "concise",
+      "personalized opening"
+    ],
+    "score": 8.3,
+    "review_comments": [
+      "Tie the closing back to the company mission.",
+      "Slightly generic motivation — make it concrete."
+    ]
+  },
+  {
+    "example_id": "cl_034",
+    "target_role": "Analytics Engineer",
+    "industry": "Trading",
+    "company_type": "Enterprise",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Analytics Engineer role. In my recent work I analyzed a Fintech solution that map liquidity flows, improving precision by 69%. I bring strong skills in On-chain Data, Statistical Modeling and a passion for Trading.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "personalized opening",
+      "clear motivation",
+      "specific impact metric",
+      "concise"
+    ],
+    "score": 6.3,
+    "review_comments": [
+      "Strong, confident tone.",
+      "Shorten the middle paragraph.",
+      "Slightly generic motivation — make it concrete.",
+      "Good specific metric in paragraph one."
+    ]
+  },
+  {
+    "example_id": "cl_035",
+    "target_role": "Machine Learning Engineer",
+    "industry": "AdTech",
+    "company_type": "Early-stage Startup",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Machine Learning Engineer role. In my recent work I reduced a NLP solution that classify token contracts, improving latency by 90%. I bring strong skills in Machine Learning, Feature Engineering, A/B Testing and a passion for AdTech.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "specific impact metric",
+      "professional tone",
+      "relevant skills",
+      "clear motivation"
+    ],
+    "score": 8.5,
+    "review_comments": [
+      "Shorten the middle paragraph.",
+      "Tie the closing back to the company mission.",
+      "Good specific metric in paragraph one.",
+      "Strong, confident tone."
+    ]
+  },
+  {
+    "example_id": "cl_036",
+    "target_role": "Data Analyst",
+    "industry": "Banking",
+    "company_type": "Scale-up",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Data Analyst role. In my recent work I improved a On-chain Analytics solution that score credit risk, improving recall by 60%. I bring strong skills in Data Visualization, Risk Modeling and a passion for Banking.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "professional tone",
+      "concise",
+      "personalized opening"
+    ],
+    "score": 8.2,
+    "review_comments": [
+      "Shorten the middle paragraph.",
+      "Tie the closing back to the company mission."
+    ]
+  },
+  {
+    "example_id": "cl_037",
+    "target_role": "Quantitative Analyst",
+    "industry": "Banking",
+    "company_type": "Enterprise",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Quantitative Analyst role. In my recent work I enhanced a Quantitative Finance solution that score credit risk, improving false-positive rate by 34%. I bring strong skills in Data Pipeline Design, ETL, Data Wrangling and a passion for Banking.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "personalized opening",
+      "relevant skills",
+      "concise"
+    ],
+    "score": 8.6,
+    "review_comments": [
+      "Tie the closing back to the company mission.",
+      "Shorten the middle paragraph.",
+      "Strong, confident tone."
+    ]
+  },
+  {
+    "example_id": "cl_038",
+    "target_role": "Blockchain Data Engineer",
+    "industry": "Insurance",
+    "company_type": "Early-stage Startup",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Blockchain Data Engineer role. In my recent work I improved a Data Engineering solution that automate compliance reporting, improving precision by 81%. I bring strong skills in Model Deployment, Data Visualization, Machine Learning and a passion for Insurance.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "concise",
+      "professional tone",
+      "relevant skills"
+    ],
+    "score": 6.0,
+    "review_comments": [
+      "Tie the closing back to the company mission.",
+      "Strong, confident tone.",
+      "Good specific metric in paragraph one.",
+      "Slightly generic motivation — make it concrete."
+    ]
+  },
+  {
+    "example_id": "cl_039",
+    "target_role": "Data Scientist",
+    "industry": "Healthcare Analytics",
+    "company_type": "Scale-up",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Data Scientist role. In my recent work I accelerated a Time Series Forecasting solution that map liquidity flows, improving data freshness by 22%. I bring strong skills in NLP, Cloud Computing and a passion for Healthcare Analytics.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "concise",
+      "professional tone"
+    ],
+    "score": 9.3,
+    "review_comments": [
+      "Tie the closing back to the company mission.",
+      "Shorten the middle paragraph.",
+      "Good specific metric in paragraph one.",
+      "Slightly generic motivation — make it concrete."
+    ]
+  },
+  {
+    "example_id": "cl_040",
+    "target_role": "Quant Developer",
+    "industry": "Crypto / Web3",
+    "company_type": "Scale-up",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Quant Developer role. In my recent work I enhanced a Risk Analytics solution that surface at-risk loan positions, improving false-positive rate by 32%. I bring strong skills in Python, Data Wrangling and a passion for Crypto / Web3.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "relevant skills",
+      "concise",
+      "professional tone",
+      "clear motivation"
+    ],
+    "score": 7.8,
+    "review_comments": [
+      "Strong, confident tone.",
+      "Slightly generic motivation — make it concrete.",
+      "Shorten the middle paragraph.",
+      "Good specific metric in paragraph one."
+    ]
+  },
+  {
+    "example_id": "cl_041",
+    "target_role": "Research Engineer",
+    "industry": "SaaS",
+    "company_type": "Enterprise",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Research Engineer role. In my recent work I automated a Quantitative Finance solution that map liquidity flows, improving turnaround time by 15%. I bring strong skills in Deep Learning, SQL and a passion for SaaS.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "clear motivation",
+      "specific impact metric",
+      "relevant skills"
+    ],
+    "score": 8.3,
+    "review_comments": [
+      "Shorten the middle paragraph.",
+      "Slightly generic motivation — make it concrete.",
+      "Good specific metric in paragraph one.",
+      "Tie the closing back to the company mission."
+    ]
+  },
+  {
+    "example_id": "cl_042",
+    "target_role": "Machine Learning Engineer",
+    "industry": "Healthcare Analytics",
+    "company_type": "Research Lab",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Machine Learning Engineer role. In my recent work I automated a Computer Vision solution that score credit risk, improving latency by 10%. I bring strong skills in Anomaly Detection, Dashboarding and a passion for Healthcare Analytics.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "professional tone",
+      "concise"
+    ],
+    "score": 8.6,
+    "review_comments": [
+      "Good specific metric in paragraph one.",
+      "Shorten the middle paragraph.",
+      "Tie the closing back to the company mission.",
+      "Strong, confident tone."
+    ]
+  },
+  {
+    "example_id": "cl_043",
+    "target_role": "Analytics Engineer",
+    "industry": "E-commerce",
+    "company_type": "Consultancy",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Analytics Engineer role. In my recent work I generated a Computer Vision solution that surface at-risk loan positions, improving analyst hours by 33%. I bring strong skills in Dashboarding, Risk Modeling and a passion for E-commerce.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "personalized opening",
+      "specific impact metric",
+      "relevant skills"
+    ],
+    "score": 6.3,
+    "review_comments": [
+      "Tie the closing back to the company mission.",
+      "Strong, confident tone."
+    ]
+  },
+  {
+    "example_id": "cl_044",
+    "target_role": "Data Scientist",
+    "industry": "Banking",
+    "company_type": "Consultancy",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Data Scientist role. In my recent work I optimized a Machine Learning solution that rank lending opportunities, improving coverage by 23%. I bring strong skills in Risk Modeling, A/B Testing, Prompt Engineering and a passion for Banking.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "personalized opening",
+      "professional tone"
+    ],
+    "score": 8.1,
+    "review_comments": [
+      "Good specific metric in paragraph one.",
+      "Shorten the middle paragraph.",
+      "Strong, confident tone.",
+      "Tie the closing back to the company mission."
+    ]
+  },
+  {
+    "example_id": "cl_045",
+    "target_role": "Data Engineer",
+    "industry": "Crypto / Web3",
+    "company_type": "Scale-up",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Data Engineer role. In my recent work I automated a Blockchain solution that forecast short-term volatility, improving analyst hours by 12%. I bring strong skills in Statistical Modeling, Cloud Computing, Prompt Engineering and a passion for Crypto / Web3.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "concise",
+      "relevant skills",
+      "specific impact metric",
+      "personalized opening"
+    ],
+    "score": 9.2,
+    "review_comments": [
+      "Tie the closing back to the company mission.",
+      "Good specific metric in paragraph one.",
+      "Shorten the middle paragraph.",
+      "Strong, confident tone."
+    ]
+  },
+  {
+    "example_id": "cl_046",
+    "target_role": "Data Engineer",
+    "industry": "AdTech",
+    "company_type": "Enterprise",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Data Engineer role. In my recent work I constructed a Algorithmic Trading solution that surface at-risk loan positions, improving coverage by 66%. I bring strong skills in MLOps, Data Visualization, Statistical Modeling and a passion for AdTech.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "specific impact metric",
+      "personalized opening",
+      "concise"
+    ],
+    "score": 7.0,
+    "review_comments": [
+      "Strong, confident tone.",
+      "Tie the closing back to the company mission.",
+      "Shorten the middle paragraph.",
+      "Good specific metric in paragraph one."
+    ]
+  },
+  {
+    "example_id": "cl_047",
+    "target_role": "Business Intelligence Analyst",
+    "industry": "Healthcare Analytics",
+    "company_type": "Scale-up",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Business Intelligence Analyst role. In my recent work I optimized a Smart Contracts solution that automate compliance reporting, improving turnaround time by 24%. I bring strong skills in Dashboarding, Deep Learning and a passion for Healthcare Analytics.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "clear motivation",
+      "professional tone",
+      "relevant skills",
+      "personalized opening"
+    ],
+    "score": 8.8,
+    "review_comments": [
+      "Good specific metric in paragraph one.",
+      "Tie the closing back to the company mission.",
+      "Slightly generic motivation — make it concrete.",
+      "Strong, confident tone."
+    ]
+  },
+  {
+    "example_id": "cl_048",
+    "target_role": "Data Analyst",
+    "industry": "Consulting",
+    "company_type": "Hedge Fund",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Data Analyst role. In my recent work I engineered a Machine Learning solution that rank lending opportunities, improving data freshness by 23%. I bring strong skills in Data Wrangling, Deep Learning and a passion for Consulting.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "clear motivation",
+      "concise",
+      "professional tone"
+    ],
+    "score": 7.9,
+    "review_comments": [
+      "Slightly generic motivation — make it concrete.",
+      "Tie the closing back to the company mission.",
+      "Good specific metric in paragraph one."
+    ]
+  },
+  {
+    "example_id": "cl_049",
+    "target_role": "Data Scientist",
+    "industry": "E-commerce",
+    "company_type": "Early-stage Startup",
+    "cover_letter": "Dear Hiring Manager,\n\nI am excited to apply for the Data Scientist role. In my recent work I optimized a DeFi solution that detect anomalous wallet behavior, improving data freshness by 14%. I bring strong skills in Data Visualization, Smart Contract Analysis, Model Deployment and a passion for E-commerce.\n\nI would welcome the chance to contribute to your team.\n\nSincerely,\nA. Candidate",
+    "strengths": [
+      "relevant skills",
+      "specific impact metric"
+    ],
+    "score": 8.0,
+    "review_comments": [
+      "Good specific metric in paragraph one.",
+      "Tie the closing back to the company mission.",
+      "Slightly generic motivation — make it concrete."
+    ]
+  }
+]

@@ -1,0 +1,422 @@
+{
+  "instruction_set_id": "cv_bullet_generation_v1",
+  "revision": "1.1",
+
+  "purpose": "Generate resume project descriptions",
+
+  "enforcement": {
+    "mode": "all_rules_are_hard_constraints",
+    "rule_precedence": "none",
+    "description": "Every rule in this file applies at the same time. No rule outranks, replaces, or relaxes another.",
+    "on_conflict": "Rewrite the offending line until every rule is satisfied together. Never drop, weaken, or trade off a rule to satisfy another.",
+    "max_revision_attempts": 3,
+    "if_still_failing": "Return the closest draft together with the exact list of rules still violated. Never present a non-compliant draft as compliant.",
+    "scoring_gate": "scoring_weights are applied only after every validation rule passes. A high score can never offset a violated rule."
+  },
+
+  "input_requirements": {
+    "numbers_must_come_from_user": true,
+    "never_invent_metrics": true,
+    "required_project_facts": [
+      "project_domain",
+      "situation_or_problem",
+      "target_result",
+      "tools_and_frameworks_with_step_they_enabled",
+      "skills_with_step_they_enabled",
+      "intermediate_metrics_with_before_and_after_values",
+      "final_metrics"
+    ],
+    "if_fact_missing": "Ask the user for the missing fact. Line 4 and line 5 numbers are mandatory, so never fill them with guesses. Line 2 and line 3 progression numbers are used only when the user has supplied them."
+  },
+
+  "counting_rules": {
+    "word": "A token separated by whitespace.",
+    "hyphenated_compound_counts_as": 1,
+    "numeral_with_unit_or_symbol_counts_as": 1,
+    "examples": ["40%", "$85K", "3x", "time-series"],
+    "per_line_range_inclusive": true,
+    "total_words_expected": {
+      "min": 75,
+      "max": 90
+    }
+  },
+
+  "global_rules": {
+    "language": "simple",
+    "tone": "professional",
+    "use_action_words": true,
+    "use_numerals": true,
+    "specify_domain": true,
+    "avoid_jargon_overload": true,
+    "avoid_repetition_of_action_words": true,
+    "every_line_must_show_result": true,
+
+    "voice": {
+      "style": "impersonal_commanding_action_statement",
+      "description": "Each line is a subjectless action statement that opens with its action word. No grammatical subject is written, and no first-person pronouns are used.",
+      "forbidden_words": ["I", "we", "my", "our", "me", "us"],
+      "clause_form": "Do not use 'was/were + participle' constructions. They would push the action word off the first position."
+    },
+
+    "domain": {
+      "must_be_explicit": true,
+      "named_in_line": 1,
+      "clarity_test": "A reader who sees only the five lines can name the project domain without guessing.",
+      "domain_terms_stay_plain": true
+    },
+
+    "numerals": {
+      "write_as_digits": true,
+      "never_spell_out_numbers": true,
+      "minimum_total": 3,
+      "per_line": {
+        "line_1": "allowed, encouraged for the target result",
+        "line_2": "required when the user supplied a figure, in progression form",
+        "line_3": "required when the user supplied a figure, in progression form",
+        "line_4": "required",
+        "line_5": "required"
+      },
+      "progression_format": "Show before and after values, for example 'from 62% to 89%' or 'from 5 hours to 20 minutes'.",
+      "no_repeated_metric_across_lines": true
+    },
+
+    "result_rule": {
+      "every_line_reflects_a_result": true,
+      "allowed_result_types": ["target", "intermediate", "final"],
+      "line_1": "target",
+      "line_2": "intermediate",
+      "line_3": "intermediate",
+      "line_4": "intermediate",
+      "line_5": "final"
+    },
+
+    "buzzword_policy": {
+      "max_share_of_total_words": 0.40,
+      "measured_over": "all five lines combined",
+      "definition": "A buzzword is a technical term, tool or framework name, skill name, or industry jargon term.",
+      "does_not_count": [
+        "action words",
+        "numerals",
+        "connecting words",
+        "plain everyday words"
+      ],
+      "coexists_with": [
+        "line_2_must_name_a_tool_or_framework",
+        "line_3_must_name_a_skill",
+        "simple_language"
+      ],
+      "coexistence_rule": "Required tool and skill names count toward the cap. Every other word must be plain and easy to understand. Both the cap and the simple-language rule must hold at the same time."
+    }
+  },
+
+  "structure": {
+    "number_of_lines": 5,
+    "one_sentence_per_line": true,
+    "no_sub_bullets": true,
+    "line_order_is_fixed": true,
+    "every_line_must_satisfy": [
+      "global_rules",
+      "action_word_rules",
+      "counting_rules",
+      "buzzword_policy"
+    ],
+
+    "line_1": {
+      "purpose": "problem_statement",
+      "description": "Describe project context, challenge and target outcome.",
+      "word_limit": {
+        "min": 15,
+        "max": 18
+      },
+      "must_contain": [
+        "action_word",
+        "problem",
+        "target_result",
+        "situation",
+        "project_domain"
+      ],
+      "result_type": "target",
+      "notes": "State the situation at hand and the result to be achieved. This line defines the problem statement and names the domain."
+    },
+
+    "line_2": {
+      "purpose": "tools_and_frameworks",
+      "description": "Describe tools/frameworks used and intermediate outcome achieved.",
+      "word_limit": {
+        "min": 15,
+        "max": 18
+      },
+      "must_contain": [
+        "action_word",
+        "tool_or_framework",
+        "intermediate_result"
+      ],
+      "should_contain": [
+        "numerical_progression_if_available"
+      ],
+      "result_type": "intermediate",
+      "notes": "Name the tool or framework that produced a specific intermediate step, and show the numerical progression of that step when available."
+    },
+
+    "line_3": {
+      "purpose": "skills_application",
+      "description": "Describe technical skills applied and resulting improvement.",
+      "word_limit": {
+        "min": 15,
+        "max": 18
+      },
+      "must_contain": [
+        "action_word",
+        "skill",
+        "intermediate_result"
+      ],
+      "should_contain": [
+        "numerical_progression_if_available"
+      ],
+      "result_type": "intermediate",
+      "notes": "Name the skill that produced a specific intermediate step, and show the numerical progression of that step when available."
+    },
+
+    "line_4": {
+      "purpose": "progression",
+      "description": "Describe measurable intermediate achievement.",
+      "word_limit": {
+        "min": 15,
+        "max": 18
+      },
+      "must_contain": [
+        "action_word",
+        "numerical_progression",
+        "intermediate_result"
+      ],
+      "result_type": "intermediate",
+      "notes": "Show an intermediate result reached through a specific action, with numerical progression. The result must differ from the ones in line 2 and line 3."
+    },
+
+    "line_5": {
+      "purpose": "final_impact",
+      "description": "Describe final measurable outcome.",
+      "word_limit": {
+        "min": 15,
+        "max": 18
+      },
+      "must_contain": [
+        "action_word",
+        "final_result",
+        "numerical_metric"
+      ],
+      "result_type": "final",
+      "notes": "State the final result of the project in numbers."
+    }
+  },
+
+  "action_word_rules": {
+    "unique_per_line": true,
+    "must_be_first_word_of_line": true,
+    "form": "past_tense_verb",
+    "no_repetition_across_lines": true,
+    "no_repeated_root": true,
+    "root_repetition_examples": ["Build / Built", "Reduce / Reduced", "Optimize / Optimized"],
+    "start_word_must_not_reappear_as_verb_in_any_other_line": true,
+
+    "recommended_words": [
+      "Engineered",
+      "Developed",
+      "Designed",
+      "Implemented",
+      "Optimized",
+      "Automated",
+      "Constructed",
+      "Integrated",
+      "Analyzed",
+      "Created",
+      "Built",
+      "Enhanced",
+      "Deployed",
+      "Evaluated",
+      "Streamlined",
+      "Leveraged",
+      "Generated",
+      "Reduced",
+      "Improved",
+      "Accelerated",
+      "Addressed",
+      "Applied",
+      "Validated",
+      "Refined",
+      "Achieved",
+      "Delivered",
+      "Resolved",
+      "Identified",
+      "Curated",
+      "Trained"
+    ],
+
+    "discouraged_words": [
+      "Worked",
+      "Helped",
+      "Assisted",
+      "Participated",
+      "Responsible",
+      "Handled",
+      "Utilized"
+    ]
+  },
+
+  "validation_rules": {
+    "minimum_numeric_mentions": 3,
+    "all_lines_start_with_action_word": true,
+    "all_lines_have_measurable_result": true,
+    "all_lines_within_word_limit": true,
+    "project_domain_explicitly_mentioned": true,
+    "no_action_word_repetition": true,
+
+    "exact_line_count": 5,
+    "each_line_is_single_sentence": true,
+    "line_roles_respected": true,
+    "line_1_states_problem_and_target_result": true,
+    "line_2_names_tool_or_framework": true,
+    "line_3_names_skill": true,
+    "line_2_and_line_3_show_progression_when_data_supplied": true,
+    "line_4_has_numerical_progression": true,
+    "line_5_has_final_numerical_metric": true,
+    "numerals_written_as_digits": true,
+    "no_repeated_metric_across_lines": true,
+    "no_first_person_pronouns": true,
+    "no_discouraged_action_words": true,
+    "no_action_word_root_repetition": true,
+    "buzzword_share_max": 0.40,
+    "language_is_simple": true,
+    "no_invented_numbers": true
+  },
+
+  "check_types": {
+    "deterministic": [
+      "exact_line_count",
+      "all_lines_within_word_limit",
+      "all_lines_start_with_action_word",
+      "no_action_word_repetition",
+      "no_action_word_root_repetition",
+      "no_discouraged_action_words",
+      "minimum_numeric_mentions",
+      "line_4_has_numerical_progression",
+      "line_5_has_final_numerical_metric",
+      "numerals_written_as_digits",
+      "no_first_person_pronouns",
+      "each_line_is_single_sentence"
+    ],
+    "llm_or_hybrid": [
+      "all_lines_have_measurable_result",
+      "project_domain_explicitly_mentioned",
+      "line_roles_respected",
+      "line_1_states_problem_and_target_result",
+      "line_2_names_tool_or_framework",
+      "line_3_names_skill",
+      "line_2_and_line_3_show_progression_when_data_supplied",
+      "no_repeated_metric_across_lines",
+      "buzzword_share_max",
+      "language_is_simple",
+      "no_invented_numbers"
+    ]
+  },
+
+  "scoring_weights": {
+    "clarity": 0.25,
+    "quantification": 0.25,
+    "technical_depth": 0.20,
+    "business_impact": 0.20,
+    "format_compliance": 0.10
+  },
+
+  "rule_registry": {
+    "description": "Every item of the source feedback ('CV_bullet generation.md') and where it is enforced. Each item is enforced on its own, and none is merged into or overridden by another.",
+    "rules": [
+      {
+        "id": "R01",
+        "source": "Use action words",
+        "enforced_in": ["global_rules.use_action_words", "action_word_rules", "validation_rules.all_lines_start_with_action_word"]
+      },
+      {
+        "id": "R02",
+        "source": "Each point should indicate some result, final or intermediate",
+        "enforced_in": ["global_rules.result_rule", "validation_rules.all_lines_have_measurable_result"]
+      },
+      {
+        "id": "R03",
+        "source": "Use numerals",
+        "enforced_in": ["global_rules.numerals", "validation_rules.minimum_numeric_mentions", "validation_rules.numerals_written_as_digits"]
+      },
+      {
+        "id": "R04",
+        "source": "First line: situation at hand and result to be achieved, defining the problem statement",
+        "enforced_in": ["structure.line_1", "validation_rules.line_1_states_problem_and_target_result"]
+      },
+      {
+        "id": "R05",
+        "source": "Second line: tools and frameworks used for an intermediate step, with numerical progression if available",
+        "enforced_in": ["structure.line_2", "validation_rules.line_2_names_tool_or_framework", "validation_rules.line_2_and_line_3_show_progression_when_data_supplied"]
+      },
+      {
+        "id": "R06",
+        "source": "Third line: skills used for the project and what they achieved, with numerical progression if available",
+        "enforced_in": ["structure.line_3", "validation_rules.line_3_names_skill", "validation_rules.line_2_and_line_3_show_progression_when_data_supplied"]
+      },
+      {
+        "id": "R07",
+        "source": "Fourth line: intermediate result achieved through an action, showing numerical progression",
+        "enforced_in": ["structure.line_4", "validation_rules.line_4_has_numerical_progression"]
+      },
+      {
+        "id": "R08",
+        "source": "Final results in terms of numbers",
+        "enforced_in": ["structure.line_5", "validation_rules.line_5_has_final_numerical_metric"]
+      },
+      {
+        "id": "R09",
+        "source": "Simple, understandable language, and the write-up clearly specifies the project domain",
+        "enforced_in": ["global_rules.language", "global_rules.domain", "validation_rules.language_is_simple", "validation_rules.project_domain_explicitly_mentioned"]
+      },
+      {
+        "id": "R10",
+        "source": "Rephrase each line to a passive commanding action statement",
+        "enforced_in": ["global_rules.voice", "validation_rules.no_first_person_pronouns"]
+      },
+      {
+        "id": "R11",
+        "source": "Each line should have 15-18 words only",
+        "enforced_in": ["counting_rules", "structure.line_1..line_5.word_limit", "validation_rules.all_lines_within_word_limit"]
+      },
+      {
+        "id": "R12",
+        "source": "Each line should begin with an action word",
+        "enforced_in": ["action_word_rules.must_be_first_word_of_line", "validation_rules.all_lines_start_with_action_word"]
+      },
+      {
+        "id": "R13",
+        "source": "No repetition of action words",
+        "enforced_in": ["action_word_rules.unique_per_line", "action_word_rules.no_repetition_across_lines", "action_word_rules.no_repeated_root", "validation_rules.no_action_word_repetition", "validation_rules.no_action_word_root_repetition"]
+      },
+      {
+        "id": "R14",
+        "source": "Each line should reflect some result (final or intermediate)",
+        "enforced_in": ["global_rules.every_line_must_show_result", "global_rules.result_rule", "validation_rules.all_lines_have_measurable_result"]
+      },
+      {
+        "id": "R15",
+        "source": "Buzzwords up to 40% of the whole only",
+        "enforced_in": ["global_rules.buzzword_policy", "validation_rules.buzzword_share_max"]
+      }
+    ]
+  },
+
+  "example": {
+    "note": "Illustrative only. The domain and all figures are invented to show the format. Never copy these numbers into a real resume.",
+    "lines": [
+      "Addressed inaccurate weekly demand forecasts in retail supply chains, targeting a 20% lower stock-out rate across 40 stores.",
+      "Built time-series pipelines using Python, Prophet and XGBoost, cutting forecast error from 31% to 19% within 6 weeks.",
+      "Applied feature engineering and hyperparameter tuning skills to lift model accuracy from 69% to 81% on validation data.",
+      "Automated nightly data cleaning across 12 sources, shrinking manual preparation time from 5 hours to 20 minutes.",
+      "Deployed forecasting dashboard for 40 stores, reducing stock-outs by 22% and saving an estimated $85K annually."
+    ]
+  }
+}

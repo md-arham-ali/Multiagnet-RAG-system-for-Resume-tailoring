@@ -1,0 +1,230 @@
+{
+  "_comment": "HARD-CONSTRAINT list. Injected WHOLE into the Document Agent and the Verifier — never embedded, never retrieved top-k. Checked exhaustively; a near-miss is a violation. (Synthetic test data.)",
+  "version": 1,
+  "forbidden_claims": [
+    {
+      "id": "dnc_000",
+      "claim": "PhD in Computer Science",
+      "reason": "Candidate holds an MSc, not a doctorate",
+      "match": [
+        "phd",
+        "ph.d",
+        "doctorate",
+        "doctoral"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_001",
+      "claim": "10+ years of industry experience",
+      "reason": "Actual experience is under 6 years",
+      "match": [
+        "10+ years",
+        "ten years",
+        "decade of experience"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_002",
+      "claim": "Worked at Google",
+      "reason": "No employment at Google",
+      "match": [
+        "google",
+        "alphabet inc"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_003",
+      "claim": "Worked at Goldman Sachs",
+      "reason": "No employment at Goldman Sachs",
+      "match": [
+        "goldman sachs",
+        "goldman"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_004",
+      "claim": "AWS Certified Solutions Architect",
+      "reason": "Certification not obtained",
+      "match": [
+        "aws certified",
+        "solutions architect certification"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_005",
+      "claim": "Published at NeurIPS",
+      "reason": "No NeurIPS publication",
+      "match": [
+        "neurips",
+        "nips proceedings"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_006",
+      "claim": "Led a team of 50 engineers",
+      "reason": "Largest team led was 6",
+      "match": [
+        "team of 50",
+        "50 engineers",
+        "50+ engineers"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_007",
+      "claim": "Fluent in Mandarin",
+      "reason": "No Mandarin proficiency",
+      "match": [
+        "fluent in mandarin",
+        "native mandarin"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_008",
+      "claim": "CFA charterholder",
+      "reason": "Not a CFA charterholder",
+      "match": [
+        "cfa charterholder",
+        "chartered financial analyst"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_009",
+      "claim": "Built a system serving 1B requests/day",
+      "reason": "Real scale was ~5M/day",
+      "match": [
+        "1b requests",
+        "billion requests"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_010",
+      "claim": "Holds an active security clearance",
+      "reason": "No security clearance held",
+      "match": [
+        "security clearance",
+        "top secret clearance"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_011",
+      "claim": "Founded a venture-backed startup",
+      "reason": "Never founded a company",
+      "match": [
+        "founded a startup",
+        "co-founder of",
+        "venture-backed"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_012",
+      "claim": "Expert-level Rust developer",
+      "reason": "Beginner-level Rust only",
+      "match": [
+        "expert in rust",
+        "rust expert"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_013",
+      "claim": "Holds a granted US patent",
+      "reason": "No patents filed or granted",
+      "match": [
+        "patent holder",
+        "granted patent",
+        "us patent"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_014",
+      "claim": "Managed a $100M portfolio",
+      "reason": "Never managed a portfolio of that size",
+      "match": [
+        "$100m",
+        "100 million portfolio"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_015",
+      "claim": "Kaggle Grandmaster",
+      "reason": "Highest tier reached is Expert",
+      "match": [
+        "grandmaster",
+        "kaggle grandmaster"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_016",
+      "claim": "PMP certified",
+      "reason": "Not PMP certified",
+      "match": [
+        "pmp",
+        "project management professional"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_017",
+      "claim": "MBA from an Ivy League school",
+      "reason": "No MBA held",
+      "match": [
+        "mba",
+        "ivy league mba"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_018",
+      "claim": "Contributed to the Linux kernel",
+      "reason": "No Linux kernel contributions",
+      "match": [
+        "linux kernel",
+        "kernel contributor"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_019",
+      "claim": "Native English speaker",
+      "reason": "English is a second language",
+      "match": [
+        "native english"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_020",
+      "claim": "Trained models on 1000 GPUs",
+      "reason": "Largest run used 8 GPUs",
+      "match": [
+        "1000 gpus",
+        "thousand gpus"
+      ],
+      "match_mode": "fuzzy"
+    },
+    {
+      "id": "dnc_021",
+      "claim": "Holds a Series 7 license",
+      "reason": "No Series 7 license",
+      "match": [
+        "series 7"
+      ],
+      "match_mode": "fuzzy"
+    }
+  ]
+}

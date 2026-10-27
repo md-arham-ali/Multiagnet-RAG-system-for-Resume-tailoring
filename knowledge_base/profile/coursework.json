@@ -1,0 +1,414 @@
+[
+  {
+    "course_id": "course_000",
+    "course_name": "Big Data Analytics",
+    "institution": "Riverside Institute of Technology",
+    "type": "Online (MOOC)",
+    "grade": "A+",
+    "description": "Covered big data analytics with hands-on work on predict customer churn.",
+    "topics": [
+      "Probability Theory",
+      "Data Mining",
+      "Cloud Computing"
+    ],
+    "assignments": [
+      "Assignment on map liquidity flows",
+      "Assignment on forecast short-term volatility",
+      "Assignment on surface at-risk loan positions",
+      "Assignment on classify token contracts"
+    ],
+    "projects": [
+      "Course project: rank lending opportunities"
+    ],
+    "skills_gained": [
+      "Machine Learning",
+      "Anomaly Detection",
+      "Time Series Analysis",
+      "A/B Testing"
+    ],
+    "relevance": {
+      "ml": "high",
+      "software": "high",
+      "finance": "low",
+      "blockchain": "medium"
+    },
+    "keywords": [
+      "Feature Engineering",
+      "Deep Learning",
+      "Statistical Modeling",
+      "MLOps",
+      "ETL"
+    ]
+  },
+  {
+    "course_id": "course_001",
+    "course_name": "Data Structures and Algorithms",
+    "institution": "Granite State University",
+    "type": "Elective",
+    "grade": "A",
+    "description": "Covered data structures and algorithms with hands-on work on score credit risk.",
+    "topics": [
+      "Computer Networks",
+      "Statistical Inference",
+      "Data Mining",
+      "Data Structures and Algorithms",
+      "Natural Language Processing",
+      "Time Series Analysis"
+    ],
+    "assignments": [
+      "Assignment on forecast short-term volatility",
+      "Assignment on rank lending opportunities",
+      "Assignment on classify token contracts",
+      "Assignment on forecast short-term volatility"
+    ],
+    "projects": [
+      "Course project: forecast short-term volatility",
+      "Course project: classify token contracts"
+    ],
+    "skills_gained": [
+      "Data Visualization",
+      "Data Pipeline Design",
+      "Dashboarding"
+    ],
+    "relevance": {
+      "ml": "high",
+      "software": "low",
+      "finance": "medium",
+      "blockchain": "medium"
+    },
+    "keywords": [
+      "Dashboarding",
+      "Risk Modeling",
+      "Data Visualization"
+    ]
+  },
+  {
+    "course_id": "course_002",
+    "course_name": "Computer Networks",
+    "institution": "Granite State University",
+    "type": "Seminar",
+    "grade": "B",
+    "description": "Covered computer networks with hands-on work on classify token contracts.",
+    "topics": [
+      "Probability Theory",
+      "Convex Optimization",
+      "Software Engineering"
+    ],
+    "assignments": [
+      "Assignment on detect anomalous wallet behavior",
+      "Assignment on predict customer churn",
+      "Assignment on map liquidity flows"
+    ],
+    "projects": [
+      "Course project: map liquidity flows",
+      "Course project: automate compliance reporting"
+    ],
+    "skills_gained": [
+      "Data Wrangling",
+      "Data Pipeline Design",
+      "Time Series Analysis",
+      "Cloud Computing"
+    ],
+    "relevance": {
+      "ml": "medium",
+      "software": "low",
+      "finance": "low",
+      "blockchain": "low"
+    },
+    "keywords": [
+      "Anomaly Detection",
+      "A/B Testing",
+      "Data Visualization",
+      "Machine Learning",
+      "NLP"
+    ]
+  },
+  {
+    "course_id": "course_003",
+    "course_name": "Machine Learning",
+    "institution": "Highland Institute of Technology",
+    "type": "Seminar",
+    "grade": "B+",
+    "description": "Covered machine learning with hands-on work on classify token contracts.",
+    "topics": [
+      "Blockchain and Cryptocurrencies",
+      "Database Systems",
+      "Convex Optimization",
+      "Distributed Systems"
+    ],
+    "assignments": [
+      "Assignment on classify token contracts",
+      "Assignment on predict customer churn"
+    ],
+    "projects": [
+      "Course project: rank lending opportunities"
+    ],
+    "skills_gained": [
+      "Time Series Analysis",
+      "Deep Learning"
+    ],
+    "relevance": {
+      "ml": "medium",
+      "software": "low",
+      "finance": "medium",
+      "blockchain": "medium"
+    },
+    "keywords": [
+      "Data Visualization",
+      "Prompt Engineering",
+      "ETL",
+      "Model Deployment",
+      "Deep Learning",
+      "Statistical Modeling"
+    ]
+  },
+  {
+    "course_id": "course_004",
+    "course_name": "Natural Language Processing",
+    "institution": "Lakeside Technical University",
+    "type": "Elective",
+    "grade": "B+",
+    "description": "Covered natural language processing with hands-on work on detect anomalous wallet behavior.",
+    "topics": [
+      "Software Engineering",
+      "Blockchain and Cryptocurrencies",
+      "Natural Language Processing",
+      "Reinforcement Learning"
+    ],
+    "assignments": [
+      "Assignment on score credit risk",
+      "Assignment on optimize gas usage",
+      "Assignment on automate compliance reporting"
+    ],
+    "projects": [
+      "Course project: automate compliance reporting"
+    ],
+    "skills_gained": [
+      "ETL",
+      "Smart Contract Analysis",
+      "Statistical Modeling",
+      "Cloud Computing",
+      "A/B Testing"
+    ],
+    "relevance": {
+      "ml": "medium",
+      "software": "medium",
+      "finance": "low",
+      "blockchain": "medium"
+    },
+    "keywords": [
+      "SQL",
+      "On-chain Data",
+      "Python",
+      "Risk Modeling",
+      "Smart Contract Analysis",
+      "Statistical Modeling"
+    ]
+  },
+  {
+    "course_id": "course_005",
+    "course_name": "Computer Networks",
+    "institution": "Summit College of Engineering",
+    "type": "Core",
+    "grade": "A",
+    "description": "Covered computer networks with hands-on work on rank lending opportunities.",
+    "topics": [
+      "Distributed Systems",
+      "Big Data Analytics",
+      "Machine Learning",
+      "Natural Language Processing",
+      "Convex Optimization"
+    ],
+    "assignments": [
+      "Assignment on predict customer churn",
+      "Assignment on map liquidity flows",
+      "Assignment on map liquidity flows"
+    ],
+    "projects": [
+      "Course project: rank lending opportunities"
+    ],
+    "skills_gained": [
+      "Data Wrangling",
+      "Data Visualization",
+      "Feature Engineering",
+      "Time Series Analysis",
+      "Machine Learning"
+    ],
+    "relevance": {
+      "ml": "medium",
+      "software": "low",
+      "finance": "medium",
+      "blockchain": "low"
+    },
+    "keywords": [
+      "Python",
+      "Prompt Engineering",
+      "On-chain Data",
+      "NLP",
+      "Time Series Analysis",
+      "Data Wrangling"
+    ]
+  },
+  {
+    "course_id": "course_006",
+    "course_name": "Software Engineering",
+    "institution": "Fairmont University",
+    "type": "Core",
+    "grade": "A+",
+    "description": "Covered software engineering with hands-on work on surface at-risk loan positions.",
+    "topics": [
+      "Probability Theory",
+      "Data Mining",
+      "Big Data Analytics",
+      "Computer Networks",
+      "Distributed Systems"
+    ],
+    "assignments": [
+      "Assignment on classify token contracts",
+      "Assignment on detect anomalous wallet behavior"
+    ],
+    "projects": [
+      "Course project: predict customer churn"
+    ],
+    "skills_gained": [
+      "Statistical Modeling",
+      "Dashboarding",
+      "ETL",
+      "Deep Learning",
+      "Data Pipeline Design"
+    ],
+    "relevance": {
+      "ml": "high",
+      "software": "medium",
+      "finance": "high",
+      "blockchain": "medium"
+    },
+    "keywords": [
+      "Data Pipeline Design",
+      "MLOps",
+      "ETL",
+      "Software Engineering",
+      "SQL"
+    ]
+  },
+  {
+    "course_id": "course_007",
+    "course_name": "Deep Learning",
+    "institution": "National University of Computer Science",
+    "type": "Graduate",
+    "grade": "A-",
+    "description": "Covered deep learning with hands-on work on classify token contracts.",
+    "topics": [
+      "Blockchain and Cryptocurrencies",
+      "Natural Language Processing",
+      "Computer Networks",
+      "Linear Algebra"
+    ],
+    "assignments": [
+      "Assignment on predict customer churn",
+      "Assignment on predict customer churn",
+      "Assignment on rank lending opportunities"
+    ],
+    "projects": [
+      "Course project: automate compliance reporting",
+      "Course project: score credit risk"
+    ],
+    "skills_gained": [
+      "Statistical Modeling",
+      "Data Visualization"
+    ],
+    "relevance": {
+      "ml": "low",
+      "software": "medium",
+      "finance": "medium",
+      "blockchain": "medium"
+    },
+    "keywords": [
+      "Python",
+      "MLOps",
+      "Deep Learning",
+      "Prompt Engineering",
+      "Smart Contract Analysis",
+      "SQL"
+    ]
+  },
+  {
+    "course_id": "course_008",
+    "course_name": "Cloud Computing",
+    "institution": "Pinegrove Institute of Science",
+    "type": "Core",
+    "grade": "B",
+    "description": "Covered cloud computing with hands-on work on predict customer churn.",
+    "topics": [
+      "Distributed Systems",
+      "Cloud Computing",
+      "Natural Language Processing",
+      "Database Systems",
+      "Reinforcement Learning",
+      "Software Engineering"
+    ],
+    "assignments": [
+      "Assignment on map liquidity flows",
+      "Assignment on forecast short-term volatility"
+    ],
+    "projects": [
+      "Course project: map liquidity flows"
+    ],
+    "skills_gained": [
+      "Dashboarding",
+      "A/B Testing"
+    ],
+    "relevance": {
+      "ml": "low",
+      "software": "low",
+      "finance": "high",
+      "blockchain": "high"
+    },
+    "keywords": [
+      "Data Wrangling",
+      "A/B Testing",
+      "Prompt Engineering",
+      "Statistical Modeling",
+      "Cloud Computing",
+      "Feature Engineering"
+    ]
+  },
+  {
+    "course_id": "course_009",
+    "course_name": "Blockchain and Cryptocurrencies",
+    "institution": "Highland Institute of Technology",
+    "type": "Online (MOOC)",
+    "grade": "B",
+    "description": "Covered blockchain and cryptocurrencies with hands-on work on optimize gas usage.",
+    "topics": [
+      "Time Series Analysis",
+      "Cloud Computing",
+      "Distributed Systems"
+    ],
+    "assignments": [
+      "Assignment on score credit risk",
+      "Assignment on optimize gas usage"
+    ],
+    "projects": [
+      "Course project: surface at-risk loan positions"
+    ],
+    "skills_gained": [
+      "Cloud Computing",
+      "Risk Modeling",
+      "Statistical Modeling"
+    ],
+    "relevance": {
+      "ml": "medium",
+      "software": "high",
+      "finance": "low",
+      "blockchain": "low"
+    },
+    "keywords": [
+      "Data Pipeline Design",
+      "A/B Testing",
+      "Anomaly Detection",
+      "Prompt Engineering",
+      "Deep Learning"
+    ]
+  }
+]

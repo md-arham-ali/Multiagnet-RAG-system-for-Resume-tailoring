@@ -1,0 +1,3133 @@
+[
+  {
+    "experience_id": "exp_000",
+    "company": "ChainSight",
+    "role": "Machine Learning Engineer",
+    "employment_type": "Contract",
+    "start_date": "2022-08",
+    "end_date": "2023-04",
+    "location": "Berlin, DE",
+    "summary": "Worked as a Machine Learning Engineer at ChainSight, focused on predict customer churn for a risk function.",
+    "responsibilities": [
+      "Developed pipelines to forecast short-term volatility",
+      "Developed pipelines to map liquidity flows",
+      "Automated pipelines to detect anomalous wallet behavior",
+      "Engineered pipelines to classify token contracts"
+    ],
+    "technologies": [
+      "Go",
+      "Kubernetes",
+      "FastAPI",
+      "spaCy"
+    ],
+    "achievements": [
+      "Implemented a system that improved latency by 38%",
+      "Streamlined a system that improved analyst hours by 82%",
+      "Built a system that improved turnaround time by 33%",
+      "Built a system that improved recall by 22%"
+    ],
+    "metrics": [
+      "49% reduction in recall",
+      "3376 records processed daily"
+    ],
+    "projects": [
+      "On-chain Recommendation System"
+    ],
+    "skills_demonstrated": [
+      "Dashboarding",
+      "NLP",
+      "Python",
+      "Risk Modeling",
+      "Statistical Modeling",
+      "Deep Learning",
+      "A/B Testing"
+    ],
+    "resume_bullets": [
+      "Enhanced a NLP solution to address manual reporting overhead, targeting a 25% lift in latency.",
+      "Analyzed the workflow with Airflow and Power BI, achieving 67% faster data freshness on 23M records.",
+      "Constructed Deep Learning to refine the pipeline, improving Silhouette Score from 0.56 to 0.7.",
+      "Built validation across 5 datasets, cutting analyst hours by 29%.",
+      "Optimized the model into production, delivering a 81% gain in false-positive rate for a trading desk."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you handle slow batch pipelines?",
+        "answer": "I improved a fix using Weights & Biases, which improved data freshness by 43%."
+      },
+      {
+        "question": "Why did you choose Scala for your role at ChainSight?",
+        "answer": "It fit the team's stack and offered strong web3.py support, which sped up classify token contracts."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_001",
+    "company": "DeFiPulse Analytics",
+    "role": "Data Engineer",
+    "employment_type": "Full-time",
+    "start_date": "2015-08",
+    "end_date": "2018-10",
+    "location": "Dubai, UAE",
+    "summary": "Worked as a Data Engineer at DeFiPulse Analytics, focused on classify token contracts for a trading desk.",
+    "responsibilities": [
+      "Reduced pipelines to surface at-risk loan positions",
+      "Evaluated pipelines to rank lending opportunities",
+      "Optimized pipelines to predict customer churn"
+    ],
+    "technologies": [
+      "Git",
+      "Python",
+      "MLflow",
+      "Grafana"
+    ],
+    "achievements": [
+      "Integrated a system that improved latency by 10%",
+      "Leveraged a system that improved precision by 28%",
+      "Streamlined a system that improved analyst hours by 82%"
+    ],
+    "metrics": [
+      "11% reduction in data freshness",
+      "905K records processed daily"
+    ],
+    "projects": [
+      "DeFi Lending Trading Bot",
+      "Loan Dashboard"
+    ],
+    "skills_demonstrated": [
+      "Anomaly Detection",
+      "Feature Engineering",
+      "On-chain Data",
+      "Cloud Computing"
+    ],
+    "resume_bullets": [
+      "Accelerated a Credit Scoring solution to address sparse labeled data, targeting a 14% lift in latency.",
+      "Reduced the workflow with Kubernetes and MLflow, achieving 57% faster throughput on 51K records.",
+      "Constructed Data Wrangling to refine the pipeline, improving MAPE from 0.72 to 0.79.",
+      "Designed validation across 11 datasets, cutting latency by 79%.",
+      "Built the model into production, delivering a 34% gain in coverage for a fintech team."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you validate your results for your role at DeFiPulse Analytics?",
+        "answer": "I tracked Precision and RMSE with a held-out split and monitored drift over 4 months."
+      },
+      {
+        "question": "Why did you choose Go for your role at DeFiPulse Analytics?",
+        "answer": "It fit the team's stack and offered strong PyTorch support, which sped up classify token contracts."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_002",
+    "company": "Summit ML",
+    "role": "Analytics Engineer",
+    "employment_type": "Contract",
+    "start_date": "2023-11",
+    "end_date": "2025-11",
+    "location": "San Francisco, CA",
+    "summary": "Worked as a Analytics Engineer at Summit ML, focused on automate compliance reporting for a lending protocol.",
+    "responsibilities": [
+      "Automated pipelines to automate compliance reporting",
+      "Implemented pipelines to detect anomalous wallet behavior",
+      "Leveraged pipelines to detect anomalous wallet behavior"
+    ],
+    "technologies": [
+      "Scala",
+      "Kubernetes",
+      "TensorFlow",
+      "NLTK",
+      "DBeaver",
+      "XGBoost",
+      "JavaScript"
+    ],
+    "achievements": [
+      "Generated a system that improved accuracy by 45%",
+      "Evaluated a system that improved false-positive rate by 24%"
+    ],
+    "metrics": [
+      "68% reduction in throughput",
+      "43M records processed daily"
+    ],
+    "projects": [
+      "On-chain Recommendation System"
+    ],
+    "skills_demonstrated": [
+      "Time Series Analysis",
+      "MLOps",
+      "Anomaly Detection",
+      "Cloud Computing"
+    ],
+    "resume_bullets": [
+      "Improved a Recommender Systems solution to address manual reporting overhead, targeting a 29% lift in precision.",
+      "Generated the workflow with DBeaver and Terraform, achieving 37% faster data freshness on 5M records.",
+      "Reduced NLP to refine the pipeline, improving Precision from 0.62 to 0.7.",
+      "Streamlined validation across 10 datasets, cutting coverage by 87%.",
+      "Accelerated the model into production, delivering a 28% gain in false-positive rate for a fintech team."
+    ],
+    "interview_questions": [
+      {
+        "question": "What was the hardest part of your role at Summit ML?",
+        "answer": "Dealing with high false-positive rates; I resolved it by streamlined a LSTM baseline and iterating."
+      },
+      {
+        "question": "How did you handle slow batch pipelines?",
+        "answer": "I implemented a fix using Dune Analytics, which improved throughput by 81%."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_003",
+    "company": "Cobalt Analytics",
+    "role": "Research Engineer",
+    "employment_type": "Internship",
+    "start_date": "2023-03",
+    "end_date": "2024-04",
+    "location": "San Francisco, CA",
+    "summary": "Worked as a Research Engineer at Cobalt Analytics, focused on surface at-risk loan positions for a research unit.",
+    "responsibilities": [
+      "Generated pipelines to predict customer churn",
+      "Created pipelines to classify token contracts",
+      "Created pipelines to score credit risk",
+      "Optimized pipelines to score credit risk",
+      "Streamlined pipelines to predict customer churn"
+    ],
+    "technologies": [
+      "MLflow",
+      "dbt",
+      "Plotly",
+      "DBeaver"
+    ],
+    "achievements": [
+      "Implemented a system that improved data freshness by 13%",
+      "Optimized a system that improved false-positive rate by 22%",
+      "Created a system that improved accuracy by 59%",
+      "Accelerated a system that improved recall by 65%"
+    ],
+    "metrics": [
+      "53% reduction in latency",
+      "632K records processed daily"
+    ],
+    "projects": [
+      "Cross-chain Churn Predictor",
+      "Derivatives Trading Bot"
+    ],
+    "skills_demonstrated": [
+      "Data Pipeline Design",
+      "A/B Testing",
+      "Prompt Engineering",
+      "Feature Engineering"
+    ],
+    "resume_bullets": [
+      "Accelerated a Credit Scoring solution to address sparse labeled data, targeting a 57% lift in throughput.",
+      "Generated the workflow with Docker and Weights & Biases, achieving 9% faster precision on 325K records.",
+      "Developed Model Deployment to refine the pipeline, improving Sharpe Ratio from 0.58 to 0.76.",
+      "Enhanced validation across 10 datasets, cutting turnaround time by 64%.",
+      "Deployed the model into production, delivering a 44% gain in coverage for a research unit."
+    ],
+    "interview_questions": [
+      {
+        "question": "What was the hardest part of your role at Cobalt Analytics?",
+        "answer": "Dealing with inconsistent schemas; I resolved it by generated a Gradient Boosting baseline and iterating."
+      },
+      {
+        "question": "How did you validate your results for your role at Cobalt Analytics?",
+        "answer": "I tracked MAE and Silhouette Score with a held-out split and monitored drift over 9 months."
+      },
+      {
+        "question": "Why did you choose Scala for your role at Cobalt Analytics?",
+        "answer": "It fit the team's stack and offered strong TensorFlow support, which sped up score credit risk."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_004",
+    "company": "Cobalt Analytics",
+    "role": "ML Researcher",
+    "employment_type": "Contract",
+    "start_date": "2017-04",
+    "end_date": "2019-10",
+    "location": "Bangalore, IN",
+    "summary": "Worked as a ML Researcher at Cobalt Analytics, focused on classify token contracts for a trading desk.",
+    "responsibilities": [
+      "Engineered pipelines to detect anomalous wallet behavior",
+      "Analyzed pipelines to automate compliance reporting",
+      "Leveraged pipelines to forecast short-term volatility"
+    ],
+    "technologies": [
+      "R",
+      "dbt",
+      "Scikit-Learn",
+      "Dune Analytics",
+      "JavaScript",
+      "Scala"
+    ],
+    "achievements": [
+      "Created a system that improved turnaround time by 30%",
+      "Leveraged a system that improved recall by 11%",
+      "Implemented a system that improved precision by 71%",
+      "Designed a system that improved analyst hours by 54%"
+    ],
+    "metrics": [
+      "82% reduction in data freshness",
+      "7.4M records processed daily"
+    ],
+    "projects": [
+      "Aave Portfolio Analyzer",
+      "Staking Churn Predictor"
+    ],
+    "skills_demonstrated": [
+      "SQL",
+      "Data Wrangling",
+      "Machine Learning",
+      "Dashboarding",
+      "Python",
+      "Statistical Modeling",
+      "Cloud Computing",
+      "Time Series Analysis"
+    ],
+    "resume_bullets": [
+      "Evaluated a Deep Learning solution to address scaling bottlenecks, targeting a 32% lift in coverage.",
+      "Enhanced the workflow with Power BI and Dune Analytics, achieving 20% faster analyst hours on 22M records.",
+      "Developed Smart Contract Analysis to refine the pipeline, improving MAPE from 0.67 to 0.86.",
+      "Created validation across 8 datasets, cutting latency by 76%.",
+      "Generated the model into production, delivering a 82% gain in throughput for a trading desk."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you validate your results for your role at Cobalt Analytics?",
+        "answer": "I tracked Log Loss and Accuracy with a held-out split and monitored drift over 6 months."
+      },
+      {
+        "question": "Why did you choose R for your role at Cobalt Analytics?",
+        "answer": "It fit the team's stack and offered strong web3.py support, which sped up automate compliance reporting."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_005",
+    "company": "ChainSight",
+    "role": "Machine Learning Engineer",
+    "employment_type": "Internship",
+    "start_date": "2015-08",
+    "end_date": "2018-01",
+    "location": "Remote",
+    "summary": "Worked as a Machine Learning Engineer at ChainSight, focused on forecast short-term volatility for a trading desk.",
+    "responsibilities": [
+      "Optimized pipelines to rank lending opportunities",
+      "Created pipelines to detect anomalous wallet behavior",
+      "Constructed pipelines to detect anomalous wallet behavior"
+    ],
+    "technologies": [
+      "Jupyter",
+      "TypeScript",
+      "Python",
+      "Power BI",
+      "SciPy"
+    ],
+    "achievements": [
+      "Evaluated a system that improved latency by 17%",
+      "Engineered a system that improved data freshness by 63%"
+    ],
+    "metrics": [
+      "13% reduction in recall",
+      "2.0M records processed daily"
+    ],
+    "projects": [
+      "Stablecoin Portfolio Analyzer",
+      "Lending Pool Liquidity Tracker"
+    ],
+    "skills_demonstrated": [
+      "Feature Engineering",
+      "ETL",
+      "Prompt Engineering",
+      "SQL"
+    ],
+    "resume_bullets": [
+      "Constructed a Machine Learning solution to address manual reporting overhead, targeting a 82% lift in throughput.",
+      "Automated the workflow with Jupyter and Docker, achieving 53% faster coverage on 9.9M records.",
+      "Enhanced Dashboarding to refine the pipeline, improving Silhouette Score from 0.58 to 0.74.",
+      "Engineered validation across 3 datasets, cutting false-positive rate by 35%.",
+      "Designed the model into production, delivering a 32% gain in precision for a trading desk."
+    ],
+    "interview_questions": [
+      {
+        "question": "Why did you choose SQL for your role at ChainSight?",
+        "answer": "It fit the team's stack and offered strong LightGBM support, which sped up map liquidity flows."
+      },
+      {
+        "question": "What was the hardest part of your role at ChainSight?",
+        "answer": "Dealing with inconsistent schemas; I resolved it by implemented a K-Means baseline and iterating."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_006",
+    "company": "Cobalt Analytics",
+    "role": "Machine Learning Engineer",
+    "employment_type": "Full-time",
+    "start_date": "2016-09",
+    "end_date": "Present",
+    "location": "Toronto, CA",
+    "summary": "Worked as a Machine Learning Engineer at Cobalt Analytics, focused on automate compliance reporting for an analytics group.",
+    "responsibilities": [
+      "Created pipelines to classify token contracts",
+      "Integrated pipelines to map liquidity flows",
+      "Evaluated pipelines to automate compliance reporting",
+      "Evaluated pipelines to rank lending opportunities",
+      "Designed pipelines to classify token contracts"
+    ],
+    "technologies": [
+      "FastAPI",
+      "R",
+      "Scikit-Learn",
+      "XGBoost",
+      "Tableau",
+      "dbt"
+    ],
+    "achievements": [
+      "Enhanced a system that improved coverage by 9%",
+      "Leveraged a system that improved latency by 58%",
+      "Streamlined a system that improved false-positive rate by 92%",
+      "Designed a system that improved latency by 26%"
+    ],
+    "metrics": [
+      "58% reduction in turnaround time",
+      "25M records processed daily"
+    ],
+    "projects": [
+      "Credit Forecasting Engine"
+    ],
+    "skills_demonstrated": [
+      "Data Visualization",
+      "Time Series Analysis",
+      "Risk Modeling",
+      "NLP",
+      "Data Wrangling",
+      "Data Pipeline Design",
+      "On-chain Data"
+    ],
+    "resume_bullets": [
+      "Generated a Fintech solution to address slow batch pipelines, targeting a 88% lift in coverage.",
+      "Analyzed the workflow with DBeaver and Jupyter, achieving 11% faster latency on 520K records.",
+      "Optimized NLP to refine the pipeline, improving F1 from 0.58 to 0.71.",
+      "Streamlined validation across 12 datasets, cutting throughput by 27%.",
+      "Implemented the model into production, delivering a 46% gain in analyst hours for a risk function."
+    ],
+    "interview_questions": [
+      {
+        "question": "Why did you choose SQL for your role at Cobalt Analytics?",
+        "answer": "It fit the team's stack and offered strong web3.py support, which sped up classify token contracts."
+      },
+      {
+        "question": "How did you validate your results for your role at Cobalt Analytics?",
+        "answer": "I tracked Log Loss and Log Loss with a held-out split and monitored drift over 3 months."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_007",
+    "company": "Vertex Quant",
+    "role": "Analytics Engineer",
+    "employment_type": "Contract",
+    "start_date": "2021-08",
+    "end_date": "2022-04",
+    "location": "San Francisco, CA",
+    "summary": "Worked as a Analytics Engineer at Vertex Quant, focused on automate compliance reporting for a research unit.",
+    "responsibilities": [
+      "Leveraged pipelines to forecast short-term volatility",
+      "Improved pipelines to classify token contracts",
+      "Reduced pipelines to map liquidity flows",
+      "Improved pipelines to classify token contracts"
+    ],
+    "technologies": [
+      "R",
+      "Bash",
+      "Dune Analytics",
+      "Statsmodels",
+      "dbt"
+    ],
+    "achievements": [
+      "Reduced a system that improved coverage by 72%",
+      "Developed a system that improved turnaround time by 41%",
+      "Leveraged a system that improved analyst hours by 56%"
+    ],
+    "metrics": [
+      "86% reduction in throughput",
+      "72K records processed daily"
+    ],
+    "projects": [
+      "DeFi Lending Recommendation System",
+      "Crypto Data Pipeline"
+    ],
+    "skills_demonstrated": [
+      "SQL",
+      "Anomaly Detection",
+      "Cloud Computing",
+      "On-chain Data",
+      "Data Visualization",
+      "Risk Modeling",
+      "Smart Contract Analysis",
+      "Machine Learning"
+    ],
+    "resume_bullets": [
+      "Integrated a Recommender Systems solution to address scaling bottlenecks, targeting a 49% lift in accuracy.",
+      "Created the workflow with Dune Analytics and DBeaver, achieving 66% faster turnaround time on 9.6M records.",
+      "Designed Time Series Analysis to refine the pipeline, improving Recall from 0.58 to 0.66.",
+      "Reduced validation across 9 datasets, cutting analyst hours by 57%.",
+      "Improved the model into production, delivering a 49% gain in analyst hours for a lending protocol."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you handle inconsistent schemas?",
+        "answer": "I generated a fix using dbt, which improved throughput by 29%."
+      },
+      {
+        "question": "What was the hardest part of your role at Vertex Quant?",
+        "answer": "Dealing with delayed risk alerts; I resolved it by created a SVM baseline and iterating."
+      },
+      {
+        "question": "What would you improve about your role at Vertex Quant?",
+        "answer": "I'd add DBeaver for orchestration and test a Random Forest model to push false-positive rate further."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_008",
+    "company": "Tessellate AI",
+    "role": "Data Scientist",
+    "employment_type": "Contract",
+    "start_date": "2021-04",
+    "end_date": "2022-03",
+    "location": "London, UK",
+    "summary": "Worked as a Data Scientist at Tessellate AI, focused on predict customer churn for a lending protocol.",
+    "responsibilities": [
+      "Created pipelines to map liquidity flows",
+      "Created pipelines to optimize gas usage",
+      "Reduced pipelines to predict customer churn",
+      "Constructed pipelines to optimize gas usage",
+      "Deployed pipelines to automate compliance reporting"
+    ],
+    "technologies": [
+      "LightGBM",
+      "JavaScript",
+      "Power BI",
+      "Streamlit",
+      "TensorFlow",
+      "Solidity",
+      "Python",
+      "Grafana"
+    ],
+    "achievements": [
+      "Generated a system that improved data freshness by 78%",
+      "Automated a system that improved accuracy by 88%",
+      "Generated a system that improved coverage by 81%",
+      "Leveraged a system that improved recall by 92%"
+    ],
+    "metrics": [
+      "67% reduction in precision",
+      "883K records processed daily"
+    ],
+    "projects": [
+      "Loan Dashboard",
+      "Token Analytics Platform"
+    ],
+    "skills_demonstrated": [
+      "Statistical Modeling",
+      "Prompt Engineering",
+      "ETL",
+      "Risk Modeling",
+      "Cloud Computing"
+    ],
+    "resume_bullets": [
+      "Created a Data Analytics solution to address fragmented data sources, targeting a 39% lift in precision.",
+      "Automated the workflow with Terraform and MLflow, achieving 67% faster data freshness on 442K records.",
+      "Analyzed Data Wrangling to refine the pipeline, improving R2 from 0.6 to 0.68.",
+      "Integrated validation across 7 datasets, cutting coverage by 11%.",
+      "Deployed the model into production, delivering a 41% gain in precision for a research unit."
+    ],
+    "interview_questions": [
+      {
+        "question": "Why did you choose Python for your role at Tessellate AI?",
+        "answer": "It fit the team's stack and offered strong LangChain support, which sped up surface at-risk loan positions."
+      },
+      {
+        "question": "What would you improve about your role at Tessellate AI?",
+        "answer": "I'd add MLflow for orchestration and test a LightGBM model to push recall further."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_009",
+    "company": "Beacon Quant",
+    "role": "ML Researcher",
+    "employment_type": "Contract",
+    "start_date": "2023-05",
+    "end_date": "2024-04",
+    "location": "Amsterdam, NL",
+    "summary": "Worked as a ML Researcher at Beacon Quant, focused on rank lending opportunities for an analytics group.",
+    "responsibilities": [
+      "Optimized pipelines to forecast short-term volatility",
+      "Automated pipelines to rank lending opportunities",
+      "Analyzed pipelines to classify token contracts"
+    ],
+    "technologies": [
+      "TypeScript",
+      "Matplotlib",
+      "Tableau",
+      "Power BI",
+      "JavaScript"
+    ],
+    "achievements": [
+      "Analyzed a system that improved analyst hours by 15%",
+      "Leveraged a system that improved false-positive rate by 55%",
+      "Implemented a system that improved throughput by 77%"
+    ],
+    "metrics": [
+      "62% reduction in data freshness",
+      "6047 records processed daily"
+    ],
+    "projects": [
+      "Cross-chain Token Classifier",
+      "NFT Market Forecasting Engine",
+      "Derivatives Trading Bot"
+    ],
+    "skills_demonstrated": [
+      "Python",
+      "Prompt Engineering",
+      "Time Series Analysis",
+      "Data Wrangling",
+      "Data Pipeline Design",
+      "On-chain Data",
+      "ETL",
+      "Cloud Computing"
+    ],
+    "resume_bullets": [
+      "Deployed a Fintech solution to address slow batch pipelines, targeting a 46% lift in recall.",
+      "Engineered the workflow with Git and Docker, achieving 28% faster data freshness on 6.6M records.",
+      "Accelerated A/B Testing to refine the pipeline, improving AUC-ROC from 0.57 to 0.75.",
+      "Analyzed validation across 10 datasets, cutting turnaround time by 50%.",
+      "Created the model into production, delivering a 62% gain in latency for a trading desk."
+    ],
+    "interview_questions": [
+      {
+        "question": "Why did you choose Go for your role at Beacon Quant?",
+        "answer": "It fit the team's stack and offered strong Scikit-Learn support, which sped up predict customer churn."
+      },
+      {
+        "question": "How did you validate your results for your role at Beacon Quant?",
+        "answer": "I tracked MAPE and MAPE with a held-out split and monitored drift over 5 months."
+      },
+      {
+        "question": "What would you improve about your role at Beacon Quant?",
+        "answer": "I'd add DBeaver for orchestration and test a Isolation Forest model to push coverage further."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_010",
+    "company": "Tessellate AI",
+    "role": "Quant Developer",
+    "employment_type": "Contract",
+    "start_date": "2020-10",
+    "end_date": "Present",
+    "location": "Singapore",
+    "summary": "Worked as a Quant Developer at Tessellate AI, focused on classify token contracts for an analytics group.",
+    "responsibilities": [
+      "Optimized pipelines to automate compliance reporting",
+      "Automated pipelines to score credit risk",
+      "Built pipelines to automate compliance reporting",
+      "Constructed pipelines to forecast short-term volatility",
+      "Evaluated pipelines to predict customer churn"
+    ],
+    "technologies": [
+      "LangChain",
+      "Python",
+      "Go",
+      "Seaborn",
+      "TypeScript"
+    ],
+    "achievements": [
+      "Deployed a system that improved turnaround time by 81%",
+      "Integrated a system that improved accuracy by 10%"
+    ],
+    "metrics": [
+      "79% reduction in analyst hours",
+      "483K records processed daily"
+    ],
+    "projects": [
+      "Payments Data Pipeline"
+    ],
+    "skills_demonstrated": [
+      "Risk Modeling",
+      "Model Deployment",
+      "Data Wrangling",
+      "Statistical Modeling",
+      "Feature Engineering",
+      "Smart Contract Analysis",
+      "Machine Learning",
+      "ETL"
+    ],
+    "resume_bullets": [
+      "Streamlined a Machine Learning solution to address manual reporting overhead, targeting a 44% lift in data freshness.",
+      "Leveraged the workflow with Grafana and Git, achieving 56% faster coverage on 624K records.",
+      "Implemented Risk Modeling to refine the pipeline, improving F1 from 0.59 to 0.77.",
+      "Integrated validation across 5 datasets, cutting turnaround time by 26%.",
+      "Constructed the model into production, delivering a 11% gain in precision for a fintech team."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you validate your results for your role at Tessellate AI?",
+        "answer": "I tracked Recall and Sharpe Ratio with a held-out split and monitored drift over 9 months."
+      },
+      {
+        "question": "What was the hardest part of your role at Tessellate AI?",
+        "answer": "Dealing with fragmented data sources; I resolved it by leveraged a LightGBM baseline and iterating."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_011",
+    "company": "DataForge Inc",
+    "role": "Machine Learning Engineer",
+    "employment_type": "Full-time",
+    "start_date": "2023-01",
+    "end_date": "Present",
+    "location": "Berlin, DE",
+    "summary": "Worked as a Machine Learning Engineer at DataForge Inc, focused on map liquidity flows for a risk function.",
+    "responsibilities": [
+      "Created pipelines to optimize gas usage",
+      "Enhanced pipelines to detect anomalous wallet behavior",
+      "Reduced pipelines to surface at-risk loan positions",
+      "Improved pipelines to detect anomalous wallet behavior"
+    ],
+    "technologies": [
+      "Grafana",
+      "Docker",
+      "TypeScript",
+      "Bash",
+      "Scikit-Learn"
+    ],
+    "achievements": [
+      "Automated a system that improved false-positive rate by 71%",
+      "Built a system that improved data freshness by 24%",
+      "Designed a system that improved throughput by 75%"
+    ],
+    "metrics": [
+      "63% reduction in coverage",
+      "2195 records processed daily"
+    ],
+    "projects": [
+      "Crypto Data Pipeline",
+      "Cross-chain Token Classifier"
+    ],
+    "skills_demonstrated": [
+      "ETL",
+      "Data Wrangling",
+      "Model Deployment",
+      "Anomaly Detection",
+      "MLOps",
+      "Cloud Computing",
+      "Risk Modeling"
+    ],
+    "resume_bullets": [
+      "Streamlined a NLP solution to address manual reporting overhead, targeting a 28% lift in data freshness.",
+      "Developed the workflow with Grafana and Weights & Biases, achieving 63% faster latency on 8049 records.",
+      "Constructed Data Pipeline Design to refine the pipeline, improving AUC-ROC from 0.6 to 0.67.",
+      "Optimized validation across 4 datasets, cutting coverage by 23%.",
+      "Improved the model into production, delivering a 52% gain in latency for a trading desk."
+    ],
+    "interview_questions": [
+      {
+        "question": "What was the hardest part of your role at DataForge Inc?",
+        "answer": "Dealing with delayed risk alerts; I resolved it by engineered a K-Means baseline and iterating."
+      },
+      {
+        "question": "Why did you choose R for your role at DataForge Inc?",
+        "answer": "It fit the team's stack and offered strong XGBoost support, which sped up map liquidity flows."
+      },
+      {
+        "question": "How did you handle manual reporting overhead?",
+        "answer": "I improved a fix using DBeaver, which improved analyst hours by 35%."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_012",
+    "company": "Beacon Quant",
+    "role": "Quant Developer",
+    "employment_type": "Internship",
+    "start_date": "2016-07",
+    "end_date": "2017-07",
+    "location": "Austin, TX",
+    "summary": "Worked as a Quant Developer at Beacon Quant, focused on surface at-risk loan positions for a fintech team.",
+    "responsibilities": [
+      "Accelerated pipelines to classify token contracts",
+      "Built pipelines to score credit risk",
+      "Optimized pipelines to rank lending opportunities"
+    ],
+    "technologies": [
+      "Plotly",
+      "NumPy",
+      "XGBoost",
+      "DBeaver",
+      "Grafana",
+      "Scala"
+    ],
+    "achievements": [
+      "Created a system that improved throughput by 15%",
+      "Designed a system that improved false-positive rate by 85%"
+    ],
+    "metrics": [
+      "56% reduction in latency",
+      "7.4M records processed daily"
+    ],
+    "projects": [
+      "NFT Market Token Classifier"
+    ],
+    "skills_demonstrated": [
+      "On-chain Data",
+      "ETL",
+      "Anomaly Detection",
+      "Statistical Modeling",
+      "Data Visualization"
+    ],
+    "resume_bullets": [
+      "Accelerated a MLOps solution to address volatile market signals, targeting a 68% lift in precision.",
+      "Optimized the workflow with dbt and MLflow, achieving 80% faster analyst hours on 784K records.",
+      "Enhanced ETL to refine the pipeline, improving F1 from 0.67 to 0.8.",
+      "Implemented validation across 9 datasets, cutting latency by 13%.",
+      "Reduced the model into production, delivering a 73% gain in throughput for an analytics group."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you validate your results for your role at Beacon Quant?",
+        "answer": "I tracked R2 and R2 with a held-out split and monitored drift over 7 months."
+      },
+      {
+        "question": "What was the hardest part of your role at Beacon Quant?",
+        "answer": "Dealing with noisy on-chain data; I resolved it by leveraged a Transformer baseline and iterating."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_013",
+    "company": "DeFiPulse Analytics",
+    "role": "Business Intelligence Analyst",
+    "employment_type": "Contract",
+    "start_date": "2023-02",
+    "end_date": "2025-04",
+    "location": "Lahore, PK",
+    "summary": "Worked as a Business Intelligence Analyst at DeFiPulse Analytics, focused on score credit risk for a fintech team.",
+    "responsibilities": [
+      "Analyzed pipelines to score credit risk",
+      "Designed pipelines to map liquidity flows",
+      "Engineered pipelines to forecast short-term volatility",
+      "Streamlined pipelines to detect anomalous wallet behavior"
+    ],
+    "technologies": [
+      "Terraform",
+      "Git",
+      "Weights & Biases",
+      "LightGBM"
+    ],
+    "achievements": [
+      "Deployed a system that improved accuracy by 18%",
+      "Evaluated a system that improved precision by 48%"
+    ],
+    "metrics": [
+      "83% reduction in data freshness",
+      "837K records processed daily"
+    ],
+    "projects": [
+      "Market Portfolio Analyzer"
+    ],
+    "skills_demonstrated": [
+      "Model Deployment",
+      "Data Wrangling",
+      "Prompt Engineering",
+      "Data Visualization"
+    ],
+    "resume_bullets": [
+      "Engineered a Recommender Systems solution to address delayed risk alerts, targeting a 70% lift in precision.",
+      "Automated the workflow with Dune Analytics and MLflow, achieving 87% faster analyst hours on 833K records.",
+      "Leveraged Data Visualization to refine the pipeline, improving R2 from 0.75 to 0.95.",
+      "Streamlined validation across 3 datasets, cutting recall by 22%.",
+      "Deployed the model into production, delivering a 10% gain in recall for a lending protocol."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you validate your results for your role at DeFiPulse Analytics?",
+        "answer": "I tracked F1 and RMSE with a held-out split and monitored drift over 4 months."
+      },
+      {
+        "question": "What would you improve about your role at DeFiPulse Analytics?",
+        "answer": "I'd add Power BI for orchestration and test a LightGBM model to push data freshness further."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_014",
+    "company": "Cobalt Analytics",
+    "role": "Data Scientist",
+    "employment_type": "Contract",
+    "start_date": "2018-04",
+    "end_date": "2020-11",
+    "location": "Toronto, CA",
+    "summary": "Worked as a Data Scientist at Cobalt Analytics, focused on classify token contracts for a research unit.",
+    "responsibilities": [
+      "Accelerated pipelines to map liquidity flows",
+      "Created pipelines to surface at-risk loan positions",
+      "Leveraged pipelines to optimize gas usage",
+      "Leveraged pipelines to map liquidity flows",
+      "Improved pipelines to score credit risk"
+    ],
+    "technologies": [
+      "Power BI",
+      "Pandas",
+      "LightGBM",
+      "Java"
+    ],
+    "achievements": [
+      "Leveraged a system that improved recall by 15%",
+      "Generated a system that improved accuracy by 62%",
+      "Improved a system that improved throughput by 78%",
+      "Designed a system that improved precision by 90%"
+    ],
+    "metrics": [
+      "61% reduction in data freshness",
+      "5781 records processed daily"
+    ],
+    "projects": [
+      "Payments Price Oracle",
+      "Derivatives Trading Bot",
+      "Uniswap Recommendation System"
+    ],
+    "skills_demonstrated": [
+      "Deep Learning",
+      "NLP",
+      "Smart Contract Analysis",
+      "A/B Testing",
+      "Time Series Analysis",
+      "MLOps"
+    ],
+    "resume_bullets": [
+      "Optimized a Quantitative Finance solution to address high false-positive rates, targeting a 87% lift in recall.",
+      "Created the workflow with Jupyter and Grafana, achieving 44% faster latency on 2661 records.",
+      "Deployed A/B Testing to refine the pipeline, improving MAE from 0.73 to 0.9.",
+      "Evaluated validation across 9 datasets, cutting data freshness by 46%.",
+      "Enhanced the model into production, delivering a 38% gain in recall for a risk function."
+    ],
+    "interview_questions": [
+      {
+        "question": "What was the hardest part of your role at Cobalt Analytics?",
+        "answer": "Dealing with noisy on-chain data; I resolved it by built a PCA baseline and iterating."
+      },
+      {
+        "question": "What would you improve about your role at Cobalt Analytics?",
+        "answer": "I'd add Tableau for orchestration and test a ARIMA model to push data freshness further."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_015",
+    "company": "Horizon DeFi",
+    "role": "Research Engineer",
+    "employment_type": "Freelance",
+    "start_date": "2015-09",
+    "end_date": "2016-12",
+    "location": "Remote",
+    "summary": "Worked as a Research Engineer at Horizon DeFi, focused on map liquidity flows for a lending protocol.",
+    "responsibilities": [
+      "Implemented pipelines to rank lending opportunities",
+      "Enhanced pipelines to detect anomalous wallet behavior",
+      "Created pipelines to classify token contracts"
+    ],
+    "technologies": [
+      "TypeScript",
+      "LightGBM",
+      "PyTorch",
+      "Jupyter",
+      "DBeaver",
+      "Matplotlib",
+      "Go",
+      "Solidity"
+    ],
+    "achievements": [
+      "Leveraged a system that improved latency by 27%",
+      "Enhanced a system that improved throughput by 25%",
+      "Implemented a system that improved recall by 64%",
+      "Evaluated a system that improved accuracy by 39%"
+    ],
+    "metrics": [
+      "68% reduction in throughput",
+      "7M records processed daily"
+    ],
+    "projects": [
+      "Retail Scoring Model",
+      "DeFi Lending Liquidity Tracker",
+      "Cross-chain Token Classifier"
+    ],
+    "skills_demonstrated": [
+      "Statistical Modeling",
+      "MLOps",
+      "Risk Modeling",
+      "Time Series Analysis",
+      "A/B Testing"
+    ],
+    "resume_bullets": [
+      "Generated a Credit Scoring solution to address volatile market signals, targeting a 15% lift in turnaround time.",
+      "Designed the workflow with Dune Analytics and Weights & Biases, achieving 12% faster coverage on 28M records.",
+      "Improved SQL to refine the pipeline, improving Sharpe Ratio from 0.64 to 0.81.",
+      "Built validation across 8 datasets, cutting throughput by 9%.",
+      "Accelerated the model into production, delivering a 43% gain in false-positive rate for a risk function."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you handle scaling bottlenecks?",
+        "answer": "I accelerated a fix using dbt, which improved analyst hours by 91%."
+      },
+      {
+        "question": "What was the hardest part of your role at Horizon DeFi?",
+        "answer": "Dealing with inconsistent schemas; I resolved it by enhanced a Naive Bayes baseline and iterating."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_016",
+    "company": "QuantEdge Capital",
+    "role": "Quantitative Analyst",
+    "employment_type": "Internship",
+    "start_date": "2023-09",
+    "end_date": "2025-12",
+    "location": "Amsterdam, NL",
+    "summary": "Worked as a Quantitative Analyst at QuantEdge Capital, focused on optimize gas usage for a risk function.",
+    "responsibilities": [
+      "Developed pipelines to predict customer churn",
+      "Analyzed pipelines to map liquidity flows",
+      "Enhanced pipelines to forecast short-term volatility"
+    ],
+    "technologies": [
+      "NumPy",
+      "SQL",
+      "JavaScript",
+      "web3.py",
+      "LangChain"
+    ],
+    "achievements": [
+      "Implemented a system that improved data freshness by 46%",
+      "Improved a system that improved accuracy by 66%"
+    ],
+    "metrics": [
+      "51% reduction in recall",
+      "24M records processed daily"
+    ],
+    "projects": [
+      "Credit Fraud Detector",
+      "Derivatives Sentiment Tracker",
+      "Aave Scoring Model"
+    ],
+    "skills_demonstrated": [
+      "On-chain Data",
+      "MLOps",
+      "Time Series Analysis",
+      "Data Visualization",
+      "Cloud Computing"
+    ],
+    "resume_bullets": [
+      "Streamlined a Credit Scoring solution to address high false-positive rates, targeting a 68% lift in recall.",
+      "Implemented the workflow with Terraform and dbt, achieving 65% faster latency on 8602 records.",
+      "Optimized Smart Contract Analysis to refine the pipeline, improving Precision from 0.57 to 0.64.",
+      "Evaluated validation across 12 datasets, cutting data freshness by 89%.",
+      "Generated the model into production, delivering a 62% gain in data freshness for a research unit."
+    ],
+    "interview_questions": [
+      {
+        "question": "What would you improve about your role at QuantEdge Capital?",
+        "answer": "I'd add Weights & Biases for orchestration and test a Logistic Regression model to push coverage further."
+      },
+      {
+        "question": "What was the hardest part of your role at QuantEdge Capital?",
+        "answer": "Dealing with scaling bottlenecks; I resolved it by generated a XGBoost baseline and iterating."
+      },
+      {
+        "question": "Why did you choose Scala for your role at QuantEdge Capital?",
+        "answer": "It fit the team's stack and offered strong XGBoost support, which sped up detect anomalous wallet behavior."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_017",
+    "company": "Polaris Fintech",
+    "role": "Business Intelligence Analyst",
+    "employment_type": "Internship",
+    "start_date": "2016-02",
+    "end_date": "2018-02",
+    "location": "Singapore",
+    "summary": "Worked as a Business Intelligence Analyst at Polaris Fintech, focused on automate compliance reporting for a fintech team.",
+    "responsibilities": [
+      "Engineered pipelines to detect anomalous wallet behavior",
+      "Optimized pipelines to score credit risk",
+      "Evaluated pipelines to surface at-risk loan positions",
+      "Created pipelines to automate compliance reporting"
+    ],
+    "technologies": [
+      "Python",
+      "Plotly",
+      "Matplotlib",
+      "Kubernetes"
+    ],
+    "achievements": [
+      "Automated a system that improved data freshness by 8%",
+      "Implemented a system that improved false-positive rate by 52%"
+    ],
+    "metrics": [
+      "16% reduction in accuracy",
+      "21M records processed daily"
+    ],
+    "projects": [
+      "DeFi Lending Dashboard",
+      "Staking Churn Predictor"
+    ],
+    "skills_demonstrated": [
+      "Statistical Modeling",
+      "Prompt Engineering",
+      "MLOps",
+      "A/B Testing",
+      "Dashboarding",
+      "Data Pipeline Design",
+      "Anomaly Detection",
+      "Risk Modeling"
+    ],
+    "resume_bullets": [
+      "Accelerated a Data Engineering solution to address inconsistent schemas, targeting a 43% lift in latency.",
+      "Evaluated the workflow with dbt and Jupyter, achieving 29% faster accuracy on 670K records.",
+      "Deployed Prompt Engineering to refine the pipeline, improving Silhouette Score from 0.63 to 0.7.",
+      "Integrated validation across 11 datasets, cutting analyst hours by 14%.",
+      "Reduced the model into production, delivering a 80% gain in false-positive rate for a trading desk."
+    ],
+    "interview_questions": [
+      {
+        "question": "Why did you choose Go for your role at Polaris Fintech?",
+        "answer": "It fit the team's stack and offered strong Pandas support, which sped up forecast short-term volatility."
+      },
+      {
+        "question": "How did you validate your results for your role at Polaris Fintech?",
+        "answer": "I tracked MAE and Log Loss with a held-out split and monitored drift over 12 months."
+      },
+      {
+        "question": "What would you improve about your role at Polaris Fintech?",
+        "answer": "I'd add Airflow for orchestration and test a Naive Bayes model to push analyst hours further."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_018",
+    "company": "Polaris Fintech",
+    "role": "Research Engineer",
+    "employment_type": "Internship",
+    "start_date": "2017-07",
+    "end_date": "Present",
+    "location": "San Francisco, CA",
+    "summary": "Worked as a Research Engineer at Polaris Fintech, focused on detect anomalous wallet behavior for a fintech team.",
+    "responsibilities": [
+      "Optimized pipelines to automate compliance reporting",
+      "Evaluated pipelines to detect anomalous wallet behavior",
+      "Developed pipelines to score credit risk"
+    ],
+    "technologies": [
+      "Tableau",
+      "Airflow",
+      "web3.py",
+      "XGBoost",
+      "Matplotlib",
+      "LightGBM",
+      "SQL",
+      "Statsmodels"
+    ],
+    "achievements": [
+      "Automated a system that improved accuracy by 15%",
+      "Created a system that improved turnaround time by 20%",
+      "Built a system that improved coverage by 60%"
+    ],
+    "metrics": [
+      "49% reduction in precision",
+      "63K records processed daily"
+    ],
+    "projects": [
+      "Aave Portfolio Analyzer",
+      "Retail Scoring Model"
+    ],
+    "skills_demonstrated": [
+      "On-chain Data",
+      "Data Visualization",
+      "Data Wrangling",
+      "Python",
+      "Cloud Computing",
+      "A/B Testing",
+      "Risk Modeling",
+      "Dashboarding"
+    ],
+    "resume_bullets": [
+      "Engineered a Fraud Detection solution to address high false-positive rates, targeting a 46% lift in analyst hours.",
+      "Analyzed the workflow with MLflow and DBeaver, achieving 60% faster data freshness on 218K records.",
+      "Reduced Time Series Analysis to refine the pipeline, improving Accuracy from 0.73 to 0.88.",
+      "Implemented validation across 11 datasets, cutting turnaround time by 79%.",
+      "Integrated the model into production, delivering a 65% gain in accuracy for a lending protocol."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you handle fragmented data sources?",
+        "answer": "I developed a fix using Weights & Biases, which improved precision by 84%."
+      },
+      {
+        "question": "Why did you choose Bash for your role at Polaris Fintech?",
+        "answer": "It fit the team's stack and offered strong Plotly support, which sped up detect anomalous wallet behavior."
+      },
+      {
+        "question": "What would you improve about your role at Polaris Fintech?",
+        "answer": "I'd add Terraform for orchestration and test a Transformer model to push accuracy further."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_019",
+    "company": "OnChain Research",
+    "role": "Machine Learning Engineer",
+    "employment_type": "Internship",
+    "start_date": "2016-03",
+    "end_date": "2018-02",
+    "location": "London, UK",
+    "summary": "Worked as a Machine Learning Engineer at OnChain Research, focused on predict customer churn for a fintech team.",
+    "responsibilities": [
+      "Streamlined pipelines to score credit risk",
+      "Built pipelines to surface at-risk loan positions",
+      "Optimized pipelines to surface at-risk loan positions"
+    ],
+    "technologies": [
+      "spaCy",
+      "Scala",
+      "Terraform",
+      "Tableau",
+      "Power BI",
+      "web3.py",
+      "Jupyter"
+    ],
+    "achievements": [
+      "Leveraged a system that improved accuracy by 9%",
+      "Automated a system that improved turnaround time by 79%",
+      "Leveraged a system that improved turnaround time by 76%",
+      "Designed a system that improved latency by 76%"
+    ],
+    "metrics": [
+      "11% reduction in data freshness",
+      "5964 records processed daily"
+    ],
+    "projects": [
+      "Staking Forecasting Engine"
+    ],
+    "skills_demonstrated": [
+      "Data Visualization",
+      "A/B Testing",
+      "Smart Contract Analysis",
+      "Deep Learning"
+    ],
+    "resume_bullets": [
+      "Analyzed a Time Series Forecasting solution to address inconsistent schemas, targeting a 54% lift in accuracy.",
+      "Enhanced the workflow with Docker and Grafana, achieving 43% faster data freshness on 4.0M records.",
+      "Constructed SQL to refine the pipeline, improving Precision from 0.74 to 0.83.",
+      "Designed validation across 12 datasets, cutting false-positive rate by 71%.",
+      "Created the model into production, delivering a 29% gain in false-positive rate for a trading desk."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you validate your results for your role at OnChain Research?",
+        "answer": "I tracked MAPE and RMSE with a held-out split and monitored drift over 11 months."
+      },
+      {
+        "question": "Why did you choose SQL for your role at OnChain Research?",
+        "answer": "It fit the team's stack and offered strong FastAPI support, which sped up detect anomalous wallet behavior."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_020",
+    "company": "Catalyst Labs",
+    "role": "Data Engineer",
+    "employment_type": "Full-time",
+    "start_date": "2015-06",
+    "end_date": "2018-02",
+    "location": "Amsterdam, NL",
+    "summary": "Worked as a Data Engineer at Catalyst Labs, focused on rank lending opportunities for a lending protocol.",
+    "responsibilities": [
+      "Evaluated pipelines to map liquidity flows",
+      "Streamlined pipelines to predict customer churn",
+      "Engineered pipelines to optimize gas usage",
+      "Constructed pipelines to predict customer churn"
+    ],
+    "technologies": [
+      "Matplotlib",
+      "Python",
+      "DBeaver",
+      "dbt",
+      "Kubernetes",
+      "Go"
+    ],
+    "achievements": [
+      "Improved a system that improved accuracy by 36%",
+      "Evaluated a system that improved latency by 39%"
+    ],
+    "metrics": [
+      "33% reduction in coverage",
+      "6.4M records processed daily"
+    ],
+    "projects": [
+      "Payments Price Oracle",
+      "Derivatives Trading Bot"
+    ],
+    "skills_demonstrated": [
+      "Anomaly Detection",
+      "Cloud Computing",
+      "Data Wrangling",
+      "Time Series Analysis",
+      "Data Visualization",
+      "NLP",
+      "Dashboarding",
+      "Machine Learning"
+    ],
+    "resume_bullets": [
+      "Accelerated a Blockchain solution to address fragmented data sources, targeting a 56% lift in throughput.",
+      "Streamlined the workflow with Git and dbt, achieving 16% faster coverage on 1.7M records.",
+      "Implemented Feature Engineering to refine the pipeline, improving MAE from 0.57 to 0.64.",
+      "Improved validation across 3 datasets, cutting false-positive rate by 14%.",
+      "Reduced the model into production, delivering a 45% gain in turnaround time for an analytics group."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you handle delayed risk alerts?",
+        "answer": "I accelerated a fix using Dune Analytics, which improved data freshness by 57%."
+      },
+      {
+        "question": "Why did you choose Bash for your role at Catalyst Labs?",
+        "answer": "It fit the team's stack and offered strong spaCy support, which sped up rank lending opportunities."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_021",
+    "company": "BlockMetrics Labs",
+    "role": "Machine Learning Engineer",
+    "employment_type": "Part-time",
+    "start_date": "2016-10",
+    "end_date": "2018-04",
+    "location": "London, UK",
+    "summary": "Worked as a Machine Learning Engineer at BlockMetrics Labs, focused on detect anomalous wallet behavior for a lending protocol.",
+    "responsibilities": [
+      "Optimized pipelines to automate compliance reporting",
+      "Improved pipelines to optimize gas usage",
+      "Generated pipelines to predict customer churn"
+    ],
+    "technologies": [
+      "Seaborn",
+      "Java",
+      "Terraform",
+      "web3.py",
+      "Docker",
+      "Weights & Biases",
+      "Grafana",
+      "Jupyter"
+    ],
+    "achievements": [
+      "Improved a system that improved false-positive rate by 26%",
+      "Optimized a system that improved data freshness by 47%",
+      "Accelerated a system that improved throughput by 45%"
+    ],
+    "metrics": [
+      "55% reduction in accuracy",
+      "9.9M records processed daily"
+    ],
+    "projects": [
+      "Aave Portfolio Analyzer"
+    ],
+    "skills_demonstrated": [
+      "Python",
+      "Risk Modeling",
+      "Smart Contract Analysis",
+      "Deep Learning",
+      "Dashboarding",
+      "Data Pipeline Design",
+      "Feature Engineering",
+      "Machine Learning"
+    ],
+    "resume_bullets": [
+      "Built a Computer Vision solution to address fragmented data sources, targeting a 71% lift in recall.",
+      "Improved the workflow with Grafana and Terraform, achieving 8% faster recall on 4016 records.",
+      "Accelerated Model Deployment to refine the pipeline, improving Sharpe Ratio from 0.63 to 0.7.",
+      "Created validation across 8 datasets, cutting turnaround time by 34%.",
+      "Evaluated the model into production, delivering a 59% gain in coverage for a lending protocol."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you handle fragmented data sources?",
+        "answer": "I reduced a fix using Tableau, which improved coverage by 45%."
+      },
+      {
+        "question": "What was the hardest part of your role at BlockMetrics Labs?",
+        "answer": "Dealing with inconsistent schemas; I resolved it by constructed a SVM baseline and iterating."
+      },
+      {
+        "question": "How did you validate your results for your role at BlockMetrics Labs?",
+        "answer": "I tracked RMSE and RMSE with a held-out split and monitored drift over 6 months."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_022",
+    "company": "Vertex Quant",
+    "role": "Data Analyst",
+    "employment_type": "Full-time",
+    "start_date": "2023-04",
+    "end_date": "2023-11",
+    "location": "Singapore",
+    "summary": "Worked as a Data Analyst at Vertex Quant, focused on rank lending opportunities for a fintech team.",
+    "responsibilities": [
+      "Integrated pipelines to predict customer churn",
+      "Enhanced pipelines to detect anomalous wallet behavior",
+      "Generated pipelines to score credit risk",
+      "Evaluated pipelines to forecast short-term volatility"
+    ],
+    "technologies": [
+      "web3.py",
+      "LightGBM",
+      "NumPy",
+      "Seaborn",
+      "Airflow"
+    ],
+    "achievements": [
+      "Optimized a system that improved coverage by 32%",
+      "Constructed a system that improved false-positive rate by 56%"
+    ],
+    "metrics": [
+      "55% reduction in throughput",
+      "4M records processed daily"
+    ],
+    "projects": [
+      "Lending Pool Recommendation System"
+    ],
+    "skills_demonstrated": [
+      "Python",
+      "Anomaly Detection",
+      "Data Wrangling",
+      "Statistical Modeling",
+      "MLOps"
+    ],
+    "resume_bullets": [
+      "Accelerated a On-chain Analytics solution to address scaling bottlenecks, targeting a 55% lift in data freshness.",
+      "Designed the workflow with Docker and Grafana, achieving 74% faster data freshness on 8709 records.",
+      "Automated NLP to refine the pipeline, improving Sharpe Ratio from 0.72 to 0.87.",
+      "Generated validation across 10 datasets, cutting data freshness by 42%.",
+      "Deployed the model into production, delivering a 82% gain in turnaround time for a research unit."
+    ],
+    "interview_questions": [
+      {
+        "question": "What was the hardest part of your role at Vertex Quant?",
+        "answer": "Dealing with volatile market signals; I resolved it by deployed a K-Means baseline and iterating."
+      },
+      {
+        "question": "How did you validate your results for your role at Vertex Quant?",
+        "answer": "I tracked Recall and Precision with a held-out split and monitored drift over 11 months."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_023",
+    "company": "Meridian Data Labs",
+    "role": "ML Researcher",
+    "employment_type": "Contract",
+    "start_date": "2018-10",
+    "end_date": "Present",
+    "location": "Singapore",
+    "summary": "Worked as a ML Researcher at Meridian Data Labs, focused on automate compliance reporting for an analytics group.",
+    "responsibilities": [
+      "Automated pipelines to classify token contracts",
+      "Integrated pipelines to automate compliance reporting",
+      "Designed pipelines to predict customer churn"
+    ],
+    "technologies": [
+      "Scala",
+      "Power BI",
+      "Git",
+      "Jupyter",
+      "DBeaver",
+      "Java",
+      "Weights & Biases",
+      "Kubernetes"
+    ],
+    "achievements": [
+      "Created a system that improved false-positive rate by 73%",
+      "Reduced a system that improved latency by 43%"
+    ],
+    "metrics": [
+      "37% reduction in latency",
+      "4M records processed daily"
+    ],
+    "projects": [
+      "Aave Scoring Model"
+    ],
+    "skills_demonstrated": [
+      "Data Wrangling",
+      "ETL",
+      "Prompt Engineering",
+      "Deep Learning",
+      "Statistical Modeling",
+      "Model Deployment"
+    ],
+    "resume_bullets": [
+      "Improved a DeFi solution to address slow batch pipelines, targeting a 68% lift in recall.",
+      "Engineered the workflow with Kubernetes and Airflow, achieving 74% faster analyst hours on 9.7M records.",
+      "Leveraged On-chain Data to refine the pipeline, improving Recall from 0.75 to 0.84.",
+      "Generated validation across 6 datasets, cutting turnaround time by 61%.",
+      "Optimized the model into production, delivering a 34% gain in data freshness for an analytics group."
+    ],
+    "interview_questions": [
+      {
+        "question": "What would you improve about your role at Meridian Data Labs?",
+        "answer": "I'd add dbt for orchestration and test a Transformer model to push throughput further."
+      },
+      {
+        "question": "Why did you choose TypeScript for your role at Meridian Data Labs?",
+        "answer": "It fit the team's stack and offered strong TensorFlow support, which sped up score credit risk."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_024",
+    "company": "DeFiPulse Analytics",
+    "role": "Business Intelligence Analyst",
+    "employment_type": "Full-time",
+    "start_date": "2017-03",
+    "end_date": "2019-06",
+    "location": "Bangalore, IN",
+    "summary": "Worked as a Business Intelligence Analyst at DeFiPulse Analytics, focused on optimize gas usage for a trading desk.",
+    "responsibilities": [
+      "Implemented pipelines to predict customer churn",
+      "Improved pipelines to classify token contracts",
+      "Created pipelines to forecast short-term volatility",
+      "Automated pipelines to forecast short-term volatility"
+    ],
+    "technologies": [
+      "Java",
+      "TypeScript",
+      "Go",
+      "Solidity",
+      "MLflow",
+      "Airflow",
+      "spaCy",
+      "Bash"
+    ],
+    "achievements": [
+      "Reduced a system that improved coverage by 12%",
+      "Accelerated a system that improved data freshness by 11%",
+      "Automated a system that improved recall by 16%",
+      "Deployed a system that improved precision by 34%"
+    ],
+    "metrics": [
+      "37% reduction in precision",
+      "9.1M records processed daily"
+    ],
+    "projects": [
+      "Lending Pool Recommendation System"
+    ],
+    "skills_demonstrated": [
+      "On-chain Data",
+      "Machine Learning",
+      "Data Visualization",
+      "Statistical Modeling",
+      "Data Pipeline Design",
+      "Risk Modeling",
+      "NLP"
+    ],
+    "resume_bullets": [
+      "Created a Data Analytics solution to address inconsistent schemas, targeting a 43% lift in recall.",
+      "Evaluated the workflow with Terraform and Docker, achieving 8% faster coverage on 27M records.",
+      "Leveraged Deep Learning to refine the pipeline, improving Silhouette Score from 0.69 to 0.82.",
+      "Automated validation across 10 datasets, cutting data freshness by 67%.",
+      "Accelerated the model into production, delivering a 81% gain in accuracy for a research unit."
+    ],
+    "interview_questions": [
+      {
+        "question": "Why did you choose JavaScript for your role at DeFiPulse Analytics?",
+        "answer": "It fit the team's stack and offered strong Transformers support, which sped up predict customer churn."
+      },
+      {
+        "question": "How did you handle manual reporting overhead?",
+        "answer": "I deployed a fix using Jupyter, which improved coverage by 61%."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_025",
+    "company": "Orbit Analytics",
+    "role": "Data Analyst",
+    "employment_type": "Full-time",
+    "start_date": "2023-05",
+    "end_date": "2024-03",
+    "location": "New York, NY",
+    "summary": "Worked as a Data Analyst at Orbit Analytics, focused on map liquidity flows for a fintech team.",
+    "responsibilities": [
+      "Streamlined pipelines to detect anomalous wallet behavior",
+      "Analyzed pipelines to rank lending opportunities",
+      "Generated pipelines to surface at-risk loan positions",
+      "Streamlined pipelines to surface at-risk loan positions"
+    ],
+    "technologies": [
+      "dbt",
+      "Weights & Biases",
+      "R",
+      "Matplotlib",
+      "Kubernetes"
+    ],
+    "achievements": [
+      "Streamlined a system that improved turnaround time by 51%",
+      "Deployed a system that improved recall by 58%"
+    ],
+    "metrics": [
+      "12% reduction in accuracy",
+      "5459 records processed daily"
+    ],
+    "projects": [
+      "Loan Dashboard",
+      "On-chain Recommendation System"
+    ],
+    "skills_demonstrated": [
+      "Data Pipeline Design",
+      "Prompt Engineering",
+      "Time Series Analysis",
+      "A/B Testing"
+    ],
+    "resume_bullets": [
+      "Engineered a Deep Learning solution to address noisy on-chain data, targeting a 9% lift in precision.",
+      "Implemented the workflow with Terraform and Kubernetes, achieving 27% faster data freshness on 231K records.",
+      "Automated Machine Learning to refine the pipeline, improving AUC-ROC from 0.67 to 0.78.",
+      "Created validation across 3 datasets, cutting false-positive rate by 90%.",
+      "Improved the model into production, delivering a 92% gain in latency for an analytics group."
+    ],
+    "interview_questions": [
+      {
+        "question": "What was the hardest part of your role at Orbit Analytics?",
+        "answer": "Dealing with slow batch pipelines; I resolved it by enhanced a ARIMA baseline and iterating."
+      },
+      {
+        "question": "How did you handle fragmented data sources?",
+        "answer": "I developed a fix using dbt, which improved turnaround time by 33%."
+      },
+      {
+        "question": "What would you improve about your role at Orbit Analytics?",
+        "answer": "I'd add MLflow for orchestration and test a Linear Regression model to push accuracy further."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_026",
+    "company": "QuantEdge Capital",
+    "role": "Quant Developer",
+    "employment_type": "Internship",
+    "start_date": "2018-02",
+    "end_date": "2019-06",
+    "location": "Bangalore, IN",
+    "summary": "Worked as a Quant Developer at QuantEdge Capital, focused on rank lending opportunities for a risk function.",
+    "responsibilities": [
+      "Reduced pipelines to optimize gas usage",
+      "Evaluated pipelines to forecast short-term volatility",
+      "Integrated pipelines to rank lending opportunities"
+    ],
+    "technologies": [
+      "Scikit-Learn",
+      "Weights & Biases",
+      "Terraform",
+      "LightGBM",
+      "Tableau"
+    ],
+    "achievements": [
+      "Enhanced a system that improved throughput by 30%",
+      "Engineered a system that improved turnaround time by 91%"
+    ],
+    "metrics": [
+      "48% reduction in accuracy",
+      "16M records processed daily"
+    ],
+    "projects": [
+      "Uniswap Scoring Model",
+      "Cross-chain Token Classifier",
+      "Uniswap Risk Monitor"
+    ],
+    "skills_demonstrated": [
+      "Deep Learning",
+      "Risk Modeling",
+      "ETL",
+      "Model Deployment"
+    ],
+    "resume_bullets": [
+      "Automated a Fraud Detection solution to address high false-positive rates, targeting a 50% lift in coverage.",
+      "Analyzed the workflow with Grafana and Git, achieving 89% faster throughput on 7454 records.",
+      "Implemented Dashboarding to refine the pipeline, improving Log Loss from 0.71 to 0.91.",
+      "Built validation across 6 datasets, cutting false-positive rate by 83%.",
+      "Deployed the model into production, delivering a 9% gain in recall for a lending protocol."
+    ],
+    "interview_questions": [
+      {
+        "question": "What would you improve about your role at QuantEdge Capital?",
+        "answer": "I'd add Docker for orchestration and test a Logistic Regression model to push recall further."
+      },
+      {
+        "question": "How did you validate your results for your role at QuantEdge Capital?",
+        "answer": "I tracked Accuracy and R2 with a held-out split and monitored drift over 9 months."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_027",
+    "company": "ChainSight",
+    "role": "Research Engineer",
+    "employment_type": "Part-time",
+    "start_date": "2019-06",
+    "end_date": "2020-02",
+    "location": "Bangalore, IN",
+    "summary": "Worked as a Research Engineer at ChainSight, focused on surface at-risk loan positions for a research unit.",
+    "responsibilities": [
+      "Integrated pipelines to score credit risk",
+      "Deployed pipelines to map liquidity flows",
+      "Built pipelines to detect anomalous wallet behavior"
+    ],
+    "technologies": [
+      "Weights & Biases",
+      "Go",
+      "FastAPI",
+      "NumPy",
+      "Transformers",
+      "Power BI",
+      "JavaScript",
+      "LangChain"
+    ],
+    "achievements": [
+      "Engineered a system that improved latency by 70%",
+      "Designed a system that improved recall by 14%",
+      "Optimized a system that improved recall by 24%"
+    ],
+    "metrics": [
+      "19% reduction in coverage",
+      "1380 records processed daily"
+    ],
+    "projects": [
+      "Loan Dashboard",
+      "NFT Market Forecasting Engine",
+      "Uniswap Recommendation System"
+    ],
+    "skills_demonstrated": [
+      "Time Series Analysis",
+      "Risk Modeling",
+      "Machine Learning",
+      "Model Deployment",
+      "ETL"
+    ],
+    "resume_bullets": [
+      "Designed a MLOps solution to address delayed risk alerts, targeting a 63% lift in coverage.",
+      "Enhanced the workflow with DBeaver and Docker, achieving 69% faster accuracy on 884K records.",
+      "Deployed NLP to refine the pipeline, improving Log Loss from 0.66 to 0.78.",
+      "Reduced validation across 5 datasets, cutting precision by 56%.",
+      "Automated the model into production, delivering a 67% gain in precision for an analytics group."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you validate your results for your role at ChainSight?",
+        "answer": "I tracked RMSE and RMSE with a held-out split and monitored drift over 11 months."
+      },
+      {
+        "question": "What would you improve about your role at ChainSight?",
+        "answer": "I'd add Grafana for orchestration and test a SVM model to push data freshness further."
+      },
+      {
+        "question": "How did you handle inconsistent schemas?",
+        "answer": "I designed a fix using Airflow, which improved coverage by 68%."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_028",
+    "company": "OnChain Research",
+    "role": "Research Engineer",
+    "employment_type": "Internship",
+    "start_date": "2022-05",
+    "end_date": "2023-03",
+    "location": "Amsterdam, NL",
+    "summary": "Worked as a Research Engineer at OnChain Research, focused on predict customer churn for a risk function.",
+    "responsibilities": [
+      "Leveraged pipelines to predict customer churn",
+      "Developed pipelines to optimize gas usage",
+      "Evaluated pipelines to rank lending opportunities",
+      "Integrated pipelines to classify token contracts",
+      "Developed pipelines to predict customer churn"
+    ],
+    "technologies": [
+      "Scikit-Learn",
+      "Matplotlib",
+      "Airflow",
+      "Solidity",
+      "Statsmodels",
+      "NLTK",
+      "Git"
+    ],
+    "achievements": [
+      "Engineered a system that improved coverage by 41%",
+      "Accelerated a system that improved data freshness by 26%",
+      "Analyzed a system that improved recall by 85%",
+      "Improved a system that improved coverage by 9%"
+    ],
+    "metrics": [
+      "22% reduction in latency",
+      "733K records processed daily"
+    ],
+    "projects": [
+      "Uniswap Recommendation System",
+      "Payments Price Oracle"
+    ],
+    "skills_demonstrated": [
+      "ETL",
+      "MLOps",
+      "Data Pipeline Design",
+      "On-chain Data",
+      "Prompt Engineering",
+      "Risk Modeling"
+    ],
+    "resume_bullets": [
+      "Optimized a Data Analytics solution to address inconsistent schemas, targeting a 8% lift in latency.",
+      "Analyzed the workflow with DBeaver and Jupyter, achieving 16% faster turnaround time on 680K records.",
+      "Constructed Smart Contract Analysis to refine the pipeline, improving R2 from 0.55 to 0.63.",
+      "Deployed validation across 8 datasets, cutting coverage by 25%.",
+      "Created the model into production, delivering a 33% gain in data freshness for a trading desk."
+    ],
+    "interview_questions": [
+      {
+        "question": "What was the hardest part of your role at OnChain Research?",
+        "answer": "Dealing with manual reporting overhead; I resolved it by evaluated a Isolation Forest baseline and iterating."
+      },
+      {
+        "question": "Why did you choose Java for your role at OnChain Research?",
+        "answer": "It fit the team's stack and offered strong FastAPI support, which sped up rank lending opportunities."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_029",
+    "company": "DataForge Inc",
+    "role": "Data Engineer",
+    "employment_type": "Full-time",
+    "start_date": "2019-02",
+    "end_date": "2020-11",
+    "location": "London, UK",
+    "summary": "Worked as a Data Engineer at DataForge Inc, focused on map liquidity flows for a lending protocol.",
+    "responsibilities": [
+      "Accelerated pipelines to map liquidity flows",
+      "Analyzed pipelines to classify token contracts",
+      "Leveraged pipelines to predict customer churn",
+      "Accelerated pipelines to optimize gas usage"
+    ],
+    "technologies": [
+      "dbt",
+      "LightGBM",
+      "Pandas",
+      "PyTorch",
+      "Streamlit",
+      "Java",
+      "Scikit-Learn"
+    ],
+    "achievements": [
+      "Enhanced a system that improved throughput by 48%",
+      "Integrated a system that improved throughput by 59%",
+      "Deployed a system that improved analyst hours by 15%"
+    ],
+    "metrics": [
+      "53% reduction in throughput",
+      "477K records processed daily"
+    ],
+    "projects": [
+      "Credit Forecasting Engine"
+    ],
+    "skills_demonstrated": [
+      "MLOps",
+      "Data Wrangling",
+      "Time Series Analysis",
+      "Smart Contract Analysis"
+    ],
+    "resume_bullets": [
+      "Engineered a Time Series Forecasting solution to address inconsistent schemas, targeting a 37% lift in analyst hours.",
+      "Built the workflow with Git and MLflow, achieving 70% faster turnaround time on 1745 records.",
+      "Accelerated Deep Learning to refine the pipeline, improving Precision from 0.77 to 0.93.",
+      "Enhanced validation across 12 datasets, cutting recall by 26%.",
+      "Developed the model into production, delivering a 74% gain in analyst hours for a research unit."
+    ],
+    "interview_questions": [
+      {
+        "question": "Why did you choose R for your role at DataForge Inc?",
+        "answer": "It fit the team's stack and offered strong LangChain support, which sped up forecast short-term volatility."
+      },
+      {
+        "question": "What would you improve about your role at DataForge Inc?",
+        "answer": "I'd add Docker for orchestration and test a DBSCAN model to push coverage further."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_030",
+    "company": "Summit ML",
+    "role": "Data Engineer",
+    "employment_type": "Contract",
+    "start_date": "2015-03",
+    "end_date": "2017-05",
+    "location": "New York, NY",
+    "summary": "Worked as a Data Engineer at Summit ML, focused on predict customer churn for a trading desk.",
+    "responsibilities": [
+      "Accelerated pipelines to forecast short-term volatility",
+      "Built pipelines to optimize gas usage",
+      "Deployed pipelines to map liquidity flows",
+      "Evaluated pipelines to rank lending opportunities",
+      "Integrated pipelines to automate compliance reporting"
+    ],
+    "technologies": [
+      "Streamlit",
+      "Transformers",
+      "web3.py",
+      "Grafana",
+      "Matplotlib",
+      "Seaborn",
+      "SQL"
+    ],
+    "achievements": [
+      "Created a system that improved latency by 22%",
+      "Designed a system that improved throughput by 83%"
+    ],
+    "metrics": [
+      "32% reduction in latency",
+      "6.2M records processed daily"
+    ],
+    "projects": [
+      "Cross-chain Analytics Platform",
+      "On-chain Data Pipeline"
+    ],
+    "skills_demonstrated": [
+      "Deep Learning",
+      "On-chain Data",
+      "Risk Modeling",
+      "Cloud Computing",
+      "Smart Contract Analysis",
+      "Statistical Modeling",
+      "Time Series Analysis",
+      "Python"
+    ],
+    "resume_bullets": [
+      "Optimized a Risk Analytics solution to address fragmented data sources, targeting a 84% lift in throughput.",
+      "Created the workflow with Git and Weights & Biases, achieving 47% faster false-positive rate on 878K records.",
+      "Integrated Cloud Computing to refine the pipeline, improving AUC-ROC from 0.58 to 0.68.",
+      "Leveraged validation across 7 datasets, cutting turnaround time by 15%.",
+      "Streamlined the model into production, delivering a 50% gain in coverage for a research unit."
+    ],
+    "interview_questions": [
+      {
+        "question": "Why did you choose Solidity for your role at Summit ML?",
+        "answer": "It fit the team's stack and offered strong NumPy support, which sped up detect anomalous wallet behavior."
+      },
+      {
+        "question": "What was the hardest part of your role at Summit ML?",
+        "answer": "Dealing with scaling bottlenecks; I resolved it by deployed a Gradient Boosting baseline and iterating."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_031",
+    "company": "Summit ML",
+    "role": "Blockchain Data Engineer",
+    "employment_type": "Internship",
+    "start_date": "2018-12",
+    "end_date": "2021-07",
+    "location": "Dubai, UAE",
+    "summary": "Worked as a Blockchain Data Engineer at Summit ML, focused on detect anomalous wallet behavior for a risk function.",
+    "responsibilities": [
+      "Streamlined pipelines to classify token contracts",
+      "Created pipelines to detect anomalous wallet behavior",
+      "Constructed pipelines to rank lending opportunities"
+    ],
+    "technologies": [
+      "Seaborn",
+      "Tableau",
+      "JavaScript",
+      "PyTorch"
+    ],
+    "achievements": [
+      "Constructed a system that improved accuracy by 54%",
+      "Improved a system that improved latency by 26%",
+      "Deployed a system that improved turnaround time by 29%",
+      "Developed a system that improved latency by 53%"
+    ],
+    "metrics": [
+      "68% reduction in coverage",
+      "5645 records processed daily"
+    ],
+    "projects": [
+      "DeFi Lending Trading Bot"
+    ],
+    "skills_demonstrated": [
+      "Time Series Analysis",
+      "Python",
+      "Data Visualization",
+      "Prompt Engineering",
+      "On-chain Data",
+      "NLP",
+      "ETL"
+    ],
+    "resume_bullets": [
+      "Designed a Smart Contracts solution to address noisy on-chain data, targeting a 23% lift in data freshness.",
+      "Streamlined the workflow with DBeaver and Grafana, achieving 90% faster false-positive rate on 38M records.",
+      "Deployed On-chain Data to refine the pipeline, improving Sharpe Ratio from 0.63 to 0.71.",
+      "Analyzed validation across 4 datasets, cutting analyst hours by 31%.",
+      "Improved the model into production, delivering a 57% gain in data freshness for a research unit."
+    ],
+    "interview_questions": [
+      {
+        "question": "What would you improve about your role at Summit ML?",
+        "answer": "I'd add Weights & Biases for orchestration and test a Random Forest model to push false-positive rate further."
+      },
+      {
+        "question": "Why did you choose JavaScript for your role at Summit ML?",
+        "answer": "It fit the team's stack and offered strong FastAPI support, which sped up detect anomalous wallet behavior."
+      },
+      {
+        "question": "How did you validate your results for your role at Summit ML?",
+        "answer": "I tracked Log Loss and Log Loss with a held-out split and monitored drift over 11 months."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_032",
+    "company": "DataForge Inc",
+    "role": "Quant Developer",
+    "employment_type": "Full-time",
+    "start_date": "2017-10",
+    "end_date": "2018-04",
+    "location": "Bangalore, IN",
+    "summary": "Worked as a Quant Developer at DataForge Inc, focused on automate compliance reporting for a lending protocol.",
+    "responsibilities": [
+      "Implemented pipelines to map liquidity flows",
+      "Created pipelines to predict customer churn",
+      "Reduced pipelines to detect anomalous wallet behavior"
+    ],
+    "technologies": [
+      "Jupyter",
+      "Tableau",
+      "Matplotlib",
+      "Scikit-Learn",
+      "Seaborn",
+      "Solidity",
+      "spaCy",
+      "Statsmodels"
+    ],
+    "achievements": [
+      "Engineered a system that improved recall by 46%",
+      "Developed a system that improved false-positive rate by 45%",
+      "Reduced a system that improved data freshness by 25%"
+    ],
+    "metrics": [
+      "81% reduction in data freshness",
+      "942K records processed daily"
+    ],
+    "projects": [
+      "Lending Pool Churn Predictor",
+      "Uniswap Churn Predictor",
+      "Uniswap Risk Monitor"
+    ],
+    "skills_demonstrated": [
+      "Python",
+      "Deep Learning",
+      "Statistical Modeling",
+      "ETL",
+      "Model Deployment"
+    ],
+    "resume_bullets": [
+      "Optimized a Algorithmic Trading solution to address volatile market signals, targeting a 66% lift in latency.",
+      "Evaluated the workflow with Jupyter and Airflow, achieving 40% faster turnaround time on 218K records.",
+      "Designed Data Wrangling to refine the pipeline, improving Sharpe Ratio from 0.64 to 0.83.",
+      "Analyzed validation across 8 datasets, cutting analyst hours by 92%.",
+      "Generated the model into production, delivering a 90% gain in false-positive rate for a risk function."
+    ],
+    "interview_questions": [
+      {
+        "question": "Why did you choose Scala for your role at DataForge Inc?",
+        "answer": "It fit the team's stack and offered strong TensorFlow support, which sped up predict customer churn."
+      },
+      {
+        "question": "What was the hardest part of your role at DataForge Inc?",
+        "answer": "Dealing with noisy on-chain data; I resolved it by analyzed a XGBoost baseline and iterating."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_033",
+    "company": "Horizon DeFi",
+    "role": "Research Engineer",
+    "employment_type": "Full-time",
+    "start_date": "2019-03",
+    "end_date": "2020-11",
+    "location": "San Francisco, CA",
+    "summary": "Worked as a Research Engineer at Horizon DeFi, focused on map liquidity flows for a research unit.",
+    "responsibilities": [
+      "Improved pipelines to classify token contracts",
+      "Implemented pipelines to map liquidity flows",
+      "Enhanced pipelines to score credit risk",
+      "Created pipelines to map liquidity flows"
+    ],
+    "technologies": [
+      "Pandas",
+      "LightGBM",
+      "Airflow",
+      "Transformers",
+      "Java",
+      "Go"
+    ],
+    "achievements": [
+      "Accelerated a system that improved latency by 14%",
+      "Automated a system that improved throughput by 57%",
+      "Automated a system that improved throughput by 76%"
+    ],
+    "metrics": [
+      "78% reduction in analyst hours",
+      "7.7M records processed daily"
+    ],
+    "projects": [
+      "Aave Portfolio Analyzer",
+      "Credit Fraud Detector",
+      "Token Analytics Platform"
+    ],
+    "skills_demonstrated": [
+      "Statistical Modeling",
+      "On-chain Data",
+      "Dashboarding",
+      "Data Wrangling",
+      "Python"
+    ],
+    "resume_bullets": [
+      "Streamlined a Fintech solution to address volatile market signals, targeting a 74% lift in recall.",
+      "Automated the workflow with DBeaver and Jupyter, achieving 47% faster latency on 5.6M records.",
+      "Accelerated Risk Modeling to refine the pipeline, improving MAE from 0.67 to 0.77.",
+      "Enhanced validation across 6 datasets, cutting latency by 29%.",
+      "Reduced the model into production, delivering a 81% gain in accuracy for a lending protocol."
+    ],
+    "interview_questions": [
+      {
+        "question": "What would you improve about your role at Horizon DeFi?",
+        "answer": "I'd add Docker for orchestration and test a Linear Regression model to push turnaround time further."
+      },
+      {
+        "question": "What was the hardest part of your role at Horizon DeFi?",
+        "answer": "Dealing with inconsistent schemas; I resolved it by generated a XGBoost baseline and iterating."
+      },
+      {
+        "question": "Why did you choose Go for your role at Horizon DeFi?",
+        "answer": "It fit the team's stack and offered strong LangChain support, which sped up surface at-risk loan positions."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_034",
+    "company": "Strata Intelligence",
+    "role": "Quant Developer",
+    "employment_type": "Contract",
+    "start_date": "2015-10",
+    "end_date": "2017-02",
+    "location": "Dubai, UAE",
+    "summary": "Worked as a Quant Developer at Strata Intelligence, focused on optimize gas usage for a trading desk.",
+    "responsibilities": [
+      "Implemented pipelines to predict customer churn",
+      "Integrated pipelines to map liquidity flows",
+      "Implemented pipelines to automate compliance reporting",
+      "Created pipelines to classify token contracts"
+    ],
+    "technologies": [
+      "Transformers",
+      "SciPy",
+      "TensorFlow",
+      "Kubernetes",
+      "Seaborn",
+      "Terraform",
+      "Docker",
+      "PyTorch"
+    ],
+    "achievements": [
+      "Analyzed a system that improved recall by 8%",
+      "Improved a system that improved turnaround time by 35%",
+      "Created a system that improved false-positive rate by 12%"
+    ],
+    "metrics": [
+      "67% reduction in analyst hours",
+      "2M records processed daily"
+    ],
+    "projects": [
+      "DeFi Lending Recommendation System",
+      "Lending Pool Churn Predictor"
+    ],
+    "skills_demonstrated": [
+      "Smart Contract Analysis",
+      "Machine Learning",
+      "On-chain Data",
+      "SQL"
+    ],
+    "resume_bullets": [
+      "Generated a Machine Learning solution to address manual reporting overhead, targeting a 36% lift in data freshness.",
+      "Optimized the workflow with Weights & Biases and Docker, achieving 58% faster throughput on 13M records.",
+      "Evaluated MLOps to refine the pipeline, improving MAE from 0.55 to 0.72.",
+      "Implemented validation across 10 datasets, cutting data freshness by 28%.",
+      "Leveraged the model into production, delivering a 25% gain in throughput for a research unit."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you validate your results for your role at Strata Intelligence?",
+        "answer": "I tracked RMSE and R2 with a held-out split and monitored drift over 6 months."
+      },
+      {
+        "question": "What would you improve about your role at Strata Intelligence?",
+        "answer": "I'd add Weights & Biases for orchestration and test a LSTM model to push latency further."
+      },
+      {
+        "question": "What was the hardest part of your role at Strata Intelligence?",
+        "answer": "Dealing with volatile market signals; I resolved it by evaluated a Gradient Boosting baseline and iterating."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_035",
+    "company": "Beacon Quant",
+    "role": "Analytics Engineer",
+    "employment_type": "Freelance",
+    "start_date": "2017-06",
+    "end_date": "2020-01",
+    "location": "Remote",
+    "summary": "Worked as a Analytics Engineer at Beacon Quant, focused on rank lending opportunities for a lending protocol.",
+    "responsibilities": [
+      "Built pipelines to optimize gas usage",
+      "Accelerated pipelines to surface at-risk loan positions",
+      "Evaluated pipelines to classify token contracts",
+      "Created pipelines to automate compliance reporting",
+      "Leveraged pipelines to forecast short-term volatility"
+    ],
+    "technologies": [
+      "Airflow",
+      "Seaborn",
+      "Matplotlib",
+      "LightGBM",
+      "NumPy",
+      "Go",
+      "Plotly",
+      "Docker"
+    ],
+    "achievements": [
+      "Integrated a system that improved analyst hours by 27%",
+      "Generated a system that improved coverage by 39%",
+      "Analyzed a system that improved latency by 41%"
+    ],
+    "metrics": [
+      "39% reduction in turnaround time",
+      "733K records processed daily"
+    ],
+    "projects": [
+      "On-chain Data Pipeline"
+    ],
+    "skills_demonstrated": [
+      "Time Series Analysis",
+      "Data Visualization",
+      "Statistical Modeling",
+      "On-chain Data",
+      "Python"
+    ],
+    "resume_bullets": [
+      "Accelerated a Web3 solution to address slow batch pipelines, targeting a 36% lift in throughput.",
+      "Constructed the workflow with Power BI and MLflow, achieving 62% faster data freshness on 43M records.",
+      "Designed SQL to refine the pipeline, improving MAE from 0.64 to 0.74.",
+      "Developed validation across 7 datasets, cutting throughput by 43%.",
+      "Deployed the model into production, delivering a 52% gain in turnaround time for a trading desk."
+    ],
+    "interview_questions": [
+      {
+        "question": "What was the hardest part of your role at Beacon Quant?",
+        "answer": "Dealing with manual reporting overhead; I resolved it by leveraged a LSTM baseline and iterating."
+      },
+      {
+        "question": "What would you improve about your role at Beacon Quant?",
+        "answer": "I'd add Power BI for orchestration and test a LSTM model to push data freshness further."
+      },
+      {
+        "question": "How did you handle fragmented data sources?",
+        "answer": "I developed a fix using DBeaver, which improved throughput by 35%."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_036",
+    "company": "DataForge Inc",
+    "role": "Machine Learning Engineer",
+    "employment_type": "Part-time",
+    "start_date": "2015-11",
+    "end_date": "2017-01",
+    "location": "Lahore, PK",
+    "summary": "Worked as a Machine Learning Engineer at DataForge Inc, focused on automate compliance reporting for a trading desk.",
+    "responsibilities": [
+      "Deployed pipelines to forecast short-term volatility",
+      "Implemented pipelines to detect anomalous wallet behavior",
+      "Accelerated pipelines to forecast short-term volatility",
+      "Developed pipelines to score credit risk",
+      "Constructed pipelines to rank lending opportunities"
+    ],
+    "technologies": [
+      "Kubernetes",
+      "Bash",
+      "JavaScript",
+      "Python",
+      "TypeScript",
+      "Go"
+    ],
+    "achievements": [
+      "Streamlined a system that improved latency by 17%",
+      "Reduced a system that improved analyst hours by 51%",
+      "Created a system that improved data freshness by 33%",
+      "Reduced a system that improved coverage by 13%"
+    ],
+    "metrics": [
+      "24% reduction in recall",
+      "18M records processed daily"
+    ],
+    "projects": [
+      "DeFi Lending Trading Bot",
+      "Credit Fraud Detector"
+    ],
+    "skills_demonstrated": [
+      "Risk Modeling",
+      "Feature Engineering",
+      "NLP",
+      "MLOps"
+    ],
+    "resume_bullets": [
+      "Optimized a Credit Scoring solution to address scaling bottlenecks, targeting a 73% lift in latency.",
+      "Created the workflow with Power BI and Jupyter, achieving 29% faster data freshness on 26M records.",
+      "Developed Data Wrangling to refine the pipeline, improving Accuracy from 0.72 to 0.84.",
+      "Reduced validation across 5 datasets, cutting accuracy by 28%.",
+      "Constructed the model into production, delivering a 81% gain in recall for a risk function."
+    ],
+    "interview_questions": [
+      {
+        "question": "Why did you choose Go for your role at DataForge Inc?",
+        "answer": "It fit the team's stack and offered strong Transformers support, which sped up map liquidity flows."
+      },
+      {
+        "question": "How did you handle scaling bottlenecks?",
+        "answer": "I analyzed a fix using Kubernetes, which improved recall by 45%."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_037",
+    "company": "ChainSight",
+    "role": "Blockchain Data Engineer",
+    "employment_type": "Freelance",
+    "start_date": "2019-01",
+    "end_date": "2020-10",
+    "location": "Singapore",
+    "summary": "Worked as a Blockchain Data Engineer at ChainSight, focused on predict customer churn for a lending protocol.",
+    "responsibilities": [
+      "Reduced pipelines to automate compliance reporting",
+      "Optimized pipelines to optimize gas usage",
+      "Accelerated pipelines to automate compliance reporting",
+      "Built pipelines to surface at-risk loan positions",
+      "Engineered pipelines to predict customer churn"
+    ],
+    "technologies": [
+      "SQL",
+      "Matplotlib",
+      "Pandas",
+      "Go",
+      "Docker"
+    ],
+    "achievements": [
+      "Analyzed a system that improved coverage by 40%",
+      "Engineered a system that improved false-positive rate by 92%"
+    ],
+    "metrics": [
+      "82% reduction in latency",
+      "3477 records processed daily"
+    ],
+    "projects": [
+      "Lending Pool Recommendation System"
+    ],
+    "skills_demonstrated": [
+      "Deep Learning",
+      "Dashboarding",
+      "On-chain Data",
+      "Statistical Modeling",
+      "A/B Testing",
+      "Time Series Analysis"
+    ],
+    "resume_bullets": [
+      "Automated a Recommender Systems solution to address high false-positive rates, targeting a 90% lift in precision.",
+      "Streamlined the workflow with Power BI and Weights & Biases, achieving 10% faster precision on 3.2M records.",
+      "Accelerated NLP to refine the pipeline, improving R2 from 0.68 to 0.87.",
+      "Reduced validation across 4 datasets, cutting turnaround time by 39%.",
+      "Constructed the model into production, delivering a 66% gain in turnaround time for a lending protocol."
+    ],
+    "interview_questions": [
+      {
+        "question": "Why did you choose Python for your role at ChainSight?",
+        "answer": "It fit the team's stack and offered strong PyTorch support, which sped up optimize gas usage."
+      },
+      {
+        "question": "What was the hardest part of your role at ChainSight?",
+        "answer": "Dealing with fragmented data sources; I resolved it by optimized a ARIMA baseline and iterating."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_038",
+    "company": "Nexus Data",
+    "role": "Machine Learning Engineer",
+    "employment_type": "Full-time",
+    "start_date": "2017-08",
+    "end_date": "2020-06",
+    "location": "Bangalore, IN",
+    "summary": "Worked as a Machine Learning Engineer at Nexus Data, focused on automate compliance reporting for a research unit.",
+    "responsibilities": [
+      "Implemented pipelines to surface at-risk loan positions",
+      "Developed pipelines to forecast short-term volatility",
+      "Reduced pipelines to automate compliance reporting",
+      "Implemented pipelines to map liquidity flows",
+      "Evaluated pipelines to detect anomalous wallet behavior"
+    ],
+    "technologies": [
+      "Dune Analytics",
+      "Power BI",
+      "Grafana",
+      "Plotly",
+      "LangChain"
+    ],
+    "achievements": [
+      "Integrated a system that improved accuracy by 37%",
+      "Evaluated a system that improved turnaround time by 26%"
+    ],
+    "metrics": [
+      "53% reduction in precision",
+      "1941 records processed daily"
+    ],
+    "projects": [
+      "Stablecoin Portfolio Analyzer"
+    ],
+    "skills_demonstrated": [
+      "Data Visualization",
+      "ETL",
+      "Smart Contract Analysis",
+      "Feature Engineering",
+      "Model Deployment"
+    ],
+    "resume_bullets": [
+      "Accelerated a Data Engineering solution to address high false-positive rates, targeting a 46% lift in analyst hours.",
+      "Optimized the workflow with Airflow and Tableau, achieving 44% faster throughput on 33M records.",
+      "Automated Python to refine the pipeline, improving Sharpe Ratio from 0.69 to 0.85.",
+      "Evaluated validation across 4 datasets, cutting accuracy by 27%.",
+      "Built the model into production, delivering a 91% gain in coverage for a fintech team."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you validate your results for your role at Nexus Data?",
+        "answer": "I tracked R2 and R2 with a held-out split and monitored drift over 9 months."
+      },
+      {
+        "question": "What would you improve about your role at Nexus Data?",
+        "answer": "I'd add Airflow for orchestration and test a Gradient Boosting model to push data freshness further."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_039",
+    "company": "Northwind Analytics",
+    "role": "Data Engineer",
+    "employment_type": "Freelance",
+    "start_date": "2020-03",
+    "end_date": "2021-12",
+    "location": "London, UK",
+    "summary": "Worked as a Data Engineer at Northwind Analytics, focused on optimize gas usage for a lending protocol.",
+    "responsibilities": [
+      "Evaluated pipelines to map liquidity flows",
+      "Improved pipelines to rank lending opportunities",
+      "Designed pipelines to rank lending opportunities",
+      "Enhanced pipelines to surface at-risk loan positions",
+      "Constructed pipelines to surface at-risk loan positions"
+    ],
+    "technologies": [
+      "Weights & Biases",
+      "R",
+      "dbt",
+      "SQL",
+      "Scala",
+      "Java",
+      "TypeScript"
+    ],
+    "achievements": [
+      "Reduced a system that improved data freshness by 25%",
+      "Implemented a system that improved accuracy by 52%",
+      "Enhanced a system that improved coverage by 45%"
+    ],
+    "metrics": [
+      "66% reduction in coverage",
+      "9.6M records processed daily"
+    ],
+    "projects": [
+      "Cross-chain Wallet Profiler",
+      "Stablecoin Portfolio Analyzer",
+      "NFT Market Recommendation System"
+    ],
+    "skills_demonstrated": [
+      "On-chain Data",
+      "SQL",
+      "Risk Modeling",
+      "Smart Contract Analysis",
+      "Python"
+    ],
+    "resume_bullets": [
+      "Engineered a Machine Learning solution to address volatile market signals, targeting a 27% lift in coverage.",
+      "Optimized the workflow with Weights & Biases and Jupyter, achieving 68% faster coverage on 5626 records.",
+      "Enhanced Machine Learning to refine the pipeline, improving MAPE from 0.61 to 0.67.",
+      "Improved validation across 3 datasets, cutting precision by 22%.",
+      "Designed the model into production, delivering a 27% gain in accuracy for a research unit."
+    ],
+    "interview_questions": [
+      {
+        "question": "What would you improve about your role at Northwind Analytics?",
+        "answer": "I'd add Power BI for orchestration and test a LSTM model to push latency further."
+      },
+      {
+        "question": "How did you validate your results for your role at Northwind Analytics?",
+        "answer": "I tracked Sharpe Ratio and Accuracy with a held-out split and monitored drift over 9 months."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_040",
+    "company": "Ridgeline Data",
+    "role": "Data Analyst",
+    "employment_type": "Contract",
+    "start_date": "2018-07",
+    "end_date": "2020-03",
+    "location": "Toronto, CA",
+    "summary": "Worked as a Data Analyst at Ridgeline Data, focused on detect anomalous wallet behavior for a lending protocol.",
+    "responsibilities": [
+      "Evaluated pipelines to rank lending opportunities",
+      "Analyzed pipelines to forecast short-term volatility",
+      "Implemented pipelines to forecast short-term volatility",
+      "Enhanced pipelines to score credit risk"
+    ],
+    "technologies": [
+      "SciPy",
+      "R",
+      "TypeScript",
+      "TensorFlow",
+      "DBeaver",
+      "Grafana",
+      "Tableau"
+    ],
+    "achievements": [
+      "Engineered a system that improved recall by 44%",
+      "Automated a system that improved false-positive rate by 21%",
+      "Designed a system that improved recall by 84%"
+    ],
+    "metrics": [
+      "9% reduction in precision",
+      "216K records processed daily"
+    ],
+    "projects": [
+      "Compound Scoring Model",
+      "Derivatives Sentiment Tracker"
+    ],
+    "skills_demonstrated": [
+      "Python",
+      "Dashboarding",
+      "NLP",
+      "Prompt Engineering",
+      "Anomaly Detection",
+      "Cloud Computing",
+      "Feature Engineering",
+      "Statistical Modeling"
+    ],
+    "resume_bullets": [
+      "Constructed a DeFi solution to address volatile market signals, targeting a 72% lift in latency.",
+      "Built the workflow with dbt and Kubernetes, achieving 72% faster coverage on 1.9M records.",
+      "Deployed MLOps to refine the pipeline, improving Precision from 0.71 to 0.78.",
+      "Enhanced validation across 5 datasets, cutting coverage by 67%.",
+      "Optimized the model into production, delivering a 18% gain in latency for a research unit."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you validate your results for your role at Ridgeline Data?",
+        "answer": "I tracked R2 and Recall with a held-out split and monitored drift over 7 months."
+      },
+      {
+        "question": "How did you handle scaling bottlenecks?",
+        "answer": "I generated a fix using Grafana, which improved analyst hours by 91%."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_041",
+    "company": "Northwind Analytics",
+    "role": "Quantitative Analyst",
+    "employment_type": "Full-time",
+    "start_date": "2016-03",
+    "end_date": "2019-04",
+    "location": "Dubai, UAE",
+    "summary": "Worked as a Quantitative Analyst at Northwind Analytics, focused on forecast short-term volatility for an analytics group.",
+    "responsibilities": [
+      "Automated pipelines to automate compliance reporting",
+      "Automated pipelines to forecast short-term volatility",
+      "Analyzed pipelines to score credit risk",
+      "Enhanced pipelines to predict customer churn"
+    ],
+    "technologies": [
+      "Pandas",
+      "Plotly",
+      "Dune Analytics",
+      "R"
+    ],
+    "achievements": [
+      "Designed a system that improved coverage by 66%",
+      "Analyzed a system that improved data freshness by 40%"
+    ],
+    "metrics": [
+      "64% reduction in coverage",
+      "4M records processed daily"
+    ],
+    "projects": [
+      "DeFi Lending Liquidity Tracker",
+      "Uniswap Scoring Model"
+    ],
+    "skills_demonstrated": [
+      "A/B Testing",
+      "Smart Contract Analysis",
+      "MLOps",
+      "Model Deployment",
+      "Cloud Computing"
+    ],
+    "resume_bullets": [
+      "Streamlined a Fintech solution to address high false-positive rates, targeting a 21% lift in precision.",
+      "Analyzed the workflow with DBeaver and MLflow, achieving 56% faster coverage on 7.1M records.",
+      "Developed MLOps to refine the pipeline, improving Recall from 0.71 to 0.85.",
+      "Reduced validation across 10 datasets, cutting data freshness by 90%.",
+      "Integrated the model into production, delivering a 76% gain in data freshness for a lending protocol."
+    ],
+    "interview_questions": [
+      {
+        "question": "Why did you choose R for your role at Northwind Analytics?",
+        "answer": "It fit the team's stack and offered strong PyTorch support, which sped up optimize gas usage."
+      },
+      {
+        "question": "How did you handle volatile market signals?",
+        "answer": "I constructed a fix using MLflow, which improved throughput by 16%."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_042",
+    "company": "ChainSight",
+    "role": "Analytics Engineer",
+    "employment_type": "Full-time",
+    "start_date": "2018-06",
+    "end_date": "2020-12",
+    "location": "London, UK",
+    "summary": "Worked as a Analytics Engineer at ChainSight, focused on surface at-risk loan positions for a research unit.",
+    "responsibilities": [
+      "Analyzed pipelines to automate compliance reporting",
+      "Automated pipelines to forecast short-term volatility",
+      "Optimized pipelines to forecast short-term volatility",
+      "Analyzed pipelines to optimize gas usage"
+    ],
+    "technologies": [
+      "Kubernetes",
+      "Git",
+      "Grafana",
+      "spaCy"
+    ],
+    "achievements": [
+      "Created a system that improved data freshness by 61%",
+      "Generated a system that improved recall by 41%"
+    ],
+    "metrics": [
+      "31% reduction in accuracy",
+      "360K records processed daily"
+    ],
+    "projects": [
+      "DeFi Lending Recommendation System"
+    ],
+    "skills_demonstrated": [
+      "NLP",
+      "Prompt Engineering",
+      "Data Pipeline Design",
+      "Machine Learning",
+      "Risk Modeling",
+      "Smart Contract Analysis",
+      "On-chain Data"
+    ],
+    "resume_bullets": [
+      "Improved a DeFi solution to address high false-positive rates, targeting a 71% lift in throughput.",
+      "Optimized the workflow with Tableau and Grafana, achieving 22% faster turnaround time on 749K records.",
+      "Built Prompt Engineering to refine the pipeline, improving MAPE from 0.58 to 0.7.",
+      "Reduced validation across 10 datasets, cutting analyst hours by 20%.",
+      "Engineered the model into production, delivering a 12% gain in recall for a research unit."
+    ],
+    "interview_questions": [
+      {
+        "question": "Why did you choose Scala for your role at ChainSight?",
+        "answer": "It fit the team's stack and offered strong Streamlit support, which sped up detect anomalous wallet behavior."
+      },
+      {
+        "question": "How did you validate your results for your role at ChainSight?",
+        "answer": "I tracked Recall and Recall with a held-out split and monitored drift over 3 months."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_043",
+    "company": "Cobalt Analytics",
+    "role": "Quant Developer",
+    "employment_type": "Part-time",
+    "start_date": "2021-07",
+    "end_date": "2024-11",
+    "location": "Bangalore, IN",
+    "summary": "Worked as a Quant Developer at Cobalt Analytics, focused on score credit risk for a trading desk.",
+    "responsibilities": [
+      "Evaluated pipelines to optimize gas usage",
+      "Created pipelines to optimize gas usage",
+      "Created pipelines to score credit risk",
+      "Implemented pipelines to forecast short-term volatility",
+      "Implemented pipelines to forecast short-term volatility"
+    ],
+    "technologies": [
+      "Python",
+      "Power BI",
+      "Matplotlib",
+      "SciPy",
+      "DBeaver",
+      "Git",
+      "Kubernetes"
+    ],
+    "achievements": [
+      "Engineered a system that improved analyst hours by 60%",
+      "Implemented a system that improved data freshness by 87%",
+      "Reduced a system that improved latency by 89%",
+      "Streamlined a system that improved false-positive rate by 82%"
+    ],
+    "metrics": [
+      "12% reduction in precision",
+      "7.3M records processed daily"
+    ],
+    "projects": [
+      "DeFi Lending Dashboard"
+    ],
+    "skills_demonstrated": [
+      "Smart Contract Analysis",
+      "A/B Testing",
+      "Risk Modeling",
+      "Anomaly Detection"
+    ],
+    "resume_bullets": [
+      "Generated a Risk Analytics solution to address volatile market signals, targeting a 38% lift in accuracy.",
+      "Created the workflow with Airflow and dbt, achieving 61% faster accuracy on 25M records.",
+      "Analyzed Time Series Analysis to refine the pipeline, improving Recall from 0.74 to 0.91.",
+      "Reduced validation across 5 datasets, cutting analyst hours by 63%.",
+      "Improved the model into production, delivering a 38% gain in false-positive rate for an analytics group."
+    ],
+    "interview_questions": [
+      {
+        "question": "Why did you choose Bash for your role at Cobalt Analytics?",
+        "answer": "It fit the team's stack and offered strong NLTK support, which sped up surface at-risk loan positions."
+      },
+      {
+        "question": "How did you validate your results for your role at Cobalt Analytics?",
+        "answer": "I tracked F1 and Accuracy with a held-out split and monitored drift over 4 months."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_044",
+    "company": "Orbit Analytics",
+    "role": "Quant Developer",
+    "employment_type": "Freelance",
+    "start_date": "2023-03",
+    "end_date": "2024-10",
+    "location": "San Francisco, CA",
+    "summary": "Worked as a Quant Developer at Orbit Analytics, focused on surface at-risk loan positions for a risk function.",
+    "responsibilities": [
+      "Reduced pipelines to forecast short-term volatility",
+      "Improved pipelines to optimize gas usage",
+      "Engineered pipelines to detect anomalous wallet behavior",
+      "Streamlined pipelines to predict customer churn",
+      "Automated pipelines to rank lending opportunities"
+    ],
+    "technologies": [
+      "XGBoost",
+      "NumPy",
+      "Git",
+      "Pandas"
+    ],
+    "achievements": [
+      "Integrated a system that improved precision by 32%",
+      "Reduced a system that improved recall by 56%",
+      "Analyzed a system that improved accuracy by 43%",
+      "Designed a system that improved coverage by 88%"
+    ],
+    "metrics": [
+      "10% reduction in analyst hours",
+      "2.1M records processed daily"
+    ],
+    "projects": [
+      "Crypto Forecasting Engine"
+    ],
+    "skills_demonstrated": [
+      "Machine Learning",
+      "Feature Engineering",
+      "Anomaly Detection",
+      "NLP",
+      "Smart Contract Analysis",
+      "Deep Learning"
+    ],
+    "resume_bullets": [
+      "Evaluated a Risk Analytics solution to address sparse labeled data, targeting a 89% lift in data freshness.",
+      "Designed the workflow with Weights & Biases and dbt, achieving 28% faster coverage on 5.0M records.",
+      "Leveraged SQL to refine the pipeline, improving Recall from 0.71 to 0.82.",
+      "Improved validation across 8 datasets, cutting data freshness by 86%.",
+      "Constructed the model into production, delivering a 84% gain in false-positive rate for a lending protocol."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you handle slow batch pipelines?",
+        "answer": "I accelerated a fix using Dune Analytics, which improved false-positive rate by 10%."
+      },
+      {
+        "question": "What would you improve about your role at Orbit Analytics?",
+        "answer": "I'd add Docker for orchestration and test a Linear Regression model to push throughput further."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_045",
+    "company": "Ridgeline Data",
+    "role": "Machine Learning Engineer",
+    "employment_type": "Contract",
+    "start_date": "2017-05",
+    "end_date": "2018-11",
+    "location": "Amsterdam, NL",
+    "summary": "Worked as a Machine Learning Engineer at Ridgeline Data, focused on classify token contracts for an analytics group.",
+    "responsibilities": [
+      "Deployed pipelines to rank lending opportunities",
+      "Analyzed pipelines to detect anomalous wallet behavior",
+      "Constructed pipelines to automate compliance reporting",
+      "Deployed pipelines to forecast short-term volatility",
+      "Improved pipelines to score credit risk"
+    ],
+    "technologies": [
+      "Docker",
+      "R",
+      "Go",
+      "FastAPI"
+    ],
+    "achievements": [
+      "Automated a system that improved recall by 70%",
+      "Evaluated a system that improved data freshness by 62%",
+      "Accelerated a system that improved precision by 48%"
+    ],
+    "metrics": [
+      "87% reduction in latency",
+      "38M records processed daily"
+    ],
+    "projects": [
+      "On-chain Recommendation System",
+      "Credit Price Oracle",
+      "Uniswap Recommendation System"
+    ],
+    "skills_demonstrated": [
+      "MLOps",
+      "Data Wrangling",
+      "Dashboarding",
+      "Risk Modeling"
+    ],
+    "resume_bullets": [
+      "Built a MLOps solution to address sparse labeled data, targeting a 26% lift in throughput.",
+      "Evaluated the workflow with MLflow and Dune Analytics, achieving 23% faster accuracy on 3602 records.",
+      "Automated Machine Learning to refine the pipeline, improving Silhouette Score from 0.57 to 0.72.",
+      "Enhanced validation across 8 datasets, cutting recall by 79%.",
+      "Integrated the model into production, delivering a 16% gain in turnaround time for a fintech team."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you validate your results for your role at Ridgeline Data?",
+        "answer": "I tracked Recall and Recall with a held-out split and monitored drift over 6 months."
+      },
+      {
+        "question": "Why did you choose Go for your role at Ridgeline Data?",
+        "answer": "It fit the team's stack and offered strong LightGBM support, which sped up forecast short-term volatility."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_046",
+    "company": "Polaris Fintech",
+    "role": "Blockchain Data Engineer",
+    "employment_type": "Contract",
+    "start_date": "2016-02",
+    "end_date": "2018-04",
+    "location": "Berlin, DE",
+    "summary": "Worked as a Blockchain Data Engineer at Polaris Fintech, focused on detect anomalous wallet behavior for an analytics group.",
+    "responsibilities": [
+      "Reduced pipelines to map liquidity flows",
+      "Developed pipelines to predict customer churn",
+      "Engineered pipelines to forecast short-term volatility"
+    ],
+    "technologies": [
+      "Airflow",
+      "LangChain",
+      "Solidity",
+      "NumPy",
+      "FastAPI",
+      "Scala",
+      "Java",
+      "Pandas"
+    ],
+    "achievements": [
+      "Implemented a system that improved turnaround time by 46%",
+      "Analyzed a system that improved throughput by 52%",
+      "Deployed a system that improved latency by 79%"
+    ],
+    "metrics": [
+      "48% reduction in data freshness",
+      "7547 records processed daily"
+    ],
+    "projects": [
+      "Stablecoin Portfolio Analyzer",
+      "Cross-chain Token Classifier",
+      "Uniswap Scoring Model"
+    ],
+    "skills_demonstrated": [
+      "SQL",
+      "Time Series Analysis",
+      "Python",
+      "Statistical Modeling"
+    ],
+    "resume_bullets": [
+      "Integrated a Machine Learning solution to address fragmented data sources, targeting a 14% lift in precision.",
+      "Automated the workflow with Terraform and Grafana, achieving 13% faster latency on 5495 records.",
+      "Designed Risk Modeling to refine the pipeline, improving Precision from 0.74 to 0.88.",
+      "Constructed validation across 5 datasets, cutting coverage by 82%.",
+      "Enhanced the model into production, delivering a 66% gain in latency for a trading desk."
+    ],
+    "interview_questions": [
+      {
+        "question": "What was the hardest part of your role at Polaris Fintech?",
+        "answer": "Dealing with delayed risk alerts; I resolved it by leveraged a Prophet baseline and iterating."
+      },
+      {
+        "question": "Why did you choose R for your role at Polaris Fintech?",
+        "answer": "It fit the team's stack and offered strong FastAPI support, which sped up optimize gas usage."
+      },
+      {
+        "question": "How did you handle inconsistent schemas?",
+        "answer": "I implemented a fix using Git, which improved false-positive rate by 38%."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_047",
+    "company": "Helios Trading",
+    "role": "ML Researcher",
+    "employment_type": "Contract",
+    "start_date": "2018-12",
+    "end_date": "Present",
+    "location": "New York, NY",
+    "summary": "Worked as a ML Researcher at Helios Trading, focused on predict customer churn for a trading desk.",
+    "responsibilities": [
+      "Generated pipelines to map liquidity flows",
+      "Built pipelines to automate compliance reporting",
+      "Streamlined pipelines to detect anomalous wallet behavior",
+      "Generated pipelines to forecast short-term volatility",
+      "Optimized pipelines to rank lending opportunities"
+    ],
+    "technologies": [
+      "PyTorch",
+      "spaCy",
+      "Pandas",
+      "Go",
+      "DBeaver",
+      "Airflow",
+      "NLTK"
+    ],
+    "achievements": [
+      "Deployed a system that improved data freshness by 87%",
+      "Generated a system that improved recall by 59%",
+      "Constructed a system that improved latency by 43%"
+    ],
+    "metrics": [
+      "62% reduction in coverage",
+      "2513 records processed daily"
+    ],
+    "projects": [
+      "Crypto Data Pipeline"
+    ],
+    "skills_demonstrated": [
+      "Time Series Analysis",
+      "SQL",
+      "A/B Testing",
+      "Machine Learning"
+    ],
+    "resume_bullets": [
+      "Streamlined a Web3 solution to address volatile market signals, targeting a 72% lift in turnaround time.",
+      "Enhanced the workflow with Weights & Biases and DBeaver, achieving 73% faster throughput on 1.7M records.",
+      "Analyzed MLOps to refine the pipeline, improving MAPE from 0.63 to 0.72.",
+      "Implemented validation across 9 datasets, cutting turnaround time by 32%.",
+      "Designed the model into production, delivering a 45% gain in recall for an analytics group."
+    ],
+    "interview_questions": [
+      {
+        "question": "Why did you choose Bash for your role at Helios Trading?",
+        "answer": "It fit the team's stack and offered strong Seaborn support, which sped up map liquidity flows."
+      },
+      {
+        "question": "What would you improve about your role at Helios Trading?",
+        "answer": "I'd add Dune Analytics for orchestration and test a LSTM model to push recall further."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_048",
+    "company": "Helios Trading",
+    "role": "Blockchain Data Engineer",
+    "employment_type": "Freelance",
+    "start_date": "2021-07",
+    "end_date": "2023-03",
+    "location": "Berlin, DE",
+    "summary": "Worked as a Blockchain Data Engineer at Helios Trading, focused on surface at-risk loan positions for a lending protocol.",
+    "responsibilities": [
+      "Generated pipelines to score credit risk",
+      "Leveraged pipelines to automate compliance reporting",
+      "Integrated pipelines to detect anomalous wallet behavior"
+    ],
+    "technologies": [
+      "dbt",
+      "spaCy",
+      "Statsmodels",
+      "Go",
+      "Docker",
+      "FastAPI"
+    ],
+    "achievements": [
+      "Designed a system that improved coverage by 31%",
+      "Built a system that improved data freshness by 26%",
+      "Engineered a system that improved data freshness by 62%"
+    ],
+    "metrics": [
+      "50% reduction in accuracy",
+      "3.4M records processed daily"
+    ],
+    "projects": [
+      "DeFi Lending Recommendation System",
+      "DeFi Lending Dashboard",
+      "On-chain Data Pipeline"
+    ],
+    "skills_demonstrated": [
+      "NLP",
+      "Time Series Analysis",
+      "Data Visualization",
+      "Python"
+    ],
+    "resume_bullets": [
+      "Automated a DeFi solution to address inconsistent schemas, targeting a 52% lift in false-positive rate.",
+      "Optimized the workflow with Terraform and Docker, achieving 40% faster data freshness on 2M records.",
+      "Implemented MLOps to refine the pipeline, improving Sharpe Ratio from 0.73 to 0.84.",
+      "Reduced validation across 8 datasets, cutting false-positive rate by 92%.",
+      "Created the model into production, delivering a 84% gain in data freshness for a lending protocol."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you handle volatile market signals?",
+        "answer": "I integrated a fix using DBeaver, which improved coverage by 53%."
+      },
+      {
+        "question": "How did you validate your results for your role at Helios Trading?",
+        "answer": "I tracked Silhouette Score and Sharpe Ratio with a held-out split and monitored drift over 9 months."
+      },
+      {
+        "question": "What was the hardest part of your role at Helios Trading?",
+        "answer": "Dealing with inconsistent schemas; I resolved it by engineered a ARIMA baseline and iterating."
+      }
+    ]
+  },
+  {
+    "experience_id": "exp_049",
+    "company": "Orbit Analytics",
+    "role": "Machine Learning Engineer",
+    "employment_type": "Contract",
+    "start_date": "2023-08",
+    "end_date": "2025-11",
+    "location": "Berlin, DE",
+    "summary": "Worked as a Machine Learning Engineer at Orbit Analytics, focused on automate compliance reporting for a trading desk.",
+    "responsibilities": [
+      "Improved pipelines to map liquidity flows",
+      "Built pipelines to score credit risk",
+      "Implemented pipelines to optimize gas usage"
+    ],
+    "technologies": [
+      "web3.py",
+      "Docker",
+      "Power BI",
+      "MLflow",
+      "JavaScript"
+    ],
+    "achievements": [
+      "Improved a system that improved throughput by 44%",
+      "Implemented a system that improved accuracy by 71%",
+      "Optimized a system that improved data freshness by 27%"
+    ],
+    "metrics": [
+      "74% reduction in precision",
+      "9.2M records processed daily"
+    ],
+    "projects": [
+      "Wallet Anomaly Detector",
+      "Loan Dashboard"
+    ],
+    "skills_demonstrated": [
+      "Deep Learning",
+      "ETL",
+      "Dashboarding",
+      "Data Visualization"
+    ],
+    "resume_bullets": [
+      "Engineered a Blockchain solution to address scaling bottlenecks, targeting a 79% lift in coverage.",
+      "Developed the workflow with Kubernetes and Dune Analytics, achieving 19% faster precision on 39M records.",
+      "Analyzed Smart Contract Analysis to refine the pipeline, improving Accuracy from 0.75 to 0.92.",
+      "Optimized validation across 3 datasets, cutting data freshness by 53%.",
+      "Enhanced the model into production, delivering a 39% gain in turnaround time for an analytics group."
+    ],
+    "interview_questions": [
+      {
+        "question": "How did you handle delayed risk alerts?",
+        "answer": "I created a fix using Power BI, which improved analyst hours by 63%."
+      },
+      {
+        "question": "What was the hardest part of your role at Orbit Analytics?",
+        "answer": "Dealing with sparse labeled data; I resolved it by improved a LightGBM baseline and iterating."
+      },
+      {
+        "question": "What would you improve about your role at Orbit Analytics?",
+        "answer": "I'd add Power BI for orchestration and test a PCA model to push false-positive rate further."
+      }
+    ]
+  }
+]

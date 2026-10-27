@@ -39,10 +39,16 @@ class Reranker:
         return [float(s) for s in self.model.predict(pairs)]
 
     def rerank(self, query, hits, top_k=None):
-        """Reorder `hits` by cross-encoder score (sets `hit.rerank_score`)."""
+        """Reorder `hits` by cross-encoder score (sets `hit.rerank_score`).
+
+        top_k=None means "all of them"; top_k <= 0 means none. Testing the value
+        for truthiness instead made 0 mean "all" (#80.1).
+        """
         if not hits:
+            return []
+        if top_k is not None and top_k < 1:
             return []
         for hit, s in zip(hits, self.score(query, [h.document for h in hits])):
             hit.rerank_score = round(s, 4)
         ranked = sorted(hits, key=lambda h: h.rerank_score, reverse=True)
-        return ranked[:top_k] if top_k else ranked
+        return ranked if top_k is None else ranked[:top_k]

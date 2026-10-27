@@ -1,0 +1,322 @@
+[
+  {
+    "education_id": "edu_000",
+    "institution": "National University of Computer Science",
+    "degree": "MSc",
+    "major": "Information Systems",
+    "start_date": "2019-10",
+    "end_date": "2024-06",
+    "cgpa": "3.18/4.0",
+    "coursework": [
+      "Statistical Inference",
+      "Deep Learning",
+      "Reinforcement Learning",
+      "Computer Networks",
+      "Natural Language Processing",
+      "Probability Theory",
+      "Operating Systems"
+    ],
+    "achievements": [
+      "Best Project Award in 2023",
+      "Best Project Award in 2022",
+      "Merit Scholarship in 2022"
+    ],
+    "projects": [
+      "Thesis project on surface at-risk loan positions",
+      "Term project on surface at-risk loan positions"
+    ],
+    "skills_gained": [
+      "Feature Engineering",
+      "Statistical Modeling",
+      "Model Deployment",
+      "ETL",
+      "Time Series Analysis",
+      "MLOps",
+      "Smart Contract Analysis"
+    ]
+  },
+  {
+    "education_id": "edu_001",
+    "institution": "Cascade Institute of Science",
+    "degree": "BSc",
+    "major": "Electrical Engineering",
+    "start_date": "2023-10",
+    "end_date": "2025-07",
+    "cgpa": "3.13/4.0",
+    "coursework": [
+      "Computer Networks",
+      "Reinforcement Learning",
+      "Software Engineering",
+      "Data Structures and Algorithms"
+    ],
+    "achievements": [
+      "Dean's List in 2020"
+    ],
+    "projects": [
+      "Thesis project on score credit risk"
+    ],
+    "skills_gained": [
+      "ETL",
+      "Dashboarding",
+      "NLP",
+      "Cloud Computing"
+    ]
+  },
+  {
+    "education_id": "edu_002",
+    "institution": "Riverside Institute of Technology",
+    "degree": "MS",
+    "major": "Information Systems",
+    "start_date": "2016-12",
+    "end_date": "2021-06",
+    "cgpa": "3.74/4.0",
+    "coursework": [
+      "Financial Mathematics",
+      "Reinforcement Learning",
+      "Deep Learning",
+      "Operating Systems"
+    ],
+    "achievements": [
+      "Top 5% in 2018"
+    ],
+    "projects": [
+      "Term project on automate compliance reporting",
+      "Term project on surface at-risk loan positions"
+    ],
+    "skills_gained": [
+      "Model Deployment",
+      "Deep Learning",
+      "Data Visualization",
+      "Feature Engineering",
+      "SQL",
+      "Statistical Modeling",
+      "Prompt Engineering"
+    ]
+  },
+  {
+    "education_id": "edu_003",
+    "institution": "Metropolitan University",
+    "degree": "MSc",
+    "major": "Computer Science",
+    "start_date": "2018-04",
+    "end_date": "2021-07",
+    "cgpa": "3.83/4.0",
+    "coursework": [
+      "Time Series Analysis",
+      "Data Structures and Algorithms",
+      "Statistical Inference",
+      "Distributed Systems",
+      "Software Engineering",
+      "Linear Algebra",
+      "Database Systems"
+    ],
+    "achievements": [
+      "Honor Roll in 2020"
+    ],
+    "projects": [
+      "Term project on score credit risk",
+      "Capstone project on optimize gas usage"
+    ],
+    "skills_gained": [
+      "Anomaly Detection",
+      "SQL",
+      "Machine Learning",
+      "Statistical Modeling",
+      "Prompt Engineering"
+    ]
+  },
+  {
+    "education_id": "edu_004",
+    "institution": "Eastbrook University",
+    "degree": "MS",
+    "major": "Information Systems",
+    "start_date": "2017-09",
+    "end_date": "2022-08",
+    "cgpa": "3.2/4.0",
+    "coursework": [
+      "Distributed Systems",
+      "Software Engineering",
+      "Statistical Inference",
+      "Operating Systems",
+      "Big Data Analytics",
+      "Natural Language Processing",
+      "Deep Learning"
+    ],
+    "achievements": [
+      "Merit Scholarship in 2017",
+      "Merit Scholarship in 2022"
+    ],
+    "projects": [
+      "Capstone project on surface at-risk loan positions",
+      "Thesis project on classify token contracts"
+    ],
+    "skills_gained": [
+      "Dashboarding",
+      "On-chain Data",
+      "SQL",
+      "ETL"
+    ]
+  },
+  {
+    "education_id": "edu_005",
+    "institution": "Riverside Institute of Technology",
+    "degree": "BEng",
+    "major": "Economics",
+    "start_date": "2022-01",
+    "end_date": "2025-12",
+    "cgpa": "3.88/4.0",
+    "coursework": [
+      "Probability Theory",
+      "Machine Learning",
+      "Blockchain and Cryptocurrencies",
+      "Big Data Analytics",
+      "Financial Mathematics",
+      "Data Mining",
+      "Reinforcement Learning"
+    ],
+    "achievements": [
+      "Merit Scholarship in 2024",
+      "Dean's List in 2018",
+      "Distinction in 2018"
+    ],
+    "projects": [
+      "Term project on score credit risk",
+      "Thesis project on classify token contracts"
+    ],
+    "skills_gained": [
+      "Data Wrangling",
+      "Prompt Engineering",
+      "ETL",
+      "On-chain Data",
+      "Feature Engineering"
+    ]
+  },
+  {
+    "education_id": "edu_006",
+    "institution": "Ironwood Technical Institute",
+    "degree": "MS",
+    "major": "Software Engineering",
+    "start_date": "2021-08",
+    "end_date": "2025-03",
+    "cgpa": "3.58/4.0",
+    "coursework": [
+      "Reinforcement Learning",
+      "Probability Theory",
+      "Deep Learning",
+      "Natural Language Processing",
+      "Big Data Analytics",
+      "Distributed Systems",
+      "Computer Networks",
+      "Financial Mathematics"
+    ],
+    "achievements": [
+      "Dean's List in 2016"
+    ],
+    "projects": [
+      "Capstone project on forecast short-term volatility"
+    ],
+    "skills_gained": [
+      "NLP",
+      "Prompt Engineering",
+      "Cloud Computing",
+      "Time Series Analysis"
+    ]
+  },
+  {
+    "education_id": "edu_007",
+    "institution": "Eastbrook University",
+    "degree": "MSc",
+    "major": "Electrical Engineering",
+    "start_date": "2016-03",
+    "end_date": "2021-02",
+    "cgpa": "3.92/4.0",
+    "coursework": [
+      "Software Engineering",
+      "Probability Theory",
+      "Statistical Inference",
+      "Data Structures and Algorithms"
+    ],
+    "achievements": [
+      "Dean's List in 2023",
+      "Best Project Award in 2016",
+      "Top 5% in 2021"
+    ],
+    "projects": [
+      "Term project on classify token contracts"
+    ],
+    "skills_gained": [
+      "Statistical Modeling",
+      "Anomaly Detection",
+      "Dashboarding",
+      "Data Pipeline Design",
+      "Deep Learning",
+      "Model Deployment",
+      "Data Wrangling"
+    ]
+  },
+  {
+    "education_id": "edu_008",
+    "institution": "Ironwood Technical Institute",
+    "degree": "BEng",
+    "major": "Statistics",
+    "start_date": "2022-11",
+    "end_date": "2025-08",
+    "cgpa": "3.74/4.0",
+    "coursework": [
+      "Reinforcement Learning",
+      "Financial Mathematics",
+      "Database Systems",
+      "Machine Learning",
+      "Statistical Inference",
+      "Operating Systems",
+      "Software Engineering"
+    ],
+    "achievements": [
+      "Dean's List in 2021"
+    ],
+    "projects": [
+      "Term project on map liquidity flows",
+      "Capstone project on predict customer churn"
+    ],
+    "skills_gained": [
+      "Prompt Engineering",
+      "Anomaly Detection",
+      "MLOps",
+      "NLP",
+      "Deep Learning"
+    ]
+  },
+  {
+    "education_id": "edu_009",
+    "institution": "Granite State University",
+    "degree": "BS",
+    "major": "Applied Mathematics",
+    "start_date": "2022-09",
+    "end_date": "2025-08",
+    "cgpa": "3.9/4.0",
+    "coursework": [
+      "Database Systems",
+      "Computer Networks",
+      "Convex Optimization",
+      "Time Series Analysis",
+      "Software Engineering"
+    ],
+    "achievements": [
+      "Dean's List in 2018",
+      "Honor Roll in 2020",
+      "Dean's List in 2017"
+    ],
+    "projects": [
+      "Capstone project on surface at-risk loan positions",
+      "Term project on map liquidity flows"
+    ],
+    "skills_gained": [
+      "SQL",
+      "Time Series Analysis",
+      "ETL",
+      "Data Wrangling",
+      "On-chain Data",
+      "Smart Contract Analysis"
+    ]
+  }
+]

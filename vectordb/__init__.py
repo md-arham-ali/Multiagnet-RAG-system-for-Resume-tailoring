@@ -2,6 +2,7 @@
 Vector DB for the knowledge base.
 
   Embedder     - local sentence-transformers embeddings (bge-base-en-v1.5)
+  get_embedder / get_reranker - the process's shared models (built once, #43)
   VectorStore  - small Chroma wrapper (cosine; add / query / count)
   build        - embed the knowledge_base/*.json fixtures into collections
 
@@ -14,7 +15,9 @@ Quick start:
 
 from vectordb.embeddings import Embedder
 from vectordb.ingest import build
+from vectordb.models import get_embedder, get_reranker
 from vectordb.reranker import Reranker
 from vectordb.store import Hit, VectorStore
 
-__all__ = ["Embedder", "VectorStore", "Hit", "build", "Reranker"]
+__all__ = ["Embedder", "VectorStore", "Hit", "build", "Reranker",
+           "get_embedder", "get_reranker"]

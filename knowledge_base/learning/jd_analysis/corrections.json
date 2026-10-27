@@ -1,0 +1,47 @@
+[
+  {
+    "correction_id": "corr_001",
+    "agent_name": "jd_analysis",
+    "before": "Built a system that helped with predict customer churn.",
+    "after": "Analyzed a NLP system that surface at-risk loan positions, improving recall by 44%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Action-word repetition across lines.",
+    "timestamp": "2024-03-01T03:01:00Z"
+  },
+  {
+    "correction_id": "corr_009",
+    "agent_name": "jd_analysis",
+    "before": "Constructed a system that helped with surface at-risk loan positions.",
+    "after": "Engineered a On-chain Analytics system that optimize gas usage, improving coverage by 52%.",
+    "feedback": "Name the domain explicitly.",
+    "reason": "Domain not stated.",
+    "timestamp": "2024-12-29T14:27:00Z"
+  },
+  {
+    "correction_id": "corr_012",
+    "agent_name": "jd_analysis",
+    "before": "Generated a system that helped with rank lending opportunities.",
+    "after": "Optimized a Fraud Detection system that surface at-risk loan positions, improving accuracy by 15%.",
+    "feedback": "Ground the claim in an actual project.",
+    "reason": "Exceeded the 18-word limit.",
+    "timestamp": "2025-02-28T13:06:00Z"
+  },
+  {
+    "correction_id": "corr_028",
+    "agent_name": "jd_analysis",
+    "before": "Analyzed a system that helped with forecast short-term volatility.",
+    "after": "Improved a Recommender Systems system that forecast short-term volatility, improving throughput by 62%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Exceeded the 18-word limit.",
+    "timestamp": "2024-09-11T05:31:00Z"
+  },
+  {
+    "correction_id": "corr_035",
+    "agent_name": "jd_analysis",
+    "before": "Constructed a system that helped with forecast short-term volatility.",
+    "after": "Improved a Quantitative Finance system that predict customer churn, improving analyst hours by 89%.",
+    "feedback": "Avoid repeating the action verb.",
+    "reason": "Action-word repetition across lines.",
+    "timestamp": "2025-02-21T03:14:00Z"
+  }
+]

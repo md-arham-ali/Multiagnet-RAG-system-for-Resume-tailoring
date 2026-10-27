@@ -1,0 +1,174 @@
+[
+  {
+    "activity_id": "act_000",
+    "activity_name": "AI Reading Group",
+    "role": "Member",
+    "organization": "Local Tech Community",
+    "duration": "2021-01 to 2023-04",
+    "description": "Contributed to predict customer churn and community learning.",
+    "achievements": [
+      "Streamlined an initiative reaching 8448 people",
+      "Automated an initiative reaching 4.9M people"
+    ],
+    "skills_demonstrated": [
+      "Model Deployment",
+      "SQL",
+      "Risk Modeling",
+      "Feature Engineering",
+      "Data Pipeline Design"
+    ]
+  },
+  {
+    "activity_id": "act_001",
+    "activity_name": "Volunteer Data Analyst",
+    "role": "Member",
+    "organization": "Open Source Foundation",
+    "duration": "2016-12 to 2017-07",
+    "description": "Contributed to automate compliance reporting and community learning.",
+    "achievements": [
+      "Analyzed an initiative reaching 36M people",
+      "Leveraged an initiative reaching 2348 people"
+    ],
+    "skills_demonstrated": [
+      "Feature Engineering",
+      "Leadership",
+      "NLP",
+      "Cloud Computing"
+    ]
+  },
+  {
+    "activity_id": "act_002",
+    "activity_name": "Quant Finance Group",
+    "role": "Volunteer",
+    "organization": "Open Source Foundation",
+    "duration": "2023-09 to 2024-02",
+    "description": "Contributed to automate compliance reporting and community learning.",
+    "achievements": [
+      "Accelerated an initiative reaching 330K people",
+      "Enhanced an initiative reaching 8581 people"
+    ],
+    "skills_demonstrated": [
+      "Data Wrangling",
+      "Model Deployment",
+      "Risk Modeling",
+      "Prompt Engineering"
+    ]
+  },
+  {
+    "activity_id": "act_003",
+    "activity_name": "Robotics Club",
+    "role": "Organizer",
+    "organization": "Local Tech Community",
+    "duration": "2018-10 to 2019-05",
+    "description": "Contributed to predict customer churn and community learning.",
+    "achievements": [
+      "Reduced an initiative reaching 219K people",
+      "Implemented an initiative reaching 220K people",
+      "Leveraged an initiative reaching 4535 people"
+    ],
+    "skills_demonstrated": [
+      "Statistical Modeling",
+      "Data Wrangling",
+      "Model Deployment",
+      "Feature Engineering"
+    ]
+  },
+  {
+    "activity_id": "act_004",
+    "activity_name": "Math Olympiad Team",
+    "role": "Mentor",
+    "organization": "University Student Union",
+    "duration": "2019-02 to 2021-07",
+    "description": "Contributed to forecast short-term volatility and community learning.",
+    "achievements": [
+      "Analyzed an initiative reaching 4639 people"
+    ],
+    "skills_demonstrated": [
+      "Data Wrangling",
+      "Python",
+      "Risk Modeling"
+    ]
+  },
+  {
+    "activity_id": "act_005",
+    "activity_name": "AI Reading Group",
+    "role": "Mentor",
+    "organization": "Open Source Foundation",
+    "duration": "2022-10 to Present",
+    "description": "Contributed to forecast short-term volatility and community learning.",
+    "achievements": [
+      "Automated an initiative reaching 2.5M people"
+    ],
+    "skills_demonstrated": [
+      "Data Visualization",
+      "Data Pipeline Design",
+      "Data Wrangling",
+      "Statistical Modeling"
+    ]
+  },
+  {
+    "activity_id": "act_006",
+    "activity_name": "Data Science Club",
+    "role": "Volunteer",
+    "organization": "Online Learning Cohort",
+    "duration": "2016-12 to 2017-09",
+    "description": "Contributed to surface at-risk loan positions and community learning.",
+    "achievements": [
+      "Implemented an initiative reaching 4756 people"
+    ],
+    "skills_demonstrated": [
+      "Time Series Analysis",
+      "Model Deployment",
+      "Dashboarding"
+    ]
+  },
+  {
+    "activity_id": "act_007",
+    "activity_name": "Hackathon Team",
+    "role": "Member",
+    "organization": "Online Learning Cohort",
+    "duration": "2019-09 to 2020-07",
+    "description": "Contributed to score credit risk and community learning.",
+    "achievements": [
+      "Integrated an initiative reaching 218K people",
+      "Designed an initiative reaching 4133 people"
+    ],
+    "skills_demonstrated": [
+      "Time Series Analysis",
+      "A/B Testing",
+      "Model Deployment"
+    ]
+  },
+  {
+    "activity_id": "act_008",
+    "activity_name": "Blockchain Society",
+    "role": "Member",
+    "organization": "Local Tech Community",
+    "duration": "2017-03 to 2018-02",
+    "description": "Contributed to automate compliance reporting and community learning.",
+    "achievements": [
+      "Improved an initiative reaching 7.7M people",
+      "Evaluated an initiative reaching 6399 people"
+    ],
+    "skills_demonstrated": [
+      "Data Pipeline Design",
+      "Teamwork"
+    ]
+  },
+  {
+    "activity_id": "act_009",
+    "activity_name": "AI Reading Group",
+    "role": "President",
+    "organization": "Open Source Foundation",
+    "duration": "2019-04 to 2020-10",
+    "description": "Contributed to predict customer churn and community learning.",
+    "achievements": [
+      "Leveraged an initiative reaching 30M people"
+    ],
+    "skills_demonstrated": [
+      "Leadership",
+      "Feature Engineering",
+      "Model Deployment"
+    ]
+  }
+]

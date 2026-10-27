@@ -1,0 +1,230 @@
+[
+  {
+    "learning_id": "learn_015",
+    "agent_name": "evaluation",
+    "timestamp": "2024-07-09T02:10:00Z",
+    "task_type": "routing",
+    "project_context": "On-chain Analytics — optimize gas usage",
+    "input_context": {
+      "role": "ML Researcher",
+      "industry": "Trading",
+      "job_description_summary": "Seeking a ML Researcher with Machine Learning, On-chain Data, Python for rank lending opportunities."
+    },
+    "task": "Generate output for a ML Researcher in Trading.",
+    "generated_output": "Integrated a Recommender Systems system that detect anomalous wallet behavior, improving accuracy by 26%.",
+    "evaluation": {
+      "score": 8,
+      "evaluation_source": "llm-judge",
+      "feedback": "Repeated action verbs.",
+      "strengths": [
+        "ATS-aligned",
+        "concise"
+      ],
+      "weaknesses": []
+    },
+    "reflection": {
+      "root_cause": "Rubric weight on quantification too low.",
+      "what_worked": [
+        "strong retrieval",
+        "clear structure"
+      ],
+      "what_failed": [
+        "over-generation"
+      ],
+      "what_should_change": [
+        "inject a metric requirement",
+        "add do-not-claim check"
+      ]
+    },
+    "lesson": {
+      "summary": "Enforce unique action verbs per line.",
+      "category": "instruction-following",
+      "confidence": 0.49
+    },
+    "reuse_conditions": {
+      "roles": [
+        "ML Researcher",
+        "Data Scientist",
+        "Data Analyst"
+      ],
+      "industries": [
+        "AdTech"
+      ],
+      "project_types": [
+        "Data Engineering",
+        "Machine Learning",
+        "NLP System"
+      ],
+      "minimum_similarity_score": 0.62
+    },
+    "memory_type": "procedural",
+    "should_reuse": true,
+    "importance_score": 2,
+    "expiry_policy": {
+      "review_after_days": 90,
+      "auto_delete": false
+    },
+    "embedding_text": "evaluation learned to predict customer churn for a ML Researcher in Trading using Risk Modeling, Data Visualization.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "Data Engineering",
+        "NLP"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_017",
+    "agent_name": "evaluation",
+    "timestamp": "2025-01-03T18:38:00Z",
+    "task_type": "jd_analysis",
+    "project_context": "Computer Vision — surface at-risk loan positions",
+    "input_context": {
+      "role": "Machine Learning Engineer",
+      "industry": "Crypto / Web3",
+      "job_description_summary": "Seeking a Machine Learning Engineer with Anomaly Detection, SQL for detect anomalous wallet behavior."
+    },
+    "task": "Generate output for a Machine Learning Engineer in Crypto / Web3.",
+    "generated_output": "Developed a Computer Vision system that surface at-risk loan positions, improving precision by 27%.",
+    "evaluation": {
+      "score": 9,
+      "evaluation_source": "human",
+      "feedback": "Needs explicit domain mention.",
+      "strengths": [
+        "on-topic"
+      ],
+      "weaknesses": [
+        "repetitive verbs",
+        "missing metric",
+        "unsupported claim"
+      ]
+    },
+    "reflection": {
+      "root_cause": "Missing numeric anchor in the prompt.",
+      "what_worked": [
+        "tight prompt"
+      ],
+      "what_failed": [
+        "over-generation"
+      ],
+      "what_should_change": [
+        "inject a metric requirement"
+      ]
+    },
+    "lesson": {
+      "summary": "Verify every metric against project evidence.",
+      "category": "quantification",
+      "confidence": 0.91
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Blockchain Data Engineer",
+        "Data Engineer"
+      ],
+      "industries": [
+        "Fintech"
+      ],
+      "project_types": [
+        "Data Analytics",
+        "Automation",
+        "Research"
+      ],
+      "minimum_similarity_score": 0.83
+    },
+    "memory_type": "semantic",
+    "should_reuse": true,
+    "importance_score": 8,
+    "expiry_policy": {
+      "review_after_days": 90,
+      "auto_delete": false
+    },
+    "embedding_text": "evaluation learned to score credit risk for a Machine Learning Engineer in Crypto / Web3 using Model Deployment, Data Pipeline Design.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "Data Wrangling",
+        "Statistical Modeling",
+        "factual-grounding"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_038",
+    "agent_name": "evaluation",
+    "timestamp": "2024-01-09T03:48:00Z",
+    "task_type": "routing",
+    "project_context": "Machine Learning — map liquidity flows",
+    "input_context": {
+      "role": "Analytics Engineer",
+      "industry": "AdTech",
+      "job_description_summary": "Seeking a Analytics Engineer with Data Wrangling, Data Pipeline Design, Python for optimize gas usage."
+    },
+    "task": "Generate output for a Analytics Engineer in AdTech.",
+    "generated_output": "Created a MLOps system that detect anomalous wallet behavior, improving accuracy by 13%.",
+    "evaluation": {
+      "score": 7,
+      "evaluation_source": "llm-judge",
+      "feedback": "Needs explicit domain mention.",
+      "strengths": [
+        "ATS-aligned",
+        "on-topic",
+        "concise"
+      ],
+      "weaknesses": [
+        "missing metric",
+        "repetitive verbs",
+        "weak domain focus"
+      ]
+    },
+    "reflection": {
+      "root_cause": "Rubric weight on quantification too low.",
+      "what_worked": [
+        "strong retrieval",
+        "tight prompt",
+        "good exemplar"
+      ],
+      "what_failed": [
+        "hallucinated detail",
+        "verb repetition"
+      ],
+      "what_should_change": [
+        "inject a metric requirement",
+        "enforce word limit"
+      ]
+    },
+    "lesson": {
+      "summary": "Verify every metric against project evidence.",
+      "category": "tone",
+      "confidence": 0.47
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Quant Developer",
+        "Data Analyst"
+      ],
+      "industries": [
+        "Consulting"
+      ],
+      "project_types": [
+        "Dashboard"
+      ],
+      "minimum_similarity_score": 0.8
+    },
+    "memory_type": "episodic",
+    "should_reuse": true,
+    "importance_score": 2,
+    "expiry_policy": {
+      "review_after_days": 30,
+      "auto_delete": true
+    },
+    "embedding_text": "evaluation learned to automate compliance reporting for a Analytics Engineer in AdTech using Python, ETL.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "Algorithmic Trading",
+        "MLOps",
+        "Risk Analytics"
+      ]
+    }
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "correction_id": "corr_005",
+    "agent_name": "critic",
+    "before": "Reduced a system that helped with rank lending opportunities.",
+    "after": "Implemented a Time Series Forecasting system that optimize gas usage, improving precision by 19%.",
+    "feedback": "Tighten to the word limit.",
+    "reason": "Action-word repetition across lines.",
+    "timestamp": "2025-03-09T16:02:00Z"
+  },
+  {
+    "correction_id": "corr_010",
+    "agent_name": "critic",
+    "before": "Accelerated a system that helped with automate compliance reporting.",
+    "after": "Leveraged a DeFi system that rank lending opportunities, improving latency by 79%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Claim not supported by evidence.",
+    "timestamp": "2024-07-22T21:51:00Z"
+  },
+  {
+    "correction_id": "corr_017",
+    "agent_name": "critic",
+    "before": "Deployed a system that helped with score credit risk.",
+    "after": "Reduced a MLOps system that forecast short-term volatility, improving turnaround time by 56%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Action-word repetition across lines.",
+    "timestamp": "2024-08-09T15:18:00Z"
+  },
+  {
+    "correction_id": "corr_021",
+    "agent_name": "critic",
+    "before": "Developed a system that helped with detect anomalous wallet behavior.",
+    "after": "Engineered a Web3 system that forecast short-term volatility, improving false-positive rate by 18%.",
+    "feedback": "Avoid repeating the action verb.",
+    "reason": "Claim not supported by evidence.",
+    "timestamp": "2025-06-09T19:32:00Z"
+  },
+  {
+    "correction_id": "corr_026",
+    "agent_name": "critic",
+    "before": "Designed a system that helped with forecast short-term volatility.",
+    "after": "Automated a Credit Scoring system that classify token contracts, improving analyst hours by 42%.",
+    "feedback": "Avoid repeating the action verb.",
+    "reason": "Domain not stated.",
+    "timestamp": "2025-03-09T17:57:00Z"
+  },
+  {
+    "correction_id": "corr_042",
+    "agent_name": "critic",
+    "before": "Accelerated a system that helped with map liquidity flows.",
+    "after": "Streamlined a MLOps system that map liquidity flows, improving turnaround time by 80%.",
+    "feedback": "Ground the claim in an actual project.",
+    "reason": "Missing numeric metric (validation rule).",
+    "timestamp": "2024-12-01T10:37:00Z"
+  },
+  {
+    "correction_id": "corr_048",
+    "agent_name": "critic",
+    "before": "Deployed a system that helped with automate compliance reporting.",
+    "after": "Reduced a Smart Contracts system that optimize gas usage, improving turnaround time by 71%.",
+    "feedback": "Tighten to the word limit.",
+    "reason": "Missing numeric metric (validation rule).",
+    "timestamp": "2024-11-30T13:16:00Z"
+  }
+]

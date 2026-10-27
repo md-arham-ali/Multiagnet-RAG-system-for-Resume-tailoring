@@ -1,0 +1,38 @@
+[
+  {
+    "correction_id": "corr_008",
+    "agent_name": "matching",
+    "before": "Built a system that helped with forecast short-term volatility.",
+    "after": "Developed a MLOps system that predict customer churn, improving false-positive rate by 43%.",
+    "feedback": "Tighten to the word limit.",
+    "reason": "Claim not supported by evidence.",
+    "timestamp": "2024-07-23T12:11:00Z"
+  },
+  {
+    "correction_id": "corr_011",
+    "agent_name": "matching",
+    "before": "Accelerated a system that helped with optimize gas usage.",
+    "after": "Automated a Time Series Forecasting system that automate compliance reporting, improving turnaround time by 58%.",
+    "feedback": "Tighten to the word limit.",
+    "reason": "Action-word repetition across lines.",
+    "timestamp": "2024-03-21T11:37:00Z"
+  },
+  {
+    "correction_id": "corr_033",
+    "agent_name": "matching",
+    "before": "Analyzed a system that helped with map liquidity flows.",
+    "after": "Deployed a Algorithmic Trading system that map liquidity flows, improving recall by 86%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Exceeded the 18-word limit.",
+    "timestamp": "2024-05-20T08:25:00Z"
+  },
+  {
+    "correction_id": "corr_036",
+    "agent_name": "matching",
+    "before": "Leveraged a system that helped with optimize gas usage.",
+    "after": "Engineered a Data Engineering system that detect anomalous wallet behavior, improving recall by 13%.",
+    "feedback": "Ground the claim in an actual project.",
+    "reason": "Claim not supported by evidence.",
+    "timestamp": "2025-06-07T03:25:00Z"
+  }
+]

@@ -1,0 +1,452 @@
+[
+  {
+    "correction_id": "corr_000",
+    "agent_name": "supervisor",
+    "before": "Streamlined a system that helped with forecast short-term volatility.",
+    "after": "Evaluated a Recommender Systems system that score credit risk, improving accuracy by 60%.",
+    "feedback": "Avoid repeating the action verb.",
+    "reason": "Action-word repetition across lines.",
+    "timestamp": "2024-05-09T09:33:00Z"
+  },
+  {
+    "correction_id": "corr_001",
+    "agent_name": "jd_analysis",
+    "before": "Built a system that helped with predict customer churn.",
+    "after": "Analyzed a NLP system that surface at-risk loan positions, improving recall by 44%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Action-word repetition across lines.",
+    "timestamp": "2024-03-01T03:01:00Z"
+  },
+  {
+    "correction_id": "corr_002",
+    "agent_name": "cover_letter_writer",
+    "before": "Deployed a system that helped with classify token contracts.",
+    "after": "Improved a Time Series Forecasting system that predict customer churn, improving turnaround time by 47%.",
+    "feedback": "Name the domain explicitly.",
+    "reason": "Missing numeric metric (validation rule).",
+    "timestamp": "2025-01-14T14:37:00Z"
+  },
+  {
+    "correction_id": "corr_003",
+    "agent_name": "cover_letter_writer",
+    "before": "Enhanced a system that helped with automate compliance reporting.",
+    "after": "Evaluated a NLP system that rank lending opportunities, improving precision by 69%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Action-word repetition across lines.",
+    "timestamp": "2024-09-14T14:27:00Z"
+  },
+  {
+    "correction_id": "corr_004",
+    "agent_name": "supervisor",
+    "before": "Implemented a system that helped with surface at-risk loan positions.",
+    "after": "Reduced a Blockchain system that forecast short-term volatility, improving false-positive rate by 23%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Action-word repetition across lines.",
+    "timestamp": "2024-01-28T23:50:00Z"
+  },
+  {
+    "correction_id": "corr_005",
+    "agent_name": "critic",
+    "before": "Reduced a system that helped with rank lending opportunities.",
+    "after": "Implemented a Time Series Forecasting system that optimize gas usage, improving precision by 19%.",
+    "feedback": "Tighten to the word limit.",
+    "reason": "Action-word repetition across lines.",
+    "timestamp": "2025-03-09T16:02:00Z"
+  },
+  {
+    "correction_id": "corr_006",
+    "agent_name": "evaluation",
+    "before": "Engineered a system that helped with map liquidity flows.",
+    "after": "Implemented a Fintech system that classify token contracts, improving latency by 26%.",
+    "feedback": "Name the domain explicitly.",
+    "reason": "Missing numeric metric (validation rule).",
+    "timestamp": "2024-04-20T10:45:00Z"
+  },
+  {
+    "correction_id": "corr_007",
+    "agent_name": "supervisor",
+    "before": "Streamlined a system that helped with forecast short-term volatility.",
+    "after": "Constructed a Credit Scoring system that surface at-risk loan positions, improving turnaround time by 65%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Action-word repetition across lines.",
+    "timestamp": "2024-02-25T14:45:00Z"
+  },
+  {
+    "correction_id": "corr_008",
+    "agent_name": "matching",
+    "before": "Built a system that helped with forecast short-term volatility.",
+    "after": "Developed a MLOps system that predict customer churn, improving false-positive rate by 43%.",
+    "feedback": "Tighten to the word limit.",
+    "reason": "Claim not supported by evidence.",
+    "timestamp": "2024-07-23T12:11:00Z"
+  },
+  {
+    "correction_id": "corr_009",
+    "agent_name": "jd_analysis",
+    "before": "Constructed a system that helped with surface at-risk loan positions.",
+    "after": "Engineered a On-chain Analytics system that optimize gas usage, improving coverage by 52%.",
+    "feedback": "Name the domain explicitly.",
+    "reason": "Domain not stated.",
+    "timestamp": "2024-12-29T14:27:00Z"
+  },
+  {
+    "correction_id": "corr_010",
+    "agent_name": "critic",
+    "before": "Accelerated a system that helped with automate compliance reporting.",
+    "after": "Leveraged a DeFi system that rank lending opportunities, improving latency by 79%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Claim not supported by evidence.",
+    "timestamp": "2024-07-22T21:51:00Z"
+  },
+  {
+    "correction_id": "corr_011",
+    "agent_name": "matching",
+    "before": "Accelerated a system that helped with optimize gas usage.",
+    "after": "Automated a Time Series Forecasting system that automate compliance reporting, improving turnaround time by 58%.",
+    "feedback": "Tighten to the word limit.",
+    "reason": "Action-word repetition across lines.",
+    "timestamp": "2024-03-21T11:37:00Z"
+  },
+  {
+    "correction_id": "corr_012",
+    "agent_name": "jd_analysis",
+    "before": "Generated a system that helped with rank lending opportunities.",
+    "after": "Optimized a Fraud Detection system that surface at-risk loan positions, improving accuracy by 15%.",
+    "feedback": "Ground the claim in an actual project.",
+    "reason": "Exceeded the 18-word limit.",
+    "timestamp": "2025-02-28T13:06:00Z"
+  },
+  {
+    "correction_id": "corr_013",
+    "agent_name": "resume_writer",
+    "before": "Built a system that helped with score credit risk.",
+    "after": "Engineered a Data Analytics system that forecast short-term volatility, improving accuracy by 65%.",
+    "feedback": "Name the domain explicitly.",
+    "reason": "Exceeded the 18-word limit.",
+    "timestamp": "2025-04-23T03:58:00Z"
+  },
+  {
+    "correction_id": "corr_014",
+    "agent_name": "resume_writer",
+    "before": "Developed a system that helped with surface at-risk loan positions.",
+    "after": "Analyzed a On-chain Analytics system that rank lending opportunities, improving false-positive rate by 78%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Domain not stated.",
+    "timestamp": "2024-10-03T18:00:00Z"
+  },
+  {
+    "correction_id": "corr_015",
+    "agent_name": "cover_letter_writer",
+    "before": "Integrated a system that helped with forecast short-term volatility.",
+    "after": "Built a NLP system that surface at-risk loan positions, improving precision by 86%.",
+    "feedback": "Name the domain explicitly.",
+    "reason": "Domain not stated.",
+    "timestamp": "2024-02-08T18:19:00Z"
+  },
+  {
+    "correction_id": "corr_016",
+    "agent_name": "verifier",
+    "before": "Deployed a system that helped with score credit risk.",
+    "after": "Generated a Fraud Detection system that rank lending opportunities, improving latency by 33%.",
+    "feedback": "Tighten to the word limit.",
+    "reason": "Domain not stated.",
+    "timestamp": "2025-03-25T21:07:00Z"
+  },
+  {
+    "correction_id": "corr_017",
+    "agent_name": "critic",
+    "before": "Deployed a system that helped with score credit risk.",
+    "after": "Reduced a MLOps system that forecast short-term volatility, improving turnaround time by 56%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Action-word repetition across lines.",
+    "timestamp": "2024-08-09T15:18:00Z"
+  },
+  {
+    "correction_id": "corr_018",
+    "agent_name": "supervisor",
+    "before": "Leveraged a system that helped with classify token contracts.",
+    "after": "Improved a Web3 system that rank lending opportunities, improving recall by 30%.",
+    "feedback": "Ground the claim in an actual project.",
+    "reason": "Exceeded the 18-word limit.",
+    "timestamp": "2024-07-06T06:47:00Z"
+  },
+  {
+    "correction_id": "corr_019",
+    "agent_name": "evaluation",
+    "before": "Improved a system that helped with score credit risk.",
+    "after": "Created a On-chain Analytics system that score credit risk, improving latency by 86%.",
+    "feedback": "Tighten to the word limit.",
+    "reason": "Missing numeric metric (validation rule).",
+    "timestamp": "2024-03-09T22:52:00Z"
+  },
+  {
+    "correction_id": "corr_020",
+    "agent_name": "resume_writer",
+    "before": "Automated a system that helped with optimize gas usage.",
+    "after": "Optimized a DeFi system that rank lending opportunities, improving data freshness by 14%.",
+    "feedback": "Name the domain explicitly.",
+    "reason": "Exceeded the 18-word limit.",
+    "timestamp": "2024-06-24T03:05:00Z"
+  },
+  {
+    "correction_id": "corr_021",
+    "agent_name": "critic",
+    "before": "Developed a system that helped with detect anomalous wallet behavior.",
+    "after": "Engineered a Web3 system that forecast short-term volatility, improving false-positive rate by 18%.",
+    "feedback": "Avoid repeating the action verb.",
+    "reason": "Claim not supported by evidence.",
+    "timestamp": "2025-06-09T19:32:00Z"
+  },
+  {
+    "correction_id": "corr_022",
+    "agent_name": "verifier",
+    "before": "Optimized a system that helped with forecast short-term volatility.",
+    "after": "Designed a Time Series Forecasting system that surface at-risk loan positions, improving false-positive rate by 72%.",
+    "feedback": "Remove the unsupported metric.",
+    "reason": "Domain not stated.",
+    "timestamp": "2024-10-23T21:32:00Z"
+  },
+  {
+    "correction_id": "corr_023",
+    "agent_name": "supervisor",
+    "before": "Designed a system that helped with map liquidity flows.",
+    "after": "Deployed a Web3 system that automate compliance reporting, improving false-positive rate by 25%.",
+    "feedback": "Avoid repeating the action verb.",
+    "reason": "Missing numeric metric (validation rule).",
+    "timestamp": "2025-04-07T11:33:00Z"
+  },
+  {
+    "correction_id": "corr_024",
+    "agent_name": "evaluation",
+    "before": "Integrated a system that helped with score credit risk.",
+    "after": "Streamlined a Credit Scoring system that predict customer churn, improving data freshness by 9%.",
+    "feedback": "Name the domain explicitly.",
+    "reason": "Action-word repetition across lines.",
+    "timestamp": "2024-03-04T00:16:00Z"
+  },
+  {
+    "correction_id": "corr_025",
+    "agent_name": "evaluation",
+    "before": "Developed a system that helped with optimize gas usage.",
+    "after": "Leveraged a Data Engineering system that classify token contracts, improving latency by 31%.",
+    "feedback": "Avoid repeating the action verb.",
+    "reason": "Exceeded the 18-word limit.",
+    "timestamp": "2024-03-28T09:38:00Z"
+  },
+  {
+    "correction_id": "corr_026",
+    "agent_name": "critic",
+    "before": "Designed a system that helped with forecast short-term volatility.",
+    "after": "Automated a Credit Scoring system that classify token contracts, improving analyst hours by 42%.",
+    "feedback": "Avoid repeating the action verb.",
+    "reason": "Domain not stated.",
+    "timestamp": "2025-03-09T17:57:00Z"
+  },
+  {
+    "correction_id": "corr_027",
+    "agent_name": "evaluation",
+    "before": "Optimized a system that helped with classify token contracts.",
+    "after": "Deployed a On-chain Analytics system that classify token contracts, improving accuracy by 42%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Domain not stated.",
+    "timestamp": "2024-12-29T07:45:00Z"
+  },
+  {
+    "correction_id": "corr_028",
+    "agent_name": "jd_analysis",
+    "before": "Analyzed a system that helped with forecast short-term volatility.",
+    "after": "Improved a Recommender Systems system that forecast short-term volatility, improving throughput by 62%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Exceeded the 18-word limit.",
+    "timestamp": "2024-09-11T05:31:00Z"
+  },
+  {
+    "correction_id": "corr_029",
+    "agent_name": "resume_writer",
+    "before": "Reduced a system that helped with map liquidity flows.",
+    "after": "Integrated a Data Engineering system that optimize gas usage, improving throughput by 21%.",
+    "feedback": "Tighten to the word limit.",
+    "reason": "Domain not stated.",
+    "timestamp": "2025-02-11T05:18:00Z"
+  },
+  {
+    "correction_id": "corr_030",
+    "agent_name": "supervisor",
+    "before": "Accelerated a system that helped with optimize gas usage.",
+    "after": "Created a Smart Contracts system that optimize gas usage, improving turnaround time by 77%.",
+    "feedback": "Avoid repeating the action verb.",
+    "reason": "Claim not supported by evidence.",
+    "timestamp": "2025-03-15T00:17:00Z"
+  },
+  {
+    "correction_id": "corr_031",
+    "agent_name": "verifier",
+    "before": "Generated a system that helped with automate compliance reporting.",
+    "after": "Optimized a Data Analytics system that classify token contracts, improving accuracy by 27%.",
+    "feedback": "Name the domain explicitly.",
+    "reason": "Claim not supported by evidence.",
+    "timestamp": "2024-04-14T12:09:00Z"
+  },
+  {
+    "correction_id": "corr_032",
+    "agent_name": "profile",
+    "before": "Enhanced a system that helped with score credit risk.",
+    "after": "Integrated a Recommender Systems system that automate compliance reporting, improving false-positive rate by 77%.",
+    "feedback": "Avoid repeating the action verb.",
+    "reason": "Missing numeric metric (validation rule).",
+    "timestamp": "2025-05-29T18:50:00Z"
+  },
+  {
+    "correction_id": "corr_033",
+    "agent_name": "matching",
+    "before": "Analyzed a system that helped with map liquidity flows.",
+    "after": "Deployed a Algorithmic Trading system that map liquidity flows, improving recall by 86%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Exceeded the 18-word limit.",
+    "timestamp": "2024-05-20T08:25:00Z"
+  },
+  {
+    "correction_id": "corr_034",
+    "agent_name": "verifier",
+    "before": "Optimized a system that helped with map liquidity flows.",
+    "after": "Streamlined a Smart Contracts system that score credit risk, improving latency by 62%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Domain not stated.",
+    "timestamp": "2024-03-05T02:19:00Z"
+  },
+  {
+    "correction_id": "corr_035",
+    "agent_name": "jd_analysis",
+    "before": "Constructed a system that helped with forecast short-term volatility.",
+    "after": "Improved a Quantitative Finance system that predict customer churn, improving analyst hours by 89%.",
+    "feedback": "Avoid repeating the action verb.",
+    "reason": "Action-word repetition across lines.",
+    "timestamp": "2025-02-21T03:14:00Z"
+  },
+  {
+    "correction_id": "corr_036",
+    "agent_name": "matching",
+    "before": "Leveraged a system that helped with optimize gas usage.",
+    "after": "Engineered a Data Engineering system that detect anomalous wallet behavior, improving recall by 13%.",
+    "feedback": "Ground the claim in an actual project.",
+    "reason": "Claim not supported by evidence.",
+    "timestamp": "2025-06-07T03:25:00Z"
+  },
+  {
+    "correction_id": "corr_037",
+    "agent_name": "cover_letter_writer",
+    "before": "Engineered a system that helped with detect anomalous wallet behavior.",
+    "after": "Enhanced a Web3 system that automate compliance reporting, improving data freshness by 26%.",
+    "feedback": "Ground the claim in an actual project.",
+    "reason": "Missing numeric metric (validation rule).",
+    "timestamp": "2024-04-09T13:20:00Z"
+  },
+  {
+    "correction_id": "corr_038",
+    "agent_name": "supervisor",
+    "before": "Constructed a system that helped with automate compliance reporting.",
+    "after": "Analyzed a DeFi system that score credit risk, improving turnaround time by 59%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Exceeded the 18-word limit.",
+    "timestamp": "2025-05-10T23:04:00Z"
+  },
+  {
+    "correction_id": "corr_039",
+    "agent_name": "evaluation",
+    "before": "Optimized a system that helped with automate compliance reporting.",
+    "after": "Accelerated a Algorithmic Trading system that score credit risk, improving false-positive rate by 88%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Domain not stated.",
+    "timestamp": "2024-01-03T12:29:00Z"
+  },
+  {
+    "correction_id": "corr_040",
+    "agent_name": "evaluation",
+    "before": "Optimized a system that helped with forecast short-term volatility.",
+    "after": "Analyzed a Data Analytics system that classify token contracts, improving precision by 60%.",
+    "feedback": "Name the domain explicitly.",
+    "reason": "Missing numeric metric (validation rule).",
+    "timestamp": "2024-08-19T10:39:00Z"
+  },
+  {
+    "correction_id": "corr_041",
+    "agent_name": "profile",
+    "before": "Deployed a system that helped with optimize gas usage.",
+    "after": "Analyzed a Algorithmic Trading system that optimize gas usage, improving analyst hours by 92%.",
+    "feedback": "Name the domain explicitly.",
+    "reason": "Domain not stated.",
+    "timestamp": "2024-09-11T22:37:00Z"
+  },
+  {
+    "correction_id": "corr_042",
+    "agent_name": "critic",
+    "before": "Accelerated a system that helped with map liquidity flows.",
+    "after": "Streamlined a MLOps system that map liquidity flows, improving turnaround time by 80%.",
+    "feedback": "Ground the claim in an actual project.",
+    "reason": "Missing numeric metric (validation rule).",
+    "timestamp": "2024-12-01T10:37:00Z"
+  },
+  {
+    "correction_id": "corr_043",
+    "agent_name": "resume_writer",
+    "before": "Built a system that helped with surface at-risk loan positions.",
+    "after": "Implemented a Machine Learning system that score credit risk, improving coverage by 84%.",
+    "feedback": "Remove the unsupported metric.",
+    "reason": "Action-word repetition across lines.",
+    "timestamp": "2024-02-29T21:49:00Z"
+  },
+  {
+    "correction_id": "corr_044",
+    "agent_name": "verifier",
+    "before": "Enhanced a system that helped with rank lending opportunities.",
+    "after": "Deployed a Blockchain system that predict customer churn, improving latency by 17%.",
+    "feedback": "Tighten to the word limit.",
+    "reason": "Missing numeric metric (validation rule).",
+    "timestamp": "2025-03-08T21:46:00Z"
+  },
+  {
+    "correction_id": "corr_045",
+    "agent_name": "supervisor",
+    "before": "Integrated a system that helped with score credit risk.",
+    "after": "Reduced a Algorithmic Trading system that optimize gas usage, improving recall by 61%.",
+    "feedback": "Ground the claim in an actual project.",
+    "reason": "Action-word repetition across lines.",
+    "timestamp": "2025-02-24T22:41:00Z"
+  },
+  {
+    "correction_id": "corr_046",
+    "agent_name": "profile",
+    "before": "Implemented a system that helped with map liquidity flows.",
+    "after": "Improved a Web3 system that predict customer churn, improving throughput by 84%.",
+    "feedback": "Add a quantified result.",
+    "reason": "Exceeded the 18-word limit.",
+    "timestamp": "2025-05-12T00:03:00Z"
+  },
+  {
+    "correction_id": "corr_047",
+    "agent_name": "supervisor",
+    "before": "Accelerated a system that helped with score credit risk.",
+    "after": "Created a Deep Learning system that automate compliance reporting, improving false-positive rate by 82%.",
+    "feedback": "Ground the claim in an actual project.",
+    "reason": "Action-word repetition across lines.",
+    "timestamp": "2024-02-18T09:58:00Z"
+  },
+  {
+    "correction_id": "corr_048",
+    "agent_name": "critic",
+    "before": "Deployed a system that helped with automate compliance reporting.",
+    "after": "Reduced a Smart Contracts system that optimize gas usage, improving turnaround time by 71%.",
+    "feedback": "Tighten to the word limit.",
+    "reason": "Missing numeric metric (validation rule).",
+    "timestamp": "2024-11-30T13:16:00Z"
+  },
+  {
+    "correction_id": "corr_049",
+    "agent_name": "profile",
+    "before": "Engineered a system that helped with automate compliance reporting.",
+    "after": "Built a Recommender Systems system that predict customer churn, improving data freshness by 64%.",
+    "feedback": "Ground the claim in an actual project.",
+    "reason": "Domain not stated.",
+    "timestamp": "2024-01-30T18:28:00Z"
+  }
+]

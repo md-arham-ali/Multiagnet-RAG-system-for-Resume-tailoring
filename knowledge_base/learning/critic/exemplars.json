@@ -1,0 +1,387 @@
+[
+  {
+    "learning_id": "learn_019",
+    "agent_name": "critic",
+    "timestamp": "2024-08-18T18:26:00Z",
+    "task_type": "critique",
+    "project_context": "DeFi — automate compliance reporting",
+    "input_context": {
+      "role": "Quantitative Analyst",
+      "industry": "E-commerce",
+      "job_description_summary": "Seeking a Quantitative Analyst with Machine Learning, A/B Testing, Deep Learning for detect anomalous wallet behavior."
+    },
+    "task": "Generate output for a Quantitative Analyst in E-commerce.",
+    "generated_output": "Automated a Risk Analytics system that detect anomalous wallet behavior, improving turnaround time by 23%.",
+    "evaluation": {
+      "score": 6,
+      "evaluation_source": "human",
+      "feedback": "Repeated action verbs.",
+      "strengths": [
+        "grounded"
+      ],
+      "weaknesses": [
+        "weak domain focus"
+      ]
+    },
+    "reflection": {
+      "root_cause": "Context window lacked the right exemplar.",
+      "what_worked": [
+        "tight prompt",
+        "strong retrieval",
+        "good exemplar"
+      ],
+      "what_failed": [
+        "no metric",
+        "over-generation"
+      ],
+      "what_should_change": [
+        "inject a metric requirement",
+        "enforce word limit",
+        "rerank exemplars by role"
+      ]
+    },
+    "lesson": {
+      "summary": "Always anchor bullets with a numeric result.",
+      "category": "tone",
+      "confidence": 0.76
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Data Analyst",
+        "Quantitative Analyst"
+      ],
+      "industries": [
+        "E-commerce",
+        "Crypto / Web3",
+        "AdTech"
+      ],
+      "project_types": [
+        "Research",
+        "NLP System"
+      ],
+      "minimum_similarity_score": 0.74
+    },
+    "memory_type": "episodic",
+    "should_reuse": true,
+    "importance_score": 3,
+    "expiry_policy": {
+      "review_after_days": 60,
+      "auto_delete": false
+    },
+    "embedding_text": "critic learned to detect anomalous wallet behavior for a Quantitative Analyst in E-commerce using Prompt Engineering, Python, Smart Contract Analysis.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "A/B Testing",
+        "NLP",
+        "MLOps"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_024",
+    "agent_name": "critic",
+    "timestamp": "2025-06-01T05:53:00Z",
+    "task_type": "cover_letter",
+    "project_context": "Risk Analytics — surface at-risk loan positions",
+    "input_context": {
+      "role": "Business Intelligence Analyst",
+      "industry": "Trading",
+      "job_description_summary": "Seeking a Business Intelligence Analyst with SQL, NLP for forecast short-term volatility."
+    },
+    "task": "Generate output for a Business Intelligence Analyst in Trading.",
+    "generated_output": "Optimized a Risk Analytics system that forecast short-term volatility, improving throughput by 90%.",
+    "evaluation": {
+      "score": 4,
+      "evaluation_source": "automatic",
+      "feedback": "Needs explicit domain mention.",
+      "strengths": [
+        "ATS-aligned",
+        "concise",
+        "grounded"
+      ],
+      "weaknesses": []
+    },
+    "reflection": {
+      "root_cause": "Evidence not injected for the claim.",
+      "what_worked": [
+        "strong retrieval",
+        "tight prompt",
+        "good exemplar"
+      ],
+      "what_failed": [
+        "hallucinated detail",
+        "no metric"
+      ],
+      "what_should_change": [
+        "enforce word limit"
+      ]
+    },
+    "lesson": {
+      "summary": "Verify every metric against project evidence.",
+      "category": "instruction-following",
+      "confidence": 0.55
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Quantitative Analyst"
+      ],
+      "industries": [
+        "Banking"
+      ],
+      "project_types": [
+        "Data Engineering"
+      ],
+      "minimum_similarity_score": 0.83
+    },
+    "memory_type": "procedural",
+    "should_reuse": false,
+    "importance_score": 1,
+    "expiry_policy": {
+      "review_after_days": 14,
+      "auto_delete": false
+    },
+    "embedding_text": "critic learned to automate compliance reporting for a Business Intelligence Analyst in Trading using Statistical Modeling, Smart Contract Analysis, Data Pipeline Design.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "routing",
+        "formatting",
+        "factual-grounding"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_029",
+    "agent_name": "critic",
+    "timestamp": "2024-11-02T07:05:00Z",
+    "task_type": "critique",
+    "project_context": "Smart Contracts — automate compliance reporting",
+    "input_context": {
+      "role": "Quant Developer",
+      "industry": "Insurance",
+      "job_description_summary": "Seeking a Quant Developer with Model Deployment, On-chain Data, Smart Contract Analysis for automate compliance reporting."
+    },
+    "task": "Generate output for a Quant Developer in Insurance.",
+    "generated_output": "Evaluated a Recommender Systems system that rank lending opportunities, improving precision by 50%.",
+    "evaluation": {
+      "score": 9,
+      "evaluation_source": "llm-judge",
+      "feedback": "Repeated action verbs.",
+      "strengths": [
+        "concise",
+        "grounded",
+        "on-topic"
+      ],
+      "weaknesses": [
+        "verbose",
+        "repetitive verbs"
+      ]
+    },
+    "reflection": {
+      "root_cause": "Missing numeric anchor in the prompt.",
+      "what_worked": [
+        "good exemplar",
+        "tight prompt"
+      ],
+      "what_failed": [
+        "verb repetition"
+      ],
+      "what_should_change": [
+        "add do-not-claim check",
+        "rerank exemplars by role"
+      ]
+    },
+    "lesson": {
+      "summary": "Rerank exemplars by role type before injection.",
+      "category": "retrieval",
+      "confidence": 0.91
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Blockchain Data Engineer",
+        "Data Scientist"
+      ],
+      "industries": [
+        "SaaS",
+        "Banking",
+        "Consulting"
+      ],
+      "project_types": [
+        "Data Analytics"
+      ],
+      "minimum_similarity_score": 0.75
+    },
+    "memory_type": "procedural",
+    "should_reuse": true,
+    "importance_score": 7,
+    "expiry_policy": {
+      "review_after_days": 30,
+      "auto_delete": false
+    },
+    "embedding_text": "critic learned to classify token contracts for a Quant Developer in Insurance using Dashboarding, Prompt Engineering.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "Deep Learning",
+        "NLP",
+        "Cloud Computing",
+        "SQL"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_032",
+    "agent_name": "critic",
+    "timestamp": "2024-04-01T20:42:00Z",
+    "task_type": "verification",
+    "project_context": "Time Series Forecasting — automate compliance reporting",
+    "input_context": {
+      "role": "Business Intelligence Analyst",
+      "industry": "Fintech",
+      "job_description_summary": "Seeking a Business Intelligence Analyst with A/B Testing, Data Wrangling for rank lending opportunities."
+    },
+    "task": "Generate output for a Business Intelligence Analyst in Fintech.",
+    "generated_output": "Developed a MLOps system that rank lending opportunities, improving throughput by 15%.",
+    "evaluation": {
+      "score": 5,
+      "evaluation_source": "human",
+      "feedback": "Needs explicit domain mention.",
+      "strengths": [
+        "grounded",
+        "quantified",
+        "on-topic"
+      ],
+      "weaknesses": [
+        "unsupported claim"
+      ]
+    },
+    "reflection": {
+      "root_cause": "Rubric weight on quantification too low.",
+      "what_worked": [
+        "strong retrieval",
+        "good exemplar"
+      ],
+      "what_failed": [
+        "hallucinated detail"
+      ],
+      "what_should_change": [
+        "rerank exemplars by role",
+        "inject a metric requirement"
+      ]
+    },
+    "lesson": {
+      "summary": "Rerank exemplars by role type before injection.",
+      "category": "factual-grounding",
+      "confidence": 0.7
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Business Intelligence Analyst"
+      ],
+      "industries": [
+        "Fintech"
+      ],
+      "project_types": [
+        "Data Analytics"
+      ],
+      "minimum_similarity_score": 0.63
+    },
+    "memory_type": "semantic",
+    "should_reuse": false,
+    "importance_score": 10,
+    "expiry_policy": {
+      "review_after_days": 14,
+      "auto_delete": false
+    },
+    "embedding_text": "critic learned to surface at-risk loan positions for a Business Intelligence Analyst in Fintech using SQL, Time Series Analysis.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "MLOps",
+        "Deep Learning",
+        "Quantitative Finance"
+      ]
+    }
+  },
+  {
+    "learning_id": "learn_044",
+    "agent_name": "critic",
+    "timestamp": "2024-07-15T14:34:00Z",
+    "task_type": "jd_analysis",
+    "project_context": "MLOps — optimize gas usage",
+    "input_context": {
+      "role": "Blockchain Data Engineer",
+      "industry": "Crypto / Web3",
+      "job_description_summary": "Seeking a Blockchain Data Engineer with Dashboarding, Python, MLOps for classify token contracts."
+    },
+    "task": "Generate output for a Blockchain Data Engineer in Crypto / Web3.",
+    "generated_output": "Engineered a Machine Learning system that map liquidity flows, improving data freshness by 28%.",
+    "evaluation": {
+      "score": 7,
+      "evaluation_source": "llm-judge",
+      "feedback": "Strong quantification.",
+      "strengths": [
+        "quantified"
+      ],
+      "weaknesses": [
+        "weak domain focus"
+      ]
+    },
+    "reflection": {
+      "root_cause": "Rubric weight on quantification too low.",
+      "what_worked": [
+        "clear structure",
+        "strong retrieval",
+        "tight prompt"
+      ],
+      "what_failed": [
+        "verb repetition",
+        "no metric"
+      ],
+      "what_should_change": [
+        "rerank exemplars by role",
+        "enforce word limit"
+      ]
+    },
+    "lesson": {
+      "summary": "Always anchor bullets with a numeric result.",
+      "category": "routing",
+      "confidence": 0.68
+    },
+    "reuse_conditions": {
+      "roles": [
+        "Research Engineer",
+        "Data Engineer",
+        "ML Researcher"
+      ],
+      "industries": [
+        "Healthcare Analytics",
+        "Banking"
+      ],
+      "project_types": [
+        "Data Analytics",
+        "Dashboard"
+      ],
+      "minimum_similarity_score": 0.64
+    },
+    "memory_type": "episodic",
+    "should_reuse": true,
+    "importance_score": 2,
+    "expiry_policy": {
+      "review_after_days": 60,
+      "auto_delete": false
+    },
+    "embedding_text": "critic learned to score credit risk for a Blockchain Data Engineer in Crypto / Web3 using NLP, Statistical Modeling, Cloud Computing.",
+    "metadata": {
+      "version": "1.0",
+      "tags": [
+        "Smart Contract Analysis",
+        "Time Series Analysis",
+        "Credit Scoring",
+        "SQL",
+        "Prompt Engineering"
+      ]
+    }
+  }
+]
