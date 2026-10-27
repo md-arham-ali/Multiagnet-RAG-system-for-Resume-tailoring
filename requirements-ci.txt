@@ -1,0 +1,26 @@
+# Dependencies the TEST SUITE needs, pinned to the versions the project runs with (2026-10-25).
+# Deliberately NOT here: sentence-transformers (pulls in PyTorch, ~2 GB) and spacy. No test imports them:
+# the embedder and reranker are faked, and the 7 tests that need the real models are marked `real_models`
+# and skipped in CI (pytest.ini). Everything else in requirements.txt is a runtime dependency of the
+# live pipeline, not of the tests.
+chromadb==1.5.9
+fastapi==0.139.0
+google-genai==1.75.0
+httpx==0.28.1
+langchain-core==1.4.8
+langchain-google-genai==4.2.7
+langchain-groq==1.1.3
+langchain-openai==1.3.3
+langchain-text-splitters==1.1.2
+langfuse==4.13.1
+langgraph==1.2.8
+langgraph-checkpoint-sqlite==3.1.1
+numpy==2.5.1
+pydantic==2.13.4
+pypdf==6.14.2
+pytest==9.1.1
+python-dotenv==1.2.2
+python-multipart==0.0.32
+PyYAML==6.0.3
+rapidfuzz==3.14.5
+uvicorn==0.51.0
