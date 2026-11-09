@@ -18,22 +18,6 @@ order:
 Built on LangGraph. A human can approve, edit or reject the work at each step,
 and every claim must trace back to a real profile record.
 
-> **Status (2026-10-27):**
-> - **Agents:** six of the eight are real, and the graph runs end to end
->   offline. The `verifier` is deliberately out of Stage 0 and stays a
->   placeholder that always passes, as does `evaluation`.
-> - **Live runs:** only partly proven. On 2026-10-24 Groq worked for
->   `jd_analysis`, `profile`, `matching` and the Document planner. Gemini
->   returned a 503 on the Critic, and the Cerebras and OpenRouter model names
->   were retired. The Document writer and the Critic's findings have never been
->   seen live.
-> - **Tests:** 144 failures were cut to about 40 on 2026-10-24; the rest are
->   tracked as bug #117 (see [Status](#status)). CI runs the offline suite on
->   every push.
-> - **Deploy:** Docker files and a compose file are written but no image has
->   been built yet.
-> - **Full history:** [`context/context.md`](context/context.md).
-
 ---
 
 ## How it works
