@@ -65,7 +65,8 @@ knowledge_base/profile/manual_entries.json
 # ---- Internal working notes and local tool config: never pushed (decided 2026-10-26) ----
 # The bug log, decisions, test status, design notes and instructions are the project's private memory.
 context/
-docs/
+docs/*
+!docs/diagrams/
 plan-for-stage-0-*.md
 CV_bullet generation.md
 explanations.md

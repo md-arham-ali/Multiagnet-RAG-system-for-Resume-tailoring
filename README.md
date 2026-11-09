@@ -24,6 +24,8 @@ and every claim must trace back to a real profile record.
 
 ### 1. The pipeline
 
+📊 **Diagram: Architecture**
+
 ![Architecture: supervisor, human gates, agents and the knowledge layer](docs/diagrams/architecture.svg)
 
 - **Hub and spokes.** The Supervisor is plain routing code with no LLM. It
@@ -49,6 +51,8 @@ and every claim must trace back to a real profile record.
 
 ### 2. What each agent writes
 
+📊 **Diagram: GraphState**
+
 ![GraphState: which agent fills which field](docs/diagrams/graph_state.svg)
 
 - **Shared state.** All agents share one typed state object, `GraphState`. It's
@@ -68,6 +72,8 @@ and every claim must trace back to a real profile record.
     number, or breaks the bullet rules. The original line is kept.
 
 ### 3. The review loop
+
+📊 **Diagram: Review loop**
 
 ![Review loop: agents decide, the supervisor routes](docs/diagrams/review_loop.svg)
 
