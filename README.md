@@ -1,5 +1,11 @@
 # Multi-Agent CV Tailoring System
 
+💻 **Live link:** http://3.25.67.6  
+To open it and run anything, you need the admin access token. Ask me for it, it is not in the UI.  
+To do a run: sign in, paste a job description, pick Demo or Live, then start it.  
+At each of the four gates you can approve, edit or reject. At the end, download your patched CV.  
+The frontend has a live pipeline view, evidence search, a Build Profile page, and an audit trail for every run.
+
 Give it a job description and your own CV. A team of agents works through it in
 order:
 

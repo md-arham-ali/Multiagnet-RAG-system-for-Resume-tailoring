@@ -69,6 +69,12 @@ docs/
 plan-for-stage-0-*.md
 CV_bullet generation.md
 explanations.md
+frontend/context.md
+frontend/bugs.md
+frontend/design.md
+frontend/DELIVERABLES.md
+backend/context.md
+backend/bugs.md
 # Claude Code app: project skills, settings, launch configs (machine-specific)
 .claude/
 
